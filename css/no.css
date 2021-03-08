@@ -1,0 +1,7 @@
+/* 실제 마켓컬리에서는 적용한 css들이지만 어떤 기능인지 정확히 몰라 넣지 못한 것들 LIST */
+
+#gnb .gnb_sub .ico_arrow { display: none; float: right; width: 16px; height: 17px; padding: 6px 9px 0 0; }
+#gnb .gnb_sub .ico_arrow img { width: 7px; height: 11px; }
+#gnb .gnb_sub .current .ico_arrow { display: block; }
+
+#gnb .gnb_sub .ico_new { overflow: hidden; float: left; width: 14px; height: 14px; margin-top: 5px; background-position: 50% 50%; background-repeat: no-repeat; background-size: 14px 14px;font-size: 0; line-height: 0; text-indent: -9999px; }
