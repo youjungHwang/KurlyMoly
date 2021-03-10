@@ -18,15 +18,14 @@
             <!-- header 시작 -->
             <header id="header">
                 <div class="bnr_header" id="top-message">
-                    <!-- 100원 행사 배너 들어가는 곳 -->
+                    <!-- 100원 행사 배너 -->
                     <div class="inner_top_content">
                         <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_210224">
                             <span>지금 가입하고 인기상품 <b>100원</b>에 받아가세요!</span>
                             <img src="./img/ico_arrow_fff_84x84.webp" class="bnr_arr">
                         </a>
                     </div>
-                    <div class="inner_top_close" id="top-message-close" class="btn_top_bnr"><img src="./img/close.png">
-                    </div>
+                    <div class="inner_top_close" id="top-message-close" class="btn_top_bnr"><img src="./img/close.png"></div>
                 </div>
 
                 <div id="userMenu">
@@ -46,7 +45,6 @@
                         <li class="menu lst">
                             <a href="./shop/board/list.html" class="link_menu cos">고객센터</a>
                             <ul class="sub">
-                                <!-- dropdown 형식 -->
                                 <li>
                                     <a href="./shop/board/notice.html">공지사항</a>
                                 </li>
@@ -61,20 +59,19 @@
                     </ul>
                 </div>
 
-                <div id="headerLogo">
-                    <h1 class="logo"><a href="/" class="link_main"><img src="./img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1> <!-- 메인로고 -->
+                <div id="headerLogo"> <!-- 메인로고 -->
+                    <h1 class="logo"><a href="/" class="link_main"><img src="./img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
                 <div id="gnb">
                     <div id="gnbMenu" class="gnb_kurly">
-                        <!-- 1050*56 전체를 한번 감싸줘서 스크롤을 내렸을때 메뉴바 아래에 그림자가 생겨야 함 -->
                         <div class="inner_gnbkurly">
                             <div class="gnb_main">
                                 <!-- 메뉴들 전체를 감싸는 div -->
                                 <ul class="gnb">
                                     <li class="menu1">
                                         <a>
-                                            <span class="ico"></span> <!-- 메뉴 아이콘 -->
+                                            <span class="ico"></span>
                                             <span class="txt">전체 카테고리</span>
                                         </a>
                                     </li>
@@ -658,7 +655,7 @@
                                     var $target = $('#brnQuickObj'), $targetThumb = $('#brnQuickObj .thumb');
                                     // 시간체크
                                     function timeCheck() {
-                                        var now = brnQuick.nowTime; // 호출 하는 js에서 변수선언되어 가져다 사용
+                                        var now = brnQuick.nowTime;
                                         if (new Date('2020-12-31T11:00:00+09:00').getTime() <= now && now < new Date('2021-01-15T11:00:00+09:00').getTime()) {
                                             $target.attr('href', '/shop/event/kurlyEvent.php?htmid=event/2020/1231/newyearsday');
                                             $targetThumb.attr('src', 'https://res.kurly.com/pc/service/main/2012/bnr_quick.png');
@@ -697,14 +694,12 @@
                         </div>
 
                         <div class="side_recent">
-                            <!-- 넣을지 말지 회의필요 -->
                             <button type="button" class="btn btn_up">최근 본 상품 위로 올리기</button>
                             <strong class="tit">최근 본 상품</strong>
                             <div class="list_goods" data-height="209" style="height: 160px;">
                                 <ul class="list">
                                     <li><a class="link_goods" href="#"><img src="#"></a></li>
                                     <!-- 가장 최근에 본 상품의 링크와 이미지 가져오기 ★★★★★ -->
-                                    <!-- <li><a class="link_goods" href="#"><img src="#"></a></li> 가장 최근에 본 상품의 링크와 이미지 가져오기 ★★★★★ -->
                                 </ul>
                             </div>
                             <button type="button" class="btn btn_down">최근 본 상품 아래로 올리기</button>
@@ -2023,12 +2018,6 @@
                             </div>
                         </div>
 
-                        
-
-
-
-
-
                     </div>
                 </div>
                 <!-- 본문 종료 -->
@@ -2110,7 +2099,6 @@
                     </div>
                 </div>
                 <div class="footer_link page_aticle">
-                    <!-- 1050*57 -->
                     <div class="authentication">
                         <a href="#" class="mark">
                             <img src="./img/sns/logo_isms.webp" alt="isms 로고" class="logo">
@@ -2136,7 +2124,6 @@
         <a href="#top" id="pageTop" class="on" style="opacity: 1; bottom: 15px;">맨 위로가기</a> <!--  -->
         <script>
             // 스크롤을 위로 올리면 (top메뉴가 보이면) to_top이 아래로 사라지는 효과
-            // 현재 반대로 액션되는 문제 발생
             $(document).ready(function () {
                 var pageTop = {
                     $target: $('#pageTop'),
@@ -2210,7 +2197,6 @@
             });
         </script>
         <script>
-            // 클릭인인경우(푸터에 있으나, 아직공용작업은 못함) => bgLoading 이부분 처리필요
             var bodyScroll = {
                 winScrollTop: 0,
                 body: $('body'),
