@@ -11,7 +11,7 @@ ul, ol, li { list-style: none; }
 a { text-decoration: none; }
 div, th, td, li, dt, dd, p { word-break: break-all; }
 b, strong { font-weight: 700; }
-img { border: 0; }
+img { border: 0; max-width: 100%; }
 body, input, select, textarea, button { font-family: 'Noto Sans KR'; line-height: 1; letter-spacing: -.05em; color: #4c4c4c; font-size: 12px; max-width: 100%; }
 h1 { font-size: 2em; }
 button { outline: none; }
@@ -190,156 +190,50 @@ button { outline: none; }
 #qnb .side_recent .btn_down { background: url('../img/sidebar/ico_quick_down.webp') no-repeat 50% 0; }
 #qnb .side_recent .btn_down:hover { background: url('../img/sidebar/ico_quick_down_hover.webp') no-repeat 50% 0; }
 
-/* ======================================== 마이페이지 주문 내역 ===================================== */
-/* ------------메인페이지 탑-------------- */
-.screen_out {    display: block;
-    overflow: hidden;
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    font-size: 0;
-    line-height: 0;
-    text-indent: -9999px;}
-div{display: block;}
-#mypage_main 
-#mypage_main #content {margin: 0 auto; min-width: 1050px; padding-bottom: 120px;}
-#mypage_main #content #content_back { margin: 0 auto;}
-.mypagetop_user a{margin-top: 20px; width: 1050px; height: 60px;}
-.mypagetop_user a img { width: 1050px; height: 60px; margin-top: 20px;}
-.mypage_top {width: 100%; padding: 50px 0; margin-bottom: -20px; background-color: #f7f7f7;}
-.mypage_top .bnr_event{ background-size: 1050px 60px; background-repeat: no-repeat; background-position: 50% 50%;}
-.mypagetop_user {width: 1050px;margin: 0 auto; }
-.mypagetop_user .inner_mypagetop {height: 194.667px;}
-.mypagetop_user .inner_mypagetop .grade_user{ float: left; width: 444px; height: 100%; padding: 28px 0 30px 30px; background-color: #fff;}
-.mypage_top .grade_user {height: 136.6667px; padding: 28px 0 30px 30px; box-sizing: border-box;}
-.mypage_top .grade_user .ico_grade { box-sizing: border-box;  float: left; width: 64px; height: 64px; margin: 2px 20px 0 0; border-radius: 3px; font-size: 16px; text-align: center; word-break: break-all;  } 
-.mypage_top .grade_user .class0 {border: 1px solid #5f0080; color: #5f0080}
-.mypage_top .grade_user .ico_grade .ineer_grade {display: table; width: 100%; height: 64px; padding-bottom: 3px; box-sizing: border-box;}
-.mypage_top .grade_user .ico_grade .ineer_grade .in_grade{ width: 100%; vertical-align: middle; line-height: 18px; font: 16px; display: table-cell;}
-.mypage_top .grade_user .grade_bonus{font-size: 12px; line-height: 18px; width: 304px; margin: 0; position: relative; overflow: hidden; box-sizing: border-box; height: 84.667px; }
-.mypage_top .grade_user .grade_bonus .bonus{ height: 19.3px; padding-top: 2px; box-sizing: border-box;}
-.mypage_top .grade_user .grade_bonus .bonus .tit{ font-family: noto sans; font-weight: 400;
-letter-spacing: 0; color: #5f0080; letter-spacing: -0.7px;}
-.mypage_top .grade_user .grade_bonus .user { padding: 2px 0 14px; height: 28px;}
-.mypage_top .name{ float: left; max-width: 263px; font-weight: 700;
-font-size: 20px; color: #333; line-height: 28px; overflow: hidden;}
-.mypage_top .grade_user .grade_bonus .user .txt {float: left; padding-left: 5px; font-size: 16px;
-line-height: 28px;}
-.mypage_top .next {overflow: hidden; width: 100%; padding: 22px 0 0 84px;
-}
-.mypage_top .next a {float: left; height: 30px; border: 1px solid #f4f4f4; margin-right: 10px; margin-top: 0px !important; padding-top: 4px; border-radius: 15px; line-height: 18px; text-align: center;  background-color: #f3f3f3; font-size: 14px; font-weight: 400; letter-spacing: 0;}
-.mypage_top .next a.total_gd{width: 121px; margin-right: 10px !important; box-sizing: border-box;}
-.mypage_top .next a.next_gd {width: 168px; box-sizing: border-box; margin-right: 10px !important;}
-.mypage_top .list_mypage {float: right; width: 602px;}
 
-.mypage_top .list_mypage li{width: 198px; float: left; background-color: #fff; height: 193px; margin-right: 4px;}
-.mypage_top .list_mypage li.user_kurlypass{margin: 0;}
-.mypage_top .list_mypage li .link{ float: left; width: 100%; padding: 29px 0 0 30px;}
-.mypage_top .list_mypage li .link .tit{font-size: 14px; padding-bottom: 26px; color: #333; line-height: 18px;}
-.mypage_top .list_mypage li .link .info{    font-weight: 700; font-size: 20px; color: #5f0080;
-    line-height: 28px;}
-.mypage_top .list_mypage li .link .info img {width: 28px; height: 28px; margin: 1px 0 0 -4px;
-    vertical-align: bottom;}
-.mypage_top .list_mypage li .link .info .date{ display: block; padding-top: 12px; font-size: 12px;
-color: #999; line-height: 16px;}
+/* ================================================== footer ================================================== */
 
-/* ------------메인페이지 페이지 아티클-------------- */
-.page_aticle {width: 1050px; margin: 0 auto; letter-spacing: 0; }
-.page_aticle.aticle_type2 { padding-top: 65px;}
-#snb {width: 200px; float: left;}
-#snb .tit_snb{font-weight: 500; font-size: 30px; line-height: 34px; color: #333; padding: 8px 0 33px 1px;}
-#snb .inner_snb{ border: 1px solid #f2f2f2; border-bottom: 0;}
-#snb .inner_snb li{ border-bottom: 1px solid #f2f2f2; height: 50px;}
-#snb .inner_snb li.on {background-color: #f2f2f2;}
-#snb .inner_snb li.on a{ color: #5f0080 !important;}
-#snb .inner_snb li a{padding: 15px 0 15px 20px; display: block; font-size: 14px; line-height: 20px; font-weight: 500;  color: #4c4c4c; background: url(/img/mypage/ico_arrow_6x11.svg) no-repeat 174px 52%;} 
-#snb .link_inquire{background-color: #f2f2f2;}
-#snb > a {display: block; width: 200px; height: 60px; margin-top: 20px; padding: 9px 0 0 21px; border-radius: 0 100px 100px 0;  box-sizing: border-box;  background: url(/img/mypage/ico_arrow_6x11_on.svg) no-repeat 174px 52%;}
-#snb > a .emph{font-size: 15px;}
-#snb > a p{margin-top: 7px; font-size: 13px;}
+#footer { width: 1050px; margin: 0 auto; padding-bottom: 60px; font-weight: 400; letter-spacing: -0.2px; font-family: 'Noto Sans KR', sans-serif; }
 
-#viewOrderList { width: 820px; float: right;}
-#viewOrderList .head_aticle{ padding: 5px 0 34px; height: 36px;}
-#viewOrderList .head_aticle .tit{font-size: 24px; font-weight: 700; height: 36px; color: #333; letter-spacing: -0.5px; padding-top: 5px;}
-#viewOrderList .head_aticle .tit #text{font-size: 12px;}
-#viewOrderList .head_aticle .tit_sub{font-size: 14px; margin-left: 10px; color: #999; vertical-align: 3px; font-weight: 400;}
-#viewOrderList .search_date{position: relative;}
-.search_date .btn_layer {
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: -70px;
-    width: 157px;
-    height: 44px;
-    padding: 11px 0 0 15px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    color: #666;
-    line-height: 18px;
-    letter-spacing: -.5px;
-    box-sizing: border-box;
-    margin-top: -5px;
-}
-.search_date .layer_search{ display: none; position: absolute; right: 0; top: -30px; width: 157px; border: 1px solid #dddfe1; border-top: 0;}
-#viewOrderList .list_order {border-top: 2px solid #333; padding-top: 10px; }
-#viewOrderList .list_order .date {padding-top: 20px; font-size: 16px; line-height: 24px; font-weight: 500; color: #666;} 
-#viewOrderList .list_order .goods_name {padding: 20px 0 13px; border-bottom: 1px solid #dddfe1;}
-#viewOrderList .list_order .order_goods {
-    position: relative;
-    margin-top: 10px;
-    padding: 0 20px;
-    border: 1px solid #dddfe1;
-}
-#viewOrderList .list_order .goods_name a{font-size: 16px; display: block; overflow: hidden; line-height: 24px; font-weight: 500; color: black; cursor: pointer;
-background: url(../img/mypage/ico_arrow_10x15주문내역\ 상세로\ 이동.webp)no-repeat 100% 1px;}
-#viewOrderList .list_order .order_goods .order_info { padding: 14px 0 20px;}
-.goods_image {float: left; width: 60px; margin-right: 20px;}
-.goods_image img{width: 60px; height: auto;}
-.goods_desc {overflow: hidden; padding-top: 1px;}
-.goods_desc dl:first-child{padding-top: 3px;}
-.goods_desc dl {padding-top: 6px; overflow: hidden;}
-.goods_desc dl dt{float: left; padding-right: 15px; font-size: 12px; color: #000; line-height: 20px;}
-.goods_desc dl dd{float: left; font-size: 14px; line-height: 20px; font-weight: 500; color: black;}
+#footer h2 { font-size: 1.5em; font-weight: bold; }
+#footer h3 { display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold; }
 
+#footer .inner_footer { overflow: hidden; padding-bottom: 20px; }
 
-#viewOrderList .layout_page { margin: 60px 0 0; text-align: center; display: block; vertical-align: bottom;}
-#viewOrderList .layout_page .page_div{height: 34px; display: block;}
-#viewOrderList .layout_page .page_div span{line-height: 34px ; vertical-align: top;}
-#viewOrderList .layout_page .page_div .lay-pg-number{background-color: #f7f7f7; color: #5f0080 !important; text-indent: 1px !important; font-weight: 500;}
-#viewOrderList .layout_page .lay-pg-btn{height: 34px;  text-indent: -9999px;}
-#viewOrderList .layout_page .lay-pg-first{background: url(../img/mypage/icon-pagination-first.webp)no-repeat 50% 50%; border-left: 1px solid #ddd; border-right: 0 !important;}
-#viewOrderList .layout_page .lay-pg-prev{background-image: url(../img/mypage/icon-pagination-prev.webp); border-right: 0;}
-#viewOrderList .layout_page .lay-pg-next{background-image: url(../img/mypage/icon-pagination-next.webp); border-left: 0;}
-#viewOrderList .layout_page .lay-pg-last{background-image: url(../img/mypage/icon-pagination-last.webp); border-left: 0;}
+#footer .footer_cc { float: left; width: 534px; }
+#footer .footer_cc .list { font-size: 14px; color: #333; line-height: 18px; letter-spacing: -0.2px; }
+#footer .footer_cc .list dt { display: block; }
+#footer .footer_cc .list dd { color: #999; }
 
-.lay-pg-first, .lay-pg-prev, .lay-pg-next, .lay-pg-last{
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    text-indent: -9999px;
-}
-.lay-pg-btn {display: inline-block; width: 34px; height: 34px; border: 1px solid #ddd; box-sizing: border-box;}
+#footer .tit_cc { padding: 25px 0 2px; font-weight: 700; font-size: 20px; color: #333; line-height: 0px; }
 
-/* ========================================  배송지 관리  ======================================== */
-/* 중복 부분은 주문 내역쪽에서 처리 */
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-#viewOrderList #table_list { box-sizing: border-box;}
-#table_list #trans_list  {box-sizing: border-box; padding: 17px 0 20px; vertical-align: top;  width: 100%;}
+#footer .cc_view { overflow: hidden; padding-top: 0px; }
+#footer .cc_view .tit { float: left; width: 140px; margin-right: 16px; }
 
-#table_list #trans_list th{border-top: 2px solid black; font-size: 13.5px; font-weight: 500; line-height: 20px; color: #333; letter-spacing: -0.5px; padding: 17px 0 20px; vertical-align: top; letter-spacing: 0;}
-#table_list #trans_list .tit_select{width: 60px; display: table-cell;}
-#table_list #trans_list .tit_address{padding-left: 0; text-indent: -8px; width: auto;}
-#table_list #trans_list .tit_receive{width: 120px;}
-#table_list #trans_list .tit_hp{width: 100px;}
-#table_list #trans_list .tit_t_type{width: 100px;}
-#table_list #trans_list .tit_edit{width: 60px;}
+#footer .cc_call { padding-top: 8px; }
+#footer .cc_call .tit { font-weight: 800; font-size: 28px; color: #333; line-height: 32px; letter-spacing: -0.5px; white-space: nowrap; }
 
-#table_list #trans_list #addr_list{border-top: 2px solid black;}
-.type_radio input[type="radio"] {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-}
+#footer .cc_kakao .tit, #footer .cc_qna .tit { height: 40px; padding-top: 7px; margin-top: 3px; border: 1px solid #e3e3e3; border-radius: 3px; font-weight: 700; font-size: 14px; color: #333; line-height: 22px; text-align: center; }
+
+#footer .company { float: left; padding-top: 29px; font-size: 12px; color: #999; line-height: 20px; }
+#footer .company .list { overflow: hidden; width: 100%; padding-bottom: 29px; }
+#footer .company .list li { float: left; padding-right: 16px; }
+#footer .company .list .link { font-size: 14px; color: #333; line-height: 18px; }
+#footer .company .list .emph { font-weight: 700; }
+#footer .company .bar { padding: 0 4px 0 3px; }
+#footer .company .link { color: #5f0080; }
+#footer .company .copy { display: block; padding-top: 16px; font-style: narmal; font-size: 10px; color: #949296; line-height: 22px; letter-spacing: 0; }
+
+#footer .list_sns { float: left; padding-top: 16px; }
+#footer .list_sns li { float: left; }
+#footer .list_sns .link_sns { display: block; width: 30px; height: 30px; margin-right: 10px; vertical-align: top; }
+
+#footer .footer_link { overflow: hidden; padding-top: 19px; border-top: 1px solid #eee; letter-spacing: 0; }
+
+#footer .authentication { float: left; padding-top: 3px; }
+
+#footer .mark { float: left; width: 267px; }
+#footer .mark .logo { float: left; width: 34px; height: 34px; margin-right: 10px; }
+#footer .mark .txt { float: left; padding-top: 1px; font-size: 10px; color: #999; line-height: 16px; letter-spacing: -0.5px; white-space: nowrap; }
+#footer .lguplus { width: 428px; }
+#footer .lguplus .logo { width: 102px; height: 34px; }
