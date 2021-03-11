@@ -1,4 +1,4 @@
-<!-- 금주혜택 페이지 -->
+<!-- 비밀번호 찾기 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -647,362 +647,133 @@
             <!-- main 시작 -->
             <div id="main">
                 <!-- 본문 시작 -->
-                <div id="content">
-                    <div id="kurlyMain" class="page_main" style="opacity: 1;">
-                        <h2 class="screen_out">마켓컬리 메인</h2>
-                        <div>
-                            <div class="main_type1">
-                                <!-- 이벤트 리스트 이미지 슬라이더 부분 -->
-                                <div class="list_goods">
-                                    <div class="bx_wrapper" style="max-width: 100%; margin: 0px auto;">
-                                        <div class="bx_viewport" style="width: 100%; overflow: hidden; position: relative; height: 370px;">
-                                            <ul data-section="main_banner" class="list" style="width: 1000%; position: relative; "> <!-- js적용 구간. 100%씩 이동 transition-timing-function: ease-in-out; transition-duration: 0s; transform: translate3d(-0px, 0px, 0px); -->
-                                                <li data-index="8" style="float: left; list-style: none; position: relative; width: 10%;" class="bx-clone" data-name="main_banner">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1583112495.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="1" style="float: left; list-style: none; position: relative; width: 10%;" data-name="main_banner">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1614935884.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="2" data-name="main_banner" style="float: left; list-style: none; position: relative; width: 10%;">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1614910139.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="3" data-name="main_banner" style="float: left; list-style: none; position: relative; width: 10%;">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1614758267.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="4" data-name="main_banner" style="float: left; list-style: none; position: relative; width: 10%;">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1614909903.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="5" data-name="main_banner" style="float: left; list-style: none; position: relative; width: 10%;">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1614679801.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="6" data-name="main_banner" style="float: left; list-style: none; position: relative; width: 10%;">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1602809211.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="7" data-name="main_banner" style="float: left; list-style: none; position: relative; width: 10%;">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1596164134.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="8" style="float: left; list-style: none; position: relative; width: 10%;" data-name="main_banner">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1583112495.webp'); background-size: cover;"></a>
-                                                </li>
-                                                <li data-index="1" style="float: left; list-style: none; position: relative; width: 10%;" class="bx-clone" data-name="main_banner">
-                                                    <a href="#" class="thumb_goods" style="background-image: url('../../img/mainSlide/pc_img_1614935884.webp'); background-size: cover;"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="bx-controls bx-has-controls-direction bx-has-controls-auto">
-                                            <div class="bx-controls-direction">
-                                                <a class="bx-prev" href="">Prev</a>
-                                                <a class="bx-next" href="">Next</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div id="content" style="padding-bottom: 120px;">
+                    <div id="qnb" class="quick-navigation" style="top: 70px;">
+                        <div class="bnr_qnb" id="brnQuick">
+                            <a href="../board/notice.html" id="brnQuickObj"><img class="thumb" src="../../img/sidebar/bnr_quick_20190403.webp" alt="퀄리티있게 샛별배송"></a>
+
+                            <script>
+                                var brnQuickScript = (function () {
+                                    var $target = $('#brnQuickObj'), $targetThumb = $('#brnQuickObj .thumb');
+                                    // 시간체크
+                                    function timeCheck() {
+                                        var now = brnQuick.nowTime; // 호출 하는 js에서 변수선언되어 가져다 사용
+                                        if (new Date('2020-12-31T11:00:00+09:00').getTime() <= now && now < new Date('2021-01-15T11:00:00+09:00').getTime()) {
+                                            $target.attr('href', '/shop/event/kurlyEvent.php?htmid=event/2020/1231/newyearsday');
+                                            $targetThumb.attr('src', 'https://res.kurly.com/pc/service/main/2012/bnr_quick.png');
+                                            $targetThumb.attr('alt', '2021 설 선물');
+                                        } else if (new Date('2021-01-15T11:00:00+09:00').getTime() <= now && now <= new Date('2021-02-10T23:00:00+09:00').getTime()) {
+                                            $target.attr('href', '/shop/event/kurlyEvent.php?htmid=event/2021/0115/newyearsday');
+                                            $targetThumb.attr('src', 'https://res.kurly.com/pc/service/main/2101/bnr_quick.png');
+                                            $targetThumb.attr('alt', '2021 설 선물');
+                                        }
+                                    }
+                                    return {
+                                        timeCheck: timeCheck
+                                    }
+                                })();
+                                brnQuickScript.timeCheck();
+                            </script>
                         </div>
 
-                        <div style="margin-top: 40px;">
-                            <div class="main_type2">
-                                <div class="category_type">
-                                    <div class="tit_goods">
-                                        <h3 class="tit">
-                                            <span class="name" style="font-size: 50px;">할인 또 할인</span>
-                                        </h3>
-                                    </div>
-
-                                    <div class="event_list">
-                                        <table class="event_list_tb">
-                                            <tr class="event_area">
-                                                <td rowspan="2" class="ev_style1">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black" style="width: 380px; height: 950px;"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event1">EVENT</span>
-                                                                <span class="event_title1">설날에<br>전하지 못한 마음</span>
-                                                                <span class="event_subTitle1">아직 늦지 않았어요</span>
-                                                                <span class="event_day1">한정수량</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event1-1.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style2" style="height: 470px;">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">간편하지만 든든한 한 끼</span>
-                                                                <span class="event_subTitle2">LOTS OF LOVE<br>최대 30% 할인</span>
-                                                                <span class="event_day2">~2월 24일(수) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event1-2.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style3">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event3">EVENT</span>
-                                                                <span class="event_title3">모두가 즐기는 간식</span>
-                                                                <span class="event_subTitle3">GANSIK<br>최대 25% 할인</span>
-                                                                <span class="event_day3">~2월 24일(수) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event1-3.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style4">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">새학기 준비, 한번에 끝!</span>
-                                                                <span class="event_subTitle2">피터젠슨<br>최대 45% 할인</span>
-                                                                <span class="event_day2">~2월 24일(수) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event1-4.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="event_area">
-                                                <td class="ev_style2">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">믿고 쓰는 두피 케어</span>
-                                                                <span class="event_subTitle2">닥터포헤어<br>최대 55% 할인</span>
-                                                                <span class="event_day2">~2월 24일(수) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event1-5.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style3">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event3">EVENT</span>
-                                                                <span class="event_title3">프리미엄 유기농 오일</span>
-                                                                <span class="event_subTitle3">구스티<br>최대 30% 할인</span>
-                                                                <span class="event_day3">~2월 24일(수) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event1-6.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style4">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">프렌치 프라이의 정석</span>
-                                                                <span class="event_subTitle2">심플로트<br>최대 15% 할인</span>
-                                                                <span class="event_day2">~2월 23일(화) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event1-7.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                    <div class="tit_goods" style="margin-top: 30px;">
-                                        <h3 class="tit">
-                                            <span class="name" style="font-size: 50px;">아직 늦지 않았어요!</span>
-                                        </h3>
-                                    </div>
-
-                                    <div class="event_list" style="margin-bottom: 120px;">
-                                        <table class="event_list_tb">
-                                            <tr class="event_area">
-                                                <td rowspan="2" class="ev_style1">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black" style="width: 380px; height: 950px;"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event1">EVENT</span>
-                                                                <span class="event_title1">차갑고 깨끗한<br>노르웨이에서 온</span>
-                                                                <span class="event_subTitle1">청정 수산물 특별전</span>
-                                                                <span class="event_day1">~2월 22일(월) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event2-1.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style2" style="height: 470px;">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">영양소 가득한<br>동결건조 사료</span>
-                                                                <span class="event_subTitle2">빅스비<br>최대 15% 할인</span>
-                                                                <span class="event_day2">~2월 22일(월) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event2-2.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style3">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event3">EVENT</span>
-                                                                <span class="event_title3">프랑스에서 온<br>자연 유래 스킨케어</span>
-                                                                <span class="event_subTitle3">가란시아<br>최대 30% 할인</span>
-                                                                <span class="event_day3">~2월 22일(월) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event2-3.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style4">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">한 잔에 담긴<br>우아한 풍미</span>
-                                                                <span class="event_subTitle2">small batch<br>최대 10% 할인</span>
-                                                                <span class="event_day2">~2월 22일(월) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event2-4.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="event_area">
-                                                <td class="ev_style2">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">설 연휴,<br>입이 심심할 땐</span>
-                                                                <span class="event_subTitle2">주전부리연구소<br>최대 20% 할인</span>
-                                                                <span class="event_day2">~2월 22일(월) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event2-5.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style3">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event3">EVENT</span>
-                                                                <span class="event_title3">아낌없이 속을 채운 만두</span>
-                                                                <span class="event_subTitle3">해화당<br>최대 35% 할인</span>
-                                                                <span class="event_day3">~2월 22일(월) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event2-6.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td class="ev_style4">
-                                                    <div>
-                                                        <a href="#">
-                                                            <span class="bg_black"></span>
-                                                            <span class="bg_text">
-                                                                <span class="event2">EVENT</span>
-                                                                <span class="event_title2">단백질로 만들어<br>걱정 없는 간식</span>
-                                                                <span class="event_subTitle2">단백질과자점<br>최대 15% 할인</span>
-                                                                <span class="event_day2">~2월 23일(화) 11시</span>
-                                                            </span>
-                                                            <span class="eventImg"><img src="../../img/weekEvent/event2-7.jpg"></span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                    <div class="loversEvent">
-                                        <div class="loEv">
-                                            <div class="loEvTitle">
-                                                컬리 러버스 혜택
-                                            </div>
-                                        </div>
-
-                                        <div class="loEvContent">
-                                            <div class="loEvImgBox">
-                                                <div>
-                                                    <a href="#">
-                                                        <span class="bg_black"></span>
-                                                        <span class="bg_text">
-                                                            <span class="event">EVENT</span>
-                                                            <span class="event_title">PAYCO 충전 포인트로<br>결제할 때마다</span>
-                                                            <span class="event_subTitle"><br>3.5% 포인트 적립!</span>
-                                                            <span class="event_day">12.21(월) - 2.28(일)</span>
-                                                        </span>
-                                                        <span class="ImgBox"><img src="../../img/weekEvent/loversEvent1.jpg"></span>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="#">
-                                                        <span class="bg_black"></span>
-                                                        <span class="bg_text">
-                                                            <span class="event">EVENT</span>
-                                                            <span class="event_title">삼성앱카드로<br>6만원 이상 결제 시</span>
-                                                            <span class="event_subTitle"><br>3천원 청구 할인!</span>
-                                                            <span class="event_day">~2월 24일(수) 11시</span>
-                                                        </span>
-                                                        <span class="ImgBox"><img src="../../img/weekEvent/loversEvent2.jpg"></span>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="#">
-                                                        <span class="bg_black"></span>
-                                                        <span class="bg_text">
-                                                            <span class="event">EVENT</span>
-                                                            <span class="event_title">장바구니 자랑하면<br></span>
-                                                            <span class="event_subTitle">5천원의 행운이<br>20분께 매일!</span>
-                                                            <span class="event_day">상시 진행</span>
-                                                        </span>
-                                                        <span class="ImgBox"><img src="../../img/weekEvent/loversEvent3.jpg"></span>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="#">
-                                                        <span class="bg_black"></span>
-                                                        <span class="bg_text">
-                                                            <span class="event">EVENT</span>
-                                                            <span class="event_title">친구 초대하면<br>친구도 나도 5천원씩</span>
-                                                            <span class="event_subTitle">참여할 때마다<br>무제한 적립금 혜택</span>
-                                                            <span class="event_day">상시 진행</span>
-                                                        </span>
-                                                        <span class="ImgBox"><img src="../../img/weekEvent/loversEvent4.jpg"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- <div class="bx-controls bx-has-controls-direction">
-                                            <div class="bx-controls-direction">
-                                                <a class="bx-prev disabled" href="">Prev</a>
-                                                <a class="bx-next" href="">Next</a>
-                                            </div>
-                                        </div> -->
-                                        <!-- 이미지가 늘어나면 슬라이드 있어야 하는데(js) 없으면 버튼 없어도 됨 ★★★★★ -->
-                                    </div>
-
-                                </div>
+                        <script>
+                            var brnQuick = {
+                                nowTime: '1615473568122',
+                                update: function () {
+                                    $.ajax({
+                                        url: campaginUrl + 'pc/service/bnr_quick.html'
+                                    }).done(function (result) {
+                                        $('#brnQuick').html(result);
+                                    });
+                                }
+                            }
+                            brnQuick.update();
+                        </script>
+                
+                        <div class="side_menu">
+                            <a href="/shop/main/html.php?htmid=event/kurly.htm&amp;name=lovers" class="link_menu ">등급별 혜택</a>
+                            <a href="/shop/board/list.php?id=recipe" class="link_menu ">레시피</a>
+                            <a href="/shop/goods/goods_review_best.php" class="link_menu ">베스트 후기</a>
+                        </div>
+                        <div class="side_recent" style="display:none">
+                            <strong class="tit">최근 본 상품</strong>
+                            <div class="list_goods" data-height="209" style="height: 0px;">
+                                <ul class="list"></ul>
                             </div>
+                            <button type="button" class="btn btn_up off">최근 본 상품 위로 올리기</button>
+                            <button type="button" class="btn btn_down off">최근 본 상품 아래로 내리기</button>
                         </div>
 
+                        <script>
+                            /**
+                             * 상품상세일때 현재 보고 있는 상품 담기. 상품URL & 상품이미지
+                             * 최종 저장 날짜로 부터 24시가 지날시 localStorage 삭제
+                             */
+                            var getGoodsRecent = (function () {
+                                var i, len, getGoodsRecent, item, _nowTime = '1615473568122';
+
+                                _goodsRecent();
+                                function _goodsRecent() {
+                                    if (localStorage.getItem('goodsRecent') === null) {
+                                        return false;
+                                    }
+
+                                    try {
+                                        getGoodsRecent = JSON.parse(localStorage.getItem("goodsRecent"));
+                                        len = getGoodsRecent.length;
+                                        if (addDays(getGoodsRecent[len - 1].time, 1) < _nowTime) {
+                                            localStorage.removeItem('goodsRecent');
+                                        } else {
+                                            for (i = 0; i < len; i++) {
+                                                item = '<li><a class="link_goods" href="/shop/goods/goods_view.php?goodsno=' + getGoodsRecent[i].no + '"><img src="' + getGoodsRecent[i].thumb + '" alt=""></a></li>';
+                                                $('.side_recent .list').append(item);
+                                            }
+                                            $('.side_recent').show();
+                                        }
+                                    } catch (e) {
+                                        console.log("JSON parse error from the Quick menu goods list!!!", e);
+                                    }
+                                }
+
+                                function addDays(date, days) {
+                                    var result = new Date(date);
+                                    result.setDate(result.getDate() + days);
+                                    return result.getTime();
+                                }
+
+                                // return {
+                                // }
+                            })();
+                        </script>
                     </div>
+
+                    <div class="section_login">
+                        <h3 class="tit_login">비밀번호 찾기</h3>
+                        <div class="layer_parent">
+                            <div id="certPopLayer">
+                                <div id="certFrameLayer"><iframe id="certFrame" name="certFrame" src="about:blank" scrolling="no" frameborder="0"></iframe></div>
+                                <div id="certPopLayerBG"></div>
+                            </div>
+                        </div>
+                        <div class="write_form find_view">
+                            <form name="certForm" method="post" action="">
+                                <input type="hidden" name="token" value="84de5ab68edca723cfd9de45e398afd741bc3c724e47456defc3f023721e1bc8">
+                                <input type="hidden" name="m_id" value="nah2ee">
+                                <input type="hidden" name="otp" value="">
+                                <img class="thumb" src="../../img/login/img_pw_find_email.webp" alt="이메일 찾기">
+                                <p class="desc">이메일로 인증 완료후<br>비밀번호를 재발급 받으세요!</p>
+                                <p class="info">입력하신 ()으로 인증번호가 발송되며, 인증 후 비밀번호가 재발급됩니다. 전송량이 많은 경우 이메일 전송이 지연될 수 있습니다.</p>
+                                <a href="#none" class="btn_type1"><span class="txt_type">인증번호 받기</span></a>
+                            </form>
+                        </div>
+                    </div>
+
+                    <script>
+                        $('.section_login .btn_type1').on('click', function(e){
+                            e.preventDefault();
+                            nsGodo_PasswordFinder.selectOption(1, '', 'nah2ee', '84de5ab68edca723cfd9de45e398afd741bc3c724e47456defc3f023721e1bc8', 'pc');
+                        });
+                    </script>
                 </div>
                 <!-- 본문 종료 -->
             </div>
@@ -1055,26 +826,30 @@
                             <li><a class="link" href="#">이용안내</a></li>
                         </ul>
                         <p>
-                            법인명 (상호) : 주식회사 컬리 <span class="bar">|</span> 사업자등록번호 : 261-81-23567 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&apv_perm_no=" class="link" target="_blank">사업자정보 확인</a><br>
+                            법인명 (상호) : 주식회사 컬리 <span class="bar">|</span> 사업자등록번호 : 261-81-23567 <a
+                                href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&apv_perm_no=" class="link"
+                                target="_blank">사업자정보 확인</a><br>
                             통신판매업 : 제 2018-서울강남-01646 호 <span class="bar">|</span> 개인정보보호책임자 : 이원준<br>
                             주소 : 서울시 도산대로 16길 20, 이래빌딩 B1 ~ 4F <span class="bar">|</span> 대표이사 : 김슬아<br>
                             입점문의 : <a href="https://forms.gle/oKMAe1SaicqMX3SC9" target="_blank" class="link">입점문의하기</a>
-                            <span class="bar">|</span> 제휴문의 : <a href="mailto:business@kurlycorp.com" class="link">business@kurlycorp.com</a><br>
+                            <span class="bar">|</span> 제휴문의 : <a href="mailto:business@kurlycorp.com"
+                                class="link">business@kurlycorp.com</a><br>
                             채용문의 : <a href="mailto:recruit@kurlycorp.com" class="link">recruit@kurlycorp.com</a><br>
-                            팩스: 070 - 7500 - 6098 <span class="bar">|</span> 이메일 : <a href="mailto:help@kurlycorp.com" class="link">help@kurlycorp.com</a>
+                            팩스: 070 - 7500 - 6098 <span class="bar">|</span> 이메일 : <a href="mailto:help@kurlycorp.com"
+                                class="link">help@kurlycorp.com</a>
                         <p class="copy">© KURLY CORP. ALL RIGHTS RESERVED</p>
                         </p>
                         <ul class="list_sns">
-                            <li><a href="https://instagram.com/marketkurly" class="link_sns" target="_blank">
-                                <img src="../../img/sns/ico_instagram.webp" alt="마켓컬리 인스타그램 바로가기"></a></li>
-                            <li><a href="https://www.facebook.com/marketkurly" class="link_sns" target="_blank">
-                                <img src="../../img/sns/ico_fb.webp" alt="마켓컬리 페이스북 바로가기"></a></li>
-                            <li><a href="http://blog.naver.com/marketkurly" class="link_sns" target="_blank">
-                                <img src="../../img/sns/ico_blog.webp" alt="마켓컬리 네이버블로그 바로가기"></a></li>
-                            <li><a href="https://m.post.naver.com/marketkurly" class="link_sns" target="_blank">
-                                <img src="../../img/sns/ico_naverpost.webp" alt="마켓컬리 네이버포스트 바로가기"></a></li>
-                            <li><a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg" class="link_sns" target="_blank">
-                                <img src="../../img/sns/ico_youtube.webp" alt="마켓컬리 유튜브 바로가기"></a></li>
+                            <li><a href="https://instagram.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="../../img/sns/ico_instagram.webp" alt="마켓컬리 인스타그램 바로가기"></a></li>
+                            <li><a href="https://www.facebook.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="../../img/sns/ico_fb.webp" alt="마켓컬리 페이스북 바로가기"></a></li>
+                            <li><a href="http://blog.naver.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="../../img/sns/ico_blog.webp" alt="마켓컬리 네이버블로그 바로가기"></a></li>
+                            <li><a href="https://m.post.naver.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="../../img/sns/ico_naverpost.webp" alt="마켓컬리 네이버포스트 바로가기"></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg" class="link_sns"
+                                    target="_blank"><img src="../../img/sns/ico_youtube.webp" alt="마켓컬리 유튜브 바로가기"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -1099,115 +874,6 @@
             <!-- footer 종료 -->
         </div>
         <!-- container 종료 -->
-
-        <!-- quick list 시작 -->
-        <a href="#top" id="pageTop" class="on" style="opacity: 1; bottom: 15px;">맨 위로가기</a> <!--  -->
-        <script>
-            // 스크롤을 위로 올리면 (top메뉴가 보이면) to_top이 아래로 사라지는 효과
-            $(document).ready(function () {
-                var pageTop = {
-                    $target: $('#pageTop'),
-                    $targetDefault: 0,
-                    $scrollTop: 0,
-                    $window: $(window),
-                    $windowHeight: 0,
-                    setTime: 500,
-                    saveHeight: 0,
-                    init: function () {
-                    },
-                    action: function () {
-                        var $self = this;
-                        $self.$windowHeight = parseInt($self.$window.height());
-                        $self.$window.on('scroll', function () {
-                            $self.$scrollTop = parseInt($self.$window.scrollTop());
-                            if ($self.$scrollTop >= $self.$windowHeight) {
-                                if (!$self.$target.hasClass('on')) {
-                                    $self.position();
-                                    $self.$target.addClass('on');
-                                    $self.showAction();
-                                }
-                            } else {
-                                if ($self.$target.hasClass('on')) {
-                                    $self.position();
-                                    $self.$target.removeClass('on');
-                                    $self.hideAction();
-                                }
-                            }
-                        });
-
-                        $self.$target.on('click', function (e) {
-                            e.preventDefault();
-                            $self.topAction();
-                        });
-                    },
-                    showAction: function () {
-                        var $self = this;
-                        $self.$target.stop().animate({
-                            opacity: 1,
-                            bottom: $self.saveHeight
-                        }, $self.setTime);
-                    },
-                    hideAction: function () {
-                        var $self = this;
-                        $self.$target.stop().animate({
-                            opacity: 0,
-                            bottom: -$self.$target.height()
-                        }, $self.setTime);
-                    },
-                    topAction: function () {
-                        var $self = this;
-                        $self.hideAction();
-                        $('html,body').animate({
-                            scrollTop: 0
-                        }, $self.setTime);
-                    },
-                    position: function () {
-                        var $self = this;
-                        $self.saveHeight = 15;
-                        if ($('#sectionView').length > 0) {
-                            $self.saveHeight = 25;
-                        }
-                        if ($('#branch-banner-iframe').length > 0 && parseInt($('#branch-banner-iframe').css('bottom')) > 0) {
-                            $('#footer').addClass('bnr_app');
-                            $self.saveHeight += $('#branch-banner-iframe').height();
-                        }
-                    }
-                }
-                pageTop.action();
-            });
-        </script>
-        <script>
-            var bodyScroll = {
-                winScrollTop: 0,
-                body: $('body'),
-                gnb: $('#gnb'),
-                bg: $('#bgLoading'),
-                bodyFixed: function () {
-                    var $self = this;
-                    var gnbCheck = false;
-                    $self.gnb = $('#gnb');
-                    if ($self.gnb.hasClass('gnb_stop')) {
-                        gnbCheck = true;
-                    }
-                    $self.body = $('body');
-                    $self.bg = $('#bgLoading');
-                    $self.winScrollTop = $(window).scrollTop();
-                    $self.bg.show();
-                    $self.body.addClass('noBody').css({
-                        'top': -$self.winScrollTop
-                    });
-                },
-                bodyDefault: function (type) {
-                    var $self = this;
-                    $self.body.removeClass('noBody').removeAttr('style');
-                    $self.bg.hide();
-                    if (type === undefined) {
-                        window.scrollTo(0, $self.winScrollTop);
-                    }
-                }
-            }
-        </script>
-        <!-- quick list 끝 -->
     </div>
 </body>
 
