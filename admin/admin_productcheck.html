@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link href="./css/admin_style.css" rel="stylesheet" type="text/css">
 
     <title>Document</title>
 </head>
@@ -42,14 +42,15 @@
                 <div id="profile_area"><img id="pro_file" src="./img/profile.png"></div>
                 <div id="tab1" class="menutab">
                     <ul>
-                        <li class="category">대시보드 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">대시보드</li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
 
                 <div id="tab2" class="menutab">
+                    <img src="./img/ico_folding_down.png">
                     <ul>
-                        <li class="category">공지사항 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">공지사항</li>
                         <li>공지사항 조회</li>
                         <li>공지사항 등록</li>
                     </ul>
@@ -57,8 +58,9 @@
                 <div class="hr"> </div>
 
                 <div id="tab3" class="menutab">
+                    <img src="./img/ico_folding_down.png"> 
                     <ul>
-                        <li class="category">상품 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">상품 관리</li>
                         <li>상품 조회/수정</li>
                         <li>상품 등록</li>
                     </ul>
@@ -66,8 +68,9 @@
                 <div class="hr"> </div>
 
                 <div id="tab4" class="menutab">
+                    <img src="./img/ico_folding_down.png"> 
                     <ul>
-                        <li class="category">판매 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">판매 관리</li>
                         <li>주문 조회</li>
                         <li>발주/발송</li>
                         <li>배송 현황</li>
@@ -77,8 +80,9 @@
                 <div class="hr"> </div>
 
                 <div id="tab5" class="menutab">
+                    <img src="./img/ico_folding_down.png">
                     <ul>
-                        <li class="category clear">클레임 관리<img src="./img/ico_folding_down.png"></li>
+                        <li class="category clear">클레임 관리</li>
                         <li>취소 관리</li>
                         <li>교환 관리</li>
                         <li>반품 관리</li>
@@ -87,8 +91,9 @@
                 <div class="hr"> </div>
 
                 <div id="tab6" class="menutab">
+                    <img src="./img/ico_folding_down.png"> 
                     <ul>
-                        <li class="category">문의 사항 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">문의 사항</li>
                         <li>상품 문의</li>
                         <li>고객 문의</li>
                     </ul>
@@ -96,8 +101,9 @@
                 <div class="hr"> </div>
 
                 <div id="tab7" class="menutab">
+                    <img src="./img/ico_folding_down.png"> 
                     <ul>
-                        <li class="category">회원 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">회원 관리</li>
                         <li>회원 조회</li>
                         <li>탈회회원 조회</li>
                     </ul>
@@ -105,8 +111,9 @@
                 <div class="hr"> </div>
 
                 <div id="tab8" class="menutab">
+                    <img src="./img/ico_folding_down.png"> 
                     <ul>
-                        <li class="category">이벤트 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">이벤트 관리</li>
                         <li>이벤트 조회</li>
                         <li>이벤트 등록</li>
                     </ul>
@@ -114,8 +121,9 @@
                 <div class="hr"> </div>
 
                 <div id="tab9" class="menutab">
+                    <img src="./img/ico_folding_down.png"> 
                     <ul>
-                        <li class="category">기본 정보 <img src="./img/ico_folding_down.png"> </li>
+                        <li class="category">기본 정보</li>
                         <li>내 정보 </li>
                     </ul>
                 </div>
@@ -123,6 +131,7 @@
 
             </div>
             <!-- 사이드 메뉴 끝 -->
+            <!-- 내용 시작-->
             <div id="content">
                 <div class="title">
                     <p>상품 조회/수정</p>
@@ -173,9 +182,9 @@
                         <ul class="reg_list clear">
                             <li class="clear">
                                 <label id="search_tit" class="tit_lbl"> 검색어</label>
-                                <div class="search_box"> 상품명 <input type="text" name="productname"> 상품코드 <input type="text" name="productcode"><br>
+                                <div class="search_box"> 상품명 &nbsp; <input type="text" name="productname"> &nbsp;&nbsp;&nbsp; 상품코드 &nbsp; <input type="text" name="productcode"><br>
                                 
-                                모델명 <input type="text" name="modelname"> 브랜드명 <input type="text" name="brandname">
+                                모델명 &nbsp; <input type="text" name="modelname"> &nbsp;&nbsp;&nbsp; 브랜드명 &nbsp; <input type="text" name="brandname">
                                 </div>
                             </li>
                             <div class="hr"> </div>
@@ -246,7 +255,7 @@
                     <div class="hr"> </div>
                     <div class="subfunc"> 
                         <div class="float_left">
-                            <input type="button" name="deleterows" value="선택삭제">
+                            <input type="button" class="deleterows" name="deleterows" value="선택삭제">
                         </div>
                         <div class= "float_right clear">
                             <select name="pagenation">
@@ -437,23 +446,26 @@
                     <a href="#" class="latepage pbtn"><img src="./img/btn_lastpage.png" alt="마지막 페이지로 이동"></a>
                 </div>
             </div>
+            <!-- 푸터 시작 -->
+            <div class="footer">
+                <div class="footer_menu">
+                    <ul class="footer_list">
+                        <li><a href="#">관리자센터 메뉴얼</a></li>
+                        <li> | </li>
+                        <li><a href="#">구글 애널리틱스</a></li>
+                        <li> | </li>
+                        <li><a href="#">마켓컬리 협업툴</a></li>
+                        <li> | </li>
+                        <li><a href="#">개발도구</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 푸터 끝-->
         </div>
-
+        <!-- 내용 끝-->
         </div>
         <!--컨테이너 끝-->
-        <!-- 푸터 시작 -->
-        <footer class="footer" >
-            <div class="footer_side"> </div>
-            <div class="footer_box">
-            <ul class="footer_list">
-                <li><a href="#">관리자센터 메뉴얼</a></li>
-                <li><a href="#">구글 애널리틱스</a></li>
-                <li><a href="#">마켓컬리 협업툴</a></li>
-                <li><a href="#">개발도구</a></li>
-            </ul>
-            </div>
-        </footer>
-        <!-- 푸터 끝-->
+
     </div>
 </body>
 

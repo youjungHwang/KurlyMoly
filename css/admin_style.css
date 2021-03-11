@@ -127,7 +127,9 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 
 .side_menu #tab3 {
     background-color:rgb(105,77,115) ;
-
+}
+.side_menu #tab3 li:nth-child(2){ 
+    color:rgb(72,21,98) 
 }
 
 .side_menu .menutab ul { 
@@ -136,6 +138,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 
 .side_menu .menutab img {
     margin-top: 10px;
+    margin-right: 10%;
     width: 15px; 
     float: right; 
 }
@@ -178,7 +181,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 
 .container .quickcheck li {
     margin: 0 10px;
-    font-size: 15px;
+    font-size: 13px;
     float: left;
     vertical-align: center;
 }
@@ -202,7 +205,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 }
 
 .container .quickcheck li .prod_state > span {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bolder;
 }
 
@@ -238,9 +241,8 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 .regForm .reg_list li .search_box {
     margin-bottom: 10px;
     font-size: 12px;
+
 }
-
-
 .regForm .reg_list li #select_sales {     
     line-height: 60px; 
     font-size: 12px;
@@ -272,7 +274,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 .listview { 
     background-color: #fff;
     padding: 15px;
-    margin: 10px 25px;
+    margin: 15px 25px;
 }
 
 .listview .subtitle {
@@ -302,12 +304,15 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
     font-size: 12px;
 }
 
+
 .bbsListTbl { width: 100%; border-top: 2px solid #795b8f; }
 
 .bbsListTbl th, .bbsListTbl td {  height: 30px;}
 
 .bbsListTbl th { border-bottom: 1px solid #ccc; background-color: rgb(248,249,253); line-height: 40px; }
 .bbsListTbl td { text-align: center; border-bottom: 1px solid #ccc; line-height: 40px; }
+
+
 
 .bbsListTbl td .bbs_btn {
     display: inline-block;
@@ -316,37 +321,45 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
     background-color:rgb(248,249,253) ;
 }
 
-
 input[type=text], input[type=button], input[type=date], select  { height: 30px; padding: 0 10px;  margin: 5px 0 ; border:1px solid #ccc; background-color: #fff;font-size: 12px; line-height: normal;}
 
 .pagination{ text-align: center;
-    margin-top: 10px; }
+    margin-top: 20px;
+margin-bottom: 10px; }
 .pagination span { font-size: 12px; 
-    font-weight: bold; color: black;}
+    font-weight: bolds; color: black;}
 
+    
 /*푸터*/
 .footer {
     width: 100%; 
-    height: 50px;
-}
-.footer_side {
-    width: 15%; 
-    height: 100%;
-    background-color:rgb(118,87,129) ;
-    float: left;
-}
-
-.footer_box { 
+    height: 70px;
     background-color: rgb(237,240,245); 
-    padding: 15px;
+}
 
+.footer_menu { 
+    height: 40px;
+    background-color: #fff;
+    padding: 10px 30px;
+    margin: 20px 25px;   
+
+}
+.footer_list{ 
+    margin: 0 auto; 
+    text-align:center;
 }
 
 .footer_list li  {
-    margin: 0 20px ;
-    color: black !important;
+    display:inline-block;
+    margin: 0 25px ;
     font-size: 12px;
-    float: left;
+
     vertical-align: center;
-    
+    text-align:center;
 }
+
+
+.footer_list li a { text-decoration: none; }
+.footer_list li a:link, .footer_list li a:visited { color: black; }
+.footer_list li a:hover { color: rgb(81,39,113); }
+.footer_list li a:focus { color: rgb(81,39,113);; }
