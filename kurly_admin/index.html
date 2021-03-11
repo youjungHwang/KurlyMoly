@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 상단 메뉴 시작 -->
+        <header id="header">
+            <div id="header_menu1" class="header_menu">
+                <ul>
+                    <li>
+                        <a href="#"><img id="kurly_logo" src="./img/kurly.png" alt="컬리로고"></a>
+                    </li>
+                    <li>
+                        <h2>관리자 센터</h2>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="header_menu2">
+                <ul class="util clear" class="header_menu">
+                    <li><a href="#">Admin 님</a></li>
+                    <li><a href="#">내 정보</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- 상단 메뉴 끝 -->
+
+        <!--컨테이너 시작-->
+        <div class="container clear">
+            <!-- 사이드 메뉴 시작 -->
+            <div class="side_menu">
+                <div id="profile_area"><img id="pro_file" src="./img/profile.png"></div>
+                <div id="tab1" class="menutab">
+                    <ul>
+                        <li class="category">대시보드 <img src="./img/ico_folding_down.png"> </li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab2" class="menutab">
+                    <ul>
+                        <li class="category">공지사항 <img src="./img/ico_folding_down.png"> </li>
+                        <li>공지사항 조회</li>
+                        <li>공지사항 등록</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab3" class="menutab">
+                    <ul>
+                        <li class="category">상품 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li>상품 조회/수정</li>
+                        <li>상품 등록</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab4" class="menutab">
+                    <ul>
+                        <li class="category">판매 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li>주문 조회</li>
+                        <li>발주/발송</li>
+                        <li>배송 현황</li>
+                        <li>구매 확정</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab5" class="menutab">
+                    <ul>
+                        <li class="category clear">클레임 관리<img src="./img/ico_folding_down.png"></li>
+                        <li>취소 관리</li>
+                        <li>교환 관리</li>
+                        <li>반품 관리</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab6" class="menutab">
+                    <ul>
+                        <li class="category">문의 사항 <img src="./img/ico_folding_down.png"> </li>
+                        <li>상품 문의</li>
+                        <li>고객 문의</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab7" class="menutab">
+                    <ul>
+                        <li class="category">회원 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li>회원 조회</li>
+                        <li>탈회회원 조회</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab8" class="menutab">
+                    <ul>
+                        <li class="category">이벤트 관리 <img src="./img/ico_folding_down.png"> </li>
+                        <li>이벤트 조회</li>
+                        <li>이벤트 등록</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab9" class="menutab">
+                    <ul>
+                        <li class="category">기본 정보 <img src="./img/ico_folding_down.png"> </li>
+                        <li>내 정보 </li>
+                    </ul>
+                </div>
+               
+
+            </div>
+            <!-- 사이드 메뉴 끝 -->
+            <div id="content">
+                <div class="title">
+                    <p>상품 조회/수정</p>
+                </div>
+                <div class="quickcheck">
+                    <ul>
+                        <li>
+                            <div class="quickmenu">
+                                <img class="quickimg" src="./img/cart.png">
+                                <span class="prod_state">전체<br><span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="./img/cart.png">
+                                <span class="prod_state">판매대기<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="./img/cart.png">
+                                <span class="prod_state">판매중<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="./img/cart.png">
+                                <span class="prod_state">품절<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="./img/cart.png">
+                                <span class="prod_state">판매중지<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="./img/cart.png">
+                                <span class="prod_state">판매종료<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter">
+                    <form aciton="#" class="regForm">
+                        <ul class="reg_list clear">
+                            <li class="clear">
+                                <label id="search_tit" class="tit_lbl"> 검색어</label>
+                                <div class="search_box"> 상품명 <input type="text" name="productname"> 상품코드 <input type="text" name="productcode"><br>
+                                
+                                모델명 <input type="text" name="modelname"> 브랜드명 <input type="text" name="brandname">
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+                            <li class="clear">
+                                <label class="tit_lbl">판매상태</label>
+                                <div id="select_sales">
+                                    <label class="space"><input type="checkbox" name="salestate" value="전체"> 전체</label>
+                                    <label class="space"><input type="checkbox" name="salestate"
+                                            value="판매대기"> 판매대기</label>
+                                    <label class="space"><input type="checkbox" name="salestate" value="판매중"> 판매중</label>
+                                    <label class="space"><input type="checkbox" name="salestate" value="품절"> 품절</label>
+                                    <label class="space"><input type="checkbox" name="salestate"
+                                            value="판매중지"> 판매중지</label>
+                                    <label class="space"><input type="checkbox" name="salestate"
+                                            value="판매종료"> 판매종료</label>
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+
+                            <li class="clear">
+                                <label class="tit_lbl">카테고리</label>
+
+                                <div class="select_category1">
+                                    <select name="select_category1">
+                                        <option value="" selected>대분류</option>
+                                        <option value="채소">채소</option>
+                                        <option value="과일/견과/쌀">과일/견과/쌀</option>
+                                        <option value="수산/해산/건어물">수산/해산/건어물</option>
+                                    </select>
+                                </div>
+
+                                <div class="select_category2 clear">
+                                    <select name="select_category2">
+                                        <option value="" selected>중분류</option>
+                                        <option value="고구마/감자/당근">고구마/감자/당근</option>
+                                        <option value="시금치/쌈채소/나물">시금치/쌈채소/나물</option>
+                                        <option value="브로콜리/파프리카/양배추">브로콜리/파프리카/양배추</option>
+                                    </select>
+                                </div>
+                            </li> 
+                            <div class="hr"> </div>
+
+                            <li  class="clear">
+                                <label class="tit_lbl clear">기간</label>
+                                <div class="select_duration">
+                                    <select name="select_duration">
+                                        <option value="상품등록일" selected>상품등록일</option>
+                                        <option value="판매시작일">판매시작일</option>
+                                        <option value="판매종료일">판매종료일</option>
+                                    </select>
+                                    <input type="date"> ~ <input type="date">
+                                </div>
+                            </li>
+                            <li>
+                                <p class="btn_line">
+                                    <Input type="submit" value="검색" class="btn_basecolor1"> <Input type="reset"
+                                        value="초기화" class="btn_basecolor2">
+                                </p>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+                <div class="listview">
+                    <div class="subtitle">
+                        <h3>상품 목록 (총 <span>0</span> 개)</h3>
+                    </div>
+                    <div class="hr"> </div>
+                    <div class="subfunc"> 
+                        <div class="float_left">
+                            <input type="button" name="deleterows" value="선택삭제">
+                        </div>
+                        <div class= "float_right clear">
+                            <select name="pagenation">
+                                <option svalue="10개씩보기" selected>10개씩보기</option>
+                                <option value="20개씩보기">20개씩보기</option>
+                                <option value="30개씩보기">30개씩보기</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+
+                    <div class="bssBox">
+                        <table class="bbsListTbl">
+                            <tr>
+                                <th><input type="checkbox" name="selectrows" value=""></th>
+                                <th>수정</th>
+                                <th>복사</th>
+                                <th>상품번호</th>
+                                <th>대분류</th>
+                                <th>소분류</th>
+                                <th>제목</th>
+                                <th>할인가</th>
+                                <th>재고수량</th>
+                                <th>배송구분</th>
+                                <th>포장타입</th>
+                                <th>브랜드</th>
+                                <th>판매상태</th>
+                                <th>상품등록일</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><input type="button" class="bbs_btn"  value="수정"></td>
+                                <td><input type="button" class="bbs_btn"  value="복사"></td>
+                                <td> 12345</td>
+                                <td>채소</td>
+                                <td>양배추</td>
+                                <td>[싱싱마트]양배추</td>
+                                <td>2500</td>
+                                <td>100</td>
+                                <td>샛별배송</td>
+                                <td>냉장</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                
+                <div class="pagination">
+                    <a href="#" class="firstpage pbtn"><img src="../img/btn_firstpage.png" alt="첫 페이지로 이동"> </a>
+                    <a href="#" class="firstpage pbtn"><img src="../img/btn_prevpage.png" alt="이전 페이지로 이동"> </a>
+
+                    <a href="#"><span class="pagenum currentPage">1</span> </a>
+                    <a href="#"><span class="pagenum">2</span> </a>
+                    <a href="#"><span class="pagenum">3</span> </a>
+                    <a href="#"><span class="pagenum">4</span> </a>
+                    <a href="#"><span class="pagenum">5</span> </a>
+                    <a href="#" class="nextpage pbtn"><img src="./img/btn_nextpage.png" alt="다음 페이지로 이동"></a>
+                    <a href="#" class="latepage pbtn"><img src="./img/btn_lastpage.png" alt="마지막 페이지로 이동"></a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <!--컨테이너 끝-->
+        <!-- 푸터 시작 -->
+        <footer class="footer" >
+            <div class="footer_side"> </div>
+            <div class="footer_box">
+            <ul class="footer_list">
+                <li><a href="#">관리자센터 메뉴얼</a></li>
+                <li><a href="#">구글 애널리틱스</a></li>
+                <li><a href="#">마켓컬리 협업툴</a></li>
+                <li><a href="#">개발도구</a></li>
+            </ul>
+            </div>
+        </footer>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+
+</html>
