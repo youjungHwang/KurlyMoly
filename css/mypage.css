@@ -418,7 +418,7 @@ background-size: 24px 24px;
 }
 
 /* ========================================  적립금  ======================================== */
-
+.page_aticle .head_aticle{ padding-bottom: 34px;}
 .page_aticle .head_aticle .tit_sub {
     padding-left: 11px;
     font-size: 14px;
@@ -427,3 +427,59 @@ background-size: 24px 24px;
     letter-spacing: -.3px;
     vertical-align: 3px;
 }
+#viewPointList{box-sizing: border-box; margin: 0 auto; padding: 0;}
+#viewPointList .point_header { box-sizing: border-box; overflow: hidden; height: 100px; border: 1px solid #ddd; }
+#viewPointList .point_header .point_view{ float: left ; width: 409px; border-right: 1px solid #ddd; box-sizing: border-box;}
+#viewPointList .point_header .tit{ float: left; padding: 38px 20px 0 60px; font-size: 14px; color: #000; line-height: 20px; } 
+#viewPointList .point_header .point { float: left; width: 260px; padding: 34px 59px 36px 0; font-size: 20px; line-height: 30px; font-weight: 500; color: #5f0080; text-align: right; box-sizing: border-box;}
+
+.point_header .disappear{
+    float: left;
+    width: 408px; box-sizing: border-box;
+}
+.point_header .subject{ float: left; padding: 29px 0 0 60px; font-size: 14px; color: #000; line-height: 20px;}
+.point_header .subject.no_day{ padding-top: 38px;}
+.point_header .num{ box-sizing: border-box; float: right; width: 200px; padding: 34px 58px 36px 0;
+font-size: 20px; line-height: 30px; font-weight: 500; color: #5f0080; text-align: right;}
+
+.section_point .tbl{width: 100%; display: table;}
+.section_point .tbl_type1 {
+    margin-top: 40px;
+}
+.tbl thead{display: table-header-group;
+vertical-align: middle; border-color: inherit; }
+.tbl thead tr{display: table-row; vertical-align: inherit; width: 100%;}
+.tbl_type1 th{ 
+    padding: 20px 0; border-top: 2px solid #333; font-weight: 500; font-size: 14px; line-height: 20px; color: #333; letter-spacing: -.5px;}
+
+.tbl_type1 th.info{ text-align: left; padding-left: 20px;}
+.tbl_type1 th:first-child{ width: 120px; box-sizing: border-box;}
+
+.tbl_type1 tr:first-child td {
+    border-top: 1px solid #333 !important;
+}
+.section_point tr:first-child td{ border-top: 2px solid #ddd;}
+.section_point td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 14px;
+    color: #000;
+    line-height: 20px;
+    text-align: center;
+}
+.section_point .tbl_type1 td {
+    border-top: 1px solid #f4f4f4;
+}
+.section_point tr:last-child td {
+    border-bottom: 1px solid #ddd;}
+td.info{ text-align: left; padding-left: 20px;}
+
+.page_section .layout_page { margin: 60px 0 0; text-align: center; display: block; vertical-align: bottom;}
+.page_section .layout_page .page_div{height: 34px; display: block;}
+.page_section .layout_page .page_div span{line-height: 34px ; vertical-align: top;}
+.page_section .layout_page .page_div .lay-pg-number{background-color: #f7f7f7; color: #5f0080 !important; text-indent: 1px !important; font-weight: 500;}
+.page_section .layout_page .lay-pg-btn{height: 34px;  text-indent: -9999px;}
+.page_section .layout_page .lay-pg-first{background: url(../img/mypage/icon-pagination-first.webp)no-repeat 50% 50%; border-left: 1px solid #ddd; border-right: 0 !important;}
+.page_section .layout_page .lay-pg-prev{background-image: url(../img/mypage/icon-pagination-prev.webp); border-right: 0;}
+.page_section .layout_page .lay-pg-next{background-image: url(../img/mypage/icon-pagination-next.webp); border-left: 0;}
+.page_section .layout_page .lay-pg-last{background-image: url(../img/mypage/icon-pagination-last.webp); border-left: 0;}
