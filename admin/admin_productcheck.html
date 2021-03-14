@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/admin_style.css" rel="stylesheet" type="text/css">
 
-    <title>Document</title>
+    <title>상품조회</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                 <div id="profile_area"><img id="pro_file" src="../img/profile.png"></div>
                 <div id="tab1" class="menutab">
                     <ul>
-                        <li class="category">대시보드</li>
+                        <li class="category"><a href="#">대시보드</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -51,18 +51,18 @@
                     <img src="../img/ico_folding_down.png">
                     <ul>
                         <li class="category">공지사항</li>
-                        <li>공지사항 조회</li>
-                        <li>공지사항 등록</li>
+                        <li><a href="#">공지사항 조회</a></li>
+                        <li><a href="#">공지사항 등록</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
 
-                <div id="tab3" class="menutab">
+                <div id="tab3" class="menutab __activepage">
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">상품 관리</li>
-                        <li>상품 조회/수정</li>
-                        <li>상품 등록</li>
+                        <li class="__activepage1">상품 조회/수정</li>
+                        <li><a href="#">상품 등록</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -71,10 +71,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">판매 관리</li>
-                        <li>주문 조회</li>
-                        <li>발주/발송</li>
-                        <li>배송 현황</li>
-                        <li>구매 확정</li>
+                        <li><a href="#">주문 조회</a></li>
+                        <li><a href="#">주문/배송 현황</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -83,9 +81,9 @@
                     <img src="../img/ico_folding_down.png">
                     <ul>
                         <li class="category clear">클레임 관리</li>
-                        <li>취소 관리</li>
-                        <li>교환 관리</li>
-                        <li>반품 관리</li>
+                        <li><a href="#">취소 관리</a></li>
+                        <li><a href="#">교환 관리</a></li>
+                        <li><a href="#">반품 관리</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -94,8 +92,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">문의 사항</li>
-                        <li>상품 문의</li>
-                        <li>고객 문의</li>
+                        <li><a href="#">상품 문의</a></li>
+                        <li><a href="#">고객 문의</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -104,8 +102,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">회원 관리</li>
-                        <li>회원 조회</li>
-                        <li>탈회회원 조회</li>
+                        <li><a href="#">회원 조회</a></li>
+                        <li><a href="#">탈회회원 조회</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -114,8 +112,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">이벤트 관리</li>
-                        <li>이벤트 조회</li>
-                        <li>이벤트 등록</li>
+                        <li><a href="#">이벤트 조회</a></li>
+                        <li><a href="#">이벤트 등록</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -124,12 +122,11 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">기본 정보</li>
-                        <li>내 정보 </li>
+                        <li><a href="#">내 정보</a></li>
                     </ul>
                 </div>
-               
-
             </div>
+            
             <!-- 사이드 메뉴 끝 -->
             <!-- 내용 시작-->
             <div id="content">
@@ -141,7 +138,7 @@
                         <li>
                             <div class="quickmenu">
                                 <img class="quickimg" src="../img/cart.png">
-                                <span class="prod_state">전체<br><span>0</span> 건</span>
+                                <span class="prod_state">전체    <br><span>0</span> 건</span>
                             </div>
                         </li>
                         <li>
@@ -152,13 +149,13 @@
                         </li>
                         <li>
                             <div class="quickmenu"><img class="quickimg" src="../img/cart.png">
-                                <span class="prod_state">판매중<br>
+                                <span class="prod_state">판매중  <br>
                                 <span>0</span> 건</span>
                             </div>
                         </li>
                         <li>
                             <div class="quickmenu"><img class="quickimg" src="../img/cart.png">
-                                <span class="prod_state">품절<br>
+                                <span class="prod_state">품절    <br>
                                 <span>0</span> 건</span>
                             </div>
                         </li>
@@ -190,7 +187,7 @@
                             <div class="hr"> </div>
                             <li class="clear">
                                 <label class="tit_lbl">판매상태</label>
-                                <div id="select_sales">
+                                <div class="select_sales">
                                     <label class="space"><input type="checkbox" name="salestate" value="전체"> 전체</label>
                                     <label class="space"><input type="checkbox" name="salestate"
                                             value="판매대기"> 판매대기</label>
@@ -249,23 +246,17 @@
                 </div>
 
                 <div class="listview">
-                    <div class="subtitle">
+                    <div class="subtitle float_left">
                         <h3>상품 목록 (총 <span>0</span> 개)</h3>
                     </div>
-                    <div class="hr"> </div>
-                    <div class="subfunc"> 
-                        <div class="float_left">
+                    <div class="subfunc float_right clear"> 
                             <input type="button" class="deleterows" name="deleterows" value="선택삭제">
-                        </div>
-                        <div class= "float_right clear">
-                            <select name="pagenation">
+                            <select name="pn_cnt">
                                 <option svalue="10개씩보기" selected>10개씩보기</option>
                                 <option value="20개씩보기">20개씩보기</option>
                                 <option value="30개씩보기">30개씩보기</option>
                             </select>
-                        </div>
                     </div>
-                    
 
                     <div class="bssBox">
                         <table class="bbsListTbl">
@@ -433,19 +424,24 @@
                         </table>
                     </div>
                 
-                <div class="pagination">
-                    <a href="#" class="firstpage pbtn"><img src="../img/btn_firstpage.png" alt="첫 페이지로 이동"> </a>
-                    <a href="#" class="firstpage pbtn"><img src="../img/btn_prevpage.png" alt="이전 페이지로 이동"> </a>
-
-                    <a href="#"><span class="pagenum currentPage">1</span> </a>
-                    <a href="#"><span class="pagenum">2</span> </a>
-                    <a href="#"><span class="pagenum">3</span> </a>
-                    <a href="#"><span class="pagenum">4</span> </a>
-                    <a href="#"><span class="pagenum">5</span> </a>
-                    <a href="#" class="nextpage pbtn"><img src="../img/btn_nextpage.png" alt="다음 페이지로 이동"></a>
-                    <a href="#" class="latepage pbtn"><img src="../img/btn_lastpage.png" alt="마지막 페이지로 이동"></a>
+                    <div  class = "pagination">
+                        <a href="#" class="pn_btn pn_firstpage">맨 처음 페이지로 가기</a>
+                        <a href="#" class="pn_btn pn_prevpage">이전 페이지로 가기</a>
+                        <strong class="pn_btn pn_num __active">1</strong>
+                        <a href="#" class="pn_btn pn_num">2</a>
+                        <a href="#" class="pn_btn pn_num">3</a>
+                        <a href="#" class="pn_btn pn_num">4</a>
+                        <a href="#" class="pn_btn pn_num">5</a>
+                        <a href="#" class="pn_btn pn_num">6</a>
+                        <a href="#" class="pn_btn pn_num">7</a>
+                        <a href="#" class="pn_btn pn_num">8</a>
+                        <a href="#" class="pn_btn pn_num">9</a>
+                        <a href="#" class="pn_btn pn_num">10</a>
+                        <a href="#" class="pn_btn pn_nextpage">다음 페이지로 가기</a>
+                        <a href="#" class="pn_btn pn_lastpage">맨 끝 페이지로 가기</a>
+                    </div>
                 </div>
-            </div>
+            
             <!-- 푸터 시작 -->
             <div class="footer">
                 <div class="footer_menu">
