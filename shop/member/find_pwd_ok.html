@@ -19,15 +19,20 @@
             <!-- header 시작 -->
             <header id="header">
                 <div class="bnr_header" id="top-message">
-                    <!-- 100원 행사 배너 -->
-                    <div class="inner_top_content">
-                        <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_210224">
-                            <span>지금 가입하고 인기상품 <b>100원</b>에 받아가세요!</span>
-                            <img src="../../img/ico_arrow_fff_84x84.webp" class="bnr_arr">
-                        </a>
-                    </div>
-                    <div class="inner_top_close" id="top-message-close" class="btn_top_bnr"><img src="../../img/close.png">
-                    </div>
+                    <!-- 100원 행사 안내 배너 -->
+                    <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_210224" id="eventLanding">지금 가입하고 인기상품 <b>100원</b>에 받아가세요!<img src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
+                        <div class="bnr_top">
+                            <div class="inner_top_close">
+                                <button id="top-message-close" class="btn_top_bnr">가입하고 혜택받기</button>
+                            </div>
+                        </div>
+                    </a>
+                    <script>
+                        // PROM-476 장차석 : GA) 이벤트 트래킹
+                        $('#eventLanding').on('click', function () {
+                            ga('send', 'event', 'click', 'general_header_sighup', location.href);
+                        });
+                    </script>
                 </div>
 
                 <div id="userMenu">
@@ -780,6 +785,7 @@
             <!-- main 종료 -->
 
             <!-- footer 시작 -->
+            <div class="footerLine"></div>
             <footer id="footer">
                 <div class="inner_footer page_aticle">
                     <div class="footer_cc">
