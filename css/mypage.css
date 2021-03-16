@@ -105,6 +105,14 @@ color: #999; line-height: 16px;}
     padding: 0 20px;
     border: 1px solid #dddfe1;
 }
+
+.list_order .order_goods .order_status{ display: table; position: absolute; right: 20px; bottom: 0; height: 114px; vertical-align: middle;}
+.list_order .order_goods .order_status .inner_status{ display: table-cell; vertical-align: middle;}
+.list_order .order_goods .order_status .inner_status .link{ display: block;
+     width: 100px; height: 34px; border: 1px solid #5f0080; background-color:
+      #fff; font-size: 12px; color: #5f0080; line-height: 23px; text-align: center; cursor: pointer; padding-top: 5px; box-sizing: border-box;}
+
+
 #viewOrderList .list_order .goods_name a{font-size: 16px; display: block; overflow: hidden; line-height: 24px; font-weight: 500; color: black; cursor: pointer;
 background: url(../img/mypage/ico_arrow_10x15주문내역\ 상세로\ 이동.webp)no-repeat 100% 1px;}
 #viewOrderList .list_order .order_goods .order_info { padding: 14px 0 20px;}
@@ -169,7 +177,63 @@ background-size: 24px 24px;
 #addr_list .tp_how{box-sizing: border-box;}
 #addr_list .transport {color: #666;}
 .page_section #trans_list .edit {width: 24px; height: 24px; border: 0 none; font-size: 0; line-height: 0; 
-    background: url(../img/mypage/ico_modify.webp) no-repeat 50% 50%; cursor: pointer;  background-size: 24px 24px; vertical-align: 7px;}
+background: url(../img/mypage/ico_modify.webp) no-repeat 50% 50%; cursor: pointer;  background-size: 24px 24px; vertical-align: 7px;};
+
+/* =========배송지 수정 팝업페이지========== */
+#wrap {margin-top: 0 !important; padding: 0 !important; height: 100%; width: 100%; max-width: 500px;}
+.layout-main-wrapper{ position: relative;}
+.section_destinaiton{ overflow: auto; overflow-x: hidden; height: 100%;
+padding-bottom: 0;}
+.only_pc .pop_head {
+padding: 20px 0 0 30px; font-weight: 500; line-height: 36px; letter-spacing: -.5px;
+font-size: 24px;
+}
+#inputForm {box-sizing: border-box;}
+#inputForm .only_pc{ position: static;}
+#inputForm .only_pc.modify{ padding: 0 30px;}
+.section_destinaiton .only_pc .badge_default{ margin-bottom: 11px; font-weight: 500;}
+.badge_default{ display: inline-block; height: 22px; padding: 5px 8px 0 8px; border-radius: 11px; background-color: #f7f7f7; vertical-align: top;  margin-bottom:15px;}
+
+.section_destination .only_pc.modify .field {
+    padding-top: 22px;
+}
+.section_destination .only_pc.modify .address {
+    padding-bottom: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -.3px;
+}
+.section_destination .only_pc input[type=text] {
+    height: 44px;
+    padding: 1px 11px 0 15px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -.5px;
+    outline: 0px;
+    width: 94.5%;
+    border: 1px solid #ddd;
+}
+.section_destination .only_pc.modify .label_block {
+    padding-bottom: 7px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+}
+
+.section_destination .only_pc.modify .btn.active {
+    margin-top: 30px;
+}
+.section_destination .only_pc.modify .btn {
+    height: 44px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 42px;
+    width: 100%;
+}
 /* ============================================늘 사는 것 ======================================== */
 #Z_list {border-bottom:  1px solid #ddd; box-sizing: border-box; width: 820px;}
 
@@ -416,6 +480,97 @@ background-size: 24px 24px;
     margin-left: 28px;
     border: 1px solid #5f0080;
 }
+/* ======================================= 후기 작성 페이지 ================================== */
+.page_aticle.aticle_type2 .page_section{ float: right; width: 820px;}
+#form_review { box-sizing: border-box; margin: 0; padding: 0; line-height: 1; font-size: 12px; color: #4c4c4c;}
+#form_review .write_board{ box-sizing: border-box;}
+.section_write .goods_info{ overflow: hidden; padding: 20px 15px; border-top: 2px solid #5f0080;}
+.section_write .head_section {position: relative;}
+.section_write .head_section .link a{ position: absolute; right: 10px; top: -25px; background: url(../img/mypage/ico_question.webp) no-repeat 100% -0.3px; text-decoration: none !important; color: #949296; padding-right: 15px;}
+.section_write  .goods_info .thumb{ width: 80px; float: left; margin-right: 25px;}
+.section_write  .goods_info .thumb img{width: 100%;}
+.section_write  .goods_info .desc{ display: table; height: 104px; vertical-align: middle;}
+.section_write  .goods_info .desc{ display: table-cell; vertical-align: middle;}
+.section_write  .goods_info .desc .name_main{font-size: 16px; color: #000; line-height: 24px; padding-top: 4px;}
+.section_write .write_board .tbl {border-bottom: 1px solid #dddfe1; width: 100%;}
+.section_write .write_board th{border-top: 1px solid #dddfe1; background-color: #f7f7f7;font-size: 12px; color: #666; font-weight: 500;}
+.section_write .write_board td{padding: 10px 0 10px 10px; border-top: 1px solid #dddfe1; box-sizing: border-box;}
+.section_write .write_board .inp{ width: 100%; height: 34px; padding: 0 10px; border: 1px solid #dddfe1; font-size: 12px; color: #000; line-height: 18px; box-sizing: border-box; outline: none;}
+.section_write .write_board .inp.on{border: 1px solid #514859; }
+.inp::placeholder{color: #dddfe1;}
+
+
+.write_board .btn_upload {position: relative; float: left; width: 80px; height: 80px; margin: 10px 0; border: 1px solid #dddfe1; background: url(../img/mypage/img_add_thumb.webp) no-repeat 50% 50%;}
+.write_board .file_upload{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; font-size: 0; line-height: 0; text-indent: -9999px; opacity: 0; cursor: pointer;}
+
+.section_write .write_board .photo_notice {
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px;
+}
+.section_write .write_board .file_count {
+    position: relative;
+}
+.section_write .write_board .file_count .txt_count {
+    position: absolute;
+    right: 11px;
+    top: 0;
+    color: #949296;
+}
+.section_write .write_board .field_cmt {
+    padding: 8px 10px 9px;
+    border: 1px solid #dddfe1;
+    position: relative;
+}
+.section_write .write_board .photo_add {
+    padding-right: 100px;
+    width: 100%;
+}
+.section_write .write_board .photo_add:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
+
+
+.section_write .write_board .field_cmt textarea{border:0; width: 100%; min-height: 202px; box-sizing: border-box; line-height: 18px; resize: none; overflow: hidden;
+    outline: none;}
+.section_write .write_board .field_cmt.on{border: 1px solid #514859; }
+.section_write .write_board .field_cmt textarea::placeholder{color: #dddfe1;}
+.section_write .write_board .field_cmt p{position: absolute; right: 10px; bottom: 10px; color: #999;}
+
+.section_write .link_inquire {
+    padding: 20px 0 50px;
+    font-size: 12px;
+    color: #949296;
+    line-height: 18px;
+}
+.section_write .link_inquire a {
+    padding: 0 9px 0 5px;
+    background: url(../img/mypage/ico_arrow_6x10.webp) no-repeat 100% 4px;
+    font-weight: 500;
+    color: #5f0080;
+}
+.section_write .btn_reg {
+    display: block;
+    width: 200px;
+    height: 48px;
+    margin: 0 auto;
+    border: 1px solid #5f0080;
+    background-color: #5f0080;
+    font-size: 14px;
+    color: #fff;
+    line-height: 46px;
+}
+.section_write .btn_reg.btn_disabled {
+    border: 1px solid #dddfe1;
+    background-color: #fff;
+    color: #dddfe1;
+}
+
 
 /* ========================================  적립금  ======================================== */
 .page_aticle .head_aticle{ padding-bottom: 34px;}
@@ -483,3 +638,95 @@ td.info{ text-align: left; padding-left: 20px;}
 .page_section .layout_page .lay-pg-prev{background-image: url(../img/mypage/icon-pagination-prev.webp); border-right: 0;}
 .page_section .layout_page .lay-pg-next{background-image: url(../img/mypage/icon-pagination-next.webp); border-left: 0;}
 .page_section .layout_page .lay-pg-last{background-image: url(../img/mypage/icon-pagination-last.webp); border-left: 0;}
+
+
+/* ============================== 쿠 폰 =============================== */
+
+.page_section .coupon_reg {
+    padding: 19px 0 14px 29px;
+    border: 1px solid #ddd;
+}
+.coupon_reg form{ box-sizing: border-box;}
+.coupon_reg legend{ display: none;}
+.coupon_reg fieldset{border: none;}
+.coupon_reg .inp{ float: left; width: 210px; height: 34px; box-sizing: border-box; border: 1px solid #514859; font-size: 12px; line-height: 32px; color: #000; padding: 0 10px; letter-spacing: -.6px
+    ; margin-right: 20px;}
+.coupon_reg .btn{ float: left; width: 140px; height: 34px; border: 0; background-color: #5f0080; color: #fff; line-height: 32px; font-size: 12px; letter-spacing: .1px;}
+.coupon_reg .reg {
+    overflow: hidden;
+    width: 100%;
+}
+.coupon_reg .notice{ padding-top: 13px ; font-size: 12px; color: #b3130b; line-height: 18px;}
+
+
+.section_point .coupon_count {
+    overflow: hidden;
+    padding: 33px 0 12px;
+    color: #666;
+    line-height: 18px;
+}
+.section_point .coupon_count .ico {
+    float: left;
+    width: 4px;
+    height: 4px;
+    margin-top: 7px;
+    background-color: #514859;
+}
+.section_point .coupon_count .txt {
+    float: left;
+    padding-left: 6px;
+    font-size: 12px;
+}
+.section_point .coupon_count .count {
+    float: right;
+    padding-right: 8px;
+    font-size: 13px;
+    letter-spacing: -.6px;
+}
+.section_point .coupon_count .tit {
+    padding-right: 9px;
+    font-size: 14px;
+}
+.coup { margin: 0 !important;}
+.coup colgroup{box-sizing: border-box;}
+.section_point th.name {
+    padding-left: 10px;
+    text-align: left;
+    width: auto;
+}
+.section_point td.name {
+    padding: 16px 10px;
+    text-align: left;
+}
+.section_point .txt_sub {
+    display: block;
+    padding-top: 1px;
+    font-size: 12px;
+}
+
+/* ========================================  개인 정보 수정  ======================================== */
+.page_section{box-sizing: border-box; margin: 0; padding: 0;} 
+.page_section .type_form{ box-sizing: border-box;}
+.field_pw .tit{ font-size: 18px; font-weight: 500;padding: 0 0 8px; }
+.field_pw .sub{ padding-bottom: 20px; font-size: 12px; color: #666; line-height: 17px;}
+.member_pw{width: 820px;}
+.field_pw form{ box-sizing: border-box; margin: 0; padding: 0;}
+.tbl_comm { width: 100%; border-top: 2px solid #333 !important; border-collapse: unset;}
+.tbl_comm .fst{margin-bottom: 2px; box-sizing: unset;}
+.tbl_comm .fst th {padding-top: 28px; margin-bottom: 2px;}
+.type_form th{width: 259px; padding-left: 120px !important; box-sizing: border-box;}
+.member_pw th{padding: 19px 0 0 20px; font-weight: 500; font-size: 14px; color: #333; line-height: 20px; vertical-align: top; text-align: left;}
+
+.member_pw .tbl_comm .fst td{ padding-top: 19px !important; margin-bottom: 2px;}
+.member_pw td{ padding: 10px 0; border-top: 0 !important; font-size: 14px; vertical-align: top; text-align: left;}
+.type_form input[type=text], .type_form input[type="password"]{ 
+    height: 43px; padding: 0 14px; border: 1px solid #ccc;
+    font-size: 14px; color: #333; line-height: 20px; border-radius: 3px; background: #fff; vertical-align: top;
+    box-sizing: border-box; width: 332px;
+}
+.tbl_comm .icon{ color: #ee6a7b; text-align: left; font-size: 14px; line-height: 20px; font-weight: 400; margin-left: -3px;}
+.member_pw tr:last-child th, .member_pw tr:last-child td{ padding-bottom: 19px; border-bottom: 1px solid #ddd;}
+
+.btn.active{border: 1px solid #5f0081;
+background-color: #5f0080; color: #fff;}
+.member_pw .active{ display: block; width: 240px; height: 56px; margin: 40px auto 0; font-size: 16px; line-height: 54px;}
