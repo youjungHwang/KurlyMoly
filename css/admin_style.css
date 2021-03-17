@@ -193,6 +193,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
     display:inline-block;
     margin: 0 3% ;
     font-size: 14px;
+    font-weight: normal;
     vertical-align: center;
     text-align:center;
     
@@ -213,6 +214,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 .container #content { 
     float: left; 
     width: 85%;
+
     background-color: rgb(237,240,245); 
 }
 
@@ -289,9 +291,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
     line-height: 65px; 
     font-weight: bold; 
     font-size: 12px;
-    
-
-    }
+}
 
 .regForm .reg_list li #search_tit { 
     line-height: 45px;
@@ -478,3 +478,166 @@ input[type=text], input[type=button], input[type=date], select  { height: 30px; 
 /*배송 현황*/
 
 .regForm .reg_list li .search_box select { width: 100px; height: 29px; padding : 0 5px; }
+
+
+/*내 정보*/
+
+.myinfo .reg_list {
+    padding: 30px 35px 15px;
+    background-color: #fff;
+    margin: 15px 25px;
+    font-size: 12px;
+
+}
+
+.myinfo  .my_subtitle {
+ font-size: 14px;
+ font-weight: bolder;
+ margin-bottom: 20px;
+}
+
+
+.myinfo .reg_list .hr {
+    width: 100%;
+    height :1px; 
+    background-color:  rgb(232,237,241); 
+    margin: 0 auto;
+}
+
+
+.myinfo .reg_list li .my_tit_lbl { 
+    float: left;
+    letter-spacing: 1px;
+    width:100px; 
+    line-height: 50px; 
+    font-weight: bold; 
+    font-size: 12px;
+    }
+
+.myinfo .reg_list li .my_content {
+    width: 400px;
+    float:left;
+    line-height: 50px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+
+/*대시보드*/
+.dash_title  { 
+    padding: 15px; 
+}
+.dash_title img {
+    width: 22px; 
+}
+.dash_title p {
+    font-size: 14px;
+    margin-left:20px;
+}
+.dash_cont{
+    margin: 0 10px;
+}
+
+.dash_box  {
+    width: 23%; 
+    float: left; 
+    height: 200px;
+    padding: 20px;
+    background-color: #fff;
+    margin: 15px 0 0 15px;
+    font-size: 12px;
+}
+
+.dash_box  .dash_subtitle {
+ font-size: 14px;
+ font-weight: bolder;
+ margin-bottom: 15px;
+}
+
+
+.dash_box li .dash_tit_lbl { 
+    float: left;
+    letter-spacing: 1px;
+    width:50% ; 
+    line-height: 22px; 
+    font-size: 12px;
+    }
+
+.dash_box li .dash_content {
+    width:50% ; 
+    float:right;
+    text-align: right;
+    line-height: 22px; 
+    padding-left: 10px;
+    font-size: 12px;
+    color: #5f0080; 
+    font-weight: bold; 
+}
+
+/*공지사항 등록*/
+.notice_add .reg_list {
+    background-color: #fff;
+    padding:20px;
+}
+
+
+.notice_add .reg_list .hr {
+    width: 100%;
+    height :1px; 
+    background-color:  rgb(232,237,241); 
+    margin: 0 auto;
+}
+
+
+.notice_add .reg_list li .noti_tit_lbl { 
+    float: left;
+    width: 150px;
+    padding-left: 20px; 
+    line-height: 60px; 
+    font-weight: bold; 
+    font-size: 12px;
+    }
+
+.notice_add .reg_list li .noti_content {
+    width: 500px;
+    height: 300px;
+    float:left;
+    border: 1px solid rgb(232,237,241);
+    font-size: 12px;
+    margin-top: 20px; 
+
+}
+
+.noti_content_tab1, .noti_content_tab2 {
+width: 50%;
+height: 40px;
+float: left; 
+text-align: center;
+line-height: 40px;
+
+}
+
+.noti_content .__active{
+border-bottom: 1px solid #5f0080;}
+
+.notice_add .reg_list li .title_box {
+    float:left;
+    margin-top:10px; 
+    font-size: 12px;
+}
+
+
+.notice_add .reg_list li .title_box {
+    float:left;
+    margin-top:10px; 
+    font-size: 12px;
+}
+
+
+.notice_add .reg_list li .space {
+    margin-right: 10px;
+
+}
+.notice_add .reg_list li .title_box input[type=text] { 
+    width: 500px; 
+}
