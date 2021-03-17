@@ -1,4 +1,10 @@
 /* !!!!!!!!!!!!!!!!!!!!!!!1수정 완료 사항!!   */
+.hide {
+    display: block;
+    /* 임시로  display: block; 해놓은 것임 // 이유 : 고객행복센터 안내문구가 계속 숨어서!! */
+}
+
+
 #gnb .gnb_main .gnb a .txt {
     font-weight: 700;
 }
@@ -10,25 +16,33 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
+.grade_comm .ico_grade { display: inline-block; min-width: 38px; height: 16px; padding: 0 4px; border-radius: 30px; font-size: 9px; color: #FF9600; line-height: 14px; 
+    text-align: center; }
 
+/* .grade_comm .grade5 { border: 1px solid #cba3e8; background-color: #cba3e9; } */
 
-
-/* 꽃길람보! */
-*, *:after, *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+/* .grade_comm .grade1 { border: 1px solid #a864d7; background-color: #a864d8; } */
+.grade_comm {
+    text-align: center !important;
+}
+table {
+    display: table;
+    border-collapse: separate;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
 }
 
-p {
+/* 꽃길람보! */
+
+/* p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-}
+} */
 
 button {
     outline: none;
@@ -52,12 +66,6 @@ button, input, optgroup, select, textarea {
     color: inherit;
     font: inherit;
     margin: 0;
-}
-
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
 }
 
 .group_btn {
@@ -95,13 +103,8 @@ button {
     border-image: initial;
 }
 
-
-
-
 .section_view {
-    width: 1050px;
-    margin: 0 auto;
-    padding-top: 200px;
+    padding-top: 170px;
 }
 
 #shareLayer {
@@ -109,17 +112,9 @@ button {
 }
 
 .section_view * {
-    font-family: noto sans;
+    font-family: 'Noto Sans KR';
     color: #333;
     letter-spacing: -.5px;
-}
-
-.section_view {
-    width: 1050px;
-    margin: 0 auto;
-
-    /* 수정 완료 사항!! 원래 padding-top: 20px; 였음 */
-    padding-top: 200px;
 }
 
 #shareLayer .layer_share {
@@ -129,7 +124,7 @@ button {
     top: 39px;
     width: 278px;
     height: 164px;
-    background: url(https://res.kurly.com/mobile/service/goodsview/1804/layer_share.png) no-repeat 0 0;
+    background: url(../img/review_image/layer_share.png) no-repeat 0 0;
 }
 
 
@@ -218,7 +213,7 @@ button {
 }
 
 element.style {
-    background-image: url(https://img-cf.kurly.com/shop/data/goods/1456402788969y0.jpg);
+    background-image: url(../img/review_image/1456402788969y0.jpg);
 }
 
 #sectionView .thumb {
@@ -238,7 +233,9 @@ element.style {
     float: right;
     width: 560px;
     padding: 10px 0 29px;
+    margin: 0;
 }
+
 
 #sectionView .btn_share {
     display: block;
@@ -253,7 +250,7 @@ element.style {
     width: 40px;
     height: 40px;
     border: 0;
-    background: url(https://res.kurly.com/mobile/service/goodsview/1910/ico_view_sns.png) no-repeat 50% 50%;
+    background: url(../img/review_image/ico_view_sns.webp) no-repeat 50% 50%;
     font-size: 0;
     text-indent: -9999px;
 }
@@ -280,6 +277,7 @@ element.style {
     float: right;
     width: 560px;
     padding: 0 20px 0 0;
+    margin: 0;
 }
 
 #sectionView .goods_price .dc {
@@ -318,7 +316,7 @@ element.style {
 
 #sectionView .goods_price .not_point, #sectionView .goods_price .not_login span, #sectionView .goods_price .not_login {
     display: block;
-    padding-top: 7px;
+    /* padding-top: 7px; */
     font-size: 14px;
     color: #5f0080;
     line-height: 20px;
@@ -381,7 +379,7 @@ element.style {
 
 /* 상품수량 선택 및 장바구니 담기등의 버튼부분 */
 #cartPut * {
-    font-family: noto sans;
+    font-family: Noto Sans KR;
     color: #333;
     letter-spacing: 0;
 }
@@ -440,7 +438,7 @@ element.style {
     width: 24px;
     height: 24px;
     border: 0;
-    background: url(https://res.kurly.com/pc/ico/2010/ico_cartput_del_24x25.svg) no-repeat 50% 50%;
+    background: url(../img/review_image/ico_cartput_del_24x25.svg) no-repeat 50% 50%;
     background-size: 24px 25px;
     font-size: 0;
     line-height: 0;
@@ -472,9 +470,9 @@ element.style {
     padding-top: 0;
 }
 
-#cartPut .cart_type2 .list .option {
+/* #cartPut .cart_type2 .list .option {
     padding-top: 8px;
-}
+} */
 
 #cartPut .cart_option .list .option {
     overflow: hidden;
@@ -490,11 +488,11 @@ element.style {
 }
 
 #cartPut .cart_option .list .down.on {
-    background-image: url(https://res.kurly.com/pc/ico/2010/ico_minus_on.svg);
+    background-image: url(../img/review_image/ico_minus_on.svg);
 }
 
 #cartPut .cart_option .list .down {
-    background: #fff url(https://res.kurly.com/pc/ico/2010/ico_minus.svg) no-repeat 50% 50%;
+    background: #fff url(../img/review_image/ico_minus.svg) no-repeat 50% 50%;
     background-size: 30px 30px;
 }
 
@@ -524,13 +522,13 @@ element.style {
 }
 
 #cartPut .cart_option .list .up.on {
-    background-image: url(https://res.kurly.com/pc/ico/2010/ico_plus_on.svg);
+    background-image: url(../img/review_image/ico_plus_on.svg);
 }
 
 #cartPut .cart_option .list .up {
     float: right;
     margin-left: -1px;
-    background: #fff url(https://res.kurly.com/pc/ico/2010/ico_plus.svg) no-repeat 50% 50%;
+    background: #fff url(../img/review_image/ico_plus.svg) no-repeat 50% 50%;
     background-size: 30px 30px;
 }
 
@@ -594,6 +592,8 @@ element.style {
     color: #666;
     line-height: 20px;
     text-align: right;
+
+    margin: 0;
 }
 
 #cartPut .cart_option .total .ico {
@@ -720,9 +720,12 @@ cartPut .cart_option .view_function .btn {
     display: block;
     position: relative;
     height: 22px;
-    border-top: 2px solid #5f0080;
+    border-top: 2px solid #4f4652;
 }
 
+#cartPut .cart_type1 .bar_open {
+    position: fixed !important;
+}
 #cartPut .cart_type1 .btn_close {
     overflow: hidden;
     position: absolute;
@@ -739,7 +742,7 @@ cartPut .cart_option .view_function .btn {
 
 #cartPut .cart_type1 .btn_close .ico {
     padding: 0 30px 0 7px;
-    background: url(https://res.kurly.com/pc/service/goods/1910/ico_up_fff_24x24.png) no-repeat 100% -3px;
+    background: url(../img/review_image/ico_up_fff_24x24.webp) no-repeat 100% -3px;
     font-size: 14px;
     color: #fff;
     line-height: 20px;
@@ -874,7 +877,7 @@ cartPut .cart_option .view_function .btn {
     width: 24px;
     height: 24px;
     border: 0;
-    background: url(https://res.kurly.com/pc/ico/2010/ico_layer_close.svg) no-repeat 50% 50%;
+    background: url(../img/review_image/ico_layer_close.svg) no-repeat 50% 50%;
     background-size: 24px 24px;
     font-size: 0;
     text-indent: -9999px;
@@ -906,7 +909,7 @@ cartPut .cart_option .view_function .btn {
     display: inline-block; 
     width: 24px;
     height: 24px;
-    background: url(https://res.kurly.com/pc/ico/2008/ico_search_40x40.png) no-repeat 50% 50%;
+    background: url(../img/review_image/ico_search_40x40.webp) no-repeat 50% 50%;
     background-size: 20px 20px;
     vertical-align: -7px;
 }
@@ -922,7 +925,7 @@ cartPut .cart_option .view_function .btn {
 /* ======================== 추가된 내용!! =========== */
 
 element.style {
-    background-image: url(https://img-cf.kurly.com/shop/data/goods/1613703525758y0.jpg);
+    background-image: url(../img/review_image/1613703525758y0.jpg);
 }
 
 #sectionView #btnShare {
@@ -933,7 +936,7 @@ element.style {
     width: 40px;
     height: 40px;
     border: 0;
-    background: url(https://res.kurly.com/mobile/service/goodsview/1910/ico_view_sns.png) no-repeat 50% 50%;
+    background: url(../img/review_image/ico_view_sns.png) no-repeat 50% 50%;
     font-size: 0;
     text-indent: -9999px;
 }
@@ -1143,10 +1146,6 @@ element.style {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
-
-    /* 수정 완료 사항!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-    margin-top: 0px;
-    margin-bottom: 20px;
 }
 
 .goods-add-product-item-name {
@@ -1161,9 +1160,8 @@ element.style {
     position: absolute;
     left: 10px;
 
-    /* 수정한사항!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-    bottom: 5px;
-    top: 35px;
+    /* 수정완료사항!!!!!!!!!!!!!!!!!!!!!  */
+    margin-top: 10px;
 }
 
 .goods-add-product-item {
@@ -1172,7 +1170,6 @@ element.style {
     height: 100%;
     margin-right: 10px;
     border: 1px solid #ddd;
-    border-bottom: 14px solid #ddd;
 }
 
 .layout-wrapper.goods-view-area {
@@ -1184,16 +1181,6 @@ element.style {
     width: 1050px;
     height: 100%;
     margin: 0 auto;
-}
-
-
-body, input, select, textarea, button {
-    font-family: noto sans,malgun gothic,AppleGothic,dotum;
-    line-height: 1;
-    letter-spacing: -.05em;
-    color: #4c4c4c;
-    font-size: 12px;
-    max-width: 100%;
 }
 
 
@@ -1239,13 +1226,13 @@ h3 {
 
 .goods-add-product-move.goods-add-product-move-left {
     left: 0;
-    background-image: url(https://res.kurly.com/pc/etc/old/images/common/slide-sub-left-button-black.png);
+    background-image: url(../img/review_image/slide-sub-left-button-black.webp);
     background-position: left;
 }
 
 .goods-add-product-move.goods-add-product-move-right {
     right: 0;
-    background-image: url(https://res.kurly.com/pc/etc/old/images/common/slide-sub-right-button-black.png);
+    background-image: url(../img/review_image/slide-sub-right-button-black.webp);
     background-position: right;
 }
 
@@ -1277,18 +1264,6 @@ ol, ul {
     list-style-type: none;
 }
 
-
-ul {
-    display: block; 
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-
-    /* padding-inline-start: 40px; 실행시 푸터가 꼬임!!! */
-    /* padding-inline-start: 40px; */
-}
 
 /* ================================================== infomation-tab ================================================== */
 
@@ -1328,7 +1303,7 @@ ul {
     display: block;
     color: #4c4c4c;
     font-size: 14px;
-    font-family: noto sans;
+    font-family: Noto Sans KR;
     background-color: #f0eef1;
     border: 1px solid #bfbfbf;
     border-bottom: 0;
@@ -1350,13 +1325,9 @@ ul {
 .goods_wrap {
     width: 1010px;
     margin: 0 auto;
-    font-family: noto sans;
+    font-family: Noto Sans KR;
     font-weight: 200;
     letter-spacing: 0;
-}
-
-div, th, td, li, dt, dd, p {
-    word-break: break-all;
 }
 
 img {
@@ -1438,7 +1409,7 @@ small {
     width: 100%;
     margin-bottom: 70px;
     font-weight: 700;
-    font-family: noto sans;
+    font-family: Noto Sans KR;
     color: #666;
 }
 
@@ -1460,11 +1431,13 @@ element.style {
     z-index: 10;
     font-size: 30px;
     padding-left: 48px;
-    font-weight: 700;
-    font-family: noto sans;
-    font-weight: 700;
+    font-weight: 900;
+    font-family: Noto Sans KR;
     color: #666;
     letter-spacing: 1px;
+
+    /* ↓수정 한 사항!!!!!!!!!!!!!!!!!!!!!!!! */
+    top: 32px;
 }
 
 .goods_wrap .goods_tip h3 span {
@@ -1514,7 +1487,7 @@ element.style {
 
 .goods_wrap .tip_box .context .words b {
     font-weight: 400;
-    font-family: noto sans;
+    font-family: Noto Sans KR;
 }
 
 
@@ -1589,7 +1562,7 @@ table.extra-information td {
 }
 
 .whykurly_area {
-    font-family: noto sans;
+    font-family: Noto Sans KR;
     letter-spacing: 0;
 }
 
@@ -1716,7 +1689,7 @@ table.extra-information td {
     overflow: hidden;
     padding: 0 5px;
     border-bottom: 1px solid #ddd;
-    font: normal 16px/23px 'Noto Sans';
+    font: normal 16px/23px 'Noto Sans KR';
     color: #333;
     letter-spacing: 0;
 }
@@ -1727,6 +1700,8 @@ table.extra-information td {
     color: #666;
     line-height: 41px;
     letter-spacing: .8px;
+
+    margin: 0;
 }
 
 .happy_center .happy .sub {
@@ -1804,6 +1779,8 @@ table.extra-information td {
     color: #666;
     line-height: 27px;
     letter-spacing: 0;
+
+    margin: 0;
 }
 
 .happy_center .unfold .sub {
@@ -1811,9 +1788,6 @@ table.extra-information td {
     width: 650px;
     padding: 0;
     line-height: 27px;
-
-    /* 문제 생길경우 꼭 수정하기!! */
-    margin-top: 23px;
 }
 
 .happy_center .unfold .emph {
@@ -1835,12 +1809,6 @@ table.extra-information td {
     line-height: 24px;
     text-align: right;
     letter-spacing: -.4px;
-}
-
-a {
-    background-color: transparent;
-    text-decoration: none;
-    color: inherit;
 }
 
 /* .happy_center .asked .txt {
@@ -1868,6 +1836,7 @@ a {
     display: block;
 }
 
+
 .order .happy_faq {
     width: 100%;
     padding: 12px 0 40px 180px;
@@ -1876,7 +1845,7 @@ a {
 .happy_center .happy_faq {
     display: none;
     overflow: hidden;
-    padding: 49px 0 40px;
+    padding: 30px 0 30px;
     border-top: 1px solid #ddd;
 }
 
@@ -1887,7 +1856,7 @@ a {
 .happy_faq .questions {
     float: right;
     width: 655px;
-    padding: 2px 20px 0 0;
+    padding: 0 20px 0 180px;
     font-weight: 200;
     font-size: 15px;
     line-height: 22px;
@@ -2031,6 +2000,8 @@ h2 {
     color: #666;
     line-height: 18px;
     letter-spacing: -.3px;
+
+    margin: 0;
 }
 
 .xans-product-additional .title_txt p {
@@ -2053,7 +2024,6 @@ h2 {
     font-size: 13px;
     line-height: 140%;
 }
-
 
 .list_type1.old .emph {
     font-weight: 700;
@@ -2196,7 +2166,7 @@ element.style {
 .xans-product-additional table.tbl_newtype1 td.user_grade {
     padding: 22px 0 23px;
     line-height: 19px;
-    text-align: center;
+    text-align: left;
 }
 
 .goods_board .tbl_newtype1 .time {
@@ -2251,15 +2221,23 @@ element.style {
 
 /* 후기쓰기 버튼 */
 .xans-product-additional div.board .btnArea {
-    padding: 10px 0;
+    /* padding: 10px 0; */
     text-align: right;
     width: 100%;
     display: table;
+
+    border-top: 1px solid #522772;;
 }
 
-.xans-product-additional div.board .btnArea a {
+
+/* .xans-product-additional div.board .btnArea a {
     display: inline-block;
+} */
+
+.xans-product-additional .btnArea .bhs_button {
+    margin: 20px 0 20px 5px;
 }
+
 
 .bhs_button {
     width: 150px;
@@ -2273,11 +2251,10 @@ element.style {
     float: right;
     margin-left: 2px;
     font-size: 13px;
+
+    margin: 20px 0;
 }
 
-.xans-product-additional .btnArea .bhs_button {
-    margin: 20px 0 20px 5px;
-}
 
 element.style {
     line-height: 30px;
@@ -2303,19 +2280,19 @@ element.style {
 }
 
 .layout-pagination-first-page {
-    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-first.png);
+    background-image: url(../img/review_image/icon-pagination-first.webp);
 }
 
 .layout-pagination-prev-page {
-    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-prev.png);
+    background-image: url(../img/review_image/icon-pagination-prev.webp);
 }
 
 .layout-pagination-next-page {
-    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-next.png);
+    background-image: url(../img/review_image/icon-pagination-next.webp);
 }
 
 .layout-pagination-last-page {
-    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-last.png);
+    background-image: url(../img/review_image/icon-pagination-last.webp);
 }
 
 .layout-pagination-first-page, .layout-pagination-prev-page, .layout-pagination-next-page, .layout-pagination-last-page {
@@ -2356,7 +2333,7 @@ element.style {
     user-select: none;
     font-family: "apple sd gothic neo", nanumgothic, 나눔고딕, dotum, 돋움, sans-serif !important;
     margin: 30px 0px 0px;
-    border-top: 3px solid #5f0080;
+    border-top: 2px solid #5f0080;
     background: white;
     overflow: visible;
     outline: none;
@@ -2428,15 +2405,15 @@ element.style {
 
 .sdp-review__average__total-star__info-gray {
     display: inline-block;
-    width: 245px;
+    width: 24%;
     height: 44px;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/average/star_all_v2.png) 0px -52px no-repeat;
+    background: url(../img/review_image/star_all_v2.png) 0px -52px no-repeat;
 }
 
 .sdp-review__average__total-star__info-orange {
     width: 0%;
     height: 44px;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/average/star_all_v2.png) no-repeat;
+    background: url(../img/review_image/star_all_v2.png) no-repeat;
 }
 
 .sdp-review__average__total-star__info-count {
@@ -2445,7 +2422,7 @@ element.style {
     margin-left: 14px;
     line-height: 44px;
     vertical-align: top;
-    font-size: 30px;
+    font-size: 28px;
     color: #333;
 }
 
@@ -2499,7 +2476,7 @@ section {
 .sdp-review__average__gallery__list__item {
     position: relative;
     display: inline-block;
-    width: 120px;
+    width: 12.32%;
     height: 120px;
     overflow: hidden;
     cursor: pointer;
@@ -2525,7 +2502,7 @@ section {
     margin-top: 31px;
     margin-left: 7px;
     vertical-align: middle;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/video/play-btn-middle__v1.png) no-repeat;
+    background: url(../img/review_image/play-btn-middle__v1.png) no-repeat;
     background-size: 23px 32px;
 }
 
@@ -2544,8 +2521,8 @@ section {
 .sdp-review__average__gallery__list__item-more-btn {
     position: absolute;
     top: 0;
-    right: 36px;
-    width: 120px;
+    right: 0px;
+    width: 125px;
     height: 120px;
     padding-top: 33px;
     background: url(//img/review_image/bg-black-opacity.png) repeat;
@@ -2580,9 +2557,9 @@ section {
 
 .sdp-review__highlight__positive {
     float: left;
-    width: 460px;
+    width: 48%;
     margin-top: 60px;
-    margin-right: 60px;
+    margin-right: 40px;
     padding-top: 12px;
     border-top: 1px solid #333;
 }
@@ -2590,6 +2567,7 @@ section {
 .sdp-review__highlight__positive__title {
     font-size: 18px;
     font-weight: bold;
+    margin-top: 10px ;
 }
 
 header {
@@ -2642,13 +2620,13 @@ header {
     display: inline-block;
     width: 89px;
     height: 15px;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/average/star_all_v2.png) 0 -271px no-repeat;
+    background: url(../img/review_image/star_all_v2.png) 0 -271px no-repeat;
 }
 
 .sdp-review__highlight__positive__info__product-info__star-orange {
     width: 0%;
     height: 100%;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/average/star_all_v2.png) 0 -246px no-repeat;
+    background: url(../img/review_image/star_all_v2.png) 0 -246px no-repeat;
 }
 
 .sdp-review__highlight__positive__info__product-info__reg-date {
@@ -2680,8 +2658,8 @@ header {
 .sdp-review__highlight__positive__gallery__list {
     position: relative;
     display: inline-block;
-    width: 74px;
-    height: 74px;
+    width: 63px;
+    height: 63px;
     margin-right: 2px;
     margin-bottom: 2px;
     cursor: pointer;
@@ -2695,7 +2673,7 @@ header {
     width: 100%;
     height: 100%;
     padding-left: 3px;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/popup/bg-black-opacity.png) repeat;
+    background: url(../img/review_image/bg-black-opacity.png) repeat;
     background: rgba(17,17,17,0.65);
     text-align: center;
 }
@@ -2706,7 +2684,7 @@ header {
     height: 20px;
     margin-top: 20px;
     vertical-align: middle;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/video/play-btn-small__v1.png) no-repeat;
+    background: url(../img/review_image/play-btn-small__v1.png) no-repeat;
     background-size: 16px 20px;
 }
 
@@ -2832,8 +2810,9 @@ strong {
 /* 비판 상품평 BEST  css 시작 */
 .sdp-review__highlight__critical {
     float: left;
-    width: 460px;
+    width: 48%;
     margin-top: 60px;
+    /* margin-right: 10px; */
     padding-top: 12px;
     border-top: 1px solid #333;
 }
@@ -2846,6 +2825,8 @@ strong {
 .sdp-review__highlight__critical__title {
     font-size: 18px;
     font-weight: bold;
+
+    margin-top: 10px;
 }
 
 .sdp-review__highlight__critical__info__profile {
@@ -2877,13 +2858,13 @@ strong {
     display: inline-block;
     width: 89px;
     height: 15px;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/average/star_all_v2.png) 0 -271px no-repeat;
+    background: url(../img/review_image/star_all_v2.png) 0 -271px no-repeat;
 }
 
 .sdp-review__highlight__critical__info__product-info__star-orange {
     width: 0%;
     height: 100%;
-    background: url(//img1a.coupangcdn.com/image/productreview/web/pdp/average/star_all_v2.png) 0 -246px no-repeat;
+    background: url(../img/review_image/star_all_v2.png) 0 -246px no-repeat;
 }
 
 .sdp-review__highlight__critical__info__product-info__reg-date {
@@ -2912,8 +2893,8 @@ strong {
 .sdp-review__highlight__critical__gallery__list {
     position: relative;
     display: inline-block;
-    width: 74px;
-    height: 74px;
+    width: 63px;
+    height: 63px;
     margin-right: 2px;
     margin-bottom: 2px;
     cursor: pointer;
