@@ -912,8 +912,11 @@
                                             <input type="hidden" name="newPasswordCheck" value="0">
                                             <p class="txt_guide square">
                                                 <span class="txt txt_case4">현재 비밀번호와 다르게 입력</span>
+                                                <br>
                                                 <span class="txt txt_case1">10자 이상 입력</span>
+                                                <br>
                                                 <span class="txt txt_case2">영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span>
+                                                <br>
                                                 <span class="txt txt_case3">동일한 숫자 3개 이상 연속 사용 불가</span>
                                             </p>
                                         </td>
@@ -947,16 +950,160 @@
                                         <a href="" onclick="" class="btn default">중복확인</a>
                                         </td>
                                     </tr>
-                                    <tr class="field_phone"></tr>
-                                    <tr class="select_sex"></tr>
-                                    <tr class="birth field_birth"></tr>
-                                    <tr></tr>
+                                    <tr class="field_phone">
+                                        <th>휴대폰
+                                            <span class="ico"></span>
+                                        </th>
+                                        <td>
+                                            <div class="phone_num">
+                                                <input type="text" value="01077778888" pattern="[0-9]*" name="mobileInp" placeholder="숫자만 입력해주세요" class="inp" readonly="readonly">
+                                                <input type="hidden" name="mobile[]" id="mobie0" value="010" required option="regNum" label="휴대폰">
+                                                <input type="hidden" name="mobile[]" id="mobie1" value="7777" required option="regNum" label="휴대폰">
+                                                <input type="hidden" name="mobile[]" id="mobie2" value="8888" required option="regNum" label="휴대폰">
+                                                <button id="btn_cert" class="btn default" type="button">다른 번호 인증</button>
+                                            </div>
+                                            <div id="codeNum" class="code_num"></div>
+                                            <p class="txt_guide" >인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요. (마켓컬리 1644-1107)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="select_sex">
+                                        <th>성별</th>
+                                        <td>
+                                            <label class>
+                                                <input type="radio" name="sex" value="m">
+                                                <span class="ico"></span>
+                                                남자
+
+                                            </label>
+                                            <label class>
+                                                <input type="radio" name="sex" value="w">
+                                                <span class="ico"></span>
+                                                여자
+                                                
+                                            </label>
+                                            <label class>
+                                                <input type="radio" name="sex" value="n">
+                                                <span class="ico"></span>
+                                                선택안함
+                                                
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr class="birth field_birth">
+                                        <th>생년월일</th>
+                                        <td>
+                                            <div class="birth_day">
+                                                <input type="text" name="birth_year" id="birth_year" pattern="[0-9]*" value="1995" label="생년월일" size="4" maxlength="4" placeholder="YYYY" >
+                                                <span class="bar"></span>
+                                                <input type="text" name="birth_month" id="birth_month" pattern="[0-9]*" value="07" label="생년월일" size="2" maxlength="2" placeholder="MM" >
+                                                <span class="bar"></span>
+                                                <input type="text" name="birth_day" id="birth_day" pattern="[0-9]*" value="25" label="생년월일" size="2" maxlength="2" placeholder="DD" >
+                                            </div>
+                                            <p class="txt_guide">
+                                                <span class="txt bad">
+                                                    태어난 일을 정확하게 입력해주세요
+                                                </span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>선택약관 동의</th>
+                                        <td class="reg_agree">
+                                            <div class="check_view"> 
+                                                <input type="hidden" name="consent[1]" id="consentHidden" value="n">
+                                                <label class="label_block check_agree">
+                                                    <input type="checkbox" name="hiddenCheck" value="n" checked="checked">
+                                                    <span class="ico"></span>
+                                                    개인정보 수집·이용 동의
+                                                    <span class="sub">(선택)</span>
+                                                </label>
+                                                <a href="#none" class="link btn_link btn_choice">약관보기
+                                                </a>
+                                            </div>
+                                            <div class="layer layer_choice" style="display: none; margin-top: -151.5px;">
+                                                <div class="inner_layer">
+                                                    <div class="in_layer">
+                                                        <h4 class="tit_layer">
+                                                            개인정보 수집·이용 동의
+                                                            <span class="sub">(선택)</span>
+                                                        </h4>
+                                                        <div class="box_tbl">
+                                                            <table>
+                                                                <caption class="screen_out">개인정보의 수집 및 이용목적</caption>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="row" class="tit1">수집 목적</th>
+                                                                        <th scope="row" class="tit2">수집 항목</th>
+                                                                        <th scope="row" class="tit3">보유 기간</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>맞춤형 회원 서비스 제공</td>
+                                                                        <td>성별, 생년월일</td>
+                                                                        <td class="emph">
+                                                                            회원 탈퇴
+                                                                            <br>
+                                                                            즉시 파기
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <p class="txt_service">동의를 거부하시는 경우에도 서비스는 이용하실 수 있습니다.</p>
+                                                    </div>
+                                                    <button type="button" class="btn_ok">
+                                                        <span class="txt_type">확인</span>
+                                                    </button>
+                                                    <button type="button" class="btn_close">
+                                                        <span class="screen_out">레이어 닫기</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
                                     <tr style="display:none"></tr>
-                                    <tr class="reg_agree"></tr>
+                                    <tr class="reg_agree">
+                                        <th>이용약관동의
+                                            <span class="ico">*
+                                                <span class="screen_out">필수항목</span>
+                                            </span>
+                                        </th>
+                                        <td>
+                                            <div class="bg_dim"></div>
+                                            <div class="check_view">
+                                                <label class="label_block check_agree">
+                                                    <input type="checkbox" name="marketing" value="n" checked="checked">
+                                                    <span class="ico"></span>
+                                                    무료배송, 할인쿠폰 등 혜택/정보 수신 동의
+                                                    <span class="sub">(선택)</span>
+                                                </label>
+                                                <div class="check_event email_sms">
+                                                    <label class="label_block check_agree">
+                                                        <input type="checkbox" name="sms" value="n"
+                                                        checked="checked">
+                                                        <span class="ico"></span>
+                                                        SMS
+                                                    </label>
+                                                    <label class="label_block check_agree">
+                                                        <input type="checkbox" name="mailing" value="n"
+                                                        checked="checked">
+                                                        <span class="ico"></span>
+                                                        이메일
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
                                 </tbody>
 
                             </table>
-                            <div id="formsubmit" class="form_footer"> </div>
+                            <div id="formsubmit" class="form_footer">
+                                <a href="" class="btn default">탈퇴하기</a>
+                                <button type="submit" class="btn active">회원정보수정</button>
+                            </div>
                         </form>
                     </div>
                 </div>
