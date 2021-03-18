@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="../../script/script.js"></script>
     <script src="/common_js/kurlytracker/kurlytracker.js?ver=1.26.11"></script>
+    <style>
+        h4 { margin-block-end: 0em; }
+        .member_join { padding-bottom: 0px; }
+    </style>
 </head>
 
 <body>
@@ -66,7 +70,7 @@
             </div>
 
             <div id="headerLogo">
-                <h1 class="logo"><a href="/" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1> <!-- 메인로고 -->
+                <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1> <!-- 메인로고 -->
             </div>
 
             <div id="gnb">
@@ -951,9 +955,9 @@
                                                 <span class="screen_out">필수항목</span>
                                             </span>
                                         </th>
-                                        <td><input type="text" name="email" value="apple@apple.com" label="이메일" placeholder="예: apple@apple.com">
+                                        <td><input type="text" name="email" value="apple@apple.com" label="이메일" placeholder="예: apple@apple.com" style="display: inline-block;">
                                         <input type="hidden" name="chk_email" label="이메일중복체크" value="1">
-                                        <a href="" onclick="" class="btn default">중복확인</a>
+                                        <a href="" onclick="" class="btn default" style="width: 120px !important; display: inline-block;">중복확인</a>
                                         </td>
                                     </tr>
                                     <tr class="field_phone">
@@ -962,11 +966,11 @@
                                         </th>
                                         <td>
                                             <div class="phone_num">
-                                                <input type="text" value="01077778888" pattern="[0-9]*" name="mobileInp" placeholder="숫자만 입력해주세요" class="inp" readonly="readonly">
+                                                <input type="text" value="01077778888" pattern="[0-9]*" name="mobileInp" placeholder="숫자만 입력해주세요" class="inp" readonly="readonly" style="display: inline-block;">
                                                 <input type="hidden" name="mobile[]" id="mobie0" value="010" required option="regNum" label="휴대폰">
                                                 <input type="hidden" name="mobile[]" id="mobie1" value="7777" required option="regNum" label="휴대폰">
                                                 <input type="hidden" name="mobile[]" id="mobie2" value="8888" required option="regNum" label="휴대폰">
-                                                <button id="btn_cert" class="btn default" type="button">다른 번호 인증</button>
+                                                <button id="btn_cert" class="btn default" type="button" style="width: 120px !important; display: inline-block;">다른 번호 인증</button>
                                             </div>
                                             <div id="codeNum" class="code_num"></div>
                                             <p class="txt_guide" >인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요. (마켓컬리 1644-1107)</p>
@@ -1076,8 +1080,8 @@
                                                 <span class="screen_out">필수항목</span>
                                             </span>
                                         </th>
-                                        <td>
-                                            <div class="bg_dim"></div>
+                                        <td style="border-top: 1px solid #333;">
+                                            <div class="bg_dim"></div> <!-- 약관 보기용 회색배경 -->
                                             <div class="check_view">
                                                 <label class="label_block check_agree">
                                                     <input type="checkbox" name="marketing" value="n" checked="checked">
@@ -1100,6 +1104,35 @@
                                                     </label>
                                                 </div>
                                             </div>
+                                            <div class="layer layer_choice" style="display: none; margin-top: -153.5px;">
+                                                <div class="inner_layer">
+                                                    <div class="in_layer">
+                                                        <h4 class="tit_layer">개인정보 수집·이용 동의 <span class="sub">(선택)</span></h4>
+                                                        <div class="box_tbl">
+                                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                                <caption class="screen_out">개인정보의 수집 및 이용목적</caption>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="row" class="tit1">수집 목적</th>
+                                                                        <th scope="row" class="tit2">수집 항목</th>
+                                                                        <th scope="row" class="tit3">보유 기간</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>맞춤형 회원 서비스 제공</td>
+                                                                        <td>성별, 생년월일</td>
+                                                                        <td class="emph">회원 탈퇴<br> 즉시 파기</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <p class="txt_service">동의를 거부하시는 경우에도 서비스는 이용하실 수 있습니다.</p>
+                                                    </div>
+                                                    <button type="button" class="btn_ok"><span class="txt_type">확인</span></button>
+                                                    <button type="button" class="btn_close"><span class="screen_out">레이어 닫기</span></button>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
 
@@ -1107,8 +1140,8 @@
 
                             </table>
                             <div id="formsubmit" class="form_footer">
-                                <a href="" class="btn default">탈퇴하기</a>
-                                <button type="submit" class="btn active">회원정보수정</button>
+                                <a href="" class="btn default" style="width: 120px !important; display: inline-block;">탈퇴하기</a>
+                                <button type="submit" class="btn active" style="width: 120px !important; display: inline-block;">회원정보수정</button>
                             </div>
                         </form>
                     </div>
