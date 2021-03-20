@@ -1,46 +1,20 @@
+@charset "utf-8"; /* 한글이 깨지지 않도록 선언 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap'); /* font-family: 'Nanum Gothic', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap'); /* font-family: 'Noto Sans KR', sans-serif; */
+/*================================================마켓컬리 소개======================================================== */
 
-/* ================================================마켓컬리 소개======================================================== */
 
-html, body { height: 100%; }
-html { -webkit-text-size-adjust: 100%; }
-*, *:after, *:before { box-sizing: border-box; margin: 0; margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px; padding: 0;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;}
-/*html[Attributes Style] {
-    -webkit-locale: "ko";
-}*/
-*, *:after, *:before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body, input, select, textarea, button { letter-spacing: -.05em; }
-body { margin: 0; }
-div, th, td, li, dt, dd, p { word-break: break-all; }
-div { display: block; }
 #main { border-bottom: 1px solid #f7f7f7; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(247, 247, 247); border-bottom: 1px solid #f7f7f7;}
 
-#content { min-width: 1050px; padding-bottom: 120px; }
-#header, #container, #content {
-    position: relative;
-     
-}
-.bnr_header { position: relative; min-width: 1050px; text-align: center; line-height: 42px; font-size: 14px;}
-.bnr_header a { display: block; height: 42px; background-color: #5f0080; color: #fff;}
-a {text-decoration: none;}
+#content { padding-bottom: 120px;}
+
+.bnr_header {line-height: 42px; font-size: 14px;}
 
 a:-webkit-any-link { cursor: pointer;}
-.introduce_kurly { padding-top: 60px; font-family: noto sans; font-weight: 400; }
+.introduce_kurly { padding-top: 60px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; }
 link { display: none;}
-/* ======================================컬리소개 메뉴 탭 (위에작은거)===========================================*/
-.screen_out { display: block; overflow: hidden; position: absolute; left: -9999px; width: 1px; height: 1px; font-size: 0; line-height: 0; text-indent: -9999px;}
+/*======================================컬리소개 메뉴 탭 (위에작은거)=========================================== */
 
-/* 컬리소개 메인*/
 
 .intro_kurly { color: #000; }
 
@@ -50,20 +24,20 @@ element.style { background-position: 50% -100px; background-position-x: 50%; bac
 .introduce_kurly { margin-top:0px; padding-top:0px; }
 
 
-.introduce_kurly .info_box {width: 1050px; margin: 0 auto; margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto; padding: 30px 0 90px; }
+.introduce_kurly .info_box {width: 1050px; margin: 0 auto;  padding: 30px 0 96px; }
 
 .info_box_btn {
     padding: 30px 10px 30px !important;
 }
-.introduce_kurly .intro_kurly .tit_intro { font-size: 34px; text-align: center; font-weight: 700;}
+.introduce_kurly .intro_kurly .tit_intro { font-size: 34px; text-align: center; font-weight: 500;}
 h3 {display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;}
-.introduce_kurly .intro_text {padding: 45px 0 0; padding-top: 45px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-size: 18px;font-weight: 200; line-height: 28px; text-align: justify; }
+.introduce_kurly .intro_text {padding: 10px 0 0; font-size: 18px;font-weight: 200; line-height: 28px; text-align: justify; }
 .introduce_kurly .about_navi .opt_kurly {
     position: relative;
     float: left;
 }
 .introduce_kurly {
-    font-family: noto sans;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
 }
 p {
@@ -82,17 +56,17 @@ p {
     width: 1050px;
     margin: 0 auto;
 }
-ol, ul {
-    list-style-type: none;
-}
-ul {
+
+/*-------------------------------------------------*/
+/* ul {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
-}
+} */
+.list {padding-bottom: 0px;}
 .kurly_more_menu .list_menu li:first-child {
     margin-top: 0;
 }
@@ -103,9 +77,8 @@ ul {
     display: table;
     margin-top: 30px;
 }
-li {
-    text-align: -webkit-match-parent;
-}
+/*----------------------------------------------------*/
+
 .kurly_more_menu .img_thumb {
     display: block;
 }
@@ -129,19 +102,21 @@ img {
     border-image-outset: initial;
     border-image-repeat: initial;
 }
+
+/*---------------------------------------------------------------*/
 img, video, canvas {
     max-width: 100%;
 }
-img[Attributes Style] {
+/* img[Attributes Style] {
     width: 364px;
     aspect-ratio: auto 364 / 200;
     height: 200px;
-}
+} */
 .kurly_more_menu .kurly_menu_info {
     display: table-cell;
     width: 670px;
     padding-left: 50px;
-    font-size: 20px;
+    font-size: 13px;
     vertical-align: middle;
 }
 .kurly_more_menu .tit_menu {
@@ -150,14 +125,7 @@ img[Attributes Style] {
     font-size: 20px;
     color: #512772;
 }
-h4 {
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
+
 .kurly_more_menu .menu_info {
     padding-top: 15px;
     margin: 0;
@@ -171,15 +139,11 @@ h4 {
 .kurly_more_menu .link_more {
     display: block;
     margin-top: 20px;
-    font: 14px noto sans;
+    font: 5px; font-family: 'Noto Sans KR', sans-serif;
     font-weight: 700;
     color: #512772;
 }
-a {
-    background-color: transparent;
-    text-decoration: none;
-    color: inherit;
-}
+
 a:-webkit-any-link {
     cursor: pointer;
 }
@@ -207,8 +171,20 @@ a:-webkit-any-link {
     vertical-align: top;
     background: url(https://res.kurly.com/images/event/introduce/0720/pc/img_link.jpg);
 }
-
-
+#footer .company .list {
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 15px;
+}
+#footer .inner_footer {
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+#footer .company .copy {margin-top: 0px; margin-bottom: 0px;}
+/* .footer_cc {padding-bottom: 10px;} */
+.list{padding: }
+#footer { width: 1050px; margin: 0 auto; padding-bottom: 40px; font-weight: 400; letter-spacing: -0.2px; font-family: 'Noto Sans KR', sans-serif; }
+.inner_footer { padding-bottom: 10px;}
 .dropbtn {
     background-color: #fff;
     color: black;
@@ -228,8 +204,8 @@ padding-left: 20px;
 
 .dropdown a:hover { 
     color: #512772 ; 
- 
-    text-decoration: underline; 
+
+
     
 }
 .dropdown-content {
@@ -256,4 +232,4 @@ padding-left: 20px;
 }
 .dropdown:hover .dropbtn {
     background-color: #ccc;
-}
+} 
