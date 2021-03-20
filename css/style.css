@@ -239,9 +239,23 @@ table { border-collapse: collapse; border-spacing: 0; text-indent: initial; }
 
 .page_main .bx-controls-direction { position: relative; width: 1050px; margin: 0 auto; }
 .page_main .bx-controls-direction .disabled { opacity: 0; }
+
 .page_main .bx-controls-direction .bx-next, .page_main .bx-controls-direction .bx-prev { overflow: hidden; position: absolute; bottom: 316px; width: 60px; height: 60px; border: none; font-size: 0; line-height: 0; text-indent: -9999px; /*transition: opacity 0.5s;*/ }
 .page_main .bx-controls-direction .bx-prev { left: 30px; background: url(../img/mainSlide/btn_prev_default.webp) no-repeat 50% 50%; transition: background 0.5s; }
 .page_main .bx-controls-direction .bx-next { right: -30px; background: url(../img/mainSlide/btn_next_default.webp) no-repeat 50% 50%; transition: background 0.5s; z-index: 300; }
+
+
+/* ======================================== ★★★★★★★★★★ HYJ 메인 롤링 ★★★★★★★★★★ ======================================== */
+.page_main .swiper-container {  position: relative; width: 1050px; margin: 0 auto;}
+.page_main .swiper-container .swiper-button-next, .page_main .swiper-container .swiper-button-prev {
+overflow: hidden; position: absolute; bottom: 316px; width: 60px; height: 60px; border: none; font-size: 0; line-height: 0; text-indent: -9999px;}
+.page_main .swiper-container .swiper-button-prev { left: 200px; }
+.page_main .swiper-container .swiper-button-next { right: 200px; z-index: 300; }
+/* ======================================== ★★★★★★★★★★ HYJ 메인 롤링 끝 ★★★★★★★★★★ ======================================== */
+
+
+
+
 
 .screen_out { display: block; overflow: hidden; position: absolute; left: -9999px; width: 1px; height: 1px; font-size: 0; line-height: 0; text-indent: -9999px; }
 
