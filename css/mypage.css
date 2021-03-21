@@ -1,7 +1,5 @@
-/* 마이페이지용 css / 삭제금지 */
-
 /* ======================================== 마이페이지 주문 내역 ===================================== */
-/* 메인페이지 탑 */
+/* ------------메인페이지 탑-------------- */
 
 #content { padding-bottom: 120px; }
 a * { background-color: transparent; text-decoration: none; color: inherit; }
