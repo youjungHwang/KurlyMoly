@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -807,7 +808,7 @@
                                         <script src="./js/swiper.min.js"></script>
                                         <script>
                                             $(function(){
-                                                var swiperr= new Swiper('.swiper-container', {
+                                                var swiper= new Swiper('.swiper-container', {
                                                     loop: true,
                                                     autoplay:4000,
                                                     speed : 800,
@@ -833,11 +834,14 @@
                                     </div>
                                     <div class="list_goods">
                                         <div class="bx-wrapper" style="max-width: 1050px; margin: 0px auto;">
-                                            <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 506px;">
-                                                <ul data-title="이 상품 어때요?" data-section="today_recommendation" class="list" style="width: 2215%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-                                                    <li data-index="1" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+
+                                            <!--★★★★★★★★★★ HYJ 중간 롤링 ★★★★★★★★★★-->
+                                            <div class="bx-viewport swiper-Container" style="width: 100%; overflow: hidden; position: relative; height: 506px;">
+                                                <div data-title="이 상품 어때요?" data-section="today_recommendation" class="list swiper-wrapper">
+                                                    
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1502272106555l0.jpg');">
+                                                            <img src="./img/mainSlide/1502272106555l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name">
@@ -845,11 +849,11 @@
                                                             </span>
                                                             <span class="price">50,100원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="2" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1566362968250l0.jpg');">
+                                                            <img src="./img/mainSlide/1566362968250l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name">
@@ -857,11 +861,11 @@
                                                             </span>
                                                             <span class="price">3,600원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="3" class="cut" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1607935549902l0.jpg');">
+                                                            <img src="./img/mainSlide/1607935549902l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name">
@@ -869,11 +873,11 @@
                                                             </span>
                                                             <span class="price">4,600원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="4" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1470879732522l0.jpg');">
+                                                            <img src="./img/mainSlide/1470879732522l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name">
@@ -881,11 +885,11 @@
                                                             </span>
                                                             <span class="price">2,000원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="5" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1499933534502l0.jpg');">
+                                                            <img src="./img/mainSlide/1499933534502l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name">
@@ -894,166 +898,172 @@
                                                             <span class="price"><span class="dc">25%</span>26,932원</span>
                                                             <span class="cost">35,910원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="6" class="cut" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1501140243276l0.jpg');">
+                                                            <img src="./img/mainSlide/1501140243276l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">[하타케나카] 녹차 소바</a></span>
                                                             <span class="price"><span class="dc">5%</span>5,605원</span>
                                                             <span class="cost">5,900원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="7" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1600415153564l0.jpg');">
-                                                        </a>
-                                                        <div class="info_goods">
-                                                            <span class="name"><a class="txt">[하타케나카] 녹차 소바</a></span>
-                                                            <span class="price"><span class="dc">5%</span>5,605원</span>
-                                                            <span class="cost">5,900원</span>
-                                                        </div>
-                                                    </li>
-
-                                                    <li data-index="8" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
-                                                        <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1488966896887l0.jpg');">
+                                                            <img src="./img/mainSlide/1488966896887l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods"><span class="name"><a class="txt">[앤쿡] 컴팩트 고등어 &amp; 삼치(냉동)</a></span> <span class="price">15,900원</span></div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="9" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1488966896887l0.jpg');">
+                                                            <img src="./img/mainSlide/1499933534502l0.jpg " alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods"><span class="name"><a class="txt">[산베네데토] 탄산수 500ml</a></span> <span class="price"><span class="dc">25%</span>1,350원</span>
                                                         <span class="cost">1,800원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="10" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1477568051626l0.jpg');">
+                                                            <img src="./img/mainSlide/1477568051626l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods"><span class="name"><a class="txt">[그랑도르즈] 까망베르 2종</a></span> <span class="price">2,000원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="11" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1465956933846l0.jpg');">
+                                                            <img src="./img/mainSlide/1465956933846l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods"><span class="name"><a class="txt">무농약 양파 2종</a></span>
                                                         <span class="price">2,690원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="12" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1477568074666l0.jpg');">
+                                                            <img src="./img/mainSlide/1477568074666l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">[김소영 아티장의 안단테] 그랑도르즈 베이크드 까망베르</a></span>
                                                             <span class="price"><span class="dc">5%</span>11,305원                            </span>
                                                             <span class="cost">11,900원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="13" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1488438873000_l.jpg');">
+                                                            <img src="./img/mainSlide/1488438873000_l.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">[스토리스 오브 그릭] 엑스트라 버진 200ml  (2020-2021 햇올리브)</a></span>
                                                             <span class="price"><span class="dc">40%</span>33,000원                            </span>
                                                             <span class="cost">55,000원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="14" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1486717673706l0.jpg');">
+                                                            <img src="./img/mainSlide/1486717673706l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">친환경 콜라비 1개</a></span>
                                                             <span class="price">2,290원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="15" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1489978895649l0.jpg');">
+                                                            <img src="./img/mainSlide/1489978895649l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">친환경 비트 2~4입</a></span>
                                                             <span class="price">4,990원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="16" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1493707899386l0.jpg');">
+                                                            <img src="./img/mainSlide/1493707899386l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">산천농원 무농약 곶감 8입 (냉동)</a></span>
                                                             <span class="price">10,800원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="17" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1470304770782l0.jpg');">
+                                                            <img src="./img/mainSlide/1470304770782l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">[인페르노] 아일랜드 하바네로 핫소스 4종</a></span>
                                                             <span class="price"><span class="dc">10%</span>7,110원</span>
                                                             <span class="cost">7,900원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="18" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1498628304465l0.jpg');">
+                                                            <img src="./img/mainSlide/1498628304465l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">[바오담] 수제 팥앙금</a></span>
                                                             <span class="price"><span class="dc">20%</span>9,600원</span>
                                                             <span class="cost">12,000원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="19" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1527672401304l0.jpg');">
+                                                            <img src="./img/mainSlide/1527672401304l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">[콜린스그린] 원데이 클렌즈 (1일)</a></span>
                                                             <span class="price"><span class="dc">20%</span>34,000원</span>
                                                             <span class="cost">42,500원</span>
                                                         </div>
-                                                    </li>
+                                                    </div>
 
-                                                    <li data-index="20" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;">
+                                                    <div class="swiper-slide">
                                                         <a class="thumb_goods">
-                                                            <img src="./img/mainSlide/blank.png" alt="상품이미지" class="thumb" style="background-image: url('./img/mainSlide/1613639022287l0.jpg');">
+                                                            <img src="./img/mainSlide/1613639022287l0.jpg" alt="상품이미지">
                                                         </a>
                                                         <div class="info_goods">
                                                             <span class="name"><a class="txt">[콜린스그린] 밀싹주스</a></span>
                                                             <span class="price"><span class="dc">10%</span>8,550원</span>
                                                             <span class="cost">9,500원</span>
                                                         </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="bx-controls bx-has-controls-direction">
-                                                <div class="bx-controls-direction">
-                                                    <a class="bx-prev disabled" href="">Prev</a>
-                                                    <a class="bx-next" href="">Next</a>
+                                                    </div>           
                                                 </div>
+                                                <div class="swiper-button-next"><img src="./img/mainSlide/btn_next_default.webp"></div>
+                                                <div class="swiper-button-prev"><img src="./img/mainSlide/btn_prev_default.webp"></div>
                                             </div>
+                                            <script>
+                                            var swiper = new Swiper('.swiper-Container', {
+                                                
+                                                    slidesPerView : 4, // 동시에 보여줄 슬라이드 갯수
+                                                    spaceBetween : 30, // 슬라이드간 간격
+                                                    slidesPerGroup : 4, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+                                                
+                                                    // 그룹수가 맞지 않을 경우 빈칸으로 메우기
+                                                    // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+                                                    loopFillGroupWithBlank : true,
+                                                
+                                                    loop : true, // 무한 반복
+                                                
+                                                    navigation : { // 네비게이션
+                                                        nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+                                                        prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+                                                    }
+                                                });
+                                                </script>
+                                                
+                                            
                                         </div>
                                     </div>
                                 </div>
