@@ -40,7 +40,7 @@ img { vertical-align: middle; }
 input, select, textarea, button, form, img, label { 
     vertical-align: middle; }
 
-input[type=text], input[type=button], input[type=date], select  { height: 30px; padding: 0 10px;  margin: 5px 0 ; border:1px solid #ccc; background-color: #fff;font-size: 10px; line-height: normal;}
+input[type=text], input[type=button], input[type=date], select  { height: 30px; padding: 0 10px;  margin: 5px 0 ; border:1px solid #ccc; background-color: #fff;font-size: 10px; line-height: normal; box-sizing: border-box; }
 
 input[type=button],input[type=submit], input[type=reset]{cursor:pointer; }
 
@@ -217,7 +217,6 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 .container #content { 
     float: left; 
     width: 85%;
-
     background-color: rgb(237,240,245); 
 }
 
@@ -532,9 +531,9 @@ input[type=text], input[type=button], input[type=date], select  { height: 30px; 
 }
 
 .dash_box  {
-    width: 23%; 
+    width: 23.5%; 
     float: left; 
-    height: 200px;
+    height: 230px;
     padding: 20px;
     background-color: #fff;
     margin: 15px 0 0 15px;
@@ -620,7 +619,8 @@ input[type=text], input[type=button], input[type=date], select  { height: 30px; 
     width: 90%;
     height: 390px;
     float:left;
-    padding-left: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -642,7 +642,9 @@ input[type=text], input[type=button], input[type=date], select  { height: 30px; 
      border:1px solid #ccc; border-left:none; font-size: 8px;  
      font-weight: bold;
      width: 70px; height: 30px;
-     background-color: rgb(248,249,253);  }
+     background-color: rgb(248,249,253);
+     box-sizing: border-box;
+    }
 
 .event_add  .regForm .reg_list li .tit_lbl_event { 
     float: left;
