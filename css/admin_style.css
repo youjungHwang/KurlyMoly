@@ -1,8 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
-/* 관리자페이지용 css / 삭제금지 */
-
 /* 공통 부분 */
 * { margin: 0; padding: 0; box-sizing: border-box;  }
 #wrap{ width: 100%; min-width: 980px; height: 100% ; }
@@ -19,7 +17,7 @@ ul, ol, li { list-style: none; }
 a { text-decoration: none; }
 a:link { color: black; }
 a:visited { color: black; }
-a:hover { color: rgb(81,39,113); }
+a:hover { color: rgb(81,39,113);  cursor:pointer;}
 a:focus { color: rgb(81,39,113);; }
 
 body { font-family: 'Nanum Gothic', sans-serif; height: 100%; font-size: 16px; letter-spacing: -1px; color: #444; white-space: normal; word-wrap: break-word; line-height: 1; }
@@ -42,12 +40,15 @@ img { vertical-align: middle; }
 input, select, textarea, button, form, img, label { 
     vertical-align: middle; }
 
-input[type=text], input[type=button], input[type=date], select  { height: 30px; padding: 0 10px;  margin: 5px 0 ; border:1px solid #ccc; background-color: #fff;font-size: 12px; line-height: normal;}
+input[type=text], input[type=button], input[type=date], select  { height: 30px; padding: 0 10px;  margin: 5px 0 ; border:1px solid #ccc; background-color: #fff;font-size: 10px; line-height: normal;}
+
+input[type=button],input[type=submit], input[type=reset]{cursor:pointer; }
+
+
 
 select { width: 180px; height: 29px; padding : 0 5px;  }
 
 .btn_line{ margin-top: 20px; text-align: center; }
-
 
 .btn_basecolor1 { display: inline-block; width: 130px; text-align: center; height: 40px;  font-size: 15px; line-height: 40px; border : 0 ; outline: 0 ; vertical-align: middle; background: #795b8f; color: #fff; margin-right: 10px;  }
 
@@ -195,6 +196,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
     display:inline-block;
     margin: 0 3% ;
     font-size: 14px;
+    font-weight: normal;
     vertical-align: center;
     text-align:center;
     
@@ -215,6 +217,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
 .container #content { 
     float: left; 
     width: 85%;
+
     background-color: rgb(237,240,245); 
 }
 
@@ -291,9 +294,7 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
     line-height: 65px; 
     font-weight: bold; 
     font-size: 12px;
-    
-
-    }
+}
 
 .regForm .reg_list li #search_tit { 
     line-height: 45px;
@@ -310,16 +311,6 @@ border : 0 ;  outline: 0 ;vertical-align: middle; background: #fff; border:1px s
     margin-right: 10px;
 
 }
-
-.regForm .reg_list li .select_category1 , .regForm .reg_list li .select_category2 {
-    line-height: 60px; 
-    float:left;
-    margin-right: 10px;
-}
-
-
-
-.select_category2 select {background-color:rgb(234,235,240); }
 
 .regForm .reg_list li .select_duration {
     line-height: 60px; 
@@ -480,3 +471,452 @@ input[type=text], input[type=button], input[type=date], select  { height: 30px; 
 /*배송 현황*/
 
 .regForm .reg_list li .search_box select { width: 100px; height: 29px; padding : 0 5px; }
+
+
+/*내 정보*/
+
+.myinfo .reg_list {
+    padding: 30px 35px 15px;
+    background-color: #fff;
+    margin: 15px 25px;
+    font-size: 12px;
+
+}
+
+.myinfo  .my_subtitle {
+ font-size: 14px;
+ font-weight: bolder;
+ margin-bottom: 20px;
+}
+
+
+.myinfo .reg_list .hr {
+    width: 100%;
+    height :1px; 
+    background-color:  rgb(232,237,241); 
+    margin: 0 auto;
+}
+
+
+.myinfo .reg_list li .my_tit_lbl { 
+    float: left;
+    letter-spacing: 1px;
+    width:100px; 
+    line-height: 50px; 
+    font-weight: bold; 
+    font-size: 12px;
+    }
+
+.myinfo .reg_list li .my_content {
+    width: 400px;
+    float:left;
+    line-height: 50px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+
+/*대시보드*/
+.dash_title  { 
+    padding: 15px; 
+}
+.dash_title img {
+    width: 22px; 
+}
+.dash_title p {
+    font-size: 14px;
+    margin-left:20px;
+}
+.dash_cont{
+    margin: 0 10px;
+}
+
+.dash_box  {
+    width: 23%; 
+    float: left; 
+    height: 200px;
+    padding: 20px;
+    background-color: #fff;
+    margin: 15px 0 0 15px;
+    font-size: 12px;
+}
+
+.dash_box  .dash_subtitle {
+ font-size: 14px;
+ font-weight: bolder;
+ margin-bottom: 15px;
+}
+
+
+.dash_box li .dash_tit_lbl { 
+    float: left;
+    letter-spacing: 1px;
+    width:50% ; 
+    line-height: 22px; 
+    font-size: 12px;
+    }
+
+.dash_box li .dash_content {
+    width:50% ; 
+    float:right;
+    text-align: right;
+    line-height: 22px; 
+    padding-left: 10px;
+    font-size: 12px;
+    color: #5f0080; 
+    font-weight: bold; 
+}
+
+/*공지사항 등록*/
+.notice_add .reg_list {
+    background-color: #fff;
+    padding:20px;
+    height: 670px; 
+}
+
+
+.notice_add .reg_list .hr {
+    width: 100%;
+    height :1px; 
+    background-color:  rgb(232,237,241); 
+    margin: 0 auto;
+}
+
+
+.notice_add .reg_list li .noti_tit_lbl { 
+    float: left;
+    width: 150px;
+    padding-left: 20px; 
+    line-height: 60px; 
+    font-weight: bold; 
+    font-size: 12px;
+    }
+
+
+.notice_add .reg_list li .title_box {
+    float:left;
+    margin-top:10px; 
+    font-size: 12px;
+}
+
+
+.notice_add .reg_list li .title_box {
+    float:left;
+    margin-top:10px; 
+    font-size: 12px;
+}
+
+
+.notice_add .reg_list li .space {
+    margin-right: 10px;
+
+}
+.notice_add .reg_list li .title_box input[type=text] { 
+    width:100%; min-width: 500px;  
+}
+
+
+.notice_add .reg_list li .noti_content {
+    width: 90%;
+    height: 390px;
+    float:left;
+    padding-left: 20px;
+}
+
+
+.ck.ck-editor {width: 100%;  }
+
+.ck-editor__editable_inline {
+    height: 350px;
+}
+.event_add .regForm .reg_list {
+    padding: 20px;
+    background-color: #fff;
+    margin: 15px 25px;
+}
+
+.event_add .reg_list li .title_box input[type=text]  { background-color: rgb(248,249,253) !important; float: left; }
+
+.event_add .reg_list li .print_bytes { display:inline-block; 
+     padding: 8.5px ;  
+     border:1px solid #ccc; border-left:none; font-size: 8px;  
+     font-weight: bold;
+     width: 70px; height: 30px;
+     background-color: rgb(248,249,253);  }
+
+.event_add  .regForm .reg_list li .tit_lbl_event { 
+    float: left;
+    width: 150px; 
+    padding-left: 20px; 
+    line-height: 40px; 
+    font-weight: bold; 
+    font-size: 12px;
+}
+
+.event_add  .regForm .reg_list li .duration {
+    line-height: 60px; }
+
+.reg_list li .img_add{ 
+    float: left; 
+ width: 100px; height: 90px; border: 1px solid #ccc;
+ text-align: center; 
+ line-height: 90px;
+ margin-top: 5px;
+
+}
+
+.tit_lbl_search2 {  margin-left: 15%;}
+
+.reg_list li .img_add img { 
+    filter: opacity(.5) 
+}
+
+ .reg_list li .img_add_btn { 
+    float: left; 
+    margin: 5px 5px 0 5px; 
+    font-size: 10px; 
+    height: 25px; 
+    background-color: #795b8f;
+    color: #fff;
+}
+ .reg_list li .img_add_txt { 
+
+    font-size: 8px; 
+    line-height: 15px; 
+    margin-left: 150px;
+
+}
+
+.listview .add_items_btn{ 
+background-color: #6f5780; color: #fff;
+font-size:10px;}
+
+.listview .deleterows { font-size: 10px;}
+
+/*이벤트 상품 선택*/
+
+.eventadd_select {
+    background-color: rgb(237,240,245); 
+    width: 100%; min-width: 700px;
+    height: 100%;
+    margin: 0px; 
+    border: 1px solid rgb(237,240,245); 
+ }
+
+.eventadd_select .title {
+    height: 50px;
+    padding: 0 15px;
+
+    line-height: 50px;
+    margin: 25px 25px 15px 25px; 
+    background-color: #fff;  
+    font-size: 18px;
+    font-weight: bolder;
+    box-sizing: border-box;
+}
+
+
+.eventadd_select .regForm .reg_list {
+    padding: 20px;
+    background-color: rgb(248,249,253);
+    margin: 15px 25px;
+}
+
+.eventadd_select .regForm .reg_list .tit_lbl, .eventadd_select .regForm .reg_list .select_category1, .eventadd_select .regForm .reg_list .select_category2{ 
+    line-height: 50px;
+}
+
+.eventadd_select .regForm .reg_list .search_box { padding-top:10px;}
+
+/*상품등록*/
+
+.select_category { 
+    float:left; 
+    height:150px;
+    overflow:scroll;
+}
+
+.regForm .reg_list li .select_category1 , .regForm .reg_list li .select_category2 {
+    line-height: 60px; 
+    float:left;
+    margin-right: 10px;
+}
+
+.select_category2 select {background-color:rgb(234,235,240); }
+
+.productadd .padding0{ 
+    padding: 0 !important;
+}
+.productadd .reg_list {
+    background-color: #fff;
+    font-size: 12px;
+    padding: 0px;
+}
+
+.reg_list_category { height: 250px; }
+
+.productadd .tit_lbl{ 
+    font-size: 14px;
+    font-weight: bolder;
+    padding: 25px 35px;
+    border-bottom: 1px solid rgb(232,237,241);
+}
+
+.productadd .prod_inner { 
+    padding-left:35px;
+}
+.productadd  .tit_lbl_search {
+ font-size: 12px;
+ font-weight: bolder;
+ padding: 0px; 
+
+}
+.productadd  .search_box { 
+    margin-top:5px; 
+}
+
+.productadd .reg_list .hr {
+    width: 100%;
+    height :1px; 
+    background-color:  rgb(232,237,241); 
+    margin: 0 auto;
+}
+
+
+.productadd .reg_list li .tit_lbl { 
+    float: left;
+    letter-spacing: 1px;
+    width:100px; 
+    line-height: 50px; 
+    font-weight: bold; 
+
+    }
+
+
+.productadd .reg_list li .long_input { 
+     width: 70%; float: left; }
+     
+.productadd .reg_list li .middle_input { 
+    width: 300px; }  
+
+.productadd .reg_list li .short_input { 
+        width: 148px; float: left; }
+   
+
+.productadd .reg_list li .print_bytes { display:inline-block; 
+    margin-top:5px;
+     padding: 8.5px ;  
+     border:1px solid #ccc; border-left:none; font-size: 8px;  
+     font-weight: bold;
+     width: 50px; height: 30px;
+     background-color: rgb(248,249,253);  }
+
+     
+.productadd .reg_list li .print_units { display:inline-block; 
+    margin-top:5px;
+     padding: 8.5px ;  
+     border:1px solid #ccc; border-left:none; font-size: 8px;  
+     font-weight: bold;
+     width: 25px; height: 30px;
+     background-color: rgb(248,249,253);  }
+
+
+.productadd  .regForm .reg_list li .img_add{ 
+    float: left; 
+ width: 100px; height: 90px; border: 1px solid #ccc;
+ text-align: center; 
+ line-height: 90px;
+ margin-top: 5px;
+
+}
+.productadd  .regForm .reg_list li .img_add img { 
+    filter: opacity(.5) 
+}
+
+.productadd  .regForm .reg_list li .img_add_btn { 
+    float: left; 
+    margin: 5px 5px 0 5px; 
+    font-size: 10px; 
+    height: 25px; 
+    background-color: #795b8f;
+    color: #fff;
+}
+.productadd  .regForm .reg_list li .img_add_txt { 
+    float: left; 
+    font-size: 8px; 
+   padding: 5px; 
+    line-height: 15px; 
+}
+.productadd .prod_category {
+    padding: 10px 35px; 
+}
+
+.productadd .reg_list li .prod_content {
+    width: 90%;
+    height: 410px;
+    float:left;
+    padding: 20px 35px; 
+    font-size: 12px;
+
+}
+
+
+.productadd  .reg_list li .select_sales {     
+    line-height: 40px; 
+    font-size: 12px;
+}
+.productadd  .reg_list li .select_sales .space {
+    margin-right: 10px;
+
+}
+
+.productadd  .reg_list li .select_sales .space2 {
+    margin-right: 30px;
+
+}
+
+
+/* 로그인*/
+
+/* ================================================== login.html ================================================== */
+
+#content_login { min-width: 1050px; }
+
+.container_login { background-color: #fff;}
+
+.section_login { width: 340px; margin: 0 auto; padding-top: 90px; letter-spacing: -.6px; }
+.section_login * { font-family: 'Noto Sans KR'; color: #333; }
+.section_login .tit_login { font-weight: 800; font-size: 20px; line-height: 20px; text-align: center; }
+.section_login .write_form { padding-top: 36px; }
+.section_login .login_view { text-align: center; }
+
+.section_login input[type=number], .section_login input[type=text], .section_login input[type=password] { width: 100%; height: 54px; padding: 0 19px; border: 1px solid #ccc; border-radius: 3px; background-color: #fff; font-size: 14px; line-height: 20px; outline: none; }
+
+.section_login input[type=number]::placeholder, .section_login input[type=text]::placeholder, .section_login input[type=password]::placeholder { color: #ccc;}
+
+.section_login [name=password], .section_login [name=ordno], .section_login .login_view [name=srch_mail], .section_login [name=srch_id] { margin-top: 10px; }
+
+.section_login .checkbox_save { overflow: hidden; padding-bottom: 28px; }
+.section_login .checkbox_save .label_checkbox { float: left; margin-top: 9px; }
+
+.section_login .label_checkbox { position: relative; padding: 0 0 3px 22px; font-size: 13px; line-height: 20px; }
+
+.section_login .label_checkbox.checked:before { background: url(../img/ico_checkbox_on.webp) no-repeat 50% 50%; }
+.section_login .label_checkbox:before { content: ""; position: absolute; left: 0; top: 3px; width: 16px; height: 17px; background: url(../img/ico_checkbox_off.webp) no-repeat 50% 50%; }
+
+.section_login .label_checkbox [type=checkbox] { position: absolute; left: 0; top: 3px; opacity: 0; }
+input[type=checkbox], input[type=radio] { box-sizing: border-box; padding: 0; }
+
+.section_login .login_search { float: right; padding-top: 13px; }
+.section_login .login_search .link { float: left; font-size: 13px; }
+.section_login .login_search .bar { float: left; width: 1px; height: 10px; margin: 3px 6px 0; background-color: #333; }
+
+.btn_type1 { border: 1px solid #5f0081; background-color: #5f0080; }
+.btn_type1, .btn_type2 { display: block; overflow: hidden; width: 100%; height: 54px; border-radius: 3px; font-size: 0; text-align: center; }
+button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; cursor: pointer; }
+.btn_type1 .txt_type { color: #fff; }
+.btn_type1 .txt_type, .btn_type2 .txt_type { display: inline-block; height: 100%; font-weight: 500; font-size: 16px; color: #fff; line-height: 51px; text-align: center; }
+.section_login .btn_member { margin-top: 10px; margin-bottom: 60px; }
+.section_login .btn_type2 { margin-top: 10px; }
+.btn_type2 { border: 1px solid #5f0081; background-color: #fff; }
+.btn_type2 .txt_type { color: #5f0080; }
