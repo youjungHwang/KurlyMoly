@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/admin_style.css" rel="stylesheet" type="text/css">
+
+    <title>이벤트 상품 선택</title>
+</head>
+
+<body>
+    <div class="eventadd_select" >
+            <div id="content" >
+                <!--이벤트 상품 선택 시작-->
+                <div class="title">
+                    <div>이벤트 상품 선택
+                        <div class="float_right clear"><a href="admin_eventcheck.html"><img src="../img/exit.png" alt="닫기" ></a></div>
+                    </div>
+                    
+                </div>
+                <div class="filter">
+                    <form aciton="#" class="regForm">
+                        <ul class="reg_list clear">
+                            <li class="clear">
+                                <label class="tit_lbl">카테고리</label>
+
+                                <div class="select_category1">
+                                    <select name="select_category1">
+                                        <option value="" selected>대분류</option>
+                                        <option value="채소">채소</option>
+                                        <option value="과일/견과/쌀">과일/견과/쌀</option>
+                                        <option value="수산/해산/건어물">수산/해산/건어물</option>
+                                    </select>
+                                </div>
+
+                                <div class="select_category2 clear">
+                                    <select name="select_category2">
+                                        <option value="" selected>중분류</option>
+                                        <option value="고구마/감자/당근">고구마/감자/당근</option>
+                                        <option value="시금치/쌈채소/나물">시금치/쌈채소/나물</option>
+                                        <option value="브로콜리/파프리카/양배추">브로콜리/파프리카/양배추</option>
+                                    </select>
+                                </div>
+                            </li> 
+
+                            <div class="hr"> </div>
+                            <li class="clear">
+                                <label  class="tit_lbl"> 검색어</label>
+                                <div class="search_box"> 상품명 &nbsp;  <input type="text" name="productname">  &nbsp;브랜드명 &nbsp; <input type="text" name="brandname">
+                                </div>
+                            </li>
+
+                            <li>
+                                <p class="btn_line">
+                                    <Input type="submit" value="검색" class="btn_basecolor1"> <Input type="reset"
+                                        value="초기화" class="btn_basecolor2">
+                                </p>
+                            </li>
+                        </ul> 
+                    </form>
+                </div>
+
+                <div class="listview">
+                    <div class="subtitle float_left">
+                        <h3>이벤트 상품 선택 (총 <span>0</span> 개)</h3>
+                    </div>
+                    <div class="subfunc float_right clear"> 
+                            <select name="pn_cnt">
+                                <option svalue="10개씩보기" selected>10개씩보기</option>
+                                <option value="20개씩보기">20개씩보기</option>
+                                <option value="30개씩보기">30개씩보기</option>
+                            </select>
+                    </div>
+
+                    <div class="bssBox">
+                        <table class="bbsListTbl">
+                            <tr>
+                                <th><input type="checkbox" name="selectrows" value=""></th>
+                                <th>상품번호</th>
+                                <th>대분류</th>
+                                <th>소분류</th>
+                                <th>상품명</th>
+                                <th>할인가</th>
+                                <th>브랜드</th>
+                                <th>판매상태</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="selectrows" value=""></td>
+                                <td><a href="#">12345</a></td>
+                                <td>과일</td>
+                                <td>사과</td>
+                                <td><a href="#">[싱싱마트]햇살담은사과</a></td>
+                                <td>2990</td>
+                                <td>싱싱마트</td>
+                                <td>판매중</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <div  class = "pagination">
+                        <a href="#" class="pn_btn pn_firstpage">맨 처음 페이지로 가기</a>
+                        <a href="#" class="pn_btn pn_prevpage">이전 페이지로 가기</a>
+                        <strong class="pn_btn pn_num __active">1</strong>
+                        <a href="#" class="pn_btn pn_num">2</a>
+                        <a href="#" class="pn_btn pn_num">3</a>
+                        <a href="#" class="pn_btn pn_num">4</a>
+                        <a href="#" class="pn_btn pn_num">5</a>
+                        <a href="#" class="pn_btn pn_num">6</a>
+                        <a href="#" class="pn_btn pn_num">7</a>
+                        <a href="#" class="pn_btn pn_num">8</a>
+                        <a href="#" class="pn_btn pn_num">9</a>
+                        <a href="#" class="pn_btn pn_num">10</a>
+                        <a href="#" class="pn_btn pn_nextpage">다음 페이지로 가기</a>
+                        <a href="#" class="pn_btn pn_lastpage">맨 끝 페이지로 가기</a>
+                    </div>
+                    <p class="btn_line">
+                        <Input type="submit" value="선택 상품 추가" class="btn_basecolor1"> <Input type="reset"
+                            value="초기화" class="btn_basecolor2">
+                    </p>
+                
+                </form>
+                </div>
+            <!--상품 선택 끝-->
+
+            
+        </div>
+        <!-- 내용 끝-->
+        </div>
+        <!--컨테이너 끝-->
+
+</body>
+
+</html>
