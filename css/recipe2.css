@@ -1,0 +1,118 @@
+@charset "utf-8"; /* 한글이 깨지지 않도록 선언 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap'); /* font-family: 'Nanum Gothic', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap'); /* font-family: 'Noto Sans KR', sans-serif; */
+
+/* 전체 css / 삭제금지 */
+meta {
+    display: none;
+}
+title {
+    display: none;
+}
+script {
+    display: none;
+}
+link {
+    display: none;
+}
+style {
+    display: none;
+}
+head {
+    display: none;
+}
+body {
+    display: block;
+}
+.bnr_header {
+    
+    font-size: 14px;
+}
+b, strong {
+    font-weight: 700;
+}
+.goods_wrap .goods_recipe h3 {
+    display: block;
+    font-family: noto sans;
+    font-weight: 700;
+    padding-bottom: 70px;
+    font-size: 50px;
+    line-height: 46px;
+    text-align: center;
+    color: #666;
+}
+:root {
+    --swiper-navigation-size: 44px;
+    /* --swiper-navigation-color: var(--swiper-theme-color); */
+}
+
+:root {
+    --swiper-theme-color: #007aff;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+table[Attributes Style] {
+    width: 100%;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+}
+.view_recipe {
+    padding: 150px 10px 10px;
+}
+td[Attributes Style] {
+    height: 200px;
+    vertical-align: top;
+}
+td {
+    display: table-cell;
+}
+.goods_wrap .goods_recipe h3 {
+    display: block;
+    font-family: noto sans;
+    font-weight: 700;
+    padding-bottom: 70px;
+    font-size: 50px;
+    line-height: 46px;
+    text-align: center;
+    color: #666;
+}
+h3 {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.goods_wrap .goods_recipe .recipe_tit {
+    display: block;
+    padding-bottom: 30px;
+    font-family: noto sans;
+    font-weight: 700;
+    color: #666;
+    text-shadow: 2px 0;
+}
+.goods_wrap .goods_recipe .recipe_product {
+    display: inline-block;
+    border-top: 1px solid #b1b1b1;
+    padding-top: 30px;
+    min-width: 342px;
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 400;
+    text-shadow: 1px 0;
+}
+.goods_wrap .context {
+    margin-bottom: 130px;
+}
+/* p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} */
+/* body, input, select, textarea, button { font-family: dotum} */
