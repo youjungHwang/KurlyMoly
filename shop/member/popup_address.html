@@ -83,6 +83,80 @@
           style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; border: 0px none; margin: 0px; padding: 0px; overflow: hidden; min-width: 300px;"></iframe>
       </div>
     </div>
+
+    <div class="address_search" style="display: block;">
+      <div class="layer_prev"><img src="../../img/join_zipCode/ico_prev_333_100x100.webp" alt="" class="ico"><span
+          class="tit">주소 재검색</span></div>
+      <div class="inner_address">
+        <h1 class="screen_out">주소찾기</h1>
+        <div class="filed_address">
+          <form id="road-address-confirm" name="form-confirm-road" method="post"
+            action="/shop/proc/popup_address_bridge.php">
+            <input type="hidden" name="gubun" id="gubun" value="">
+            <input type="hidden" name="s_type" id="s_type" value="road">
+            <input name="road_address" id="road_address" type="hidden" value="경기 성남시 분당구 판교로 20 (판교원마을3단지아파트)">
+            <input name="ground_address" id="ground_address" type="hidden" value="경기 성남시 분당구 판교동 629">
+            <input name="zipcode1" id="zipcode1" type="hidden" value="">
+            <input name="zipcode2" id="zipcode2" type="hidden" value="">
+            <input name="zonecode" id="zonecode" type="hidden" value="13485">
+            <div class="filed filed_zipcode1">
+              <input class="inp" type="text" id="zonecode_text" readonly="readonly" disabled="disabled">
+            </div>
+            <div class="filed filed_zipcode2" style="display: none;">
+              <input class="inp" type="text" id="zipcode1_text" readonly="readonly" disabled="disabled">
+              <span class="bar"><span class="in_bar"></span></span>
+              <input class="inp" type="text" id="zipcode2_text" readonly="readonly" disabled="disabled">
+            </div>
+            <div class="filed">
+              <input class="inp" type="text" id="ground_address_text" readonly="readonly" disabled="disabled">
+            </div>
+            <div class="filed">
+              <input id="address_sub" class="inp" name="address_sub" type="text" placeholder="나머지 주소를 입력해주세요."
+                style="ime-mode:auto;">
+            </div>
+            <div class="filed">
+              <button type="submit" class="btn_type1"><span class="txt_type">주소입력</span></button>
+            </div>
+          </form>
+        </div>
+        <div class="no_delivery">
+          <div class="inner_no">
+            <h2 class="tit">
+              <span class="ico">샛별배송 지역 중 배송 불가 장소 안내</span>
+              <span class="desc">관공서/ 학교/ 병원/ 시장/ 공단 지역/ 산간 지역/ 백화점 등</span>
+              <button type="button" class="btn on">자세히 보기<span class="ico"></span></button>
+            </h2>
+            <ul class="list" style="display: block;">
+              <li>가락동농수산물도매시장</li>
+              <li>가락동농수산물시장</li>
+              <li>가천대학교</li>
+              <li>고려대학교안암캠퍼스</li>
+              <li>고매동 일부(일부지역만 배송가능)</li>
+              <li>국립중앙박물관</li>
+              <li>국민대학교</li>
+              <li>덕성여자대학교</li>
+              <li>덕양구 신원동 일부(일부지역만 배송가능)</li>
+              <li>도내동 일부(원흥지구만 배송가능)</li>
+              <li>동덕여자대학교</li>
+              <li>반월특수지구</li>
+              <li>서경대학교</li>
+              <li>서울사이버대학교</li>
+              <li>서울시립대학교</li>
+              <li>서울여자대학교</li>
+              <li>성균관대학교</li>
+              <li>성신여자대학교</li>
+              <li>세종대학교</li>
+              <li>연세대학교</li>
+              <li>이화여자대학교</li>
+              <li>한국외국어대학교</li>
+              <li>홍익대학교</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
     <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
     <script charset="UTF-8" type="text/javascript"
       src="//t1.daumcdn.net/postcode/api/core/210128/1611810131757/210128.js"></script>
@@ -191,79 +265,9 @@
         });
       });
     </script>
-    <div class="address_search" style="display: block;">
-      <div class="layer_prev"><img src="../../img/join_zipCode/ico_prev_333_100x100.webp" alt="" class="ico"><span
-          class="tit">주소 재검색</span></div>
-      <div class="inner_address">
-        <h1 class="screen_out">주소찾기</h1>
-        <div class="filed_address">
-          <form id="road-address-confirm" name="form-confirm-road" method="post"
-            action="/shop/proc/popup_address_bridge.php">
-            <input type="hidden" name="gubun" id="gubun" value="">
-            <input type="hidden" name="s_type" id="s_type" value="road">
-            <input name="road_address" id="road_address" type="hidden" value="경기 성남시 분당구 판교로 20 (판교원마을3단지아파트)">
-            <input name="ground_address" id="ground_address" type="hidden" value="경기 성남시 분당구 판교동 629">
-            <input name="zipcode1" id="zipcode1" type="hidden" value="">
-            <input name="zipcode2" id="zipcode2" type="hidden" value="">
-            <input name="zonecode" id="zonecode" type="hidden" value="13485">
-            <div class="filed filed_zipcode1">
-              <input class="inp" type="text" id="zonecode_text" readonly="readonly" disabled="disabled">
-            </div>
-            <div class="filed filed_zipcode2" style="display: none;">
-              <input class="inp" type="text" id="zipcode1_text" readonly="readonly" disabled="disabled">
-              <span class="bar"><span class="in_bar"></span></span>
-              <input class="inp" type="text" id="zipcode2_text" readonly="readonly" disabled="disabled">
-            </div>
-            <div class="filed">
-              <input class="inp" type="text" id="ground_address_text" readonly="readonly" disabled="disabled">
-            </div>
-            <div class="filed">
-              <input id="address_sub" class="inp" name="address_sub" type="text" placeholder="나머지 주소를 입력해주세요."
-                style="ime-mode:auto;">
-            </div>
-            <div class="filed">
-              <button type="submit" class="btn_type1"><span class="txt_type">주소입력</span></button>
-            </div>
-          </form>
-        </div>
-        <div class="no_delivery">
-          <div class="inner_no">
-            <h2 class="tit">
-              <span class="ico">샛별배송 지역 중 배송 불가 장소 안내</span>
-              <span class="desc">관공서/ 학교/ 병원/ 시장/ 공단 지역/ 산간 지역/ 백화점 등</span>
-              <button type="button" class="btn on">자세히 보기<span class="ico"></span></button>
-            </h2>
-            <ul class="list" style="display: block;">
-              <li>가락동농수산물도매시장</li>
-              <li>가락동농수산물시장</li>
-              <li>가천대학교</li>
-              <li>고려대학교안암캠퍼스</li>
-              <li>고매동 일부(일부지역만 배송가능)</li>
-              <li>국립중앙박물관</li>
-              <li>국민대학교</li>
-              <li>덕성여자대학교</li>
-              <li>덕양구 신원동 일부(일부지역만 배송가능)</li>
-              <li>도내동 일부(원흥지구만 배송가능)</li>
-              <li>동덕여자대학교</li>
-              <li>반월특수지구</li>
-              <li>서경대학교</li>
-              <li>서울사이버대학교</li>
-              <li>서울시립대학교</li>
-              <li>서울여자대학교</li>
-              <li>성균관대학교</li>
-              <li>성신여자대학교</li>
-              <li>세종대학교</li>
-              <li>연세대학교</li>
-              <li>이화여자대학교</li>
-              <li>한국외국어대학교</li>
-              <li>홍익대학교</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  
+
+
+
   
     <script type="text/javascript" src="/asset/js/useKurly/libText.bundle.js"></script>
     <script>
