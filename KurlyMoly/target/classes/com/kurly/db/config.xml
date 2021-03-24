@@ -8,19 +8,19 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/jspstudy"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/kurlymoly"/>
         <property name="username" value="root"/>
         <property name="password" value="1234"/>
       </dataSource>
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/koreait/db/notice.xml"/> <!-- 여기에 sql 몰아주기 -->
-    <mapper resource="com/koreait/db/event.xml"/>
-    <mapper resource="com/koreait/db/inquiry.xml"/>
-    <mapper resource="com/koreait/db/member.xml"/>
-    <mapper resource="com/koreait/db/order.xml"/>
-    <mapper resource="com/koreait/db/product.xml"/>
-    <mapper resource="com/koreait/db/review.xml"/>
+    <mapper resource="com/kurly/db/notice.xml"/> <!-- 여기에 sql 몰아주기 -->
+    <mapper resource="com/kurly/db/event.xml"/>
+    <mapper resource="com/kurly/db/inquiry.xml"/>
+    <mapper resource="com/kurly/db/member.xml"/>
+    <mapper resource="com/kurly/db/order.xml"/>
+    <mapper resource="com/kurly/db/product.xml"/>
+    <mapper resource="com/kurly/db/review.xml"/>
   </mappers>
 </configuration>

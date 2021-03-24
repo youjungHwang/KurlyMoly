@@ -10,7 +10,7 @@ public class Dbconn {
 		Connection conn= null;
 		
 		try {
-			String url = "jdbc:mysql://localhost:3306/jspstudy";
+			String url = "jdbc:mysql://localhost:3306/kurlymoly";
 			String uid = "root";
 			String upw = "1234";
 			

@@ -12,7 +12,7 @@ public class SqlMapConfig {
    // 메모리에 미리 올라가는, '한번만 실행되는' 초기화 블럭
    static {
       try {
-         String resource = "com/koreait/db/config.xml";
+         String resource = "com/kurly/db/config.xml";
          Reader reader = Resources.getResourceAsReader(resource);
          sqlsession = new SqlSessionFactoryBuilder().build(reader);
       } catch (Exception e) {
