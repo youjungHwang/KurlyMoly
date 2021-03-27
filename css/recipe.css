@@ -1,11 +1,4 @@
-@charset "utf-8"; /* 한글이 깨지지 않도록 선언 */
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap'); /* font-family: 'Nanum Gothic', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap'); /* font-family: 'Noto Sans KR', sans-serif; */
-
-html[Attributes Style] {
-    -webkit-locale: "ko";
-}
 /* body, input, select, textarea, button {
     font-family: noto sans,malgun gothic,AppleGothic,dotum;
     line-height: 1;
@@ -15,24 +8,7 @@ html[Attributes Style] {
 } */
 #wrap {color: #646464;} 
 .tit_recipe {color: #646464; font-weight: bold;}
-head {
-    display: none;
-}
-meta {
-    display: none;
-}
-title {
-    display: none;
-}
-script {
-    display: none;
-}
-link {
-    display: none;
-}
-style {
-    display: none;
-}
+
 
 /* body, input, select, textarea, button { font-family: dotum; }
 body, input, select, textarea, button {
@@ -50,10 +26,10 @@ body, input, select, textarea, button {
 b, strong {
     font-weight: 700;
 }
-a:-webkit-any-link {
+/* a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
-}
+} */
 #main {
     border-bottom: 1px solid #f7f7f7;
 }
@@ -72,11 +48,11 @@ body, input, select, textarea, button {
 #recipe.wrap {
     padding: 30px 29px;
 }
-table[Attributes Style] {
+/* table[Attributes Style] {
     width: 100%;
     margin-inline-start: auto;
     margin-inline-end: auto;
-}
+} */
 form {
     display: block;
     margin-top: 0em;
@@ -110,10 +86,10 @@ input[type="hidden" i] {
 #recipe_table .recipe_tr td {
     margin-left: 30px;
 }
-td[Attributes Style] {
+/* td[Attributes Style] {
     text-align: -webkit-left;
     vertical-align: top;
-}
+} */
 td {
     display: table-cell;
     vertical-align: inherit;
@@ -127,11 +103,11 @@ td {
 #recipe .recipe_item img {
     border-bottom: 1px solid #f4f4f4;
 }
-img[Attributes Style] {
+/* img[Attributes Style] {
     width: 480px;
     aspect-ratio: auto 480 / 480;
     height: 480px;
-}
+} */
 a { color: inherit;}
 #recipe .recipe_item .tit_recipe {
     width: 480px;
