@@ -190,3 +190,17 @@ input[type="checkbox" i] {
 #layerDSR .dsr_desc .emph {
     font-weight: 700;
 }
+#content {
+    padding-bottom: 120px;
+}
+
+/* #footer {
+    height: 400px;
+} */
+/* .footer_link {
+    height: 80px;
+    padding-bottom: 20px;
+} */
+/* #footer {
+    padding-bottom: 50px;
+} */
