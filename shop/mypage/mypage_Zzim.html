@@ -906,43 +906,22 @@
                                             <span class="tit_sub">늘 사는 것으로 등록하신 상품 목록 입니다</span>
                                         </h2>
                                     </div>
-                                    
                                     <form name="Zzimlist" method="POST">
                                         <input type="hidden" name="mode">
                                         <table id="Z_list">
                                             <thead>
                                                 <tr>
-                                                    <th>
-                                                        <label class="label_check all_check">
-                                                            <input type="checkbox" name="selectall" class="icon_check" onclick="checkAll(this)" onchange="" >
-                                                            <i class="check_ico th_ico"></i>
+                                                    <th><label class="label_check"><input type="checkbox" name="all_checked" class="icon_check"></label></th>
 
-
-                                                            <!--  스크립트 구상 
-                                                                const checkboxes 
-                                                                        = document.querySelectorAll('.DEL');
-                                                                if(checkboxes.lenght == 0){
-                                                                    $('.th_ico').CSS("background, url(/img/mypage/ico_checkbox_off.webp) no-repeat 0 2px")
-                                                                }
-                                                            -->
-                                                                    
-
-                                                        </label>
-                                                    </th>
                                                     <th><span class="screen_out">상품이미지</span></th>
                                                     <th>상품정보</th>
                                                     <th>선택</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="DEl">
-                                                    
-                                                    <td>
-                                                        <label class="label_check">
-                                                            <input type="checkbox" name="check" class="icon_check" onclick='checkSelectAll()'>
-                                                            <i class="check_ico"></i>
-                                                        </label>
-                                                    </td>
+                                                <tr>
+                                                    <!---------------------------------------  체크 기능 아직 적용 x 아마 스크립트이용해야할듯------------------->
+                                                    <td><label class="label_check"><input type="checkbox" name="all_checked" class="icon_check"></label></td>
                                                     <td class="thumb"><a href=""><img src="../../img/mypage/상품이미지.webp" width="126" alt=""></a></td>
                                                     <td class="info">
                                                         <div class="name">
@@ -956,44 +935,18 @@
                                                     <td>
                                                         <div class="group_btn">
                                                             <!-- 온클릭안쪽은 일단 비워둠 -->
-                                                            <button type="button" onclick="" class="btn btn_posi">장바구니 담기</button>
-                                                            <button type="button"  class="btn btn_nega solo" >삭제</button>
+                                                            <button type="button" onclick="" class="btn btn_posi">장바구니
+                                                                담기</button>
+                                                            <button type="button" onclick=""
+                                                                class="btn btn_nega">삭제</button>
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr class="DEl">
-                                                    
-                                                    <td>
-                                                        <label class="label_check">
-                                                            <input type="checkbox" name="check" class="icon_check">
-                                                            <i class="check_ico"></i>
-                                                        </label>
-                                                    </td>
-                                                    <td class="thumb"><a href=""><img src="../../img/mypage/상품이미지.webp" width="126" alt=""></a></td>
-                                                    <td class="info">
-                                                        <div class="name">
-                                                            <a href="">[칠갑농산] 우리쌀 국수 멸치맛</a>
-                                                        </div>
-                                                        <dl>
-                                                            <dt class="screen_out">상품가격</dt>
-                                                            <dd>150,860원</dd>
-                                                        </dl>
-                                                    </td>
-                                                    <td>
-                                                        <div class="group_btn">
-                                                            <!-- 온클릭안쪽은 일단 비워둠 -->
-                                                            <button type="button" onclick="" class="btn btn_posi">장바구니 담기</button>
-                                                            <button type="button" class="btn btn_nega solo">삭제</button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="DEl">
-                                                    <td>
-                                                        <label class="label_check">
-                                                            <input type="checkbox" name="check"  class="icon_check" onclick='checkSelectAll()'>
-                                                            <i class="check_ico"></i>
-                                                        </label>
-                                                    </td>
+                                                <tr>
+                                                    <td><label class="label_check">
+                                                            <input type="checkbox" name="all_checked"
+                                                                class="icon_check">
+                                                        </label></td>
                                                     <td class="thumb"><a href=""><img src="../../img/mypage/상품이미지.webp"
                                                                 width="126" alt=""></a></td>
                                                     <td class="info">
@@ -1008,109 +961,18 @@
                                                     <td>
                                                         <div class="group_btn">
                                                             <!-- 온클릭안쪽은 일단 비워둠 -->
-                                                            <button type="button"  class="btn btn_posi" >장바구니 담기</button>
-                                                            <button type="button"  class="btn btn_nega solo">삭제</button>
+                                                            <button type="button" onclick="" class="btn btn_posi">장바구니
+                                                                담기</button>
+                                                            <button type="button" onclick=""
+                                                                class="btn btn_nega">삭제</button>
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <script>
-                                                    $('.btn_posi').on('click',function () {
-                                                        $('.bg_loading').css("display","block")
-                                                        $('.cartList').css("opacity","1")
-                                                    })
-                                                </script>
-                                                <tr class="hasNone">
-                                                    <td class="no_data" colspan="4">늘 사는 상품 내역이 없습니다.</td>
-                                                    </tr>
-                                                    
-                                                    <script> 
-                                                        // 찜목록에 아무것도 없을 때
-                                                        $(document).ready(function() {
-                                                            const forLength 
-                                                            = document.querySelectorAll('input[name="check"]');
-                                                            if(forLength.length == 0){
-                                                                $('.hasNone').css("display" , "table-row")
-                                                            }
-                                                        })
-                                                    </script>
-
-
-                                                <script>
-                                                            // 삭제버튼 스크립트
-                                                        $(document).ready(function(){
-                                                            $('.solo').on('click', function(e){
-                                                            $(this).parentsUntil("tbody").remove()
-
-                                                            const forLength 
-                                                            = document.querySelectorAll('input[name="check"]');
-                                                            if(forLength.length == 0){
-                                                                $('.hasNone').css("display" , "table-row")
-                                                            }
-                                                        })
-                                                        })
-                                                </script>
-                                                
-                                                <script>
-                                                    function deleteChecked() {
-                                                        const CH 
-                                                            = document.querySelectorAll('input[name="check"]:checked');
-                                                        
-                                                        $('input:checkbox[name="check"]').each(function() {
-                                                        if (this.checked){
-                                                                var $li_id = $(this).parent().parent().parent();
-                                                                $li_id.remove(); // 삭제하기
-                                                        }
-                                                        });
-                                                        if(!CH.length>0){
-                                                            alert("선택한 항목이 없습니다!")
-                                                        }
-                                                        $("input[type=checkbox]").prop("checked", false);
-
-
-                                                        const forLength 
-                                                            = document.querySelectorAll('input[name="check"]');
-                                                            if(forLength.length == 0){
-                                                                $('.hasNone').css("display" , "table-row")
-                                                            }
-                                                        
-                                                    }  
-                                                </script>
-                                                
-                                                <script>
-                                                        function checkSelectAll()  {
-                                                        // 전체 체크박스
-                                                        const checkboxes 
-                                                            = document.querySelectorAll('input[name="check"]');
-                                                        // 선택된 체크박스
-                                                        const checked 
-                                                            = document.querySelectorAll('input[name="check"]:checked');
-                                                        // select all 체크박스
-                                                        const selectAll 
-                                                            = document.querySelector('input[name="selectall"]');
-
-                                                        if(checkboxes.length === checked.length)  {
-                                                            selectAll.checked = true;
-                                                            
-                                                        }else {
-                                                            selectAll.checked = false;
-                                                            
-                                                        }
-
-                                                        }
-                                                        function checkAll(selectAll)  {
-                                                        const checkboxes 
-                                                            = document.getElementsByName('check');
-                                                        checkboxes.forEach((checkbox) => {
-                                                            checkbox.checked = selectAll.checked
-                                                        })
-                                                        }
-                                                </script>
-                                                
                                             </tbody>
                                         </table>
                                         <div class="group_btn  bot_btn">
                                             <div class="inner_groupbtn">
-                                                <button type="button"  onclick="deleteChecked()" class="btn btn_nega Zzim">늘 사는 것
+                                                <button type="button" onclick="" class="btn btn_nega Zzim">늘 사는 것
                                                     비우기</button>
                                                 <span class="space"></span>
                                             </div>
@@ -1230,65 +1092,6 @@
         </footer>
         </footer>
         <!-- footer 종료 -->
-    </div>
-    <div class="bg_loading" id="bgLoading" style="display: none;">
-        <div class="loading_show"></div>
-    </div>
-    <div id="cartPut">
-        <div class="cart_option cartList cart_type3" style="opacity: 0;">
-            <div class="inner_option">
-                <button type="button" class="btn_close1">레이어닫기</button> <!----> 
-                <div class="in_option">
-                    <div class="list_goods"><!----> <!----> <!----> 
-                        <ul class="list list_nopackage">
-                            <li class="on">
-                                <span class="btn_position">
-                                    <button type="button" class="btn_del">
-                                        <span class="txt">삭제하기</span>
-                                    </button>
-                                </span>
-                                <span class="name"><!---->[칠갑농산] 우리쌀 국수 멸치맛<!----></span> <!----> 
-                                <div class="option">
-                                    <span class="count">
-                                            <button type="button" class="btn down on">수량내리기</button> 
-                                            <input type="number" readonly="readonly" onfocus="this.blur()" class="inp"> 
-                                            <button type="button" class="btn up on">수량올리기</button>
-                                    </span> 
-                                    <span class="price">
-                                        <span class="dc_price">150,860원</span> 
-                                        <!-- <span class="original_price">150,860원</span> -->
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> 
-                    <div class="total">
-                        <div class="price">
-                            <strong class="tit">합계</strong> <!----> <span class="sum"><span class="num"> 150,860</span> <span class="won">원</span></span>
-                        </div> 
-                        <p class="txt_point">
-                            <span class="ico">적립</span> <!----> 
-                            <span class="point">구매 시<strong class="emph">754원 적립</strong></span>
-                        </p>
-                    </div>
-                </div> 
-                <div class="group_btn off layer_btn2"><!----> <!---->
-                    <span class="btn_type2">
-                        <button type="button" class="txt_type cancle" onclick="">취소</button>
-                    </span> 
-                    <span class="btn_type1">
-                        <button type="button" class="txt_type" onclick="">장바구니 담기</button> <!---->
-                    </span> <!---->
-                </div>
-                <script>
-                    $('.cancle').on('click',function () {
-                        $('.bg_loading').css("display","none")
-                        $('.cartList').css("opacity","0")
-                    })
-                </script>
-            </div>
-        </div> 
-        
     </div>
     <!-- container 종료 -->
 

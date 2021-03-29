@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script language="JavaScript">
+ function loginCheck(){
+  var f = document.loginForm;
+  //var f = document.forms[0];
+  //var f = document.forms["loginForm"];  
+  if(f.id.value == ""){
+   alert("아이디를 입력해 주세요.");
+   f.id.focus();
+   return false;
+  }
+  
+  if(f.pw.value == ""){
+   alert("비밀번호를 입력해 주세요.");
+   f.pw.focus();
+   return false;
+  }
+  return true;
+ }
+</script>
+<body>
+<form action="" name="loginForm" onSubmit="return loginCheck();" method="get" autocomplete="off">
+ <table border="0">
+  <tr>
+   <td align="center">아이디</td>
+   <td><input type="text" name="id"></td>
+  </tr>
+  <tr>
+   <td  align="center">비밀번호</td>
+   <td><input type="password" name="pw"></td>
+  </tr>
+  <tr >
+   <td colspan="2" align="center"><input type="submit" value="전송"><input type="reset" value="취소"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
+</body>
+</html>

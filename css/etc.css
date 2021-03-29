@@ -1,0 +1,161 @@
+/* 본 css 파일은  
+
+회사소개, 
+레시피, 레시피 상세페이지, 
+상품문의글 작성페이지, 
+마이페이지의 주문내역 상세페이지, 
+탈퇴하기 등의 추가된 html의 css 입니다.
+
+*/
+
+#content {
+    min-width: 1050px;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+
+
+
+/* ======================================== 회원탈퇴 페이지 시작 ======================================== */
+.member_hack .info {
+    padding-top: 20px;
+    font-size: 14px;
+    color: #666;
+    line-height: 22px;
+}
+
+.member_hack .info .emph {
+    display: block;
+    padding: 19px 0 12px;
+    color: #5f0080;
+}
+
+/* ↓ .member_join th의 내용이 삭제시 회원탈퇴 페이지 메인내용이 틀어집니다! 수정금지! */
+.member_join th {
+    width: 159px;
+    padding: 20px 0 0 20px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left;
+}
+
+
+.member_hack textarea {
+    width: 100%;
+}
+
+.type_form textarea {
+    height: auto;
+    padding-top: 13px;
+    resize: none;
+}
+
+.member_join .form_footer {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.type_form .btn.default {
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    color: #5f0080;
+}
+
+.type_form .btn.active {
+    border: 1px solid #5f0081;
+    background-color: #5f0080;
+    color: #fff;
+}
+
+.member_join .btn {
+    display: inline-block;
+    width: 120px !important;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+.type_form .btn {
+    /* display: block; */
+    width: 30%;
+    height: 44px;
+    border: 0;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none;
+}
+
+
+/* ======================================== 컬리소개 페이지 시작 ======================================== */
+.introduce_kurly .about_navi {
+    width: 1050px;
+    margin: 0 auto 20px;
+}
+
+.introduce_kurly .about_navi .opt_kurly {
+    position: relative;
+    float: left;
+}
+
+.select_hide .select_selected {
+    background-color: #fff;
+    color: #514859;
+}
+
+.selection {
+    position: relative;
+    width: 310px;
+}
+
+
+.select_selected {
+    cursor: pointer;
+    border: 1px solid #e3e3e3;
+    font-size: 14px;
+    height: 44px;
+    line-height: 43px;
+    padding: 0 12px;
+    background-color: #f3f2f4;
+    color: #512772;
+}
+
+.select_hide .select_selected:after {
+    border-top-color: #1dcdbc;
+    background: url(https://res.kurly.com/images/event/introduce/0720/pc/btn_off.png);
+}
+
+.select_selected:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    background: url(https://res.kurly.com/images/event/introduce/0720/pc/btn_on.png);
+    content: '';
+}
+
+.introduce_kurly .about_navi .navi_kurly {
+    float: right;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.introduce_kurly .info_navi {
+    overflow: hidden;
+}
+
+.introduce_kurly .about_navi:after {
+    content: "";
+    display: block;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+}
+

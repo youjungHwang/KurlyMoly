@@ -1,13 +1,10 @@
 <!-- 회원가입 - 우편번호 팝업창(CSS를 포함한 페이지입니다.)-->
+
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- <script type="text/javascript" src="/shop/lib/js/jquery-1.10.2.min.js"></script> 확실하지 않아서 주석처리함. 차후 확인후 삭제예정  -->
-  <!-- <script type="text/javascript" src="/shop/lib/js/jquery-1.10.2.min.js"></script> -->
+<html lang="ko"><head>
+  <meta id="meta-charset" http-equiv="Content-Type" content="text/html; charset=euc-kr" charset="UTF-8">
+  <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+  <script type="text/javascript" src="/shop/lib/js/jquery-1.10.2.min.js"></script>
   <style type="text/css">
         /* reset */
         body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}
@@ -69,119 +66,29 @@
         .no_delivery .btn{height:36px;padding-top:16px;border:0 none;background:none;font-size:12px;color:#999;line-height:20px}
         .no_delivery .btn .ico{display:inline-block;width:20px;height:20px;background:url(../../img/join_zipCode/ico_arrow_999_40x40.webp) no-repeat 50% 50%;background-size:20px 20px;vertical-align:-5px}
         .no_delivery .btn.on .ico{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);-o-transform:rotate(-180deg);transform:rotate(-180deg)}
-        .no_delivery .list{display:none;padding-top:30px }
-        
+        .no_delivery .list{display:none;padding-top:30px}
         .no_delivery .list li{font-size:12px;color:#666;line-height:17px}
         .no_delivery .list li:last-child{padding-bottom:20px}
       </style>
-</head>
+  </head>
   <body style="">
-    <div class="header_close"></div>
-    <div id="wrap" style="height: 2010px; display: none;">
-      <div id="__daum__layer_1"
-        style="position: relative; width: 100%; height: 100%; background-color: rgb(255, 255, 255); z-index: 0; overflow: hidden; min-width: 300px; margin: 0px; padding: 0px;">
-        <iframe frameborder="0" src="about:blank"
-          style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; border: 0px none; margin: 0px; padding: 0px; overflow: hidden; min-width: 300px;"></iframe>
-      </div>
-    </div>
-
-    <div class="address_search" style="display: block;">
-      <div class="layer_prev"><img src="../../img/join_zipCode/ico_prev_333_100x100.webp" alt="" class="ico"><span
-          class="tit">주소 재검색</span></div>
-      <div class="inner_address">
-        <h1 class="screen_out">주소찾기</h1>
-        <div class="filed_address">
-          <form id="road-address-confirm" name="form-confirm-road" method="post"
-            action="/shop/proc/popup_address_bridge.php">
-            <input type="hidden" name="gubun" id="gubun" value="">
-            <input type="hidden" name="s_type" id="s_type" value="road">
-            <input name="road_address" id="road_address" type="hidden" value="경기 성남시 분당구 판교로 20 (판교원마을3단지아파트)">
-            <input name="ground_address" id="ground_address" type="hidden" value="경기 성남시 분당구 판교동 629">
-            <input name="zipcode1" id="zipcode1" type="hidden" value="">
-            <input name="zipcode2" id="zipcode2" type="hidden" value="">
-            <input name="zonecode" id="zonecode" type="hidden" value="13485">
-            <div class="filed filed_zipcode1">
-              <input class="inp" type="text" id="zonecode_text" readonly="readonly" disabled="disabled">
-            </div>
-            <div class="filed filed_zipcode2" style="display: none;">
-              <input class="inp" type="text" id="zipcode1_text" readonly="readonly" disabled="disabled">
-              <span class="bar"><span class="in_bar"></span></span>
-              <input class="inp" type="text" id="zipcode2_text" readonly="readonly" disabled="disabled">
-            </div>
-            <div class="filed">
-              <input class="inp" type="text" id="ground_address_text" readonly="readonly" disabled="disabled">
-            </div>
-            <div class="filed">
-              <input id="address_sub" class="inp" name="address_sub" type="text" placeholder="나머지 주소를 입력해주세요."
-                style="ime-mode:auto;">
-            </div>
-            <div class="filed">
-              <button type="submit" class="btn_type1"><span class="txt_type">주소입력</span></button>
-            </div>
-          </form>
-        </div>
-        <div class="no_delivery">
-          <div class="inner_no">
-            <h2 class="tit">
-              <span class="ico">샛별배송 지역 중 배송 불가 장소 안내</span>
-              <span class="desc">관공서/ 학교/ 병원/ 시장/ 공단 지역/ 산간 지역/ 백화점 등</span>
-              <button class="btn on" ><span class="ico"></span></button>
-              <label class="detail" style="z-index: 9999;">자세히 보기</label>
-            </h2>
-            <script type="text/javascript">
-              $('.no_delivery .detail').on('click',function () {
-                  $(this).addClass('fuck');
-                  
-              });
-              </script>
-            <ul class="list">
-              <li>가락동농수산물도매시장</li>
-              <li>가락동농수산물시장</li>
-              <li>가천대학교</li>
-              <li>고려대학교안암캠퍼스</li>
-              <li>고매동 일부(일부지역만 배송가능)</li>
-              <li>국립중앙박물관</li>
-              <li>국민대학교</li>
-              <li>덕성여자대학교</li>
-              <li>덕양구 신원동 일부(일부지역만 배송가능)</li>
-              <li>도내동 일부(원흥지구만 배송가능)</li>
-              <li>동덕여자대학교</li>
-              <li>반월특수지구</li>
-              <li>서경대학교</li>
-              <li>서울사이버대학교</li>
-              <li>서울시립대학교</li>
-              <li>서울여자대학교</li>
-              <li>성균관대학교</li>
-              <li>성신여자대학교</li>
-              <li>세종대학교</li>
-              <li>연세대학교</li>
-              <li>이화여자대학교</li>
-              <li>한국외국어대학교</li>
-              <li>홍익대학교</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
-    <script charset="UTF-8" type="text/javascript"
-      src="//t1.daumcdn.net/postcode/api/core/210128/1611810131757/210128.js"></script>
-    <script type="text/javascript">
+  <div class="header_close"></div>
+  <div id="wrap" style="height: 2010px; display: none;"><div id="__daum__layer_1" style="position: relative; width: 100%; height: 100%; background-color: rgb(255, 255, 255); z-index: 0; overflow: hidden; min-width: 300px; margin: 0px; padding: 0px;"><iframe frameborder="0" src="about:blank" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; border: 0px none; margin: 0px; padding: 0px; overflow: hidden; min-width: 300px;"></iframe></div></div>
+  <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script><script charset="UTF-8" type="text/javascript" src="//t1.daumcdn.net/postcode/api/core/210128/1611810131757/210128.js"></script>
+  <script type="text/javascript">
       // 우편번호 찾기 찾기 화면을 넣을 element
-      $(document).ready(function () {
+      $(document).ready(function(){
         var element_wrap = document.getElementById('wrap');
-
+  
         // 현재 scroll 위치를 저장해놓는다.
         var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
         new daum.Postcode({
-          maxSuggestItems: 5, //목록갯수
+          maxSuggestItems : 5, //목록갯수
           hideMapBtn: true, //지도보기 버튼
           hideEngBtn: true, //영문보기 버튼
-          oncomplete: function (data) {
+          oncomplete: function(data) {
             $('.address_search').show();
-            $('html,body').animate({ 'scrollTop': 0 }, 300);
+            $('html,body').animate({'scrollTop' : 0}, 300);
             $('#wrap').hide();
             /*
             // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -207,12 +114,12 @@
             fullRoadAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
             fullJibunAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
             */
-
+  
             var addr = (data.userSelectedType === 'R') ? data.roadAddress : data.jibunAddress; // 사용자가 선택한  주소 (지번 또는 도로명)
             var extraAddr = ''; // 참고항목 변수
             var fullRoadAddr = data.roadAddress || data.autoRoadAddress;
             var fullJibunAddr = data.jibunAddress || data.autoJibunAddress;
-
+  
             // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
             if (data.buildingName !== '') {
               extraAddr = ' (' + data.buildingName + ')';
@@ -222,23 +129,23 @@
               addr += extraAddr;
             }
             fullRoadAddr += extraAddr;
-
-
-            if (data.userSelectedType === 'R') {
+  
+  
+            if(data.userSelectedType === 'R') {
               $('#s_type').val('road');
               $(".filed_zipcode1").show();
               $(".filed_zipcode2").hide();
             } else {
-              if (data.postcode1 == "") {
+              if(data.postcode1 == ""){
                 $(".filed_zipcode1").show();
                 $(".filed_zipcode2").hide();
-              } else {
+              }else{
                 $(".filed_zipcode1").hide();
                 $(".filed_zipcode2").show();
               }
               $('#s_type').val('zipcode');
             }
-
+  
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             $('#zonecode, #zonecode_text').val(data.zonecode);
             $('#zipcode1, #zipcode1_text').val(data.postcode1);
@@ -246,54 +153,118 @@
             $('#ground_address').val(fullJibunAddr);
             $('#road_address').val(fullRoadAddr);
             $('#ground_address_text').val(addr);
-
+  
             // iframe을 넣은 element를 안보이게 한다.
             // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
             //element_wrap.style.display = 'none';
-
+  
             // 우편번호 찾기 화면이 보이기 이전으로 scroll 위치를 되돌린다.
             document.body.scrollTop = currentScroll;
           },
           // 우편번호 찾기 화면 크기가 조정되었을때 실행할 코드를 작성하는 부분. iframe을 넣은 element의 높이값을 조정한다.
-          onresize: function (size) {
-            element_wrap.style.height = size.height + 'px';
+          onresize : function(size) {
+            element_wrap.style.height = size.height+'px';
           },
-          width: '100%',
-          height: '100%'
-        }).embed(element_wrap, { q: '', autoClose: false });
-
+          width : '100%',
+          height : '100%'
+        }).embed(element_wrap,{q:'',autoClose:false});
+  
         // 배송불가지역
-        $('.no_delivery .btn').on('click', function (e) {
+        $('.no_delivery .btn').on('click',function(e){
           $(this).toggleClass('on');
           $('.no_delivery .list').slideToggle('fast');
         });
-        $('.layer_prev').on('click', function (e) {
+        $('.layer_prev').on('click',function(e){
           $('.address_search').hide();
           $('#wrap').show();
         });
       });
     </script>
+  <div class="address_search" style="display: block;">
+  <div class="layer_prev"><img src="../../img/join_zipCode/ico_prev_333_100x100.webp" alt="" class="ico"><span class="tit">주소 재검색</span></div>
+  <div class="inner_address">
+  <h1 class="screen_out">주소찾기</h1>
+  <div class="filed_address">
+  <form id="road-address-confirm" name="form-confirm-road" method="post" action="/shop/proc/popup_address_bridge.php">
+  <input type="hidden" name="gubun" id="gubun" value="">
+  <input type="hidden" name="s_type" id="s_type" value="road">
+  <input name="road_address" id="road_address" type="hidden" value="경기 성남시 분당구 판교로 20 (판교원마을3단지아파트)">
+  <input name="ground_address" id="ground_address" type="hidden" value="경기 성남시 분당구 판교동 629">
+  <input name="zipcode1" id="zipcode1" type="hidden" value="">
+  <input name="zipcode2" id="zipcode2" type="hidden" value="">
+  <input name="zonecode" id="zonecode" type="hidden" value="13485">
+  <div class="filed filed_zipcode1">
+  <input class="inp" type="text" id="zonecode_text" readonly="readonly" disabled="disabled">
+  </div>
+  <div class="filed filed_zipcode2" style="display: none;">
+  <input class="inp" type="text" id="zipcode1_text" readonly="readonly" disabled="disabled">
+  <span class="bar"><span class="in_bar"></span></span>
+  <input class="inp" type="text" id="zipcode2_text" readonly="readonly" disabled="disabled">
+  </div>
+  <div class="filed">
+  <input class="inp" type="text" id="ground_address_text" readonly="readonly" disabled="disabled">
+  </div>
+  <div class="filed">
+  <input id="address_sub" class="inp" name="address_sub" type="text" placeholder="나머지 주소를 입력해주세요." style="ime-mode:auto;">
+  </div>
+  <div class="filed">
+  <button type="submit" class="btn_type1"><span class="txt_type">주소입력</span></button>
+  </div>
+  </form>
+  </div>
+  <div class="no_delivery">
+  <div class="inner_no">
+  <h2 class="tit">
+  <span class="ico">샛별배송 지역 중 배송 불가 장소 안내</span>
+  <span class="desc">관공서/ 학교/ 병원/ 시장/ 공단 지역/ 산간 지역/ 백화점 등</span>
+  <button type="button" class="btn on">자세히 보기<span class="ico"></span></button>
+  </h2>
+  <ul class="list" style="display: block;">
+  <li>가락동농수산물도매시장</li>
+  <li>가락동농수산물시장</li>
+  <li>가천대학교</li>
+  <li>고려대학교안암캠퍼스</li>
+  <li>고매동 일부(일부지역만 배송가능)</li>
+  <li>국립중앙박물관</li>
+  <li>국민대학교</li>
+  <li>덕성여자대학교</li>
+  <li>덕양구 신원동 일부(일부지역만 배송가능)</li>
+  <li>도내동 일부(원흥지구만 배송가능)</li>
+  <li>동덕여자대학교</li>
+  <li>반월특수지구</li>
+  <li>서경대학교</li>
+  <li>서울사이버대학교</li>
+  <li>서울시립대학교</li>
+  <li>서울여자대학교</li>
+  <li>성균관대학교</li>
+  <li>성신여자대학교</li>
+  <li>세종대학교</li>
+  <li>연세대학교</li>
+  <li>이화여자대학교</li>
+  <li>한국외국어대학교</li>
+  <li>홍익대학교</li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  </div>
   
-    <script type="text/javascript" src="/asset/js/useKurly/libText.bundle.js"></script>
-    <script>
-      $('#road-address-confirm button[type=submit]').on('click', function (e) {
-        e.preventDefault();
-        if (_chkInputStr('address_sub', '나머지 주소')) {
-          $('#road-address-confirm').submit();
-        };
+  
+  
+  <script type="text/javascript" src="/asset/js/useKurly/libText.bundle.js"></script>
+  <script>
+      $('#road-address-confirm button[type=submit]').on('click', function(e){
+          e.preventDefault();
+          if(_chkInputStr('address_sub','나머지 주소')){
+              $('#road-address-confirm').submit();
+          };
       });
-    </script>
+  </script>
   
-    <script>
-      $("#zipcode-address-confirm input[type='submit']").on("click", function () {
-        $("input[name=address_sub]").attr('data-required', 'false');
+  <script>
+      $("#zipcode-address-confirm input[type='submit']").on("click",function(){
+        $("input[name=address_sub]").attr('data-required','false');
         opener.byteToTxt();
       });
     </script>
-    <script>
-      $('#detail').on('click', function() {
-        $('#detail').toggleClass('checked');
-      });
-    </script>
-  </body>
-</html>
+  </body></html>

@@ -857,8 +857,11 @@
                                     <a href="" alt="이벤트 페이지로 이동" class="bnr_event">
                                         <img src="../../img/mypage/eventfront.png" alt="이벤트페이지">
                                     </a>
+
                                 </div>
+
                             </div>
+
                             <div class="page_aticle aticle_type2 clear">
                                 <div id="snb" class="snb_mypage">
                                     <h2 class="tit_snb">마이컬리</h2>
@@ -916,11 +919,10 @@
                                                 <tr>
                                                     <td class="select type_radio">
                                                         <label class="checkbox">
-                                                            <input id="ch_box_input" type="radio" name="addr_NO" checked>
+                                                            <input type="radio" name="addr_NO" checked value="fuck">
                                                             <span class="icon"></span>
                                                             <span class="screen_out">선택란</span>
                                                         </label>
-                                                        
                                                     </td>
                                                     <td class="address">
                                                         <span class="checked_R">기본 배송지</span>
@@ -934,14 +936,10 @@
 
                                                     </td>
                                                     <td>
-                                                        <button type="button" class="icon edit"
-                                                            onclick="
-                                                            window.open
-                                                            ('mypage_trans_pop.html', 'pop', 'width=400, height=400, scrollbars=no')">
-                                                            수정하기
-                                                        </button>
+                                                        <button type="button" class="icon edit" href="./mypage_trans_pop.html"
+                                                            onclick="window.open(this.href, 'pop', 'width=500,height=660'); return false;">수정하기</button>
                                                     </td>
-                                
+
                                                 </tr>
                                                 <tr>
                                                     <td class="select type_radio">
@@ -964,20 +962,12 @@
                                                     </td>
                                                     <td>
                                                         <button type="button" class="icon edit"
-                                                            onclick="
-                                                            window.open
-                                                            ('mypage_trans_pop.html', 'pop', 'width=400, height=400, scrollbars=no')">
-                                                            수정하기
-                                                        </button>
+                                                            href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&showinfo=0&wmode=opaque&enablejsapi=1"
+                                                            onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes'); return false;">수정하기</button>
                                                     </td>
 
                                                 </tr>
                                             </tbody>
-                                            <script>
-                                                $('input[name="addr_NO"]').on('click',function(){
-                                                    alert('배송지 선택이 완료되었습니다.')
-                                                })
-                                            </script>
                                         </table>
                                     </div>
                                 </div>

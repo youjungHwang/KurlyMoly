@@ -736,3 +736,18 @@ function sample6_execDaumPostcode() {
 
 
 
+// ================================================= 꽃길람보 
+
+//  mypage > mypage_editinfo.html의 로그인 alert 함수
+function loginCheck(){
+    var f = document.confitmForm;
+    if(f.re_pw.value == ""){
+        alert("아이디와 비밀번호를 확인해 주세요.")
+        f.re_pw.focus();
+        return false;
+    }
+    return true;
+}
+
+
+

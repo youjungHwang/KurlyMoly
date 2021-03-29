@@ -243,10 +243,10 @@ tbody { display: table-row-group; vertical-align: middle; border-color: inherit;
 
 /* ================================================== header > gnb sub ================================================== */
 
-#gnb .gnb_sub { display: none; width: 438px; overflow: hidden; position: absolute; z-index: 301; left: 0; top: 56px; box-sizing: border-box; border: 1px solid #ddd; }
+/* #gnb .gnb_sub { display: none; width: 438px; overflow: hidden; position: absolute; z-index: 301; left: 0; top: 56px; box-sizing: border-box; border: 1px solid #ddd; } */
 /* 메뉴에 마우스 호버 시 메인메뉴 display가 none → block으로 바뀌어야 함 */
 /* 평소에는 width: 219px, 대분류 메뉴에 마우스 호버 시 width: 438px, 마지막 메뉴 호버 시 width: 731px */
-#gnb .gnb_main .menu1 a:hover #gnb .gnb_sub { display: block; overflow: hidden; position: absolute; z-index: 301; left: 0; top: 55px; /*width: 219px;*/ padding-top: 1px; }
+#gnb .gnb_main .menu1 a:hover #gnb .gnb_sub { display: block; overflow: scroll; position: absolute; z-index: 301; left: 0; top: 55px; /*width: 219px;*/ padding-top: 1px; }
 /* 마우스 호버 시 서브메뉴가 보이는 js 작성 */
 
 #gnb .gnb_sub .inner_sub { width: 100%; background: url('../img/bg_gnb_sub_v3.webp') repeat-y 0 0; box-sizing: border-box; }
@@ -271,7 +271,7 @@ tbody { display: table-row-group; vertical-align: middle; border-color: inherit;
 
 #gnb .gnb_sub .txt { float: left; padding: 0 4px 0 10px; font-weight: 400; font-size: 14px; color: #333; line-height: 22px; white-space: nowrap; }
 
-#gnb .gnb_sub .sub_menu { position: absolute; z-index: 301; left: 219px; top: 0; width: 219px; height: 100%; padding: 0; opacity: 1; transition: opacity 0.2s; padding-top: 10px; box-sizing: border-box; background-color: #f7f7f7; }
+#gnb .gnb_sub .sub_menu { position: absolute; z-index: 301; left: 219px; top: 0; width: 219px; height: 100%; padding: 0; opacity: 1; transition: opacity 0.2s; padding-top: 10px; box-sizing: border-box; background-color: #f7f7f7;}
 #gnb .gnb_sub .current .sub_menu, #gnb .gnb_sub .current .sub_menu2 { z-index: 1; opacity: 1; transition: opacity 0.5s; }
 #gnb .gnb_sub .sub_menu .sub, #gnb .gnb_sub .sub_menu2 .sub { display: block; overflow: hidden; height: 40px; padding-left: 20px; font-size: 14px; color: #333; line-height: 18px; cursor: pointer; }
 #gnb .gnb_sub .sub_menu .sub:hover .name, #gnb .gnb_sub .sub_menu2 .sub:hover .name { border-bottom: 1px solid #5f0080; font-weight: 500; color: #5f0080; }
@@ -295,7 +295,7 @@ tbody { display: table-row-group; vertical-align: middle; border-color: inherit;
 /* ======================================== ★★★★★★★★★★ Sidebar ★★★★★★★★★★ ======================================== */
 /* ================================================== qnb ================================================== */
 
-#qnb { position: absolute; z-index: 1; right: 20px; padding-top: 515px; padding-bottom: 215px; width: 80px; font: normal 12px/16px "Noto Sans KR"; color: #333; letter-spacing: -0.3px; transition: top 0.2s; }
+/*#qnb { position: ; z-index: 1; right: 20px; padding-top: 515px; padding-bottom: 215px; width: 80px; font: normal 12px/16px "Noto Sans KR"; color: #333; letter-spacing: -0.3px; transition: top 0.2s; }*/
 #qnb a { font: normal 12px/16px "Noto Sans KR"; color: #333; letter-spacing: -0.3px; }
 .goods-goods_view #qnb { top: 20px; }
 
@@ -4189,7 +4189,8 @@ input[type=search]::-webkit-clear-button, input[type=email]::-webkit-clear-butto
 .page_article #top_menu ul li {display: inline-block; padding-top: 15px; padding-right: 20px; padding-bottom: 10px; font-size: 13px; }
 .page_article #top_menu ul li:first-child { padding-left: 13px; }
 .page_article #top_menu ul li a { color: #000; padding-bottom: 7px; }
-.page_article #top_menu ul li a:active { color: #5f0080; font-weight: bold; border-bottom: 1px solid #5f0080; }
+/* .page_article #top_menu ul li a:active { color: #5f0080; font-weight: bold; border-bottom: 1px solid #5f0080; } */
+/* style.css a:active defalut전체보기로 */
 
 
 
@@ -4200,15 +4201,15 @@ input[type=search]::-webkit-clear-button, input[type=email]::-webkit-clear-butto
 .page_article #goodsList input{ display: none; }
 /* 기본 색 */
 .page_article #goodsList label { display: inline-block; width: 40px; height: 24px; cursor: pointer; position: absolute; background-color: #ccc; right: 132px; top: -31.5px; }
-.page_article #goodsList label::before { content: ""; display: block; width: 20px; height: 20px; position: absolute;  left: 2px; bottom: 2px; position: absolute; background-color: #fff; transition: all 0.4s linear; }
+.page_article #goodsList label .btn_onoff { content: ""; display: block; width: 20px; height: 20px; position: absolute;  left: 2px; bottom: 2px; position: absolute; background-color: #fff; transition: all 0.4s linear; }
 /* 클릭하면 나오는색 */ 
-.page_article #goodsList input:checked + label { background-color: #795b8f; }
+/* .page_article #goodsList input:checked + label { background-color: #795b8f; } */
 /* 박스 안에서 움직임: transform: translateX(65px) */
-.page_article #goodsList input:checked + label:before { transform: translateX(13px); }
+/* .page_article #goodsList input:checked + label .btn_onoff{ transform: translateX(13px); } */
 /* 밖 박스  */
 .page_article #goodsList label.list_round { border-radius: 30px; } 
 /* 안에 */
-.page_article #goodsList label.list_round:before {border-radius: 50%; }
+.page_article #goodsList label.list_round .btn_onoff {border-radius: 50%; }
 
 
 /* 정렬 기능 */
@@ -5149,7 +5150,7 @@ a:-webkit-any-link { cursor: pointer; }
 
 #qnaNotice .tit { display: block; padding: 4px 0 10px; font-size: 12px; line-height: 20px; font-family: 'Noto sans KR'; font-weight: 700; }
 
-/* #qnaNotice .qna_goods { display: none; } */
+#qnaNotice .qna_goods { display: none; }
 
 #qnaNotice .list span { display: block; position: relative; padding-left: 9px; }
 
