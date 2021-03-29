@@ -5149,7 +5149,7 @@ a:-webkit-any-link { cursor: pointer; }
 
 #qnaNotice .tit { display: block; padding: 4px 0 10px; font-size: 12px; line-height: 20px; font-family: 'Noto sans KR'; font-weight: 700; }
 
-#qnaNotice .qna_goods { display: none; }
+/* #qnaNotice .qna_goods { display: none; } */
 
 #qnaNotice .list span { display: block; position: relative; padding-left: 9px; }
 

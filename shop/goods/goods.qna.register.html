@@ -10,6 +10,39 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="./script/script.js"></script>
     <script src="/common_js/kurlytracker/kurlytracker.js?ver=1.26.11"></script>
+    <style>
+        /* .group_btn .inner_btn {
+            display: inline-block;
+        } */
+        #main {
+            border-bottom: 1px solid #f7f7f7;
+        }
+        #content {
+            padding-bottom: 120px;
+        }
+        /* @media (max-width: 1250px)
+        #qnb {
+                display: none;
+        } */
+        table {
+            
+            border-spacing: 0px;
+        }
+        button {
+            text-align: center;
+        }
+        .btn_submit {
+            padding: 0px;
+        }
+        div {
+            display: block;
+        }
+        #qnaNotice .tit {
+            display: block;
+        }
+        #qnaNotice .qna_goods {  }
+    </style>
+
 </head>
 
 <body class="goods-goods_qna_register">
@@ -19,1801 +52,681 @@
     <div id="wrap" class="">
         <div id="pos_scroll"></div>
         <div id="container">
-            <div id="header">
-                <script>
-                    // ie10 이하 페이지 이동
-                    var ieCheckAgent = navigator.userAgent.toLowerCase();
-                    if ((navigator.appName === 'Netscape' && navigator.userAgent.search('Trident') !== -1) || (ieCheckAgent.indexOf("msie") !== -1)) {
-                        if (navigator.appName !== 'Netscape') {
-                            location.href = "/shop/event/browserUpdate.php";
-                        }
-                    }
-                </script>
-
-                <div class="bnr_header bnr_top_friend" id="top-message">
-
-
-                    <a href="https://www.kurly.com/shop/main/html.php?htmid=event/kurly.htm&amp;name=friend">
-                        친구 초대하면 친구도 나도 적립금 <b>5천원!</b><img
-                            src="https://res.kurly.com/pc/ico/1908/ico_arrow_333_84x84.png" class="bnr_arr">
+            <header id="header">
+                <div class="bnr_header" id="top-message">
+                    <!-- 100원 행사 안내 배너 -->
+                    <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_210224"
+                        id="eventLanding">지금 가입하고 인기상품 <b>100원</b>에 받아가세요!<img
+                            src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
                         <div class="bnr_top">
                             <div class="inner_top_close">
                                 <button id="top-message-close" class="btn_top_bnr">가입하고 혜택받기</button>
                             </div>
                         </div>
                     </a>
-                </div>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $("#top-message-close").on("click", function () {
-                            setCookie('top_msg_banner2', 'set_cookie', 1)
+                    <script>
+                        // PROM-476 장차석 : GA) 이벤트 트래킹
+                        $('#eventLanding').on('click', function () {
+                            ga('send', 'event', 'click', 'general_header_sighup', location.href);
                         });
-                        if (getCookie('top_msg_banner2') == 'set_cookie') {
-                            $("#top-message").hide()
-                        } else {
-                            $("#top-message").show();
-                        }
-                    });
-
-                    function setCookie(cookieName, value, exdays) {
-                        var exdate = new Date();
-                        exdate.setDate(exdate.getDate() + exdays);
-                        var cookieValue = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toGMTString());
-                        document.cookie = cookieName + "=" + cookieValue + "; path=/;"
-                    }
-
-                    function getCookie(cookieName) {
-                        cookieName = cookieName + '=';
-                        var cookieData = document.cookie;
-                        var start = cookieData.indexOf(cookieName);
-                        var cookieValue = '';
-                        if (start != -1) {
-                            start += cookieName.length;
-                            var end = cookieData.indexOf(';', start);
-                            if (end == -1) end = cookieData.length;
-                            cookieValue = cookieData.substring(start, end);
-                        }
-                        return unescape(cookieValue);
-                    }
-                </script>
+                    </script>
+                </div>
 
                 <div id="userMenu">
-                    <ul class="list_menu">
-                        <!---->
-                        <!---->
-                        <li class="menu menu_user"><a class="link_menu grade_comm"><span
-                                    class="ico_grade grade0">일반</span> <span class="txt"><span
-                                        class="name">박재현</span><span class="sir">님</span></span>
-                                <!---->
-                            </a>
-                            <ul class="sub">
-                                <li><a href="/shop/mypage/mypage_orderlist.php">주문 내역</a></li>
-                                <li><a href="#none">배송지 관리</a></li>
-                                <li><a href="/shop/mypage/mypage_wishlist.php">늘 사는 것</a></li>
-                                <li><a href="/shop/mypage/mypage_review.php">상품 후기</a></li>
-                                <li><a href="/shop/mypage/mypage_emoney.php">적립금</a>
-                                    <!---->
-                                </li>
-                                <li><a href="/shop/mypage/mypage_coupon.php">쿠폰</a>
-                                    <!---->
-                                </li>
-                                <li><a href="/shop/member/myinfo.php">개인 정보 수정</a></li>
-                                <li><a href="/shop/member/logout.php">로그아웃</a></li>
-                            </ul>
+                    <ul class="menuLeft list_menu">
+                        <li>
+                            <a href="./shop/board/delivery.html" class="bnr_delivery"><img
+                                    src="./img/delivery_190819.webp" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송"></a>
                         </li>
-                        <li class="menu lst"><a href="/shop/board/list.php?id=notice" class="link_menu">고객센터</a>
+                    </ul>
+                    <ul class="menuRight list_menu">
+                        <li class="menu none_sub menu_join">
+                            <a href="./shop/member/join.html" class="link_menu">회원가입</a>
+                        </li>
+                        <li class="menu none_sub menu_login">
+                            <a href="./shop/member/login.html" class="link_menu">로그인</a>
+                        </li>
+                        <li class="menu lst">
+                            <a href="./shop/board/notice.html" class="link_menu cos">고객센터</a>
                             <ul class="sub">
-                                <li><a href="/shop/board/list.php?id=notice">공지사항</a></li>
-                                <li><a href="/shop/service/faq.php">자주하는 질문</a></li>
-                                <li><a href="/shop/mypage/mypage_qna.php">1:1 문의</a></li>
-                                <li><a href="/shop/main/html.php?htmid=mypage/bulk_order.htm">대량주문 문의</a></li>
-                                <li><a href="/shop/mypage/offer.php">상품 제안</a></li>
-                                <li><a href="/shop/mypage/echo_packing.php">에코포장 피드백</a></li>
+                                <li>
+                                    <a href="./shop/board/notice.html">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="./shop/board/faq.html">자주하는 질문</a>
+                                </li>
+                                <li>
+                                    <a href="./shop/mypage/mypage_qna.html">1:1 문의</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-                <script src="/common_js/usermenu_v1.js?ver=1.26.16"></script>
-                <script>
-                    $(document).ready(function () {
 
-                        userMenu.loginCheck = true;
-                        userMenu.userInfo = {
-                            userGrade: '0',
-                            userGradeName: '일반',
-                            memberName: '박재현'
-                        }
-
-                        userMenu.update();
-                    });
-                </script>
-
-                <style>
-                    #headerLogo {
-                        position: relative;
-                        width: 1050px;
-                        height: 63px;
-                        margin: 0 auto
-                    }
-
-                    #headerLogo .bnr_delivery {
-                        position: absolute;
-                        left: -1px;
-                        top: -28px;
-                        margin: auto;
-                        height: 22px
-                    }
-
-                    #headerLogo .bnr_delivery img {
-                        width: 163px;
-                        height: 22px
-                    }
-
-                    #headerLogo .logo {
-                        position: absolute;
-                        left: 50%;
-                        bottom: 6px;
-                        width: 200px;
-                        height: 79px;
-                        margin-left: -100px
-                    }
-
-                    #headerLogo .logo img {
-                        display: block;
-                        width: 103px;
-                        height: 79px;
-                        margin: 0 auto
-                    }
-
-                    #headerLogo .logo #gnbLogoContainer {
-                        margin: 0 auto
-                    }
-
-                    #gnb.gnb_stop {
-                        position: fixed;
-                        z-index: 300;
-                        left: 0;
-                        top: 0;
-                        width: 100%
-                    }
-
-                    #gnb .gnb_kurly {
-                        position: relative;
-                        z-index: 300;
-                        min-width: 1050px;
-                        background-color: #fff;
-                        font-family: 'Noto Sans';
-                        letter-spacing: -0.3px
-                    }
-
-                    #gnb .gnb_kurly:after {
-                        content: "";
-                        position: absolute;
-                        z-index: 299;
-                        left: 0;
-                        top: 56px;
-                        width: 100%;
-                        height: 9px;
-                        background: url(https://res.kurly.com/pc/service/common/1902/bg_1x9.png) repeat-x 0 100%
-                    }
-
-                    #gnb .inner_gnbkurly {
-                        position: relative;
-                        width: 1050px;
-                        height: 56px;
-                        margin: 0 auto
-                    }
-
-                    /* 검색창 */
-                    #gnb .gnb_search {
-                        position: absolute;
-                        right: 108px;
-                        top: 10px;
-                        width: 242px
-                    }
-
-                    #gnb .gnb_search .inp_search {
-                        width: 242px;
-                        height: 36px;
-                        padding: 0 60px 0 14px;
-                        border: 1px solid #f7f7f6;
-                        border-radius: 18px;
-                        background-color: #f7f7f7;
-                        font-family: 'Noto Sans';
-                        font-weight: 400;
-                        font-size: 12px;
-                        color: #666;
-                        line-height: 16px;
-                        outline: none
-                    }
-
-                    #gnb .gnb_search .inp_search.focus {
-                        background-color: #fff;
-                        color: #333
-                    }
-
-                    #gnb .gnb_search .btn_search {
-                        position: absolute;
-                        right: 5px;
-                        top: 3px;
-                        width: 30px;
-                        height: 30px
-                    }
-
-                    /* 장바구니 */
-                    #gnb .cart_count {
-                        position: absolute;
-                        right: -5px;
-                        top: 10px
-                    }
-
-                    #gnb .cart_count .inner_cartcount {
-                        text-align: center;
-                        font-weight: 400
-                    }
-
-                    #gnb .cart_count .btn_cart {
-                        display: block;
-                        width: 36px;
-                        height: 36px;
-                        background: url(https://res.kurly.com/pc/service/common/2011/ico_cart.svg) no-repeat 50% 50%
-                    }
-
-                    #gnb .cart_count .btn_cart:hover {
-                        background: url(https://res.kurly.com/pc/service/common/2011/ico_cart_on.svg?v=1) no-repeat 50% 50%
-                    }
-
-                    #gnb .cart_count .num {
-                        display: none;
-                        position: absolute;
-                        left: 19px;
-                        top: -1px;
-                        min-width: 20px;
-                        height: 20px;
-                        padding: 0 5px;
-                        border: 2px solid #fff;
-                        border-radius: 10px;
-                        background-color: #5f0080;
-                        font-size: 9px;
-                        color: #fff;
-                        line-height: 15px;
-                        text-align: center;
-                        white-space: nowrap
-                    }
-
-                    #gnb .cart_count img {
-                        display: block;
-                        width: 36px;
-                        height: 36px;
-                        margin: 0 auto
-                    }
-
-                    #gnb .cart_count .msg_cart {
-                        display: none;
-                        position: absolute;
-                        right: -7px;
-                        top: 61px;
-                        width: 348px;
-                        border: 1px solid #ddd;
-                        background-color: #fff;
-                        /* opacity:0; */
-                    }
-
-                    #gnb .cart_count .inner_msgcart {
-                        display: block;
-                        overflow: hidden;
-                        padding: 20px 0 20px 20px
-                    }
-
-                    #gnb .cart_count .msg_cart .thumb {
-                        float: left;
-                        width: 46px;
-                        height: 60px
-                    }
-
-                    #gnb .cart_count .msg_cart .desc {
-                        float: left;
-                        width: 260px;
-                        padding: 8px 0 0 20px;
-                        font-weight: 700;
-                        font-size: 14px;
-                        line-height: 21px
-                    }
-
-                    #gnb .cart_count .msg_cart .desc.add {
-                        padding-top: 0;
-                        margin-top: -5px;
-                    }
-
-                    #gnb .cart_count .msg_cart .tit {
-                        display: block;
-                        overflow: hidden;
-                        width: 100%;
-                        color: #999;
-                        white-space: nowrap;
-                        text-overflow: ellipsis
-                    }
-
-                    #gnb .cart_count .msg_cart .name {
-                        overflow: hidden;
-                        float: left;
-                        max-width: 178px;
-                        text-overflow: ellipsis
-                    }
-
-                    #gnb .cart_count .msg_cart .txt {
-                        display: block;
-                        padding-top: 3px;
-                        color: #333
-                    }
-
-                    #gnb .cart_count .msg_cart .point {
-                        position: absolute;
-                        right: 13px;
-                        top: -14px;
-                        width: 20px;
-                        height: 14px;
-                        background: url(https://res.kurly.com/pc/ico/1903/ico_layer_point.png) no-repeat 0 0
-                    }
-
-                    #gnb .cart_count .msg_cart .repeat {
-                        display: none
-                    }
-
-                    #gnb .cart_count .msg_cart .add .repeat {
-                        display: block
-                    }
-
-                    /* GNB메인 */
-                    #gnb .gnb_main {
-                        overflow: hidden;
-                        width: 1050px;
-                        margin: 0 auto
-                    }
-
-                    #gnb .gnb_main .gnb {
-                        float: left;
-                        width: 100%
-                    }
-
-                    #gnb .gnb_main .gnb li {
-                        float: left
-                    }
-
-                    #gnb .gnb_main .gnb .lst {
-                        background: none
-                    }
-
-                    #gnb .gnb_main .gnb a {
-                        overflow: hidden;
-                        float: left;
-                        width: 124px;
-                        height: 55px;
-                        padding: 16px 0 0;
-                        font-size: 16px;
-                        color: #333;
-                        line-height: 20px;
-                        text-align: center
-                    }
-
-                    #gnb .gnb_main .gnb a .txt {
-                        font-weight: 700
-                    }
-
-                    #gnb .gnb_main .gnb a:hover,
-                    #gnb .gnb_main .gnb a.on {
-                        font-weight: 700;
-                        color: #5f0080
-                    }
-
-                    #gnb .gnb_main .gnb a:hover .txt {
-                        border-bottom: 1px solid #5f0080
-                    }
-
-                    #gnb .gnb_main .menu1 a {
-                        width: 168px
-                    }
-
-                    #gnb .gnb_main .menu1 .ico {
-                        float: left;
-                        width: 16px;
-                        height: 14px;
-                        margin: 5px 14px 0 0;
-                        background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off.png) no-repeat
-                    }
-
-                    #gnb .gnb_main .menu1 a.on .ico,
-                    #gnb .gnb_main .menu1 a:hover .ico {
-                        background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all.png) no-repeat 0 0
-                    }
-
-                    #gnb .gnb_main .menu1 a.on .txt,
-                    #gnb .gnb_main .menu1 a:hover .txt,
-                    #gnb .gnb_main .menu1 .txt {
-                        float: left;
-                        font-weight: 700;
-                        border-bottom: 0
-                    }
-
-                    #gnb .gnb_main .menu3 a {
-                        width: 116px
-                    }
-
-                    #gnb .gnb_main .lst a {
-                        width: 116px
-                    }
-
-                    /* GNB서브 */
-                    #gnb .gnb_sub {
-                        display: none;
-                        overflow: hidden;
-                        position: absolute;
-                        z-index: 301;
-                        left: 0;
-                        top: 55px;
-                        width: 213px;
-                        padding-top: 1px
-                    }
-
-                    #gnb .gnb_sub .inner_sub {
-                        width: 100%;
-                        border: 1px solid #ddd;
-                        background: url(https://res.kurly.com/pc/service/common/1908/bg_gnb_sub_v3.png) repeat-y 0 0
-                    }
-
-                    #gnb .size_over {
-                        overflow-x: hidden;
-                        overflow-y: auto
-                    }
-
-                    #gnb .gnb_sub .gnb_menu {
-                        width: 219px
-                    }
-
-                    #gnb .gnb_sub .gnb_menu li {
-                        width: 100%;
-                        text-align: left
-                    }
-
-                    #gnb .gnb_sub .gnb_menu li:first-child {
-                        padding-top: 0
-                    }
-
-                    #gnb .gnb_sub .menu {
-                        display: block;
-                        overflow: hidden;
-                        width: 100%;
-                        height: 40px;
-                        padding: 8px 0 0 14px;
-                        cursor: pointer
-                    }
-
-                    #gnb .gnb_sub .gnb_menu li:first-child .menu {
-                        height: 39px;
-                        padding-top: 7px
-                    }
-
-                    #gnb .gnb_sub .current .menu {
-                        background: #f7f7f7
-                    }
-
-                    #gnb .gnb_sub .current .txt,
-                    #gnb .gnb_sub .menu.on.off:hover .txt,
-                    #gnb .gnb_sub .menu.on .txt {
-                        font-weight: 700;
-                        color: #5f0080
-                    }
-
-                    #gnb .gnb_sub .ico {
-                        float: left;
-                        width: 24px;
-                        height: 24px
-                    }
-
-                    #gnb .gnb_sub .ico img {
-                        width: 24px;
-                        height: 24px
-                    }
-
-                    #gnb .gnb_sub .ico .ico_off {
-                        display: block
-                    }
-
-                    #gnb .gnb_sub .ico .ico_on {
-                        display: none
-                    }
-
-                    #gnb .gnb_sub .current .ico_off,
-                    #gnb .gnb_sub .menu.on .ico_off,
-                    #gnb .gnb_sub .menu:hover .ico_off {
-                        display: none
-                    }
-
-                    #gnb .gnb_sub .current .ico_on,
-                    #gnb .gnb_sub .menu.on .ico_on,
-                    #gnb .gnb_sub .menu:hover .ico_on {
-                        display: block
-                    }
-
-                    #gnb .gnb_sub .ico_arrow {
-                        display: none;
-                        float: right;
-                        width: 16px;
-                        height: 17px;
-                        padding: 6px 9px 0 0
-                    }
-
-                    #gnb .gnb_sub .ico_arrow img {
-                        width: 7px;
-                        height: 11px
-                    }
-
-                    #gnb .gnb_sub .current .ico_arrow {
-                        display: block
-                    }
-
-                    #gnb .gnb_sub .txt {
-                        float: left;
-                        padding: 0 4px 0 10px;
-                        font-weight: 400;
-                        font-size: 14px;
-                        color: #333;
-                        line-height: 22px;
-                        white-space: nowrap
-                    }
-
-                    #gnb .gnb_sub .ico_new {
-                        overflow: hidden;
-                        float: left;
-                        width: 14px;
-                        height: 14px;
-                        margin-top: 5px;
-                        background-position: 50% 50%;
-                        background-repeat: no-repeat;
-                        background-size: 14px 14px;
-                        font-size: 0;
-                        line-height: 0;
-                        text-indent: -9999px
-                    }
-
-                    #gnb .gnb_sub .sub_menu {
-                        position: absolute;
-                        z-index: 0;
-                        left: 200px;
-                        top: 0;
-                        width: 248px;
-                        height: 100%;
-                        padding: 0 0 0 20px;
-                        background: url(https://res.kurly.com/images/common/bg_1_1.gif) repeat 0 0;
-                        opacity: 0;
-                        transition: opacity 0.2s
-                    }
-
-                    #gnb .gnb_sub .current .sub_menu {
-                        z-index: 1;
-                        opacity: 1;
-                        transition: opacity 0.5s
-                    }
-
-                    #gnb .gnb_sub .sub_menu li:first-child {
-                        padding-top: 11px
-                    }
-
-                    #gnb .gnb_sub .sub_menu .sub {
-                        display: block;
-                        overflow: hidden;
-                        height: 40px;
-                        padding-left: 20px;
-                        font-size: 14px;
-                        color: #333;
-                        line-height: 18px;
-                        cursor: pointer
-                    }
-
-                    #gnb .gnb_sub .sub_menu .sub:hover .name {
-                        border-bottom: 1px solid #5f0080;
-                        font-weight: 700;
-                        color: #5f0080
-                    }
-
-                    #gnb .gnb_sub .sub_menu .sub.on {
-                        font-weight: 700;
-                        color: #5f0080
-                    }
-
-                    #gnb .gnb_sub .recommend {
-                        overflow: hidden;
-                        width: 529px;
-                        padding: 21px 0 0 40px
-                    }
-
-                    #gnb .gnb_sub .recommend li {
-                        float: left;
-                        width: 120px;
-                        height: 130px;
-                        padding: 0 10px 0 0
-                    }
-
-                    #gnb .gnb_sub .recommend li:first-child {
-                        padding-top: 0
-                    }
-
-                    #gnb .gnb_sub .recommend .sub {
-                        display: block;
-                        overflow: hidden;
-                        width: 120px;
-                        height: 130px;
-                        padding: 0;
-                        cursor: pointer
-                    }
-
-                    #gnb .gnb_sub .recommend .thumb {
-                        display: block;
-                        width: 110px;
-                        height: 83.4px;
-                        margin-bottom: 8px;
-                        background-position: 50% 50%;
-                        background-repeat: no-repeat;
-                        background-size: cover
-                    }
-
-                    #gnb .gnb_sub .recommend .thumb img {
-                        width: 110px;
-                        height: 84px
-                    }
-
-                    #gnb .gnb_sub .recommend .name {
-                        font-size: 14px;
-                        line-height: 18px
-                    }
-
-                    #gnb .btn_location {
-                        overflow: hidden;
-                        position: absolute;
-                        right: 51px;
-                        top: 10px;
-                        width: 36px;
-                        height: 36px;
-                        border: 0 none;
-                        background: url(https://res.kurly.com/pc/ico/2008/ico_delivery_setting_done.svg) no-repeat 50% 50%;
-                        font-size: 0;
-                        text-indent: -9999px
-                    }
-
-                    #gnb .btn_location.on {
-                        background-image: url(https://res.kurly.com/pc/ico/2008/ico_delivery_setting.svg?ver=1)
-                    }
-
-                    #gnb .layer_location {
-                        display: none;
-                        position: absolute;
-                        z-index: 300;
-                        right: 41px;
-                        top: 56px;
-                        width: 308px;
-                        padding: 20px 18px 19px 20px;
-                        border: 1px solid #ddd;
-                        background-color: #fff
-                    }
-
-                    #gnb .layer_location:after {
-                        content: "";
-                        position: absolute;
-                        right: 10px;
-                        top: -50px;
-                        width: 36px;
-                        height: 50px;
-                        background: url(https://res.kurly.com/pc/ico/2011/ico_point_up_18x12.svg) no-repeat 50% 100%
-                    }
-
-                    #gnb .layer_location * {
-                        font-weight: 700;
-                        font-size: 16px;
-                        color: #333;
-                        line-height: 24px;
-                        letter-spacing: -0.3px
-                    }
-
-                    #gnb .layer_location .delivery {
-                        display: block;
-                        padding-top: 8px;
-                        font-size: 14px;
-                        line-height: 20px
-                    }
-
-                    #gnb .layer_location .star {
-                        color: #5f0080
-                    }
-
-                    #gnb .layer_location .regular {
-                        color: #666
-                    }
-
-                    #gnb .layer_location .none {
-                        color: #999
-                    }
-
-                    #gnb .layer_location .btn {
-                        display: block;
-                        width: 100%;
-                        height: 36px;
-                        margin-top: 17px;
-                        padding-bottom: 2px;
-                        border-radius: 3px;
-                        font-size: 12px;
-                        line-height: 32px;
-                        letter-spacing: 0;
-                        text-align: center
-                    }
-
-                    #gnb .layer_location a.btn {
-                        padding-top: 0
-                    }
-
-                    #gnb .layer_location .btn.default {
-                        border: 1px solid #5f0080;
-                        background-color: #fff;
-                        color: #5f0080
-                    }
-
-                    #gnb .layer_location .btn.active {
-                        border: 1px solid #5f0081;
-                        background-color: #5f0080;
-                        color: #fff
-                    }
-
-                    #gnb .layer_location .btn .ico {
-                        display: inline-block;
-                        width: 20px;
-                        height: 20px;
-                        margin: 6px 0 0 -6px;
-                        background: url(https://res.kurly.com/pc/ico/2008/ico_search_40x40.png) no-repeat 50% 50%;
-                        background-size: 20px 20px;
-                        vertical-align: top
-                    }
-
-                    #gnb .layer_location .group_button {
-                        display: block;
-                        overflow: hidden
-                    }
-
-                    #gnb .layer_location .double .default {
-                        float: left;
-                        width: 104px
-                    }
-
-                    #gnb .layer_location .double .active {
-                        float: right;
-                        width: 158px
-                    }
-
-                    #gnb .layer_location .emph {
-                        color: #5f0080
-                    }
-
-                    #gnb .location_set:hover .btn_location.on {
-                        background-image: url(https://res.kurly.com/pc/ico/2010/ico_delivery_setting_on.svg)
-                    }
-
-                    #gnb .location_set.show .layer_location,
-                    #gnb .location_set:hover .layer_location {
-                        display: block
-                    }
-
-                    #gnb .location_set .btn_location.off,
-                    #gnb .location_set .btn_location.off:hover {
-                        background-image: url(https://res.kurly.com/pc/ico/2008/ico_delivery_off.svg?ver=1);
-                        cursor: default
-                    }
-
-                    #gnb .location_set.off .layer_location,
-                    #gnb .location_set.off:hover .layer_location {
-                        display: none
-                    }
-
-                    /* 오류 */
-                    #gnb .layer_location .error .txt {
-                        display: block;
-                        color: #333
-                    }
-
-                    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-                    only screen and (min-device-pixel-ratio: 1.5),
-                    only screen and (min-resolution: 1.5dppx) {
-                        #gnb .gnb_sub .ico_new {
-                            background: url(https://res.kurly.com/pc/ico/1808/ico_new_gnb_16x16.png) no-repeat 0 0;
-                            background-size: 14px 14px
-                        }
-
-                        #gnb .cart_count .msg_cart .point {
-                            background: url(https://res.kurly.com/pc/ico/1903/ico_layer_point_x2.png) no-repeat 0 0;
-                            background-size: 20px 14px
-                        }
-
-                        #gnb .gnb_main .menu1 .ico {
-                            background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off_x2.png) no-repeat 0 0;
-                            background-size: 16px 14px
-                        }
-
-                        #gnb .gnb_main .menu1 a.on .ico,
-                        #gnb .gnb_main .menu1 a:hover .ico {
-                            background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_x2.png) no-repeat 0 0;
-                            background-size: 16px 14px
-                        }
-                    }
-
-                    .gnb_search .init {
-                        position: relative
-                    }
-
-                    .gnb_search .init .btn_delete {
-                        overflow: hidden;
-                        position: absolute;
-                        left: 170px;
-                        top: -36px;
-                        width: 36px;
-                        height: 36px;
-                        border: 0 none;
-                        background: url(https://res.kurly.com/pc/ico/2010/ico_search_del.svg) no-repeat 50% 50%;
-                        background-size: 12px 12px;
-                        font-size: 0;
-                        line-height: 0;
-                        text-indent: -9999px;
-                        opacity: 0
-                    }
-
-                    .gnb_search .init .btn_delete.on {
-                        opacity: 1
-                    }
-                </style>
-                <div id="headerLogo" class="layout-wrapper">
-                    <h1 class="logo">
-                        <a href="/" class="link_main">
-                            <span id="gnbLogoContainer"></span>
-                            <img src="https://res.kurly.com/images/marketkurly/logo/logo_x2.png" alt="마켓컬리 로고">
-                        </a>
-                    </h1>
-                    <a href="/shop/board/view.php?id=notice&amp;no=64"
-                        onclick="ga('send','event','etc','main_gif_btn_click');" class="bnr_delivery">
-                        <img src="https://res.kurly.com/pc/service/common/1908/delivery_190819.gif"
-                            alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송">
-                    </a>
+                <div id="headerLogo">
+                    <!-- 메인로고 -->
+                    <h1 class="logo"><a href="./index.html" class="link_main"><img src="./img/logo_x2.webp"
+                                alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
+
                 <div id="gnb">
-                    <h2 class="screen_out">메뉴</h2>
-                    <div id="gnbMenu" class="gnb_kurly">
+                    <div id="gnbMenu" class="gnb_kurly gnbMenu">
                         <div class="inner_gnbkurly">
                             <div class="gnb_main">
+                                <!-- 메뉴들 전체를 감싸는 div -->
                                 <ul class="gnb">
-                                    <li class="menu1"><a href="#none"><span class="ico"></span><span class="txt">전체
-                                                카테고리</span></a></li>
-                                    <li class="menu2"><a href="/shop/goods/goods_list.php?category=038"
-                                            class="link new "><span class="txt">신상품</span></a></li>
-                                    <li class="menu3"><a href="/shop/goods/goods_list.php?category=029"
-                                            class="link best "><span class="txt">베스트</span></a></li>
-                                    <li class="menu4"><a href="/shop/goods/goods_list.php?list=sale"
-                                            class="link bargain "><span class="txt">알뜰쇼핑</span></a></li>
-                                    <li class="lst"><a href="/shop/goods/event.php?&amp;" class="link event "><span
-                                                class="txt">금주혜택</span></a></li>
+                                    <li class="menu1">
+                                        <a>
+                                            <span class="ico"></span>
+                                            <span style="float: left; font-weight: 500;">전체 카테고리</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu2">
+                                        <a href="./shop/goods/new_goods_list.html"><span class="txt">신상품</span></a>
+                                    </li>
+                                    <li class="menu3">
+                                        <a href="./shop/goods/best_goods_list.html"><span class="txt">베스트</span></a>
+                                    </li>
+                                    <li class="menu4">
+                                        <a href="./shop/goods/sale_goods_list.html"><span class="txt">알뜰쇼핑</span></a>
+                                    </li>
+                                    <li class="menu5">
+                                        <a href="./shop/goods/event_list.html"><span class="txt">금주혜택</span></a>
+                                    </li>
                                 </ul>
-                                <div id="side_search" class="gnb_search">
-                                    <form action="/shop/goods/goods_search.php?&amp;"
-                                        onsubmit="return searchTracking(this)"><input type="hidden" name="searched"
-                                            value="Y"> <input type="hidden" name="log" value="1"> <input type="hidden"
-                                            name="skey" value="all"> <input type="hidden" name="hid_pr_text" value="">
-                                        <input type="hidden" name="hid_link_url" value=""> <input type="hidden"
-                                            id="edit" name="edit" value=""> <input name="sword" type="text" id=""
-                                            value="" required="required" label="검색어" class="inp_search"> <input
-                                            type="image"
-                                            src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-                                            class="btn_search">
-                                        <div class="init"><button type="button" id="searchInit" class="btn_delete">검색어
-                                                삭제하기</button></div>
+                                <div id="sideSearch" class="gnb_search">
+                                    <!-- 검색창 들어가는 부분 -->
+                                    <form action="./shop/goods/goods_search.html">
+                                        <!-- <form action="./shop/goods/goods_search.html" onsubmit="return searchTracking(this)"> -->
+                                        <input type="text" name="sword" id="sword" class="inp_search"
+                                            value="유명 맛집따라 서울 한 바퀴">
+                                        <input type="image" src="./img/ico_search_x2.webp" class="btn_search">
+                                        <div class="init">
+                                            <button id="searchInit" class="btn_delete">검색어 삭제하기</button>
+                                            <!-- 평소에는 숨어있고, 검색어가 입력되면 'X' 표시로 나타남 -->
+                                        </div>
                                     </form>
                                 </div>
-                                <div class="cart_count">
-                                    <div class="inner_cartcount"><a href="/shop/goods/goods_cart.php"
-                                            class="btn_cart"><span class="screen_out">장바구니</span> <span
-                                                id="cart_item_count" class="num realtime_cartcount"
-                                                style="display: none;"></span></a></div>
-                                    <div id="addMsgCart" class="msg_cart"><span class="point"></span>
-                                        <div class="inner_msgcart"><img
-                                                src="https://res.kurly.com/images/common/bg_1_1.gif" alt=""
-                                                class="thumb">
-                                            <p id="msgReaddedItem" class="desc"><span class="tit"></span> <span
-                                                    class="txt">
-                                                    장바구니에 상품을 담았습니다.
-                                                    <span class="repeat">이미 담으신 상품이 있어 추가되었습니다.</span></span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="location_set"><button type="button" class="btn_location on">배송지
-                                        설정하기</button>
+                                <div class="location_set">
+                                    <!-- 배송지 설정 -->
+                                    <button type="button" class="btn_location">배송지 설정하기</button>
                                     <div class="layer_location">
-                                        <div class="address">
-                                            <div class="address">
-                                                <p class="addr">경기 과천시 별양로 12 (래미안 슈르) 333동 601호</p> <span
-                                                    class="delivery star">샛별배송</span> <a href="#none"
-                                                    class="btn default modifyAddress">배송지 변경</a>
+                                        <div class="no_address">
+                                            <!-- 등록된 주소가 없는 사람이 마우스를 가져다 댈 때 나타남 -->
+                                            <span class="emph">배송지를 등록</span>하고<br>구매 가능한 상품을 확인하세요!
+                                            <div>
+                                                <button type="button" class="btn default login">로그인</button>
+                                                <button type="button" class="btn active searchAddress">
+                                                    <span class="ico"></span>주소검색
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="cart_count">
+                                    <!-- 장바구니에 물건이 담겨질 때마다 액션 발생해야 함 -->
+                                    <div class="inner_cartcount">
+                                        <a href="./shop/goods/goods_cart.html" class="btn_cart">
+                                            <span class="screen_out">장바구니</span>
+                                            <span id="cart_item_count" class="num realtime_cartcount"></span>
+                                        </a>
+                                    </div>
+                                    <div id="addMsgCart" class="msg_cart">
+                                        <span class="point"></span> <!-- 장바구니에 1 숫자 뜨는 곳 -->
+                                        <div class="inner_msgcart">
+                                            <img src="#" class="thumb"> <!-- 장바구니에 들어간 상품 이미지 -->
+                                            <p id="msgReaddedItem" class="desc">
+                                                <span class="tit">제품 타이틀</span>
+                                                <span class="txt">장바구니에 상품을 담았습니다.
+                                                    <span class="repeat">이미 담으신 상품이 있어 추가되었습니다.</span>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="gnb_sub">
+                                <!-- js 적용시 - display:none→block, width:219px→438px -->
+                                <!-- 마우스 오버 시 style="display: block; width: 438px;" -->
                                 <div class="inner_sub">
-                                    <ul data-default="219" data-min="219" data-max="731" class="gnb_menu"
-                                        style="height: auto;">
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_veggies_inactive_pc@2x.1586324570.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_veggies_active_pc@2x.1586324570.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">채소</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">친환경</span></a>
-                                                    <!---->
+                                    <ul class="gnb_menu" style="height: auto;" data-default="219" data-min="219"
+                                        data-max="731">
+                                        <!-- 카테고리 전체를 감싸는 div -->
+                                        <li>
+                                            <!-- 마우스 호버 시 클래스 .current가 생겨야 함 ★★★★★ -->
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_veggies_inactive_pc@2x.1586324570.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_veggies_active_pc@2x.1586324570.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">채소</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu current" style="display: block;">
+                                                <li><a class="sub"><span class="name">고구마·감자·당근</span></a></li>
+                                                <!-- 마우스 호버 시 .current가 생겨야 함 ★★★★★ -->
+                                                <li><a class="sub"><span class="name">시금치·쌈채소·나물</span></a></li>
+                                                <li><a class="sub"><span class="name">브로콜리·파프리카·양배추</span></a></li>
+                                                <li><a class="sub"><span class="name">양파·대파·마늘·배추</span></a></li>
+                                                <li><a class="sub"><span class="name">오이·호박·고추</span></a></li>
+                                                <li><a class="sub"><span class="name">냉동·이색·간편채소</span></a></li>
+                                                <li><a class="sub"><span class="name">콩나물·버섯</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_fruit_inactive_pc@2x.1568684150.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_fruit_active_pc@2x.1568684150.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">과일·견과·쌀</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">제철과일</span></a></li>
+                                                <li><a class="sub"><span class="name">국산과일</span></a></li>
+                                                <li><a class="sub"><span class="name">수입과일</span></a></li>
+                                                <li><a class="sub"><span class="name">간편과일</span></a></li>
+                                                <li><a class="sub"><span class="name">냉동·건과일</span></a></li>
+                                                <li><a class="sub"><span class="name">견과류</span></a></li>
+                                                <li><a class="sub"><span class="name">쌀·잡곡</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_seafood_inactive_pc@2x.1568684352.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_seafood_active_pc@2x.1568684353.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">수산·해산·건어물</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">제철수산</span></a></li>
+                                                <li><a class="sub"><span class="name">생선류</span></a></li>
+                                                <li><a class="sub"><span class="name">굴비·반건류</span></a></li>
+                                                <li><a class="sub"><span class="name">오징어·낙지·문어</span></a></li>
+                                                <li><a class="sub"><span class="name">새우·게·랍스터</span></a></li>
+                                                <li><a class="sub"><span class="name">해산물·조개류</span></a></li>
+                                                <li><a class="sub"><span class="name">수산가공품</span></a></li>
+                                                <li><a class="sub"><span class="name">김·미역·해조류</span></a></li>
+                                                <li><a class="sub"><span class="name">건어물·다시팩</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_meat_inactive_pc@2x.1568684452.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_meat_active_pc@2x.1568684452.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">정육·계란</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">국내산 소고기</span></a></li>
+                                                <li><a class="sub"><span class="name">수입산 소고기</span></a></li>
+                                                <li><a class="sub"><span class="name">돼지고기</span></a></li>
+                                                <li><a class="sub"><span class="name">계란류</span></a></li>
+                                                <li><a class="sub"><span class="name">닭·오리고기</span></a></li>
+                                                <li><a class="sub"><span class="name">양념육·돈까스</span></a></li>
+                                                <li><a class="sub"><span class="name">양고기</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_side_inactive_pc@2x.1572243579.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_side_active_pc@2x.1572243579.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">국·반찬·메인요리</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">국·탕·찌개</span></a></li>
+                                                <li><a class="sub"><span class="name">밀키트·메인요리</span></a></li>
+                                                <li><a class="sub"><span class="name">밑반찬</span></a></li>
+                                                <li><a class="sub"><span class="name">김치·젓갈·장류</span></a></li>
+                                                <li><a class="sub"><span class="name">두부·어묵·부침개</span></a></li>
+                                                <li><a class="sub"><span class="name">베이컨·햄·통조림</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_convenient_inactive_pc@2x.1572243542.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_convenient_active_pc@2x.1572243543.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">샐러드·간편식</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">샐러드·닭가슴살</span></a></li>
+                                                <li><a class="sub"><span class="name">도시락·밥류</span></a></li>
+                                                <li><a class="sub"><span class="name">파스타·면류</span></a></li>
+                                                <li><a class="sub"><span class="name">떡볶이·튀김·순대</span></a></li>
+                                                <li><a class="sub"><span class="name">피자·핫도그·만두</span></a></li>
+                                                <li><a class="sub"><span class="name">폭립·떡갈비·안주</span></a></li>
+                                                <li><a class="sub"><span class="name">죽·스프·카레</span></a></li>
+                                                <li><a class="sub"><span class="name">선식·시리얼</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_sauce_inactive_pc@2x.1572243594.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_sauce_active_pc@2x.1572243594.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">면·양념·오일</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">파스타·면류</span></a></li>
+                                                <li><a class="sub"><span class="name">식초·소스·드레싱</span></a></li>
+                                                <li><a class="sub"><span class="name">양념·액젓·장류</span></a></li>
+                                                <li><a class="sub"><span class="name">식용유·참기름·오일</span></a></li>
+                                                <li><a class="sub"><span class="name">소금·설탕·향신료</span></a></li>
+                                                <li><a class="sub"><span class="name">밀가루·가루·믹스</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_snacks_inactive_pc@2x.1572243615.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_snacks_active_pc@2x.1572243616.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">생수·음료·우유·커피</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">생수·탄산수</span></a></li>
+                                                <li><a class="sub"><span class="name">음료·주스</span></a></li>
+                                                <li><a class="sub"><span class="name">우유·두유·요거트</span></a></li>
+                                                <li><a class="sub"><span class="name">커피</span></a></li>
+                                                <li><a class="sub"><span class="name">차</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_cookie_inactive_pc.1610074008.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_cookie_active_pc.1610074008.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">간식·과자·떡</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">과자·스낵·쿠키</span></a></li>
+                                                <li><a class="sub"><span class="name">초콜릿·젤리·캔디</span></a></li>
+                                                <li><a class="sub"><span class="name">떡·한과</span></a></li>
+                                                <li><a class="sub"><span class="name">아이스크림</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_deli_inactive_pc@2x.1568687352.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_deli_active_pc@2x.1568687352.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">베이커리·치즈·델리</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">식빵·빵류</span></a></li>
+                                                <li><a class="sub"><span class="name">잼·버터·스프레드</span></a></li>
+                                                <li><a class="sub"><span class="name">케이크·파이·디저트</span></a></li>
+                                                <li><a class="sub"><span class="name">치즈</span></a></li>
+                                                <li><a class="sub"><span class="name">델리</span></a></li>
+                                                <li><a class="sub"><span class="name">올리브·피클</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_health_inactive_pc@2x.1574645922.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_health_active_pc@2x.1574645923.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">건강식품</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">영양제</span></a></li>
+                                                <li><a class="sub"><span class="name">유산균</span></a></li>
+                                                <li><a class="sub"><span class="name">홍삼·인삼·꿀</span></a></li>
+                                                <li><a class="sub"><span class="name">건강즙·건강음료</span></a></li>
+                                                <li><a class="sub"><span class="name">건강분말·건강환</span></a></li>
+                                                <li><a class="sub"><span class="name">다이어트·이너뷰티</span></a></li>
+                                                <li><a class="sub"><span class="name">유아동</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_living_inactive_pc@2x.1588814089.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_living_active_pc@2x.1588814090.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">생활용품·리빙</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">휴지·티슈</span></a></li>
+                                                <li><a class="sub"><span class="name">여성·위생용품</span></a></li>
+                                                <li><a class="sub"><span class="name">세제·청소용품</span></a></li>
+                                                <li><a class="sub"><span class="name">화훼·인테리어소품</span></a></li>
+                                                <li><a class="sub"><span class="name">의약외품·마스크</span></a></li>
+                                                <li><a class="sub"><span class="name">생활잡화·문구</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_beauty_inactive_pc@2x.1588750188.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_beauty_active_pc@2x.1588750188.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">뷰티·바디케어</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">스킨케어</span></a></li>
+                                                <li><a class="sub"><span class="name">구강·면도</span></a></li>
+                                                <li><a class="sub"><span class="name">바디·제모</span></a></li>
+                                                <li><a class="sub"><span class="name">헤어케어</span></a></li>
+                                                <li><a class="sub"><span class="name">미용기기·소품</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_kitchen_inactive_pc@2x.1574646457.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_kitchen_active_pc@2x.1574646458.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">주방용품</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">주방소모품·잡화</span></a></li>
+                                                <li><a class="sub"><span class="name">주방·조리도구</span></a></li>
+                                                <li><a class="sub"><span class="name">냄비·팬·솥</span></a></li>
+                                                <li><a class="sub"><span class="name">보관용기·텀블러</span></a></li>
+                                                <li><a class="sub"><span class="name">식기·테이블웨어</span></a></li>
+                                                <li><a class="sub"><span class="name">컵·잔·커피도구</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_electronic__inactive_pc@2x.1574417978.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_electronic__active_pc@2x.1574417978.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">가전제품</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">주방가전</span></a></li>
+                                                <li><a class="sub"><span class="name">생활가전</span></a></li>
+                                                <li><a class="sub"><span class="name">계절가전</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_kids_inactive_pc@2x.1568687537.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_kids_active_pc@2x.1568687537.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">베이비·키즈</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">분유·간편 이유식</span></a></li>
+                                                <li><a class="sub"><span class="name">이유식 재료</span></a></li>
+                                                <li><a class="sub"><span class="name">간식·음식·음료</span></a></li>
+                                                <li><a class="sub"><span class="name">건강식품</span></a></li>
+                                                <li><a class="sub"><span class="name">이유·수유용품</span></a></li>
+                                                <li><a class="sub"><span class="name">기저귀·물티슈</span></a></li>
+                                                <li><a class="sub"><span class="name">세제·위생용품</span></a></li>
+                                                <li><a class="sub"><span class="name">스킨·구강케어</span></a></li>
+                                                <li><a class="sub"><span class="name">완구·잡화류</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/icon_pet_inactive_pc@2x.1587442293.png"
+                                                        alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="./img/mainMenu/icon_pet_active_pc@2x.1587442294.png"
+                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">반려동물</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu" style="display: none;">
+                                                <li><a class="sub"><span class="name">강아지 간식</span></a></li>
+                                                <li><a class="sub"><span class="name">강아지 주식</span></a></li>
+                                                <li><a class="sub"><span class="name">고양이 간식</span></a></li>
+                                                <li><a class="sub"><span class="name">고양이 주식</span></a></li>
+                                                <li><a class="sub"><span class="name">반려동물 용품</span></a></li>
+                                                <li><a class="sub"><span class="name">배변·위생</span></a></li>
+                                                <li><a class="sub"><span class="name">소용량·샘플</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="menu">
+                                                <span class="ico">
+                                                    <img src="./img/mainMenu/ico_recommend_v2.webp" alt="카테고리 아이콘 off"
+                                                        class="ico_off">
+                                                    <img src="./img/mainMenu/ico_recommend_on_v2.webp" alt="카테고리 아이콘 on"
+                                                        class="ico_on">
+                                                </span>
+                                                <span class="tit">
+                                                    <span class="txt">컬리의 추천</span>
+                                                </span>
+                                            </a>
+                                            <ul class="sub_menu2" style="display: none;">
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail_diet.1585551225.jpg"></span>
+                                                        <span class="name">식단관리</span>
+                                                    </a>
                                                 </li>
-                                                <li><a class="sub"><span class="name">고구마·감자·당근</span></a>
-                                                    <!---->
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail_breakfast.1585549149.jpg"></span>
+                                                        <span class="name">간편한 아침식사</span>
+                                                    </a>
                                                 </li>
-                                                <li><a class="sub"><span class="name">시금치·쌈채소·나물</span></a>
-                                                    <!---->
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail_kp_best_201207.1607408493.jpg"></span>
+                                                        <span class="name">재구매 BEST</span>
+                                                    </a>
                                                 </li>
-                                                <li><a class="sub"><span class="name">브로콜리·파프리카·양배추</span></a>
-                                                    <!---->
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail_kp_3000_201207.1607408565.jpg"></span>
+                                                        <span class="name">3천원의 행복</span>
+                                                    </a>
                                                 </li>
-                                                <li><a class="sub"><span class="name">양파·대파·마늘·배추</span></a>
-                                                    <!---->
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail_kp_210108_4.1610088265.jpg"></span>
+                                                        <span class="name">컬리마트</span>
+                                                    </a>
                                                 </li>
-                                                <li><a class="sub"><span class="name">오이·호박·고추</span></a>
-                                                    <!---->
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail_single.1594026881.jpg"></span>
+                                                        <span class="name">1인 가구</span>
+                                                    </a>
                                                 </li>
-                                                <li><a class="sub"><span class="name">냉동·이색·간편채소</span></a>
-                                                    <!---->
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/category_kurly_s-pick_thumbnail_shrimp.1589797274.png"></span>
+                                                        <span class="name">뚝딱! 간편식</span>
+                                                    </a>
                                                 </li>
-                                                <li><a class="sub"><span class="name">콩나물·버섯</span></a>
-                                                    <!---->
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumb_kp_bakery_201217.1608624742.jpg"></span>
+                                                        <span class="name">베이커리 맛집</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail.1598235634.jpg"></span>
+                                                        <span class="name">반찬가게</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/Thum_Cytogenic.1592469678.jpg"></span>
+                                                        <span class="name">키토제닉</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/Thum_vegan.1592469659.jpg"></span>
+                                                        <span class="name">비건</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/Thum_sustainable.1589875827.jpg"></span>
+                                                        <span class="name">지속가능한 상품</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/pb.1594027365.jpg"></span>
+                                                        <span class="name">컬리가 만든 상품</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumbnail_kp_only_201207.1607408395.jpg"></span>
+                                                        <span class="name">Kurly Only</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/kf3651016.1602814588.jpg"></span>
+                                                        <span class="name">KF365</span>
+                                                    </a>
+                                                </li>
+                                                <li class="recommend">
+                                                    <a class="sub">
+                                                        <span class="thumb"><img
+                                                                src="./img/mainMenu/thumb_kp_1PT_201222.1608611417.jpg"></span>
+                                                        <span class="name">1% Table</span>
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_fruit_inactive_pc@2x.1568684150.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_fruit_active_pc@2x.1568684150.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">과일·견과·쌀</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">친환경</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">제철과일</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">국산과일</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">수입과일</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">간편과일</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">냉동·건과일</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">견과류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">쌀·잡곡</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_seafood_inactive_pc@2x.1568684352.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_seafood_active_pc@2x.1568684353.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">수산·해산·건어물</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">제철수산</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">생선류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">굴비·반건류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">오징어·낙지·문어</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">새우·게·랍스터</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">해산물·조개류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">수산가공품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">김·미역·해조류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">건어물·다시팩</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_meat_inactive_pc@2x.1568684452.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_meat_active_pc@2x.1568684452.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">정육·계란</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">국내산 소고기</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">수입산 소고기</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">돼지고기</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">계란류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">닭·오리고기</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">양념육·돈까스</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">양고기</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_side_inactive_pc@2x.1572243579.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_side_active_pc@2x.1572243579.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">국·반찬·메인요리</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">국·탕·찌개</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">밀키트·메인요리</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">밑반찬</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">김치·젓갈·장류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">두부·어묵·부침개</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">베이컨·햄·통조림</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_convenient_inactive_pc@2x.1572243542.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_convenient_active_pc@2x.1572243543.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">샐러드·간편식</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">샐러드·닭가슴살</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">도시락·밥류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">파스타·면류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">떡볶이·튀김·순대</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">피자·핫도그·만두</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">폭립·떡갈비·안주</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">죽·스프·카레</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">선식·시리얼</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_sauce_inactive_pc@2x.1572243594.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_sauce_active_pc@2x.1572243594.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">면·양념·오일</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">파스타·면류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">식초·소스·드레싱</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">양념·액젓·장류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">식용유·참기름·오일</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">소금·설탕·향신료</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">밀가루·가루·믹스</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_snacks_inactive_pc@2x.1572243615.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_snacks_active_pc@2x.1572243616.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">생수·음료·우유·커피</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">생수·탄산수</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">음료·주스</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">우유·두유·요거트</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">커피</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">차</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_cookie_inactive_pc.1610074008.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_cookie_active_pc.1610074008.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">간식·과자·떡</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">과자·스낵·쿠키</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">초콜릿·젤리·캔디</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">떡·한과</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">아이스크림</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_deli_inactive_pc@2x.1568687352.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_deli_active_pc@2x.1568687352.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">베이커리·치즈·델리</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">식빵·빵류</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">잼·버터·스프레드</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">케이크·파이·디저트</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">치즈</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">델리</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">올리브·피클</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_health_inactive_pc@2x.1574645922.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_health_active_pc@2x.1574645923.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">건강식품</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">영양제</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">유산균</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">홍삼·인삼·꿀</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">건강즙·건강음료</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">건강분말·건강환</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">다이어트·이너뷰티</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">유아동</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_living_inactive_pc@2x.1588814089.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_living_active_pc@2x.1588814090.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">생활용품·리빙</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">휴지·티슈</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">여성·위생용품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">세제·청소용품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">화훼·인테리어소품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">의약외품·마스크</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">생활잡화·문구</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_beauty_inactive_pc@2x.1588750188.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_beauty_active_pc@2x.1588750188.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">뷰티·바디케어</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">스킨케어</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">구강·면도</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">바디·제모</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">헤어케어</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">미용기기·소품</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_kitchen_inactive_pc@2x.1574646457.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_kitchen_active_pc@2x.1574646458.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">주방용품</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">주방소모품·잡화</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">주방·조리도구</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">냄비·팬·솥</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">보관용기·텀블러</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">식기·테이블웨어</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">컵·잔·커피도구</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_electronic__inactive_pc@2x.1574417978.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_electronic__active_pc@2x.1574417978.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">가전제품</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">주방가전</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">생활가전</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">계절가전</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_kids_inactive_pc@2x.1568687537.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_kids_active_pc@2x.1568687537.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">베이비·키즈</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">분유·간편 이유식</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">이유식 재료</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">간식·음식·음료</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">건강식품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">이유·수유용품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">기저귀·물티슈</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">세제·위생용품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">스킨·구강케어</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">완구·잡화류</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_pet_inactive_pc@2x.1587442293.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://img-cf.kurly.com/shop/data/category/icon_pet_active_pc@2x.1587442294.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">반려동물</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu">
-                                                <li><a class="sub"><span class="name">강아지 간식</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">강아지 주식</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">고양이 간식</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">고양이 주식</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">반려동물 용품</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">배변·위생</span></a>
-                                                    <!---->
-                                                </li>
-                                                <li><a class="sub"><span class="name">소용량·샘플</span></a>
-                                                    <!---->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="menu"><span class="ico"><img
-                                                        src="https://res.kurly.com/pc/service/common/1908/ico_recommend_v2.png"
-                                                        alt="카테고리 아이콘" class="ico_off"> <img
-                                                        src="https://res.kurly.com/pc/service/common/1908/ico_recommend_on_v2.png"
-                                                        alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span
-                                                        class="txt">컬리의 추천</span>
-                                                    <!---->
-                                                </span></a>
-                                            <ul class="sub_menu recommend">
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_diet.1585551225.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">식단관리</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_breakfast.1585549149.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">간편한 아침식사</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_best_210303.1614667541.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">재구매 BEST</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_3000_210303.1614667552.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">3천원의 행복</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_kp_210108_4.1610088265.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">컬리마트</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_single.1594026881.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">1인 가구</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/category_kurly_s-pick_thumbnail_shrimp.1589797274.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">뚝딱! 간편식</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_bakery_210303.1614667577.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">베이커리 맛집</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail.1598235634.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">반찬가게</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/Thum_Cytogenic.1592469678.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">키토제닉</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_vegan_210303.1614667589.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">비건</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_offline_210303.1614666430.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">오프라인 맛집</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_kurly_s_210303.1614667608.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">컬리가 만든 상품</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_only_210303.1614667623.png&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">Kurly Only</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/kf3651016.1602814588.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">KF365</span></a>
-                                                </li>
-                                                <li>
-                                                    <!----> <a class="sub"><span class="thumb"
-                                                            style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumb_kp_1PT_201222.1608611417.jpg&quot;);"><img
-                                                                src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png"
-                                                                alt=""></span> <span class="name">1% Table</span></a>
-                                                </li>
-                                            </ul>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <script src="/common_js/gnb_v1.js?ver=1.26.16"></script>
-                <script type="text/javascript">
-                    //
-                    gnbMenu.update();
-
-                    // 검색창 클래스 추가/삭제
-                    var searchInputAction = (function () {
-                        var $target = {};
-
-                        var _searchInputAction = {
-                            setSeletor: function () {
-                                $target = {
-                                    $parent: $('#gnb'),
-                                    $search: $('#gnb [name=sword]'),
-                                    $deleteBtn: $('#searchInit'),
-                                    $edit: $('#edit')
-                                }
-
-                                this.setAction();
-                            },
-                            setAction: function () {
-                                var that = this;
-                                $target.$search.focus(function () {
-                                    that.changeClass($target.$search, 'add', 'focus');
-                                    that.deleteCheck();
-                                }).blur(function () {
-                                    that.changeClass($target.$search, 'remove', 'focus');
-                                    that.deleteCheck(false);
-                                }).on('keyup', function () {
-                                    if ($target.$edit.val() !== 'Y') {
-                                        $target.$edit.val('Y');
-                                    }
-                                    that.deleteCheck();
-                                });
-
-                                $target.$deleteBtn.on('click', function () {
-                                    $target.$search.val('');
-                                    that.deleteCheck();
-                                });
-                            },
-                            deleteCheck: function (type) {
-                                var that = this, count = $.trim($target.$search.val()).length;
-                                if (count === 0 || (typeof type !== 'undefined' && !type)) {
-                                    that.changeClass($target.$deleteBtn, 'remove', 'on');
-                                } else {
-                                    that.changeClass($target.$deleteBtn, 'add', 'on');
-                                }
-                            },
-                            changeClass: function (target, type, className) {
-                                if (type === 'add') {
-                                    target.addClass(className);
-                                } else {
-                                    target.removeClass(className);
-                                }
-                            }
-                        }
-
-                        _searchInputAction.setSeletor();
-                    })();
-
-                    // 로고 클릭 이벤트
-                    $('#header .link_main').on('click', function (e) {
-                        e.preventDefault();
-                        KurlyTracker.setAction('select_main_logo').sendData();
-                        location.href = $(this).attr('href');
-                    });
-
-                    $('#gnb .gnb .link').on('click', function (e) {
-                        e.preventDefault();
-                        var _event_name, _event_info;
-                        if ($(this).hasClass('new')) {
-                            _event_name = 'select_new_product_subtab';
-                        } else if ($(this).hasClass('best')) {
-                            _event_name = 'select_popular_product_subtab';
-                        } else if ($(this).hasClass('bargain')) {
-                            _event_name = 'select_bargain_subtab';
-                        } else if ($(this).hasClass('event')) {
-                            _event_name = 'select_event_list_subtab';
-                        }
-                        _event_info = $(this).attr('href');
-
-                        KurlyTracker.setEventInfo(_event_info).setAction(_event_name).sendData();
-                        location.href = _event_info;
-                    });
-
-                    // 장바구니 아이콘 클릭이벤트
-                    $('#gnbMenu .btn_cart').on('click', function (e) {
-                        e.preventDefault();
-                        KurlyTracker.setAction('select_cart').sendData();
-                        location.href = $(this).attr('href');
-                    });
-                </script>
-            </div>
+            </header>
             <div id="main">
                 <div id="content">
 
                     <div id="qnb" class="quick-navigation" style="top: 70px;">
                         <style>
                             #qnb {
-                                position: absolute;
-                                z-index: 1;
-                                right: 20px;
                                 top: 70px;
                                 width: 80px;
-                                font: normal 12px/16px "Noto Sans";
-                                color: #333;
-                                letter-spacing: -0.3px;
-                                transition: top 0.2s
-                            }
-
-                            .goods-goods_view #qnb {
-                                top: 20px
-                            }
-
-                            /* 배너 */
-                            #qnb .bnr_qnb {
-                                padding-bottom: 7px
-                            }
-
-                            #qnb .bnr_qnb .thumb {
-                                width: 80px;
-                                height: 120px;
-                                vertical-align: top
-                            }
-
-                            /* 메뉴 */
-                            #qnb .side_menu {
-                                width: 80px;
-                                border: 1px solid #ddd;
-                                border-top: 0 none;
-                                background-color: #fff
                             }
 
                             #qnb .link_menu {
-                                display: block;
-                                height: 29px;
                                 padding-top: 5px;
-                                border-top: 1px solid #ddd;
-                                text-align: center
                             }
 
                             #qnb .link_menu:hover,
                             #qnb .link_menu.on {
                                 color: #5f0080
-                            }
-
-                            /* 최근본상품 */
-                            #qnb .side_recent {
-                                position: relative;
-                                margin-top: 6px;
-                                border: 1px solid #ddd;
-                                background-color: #fff
-                            }
-
-                            #qnb .side_recent .tit {
-                                display: block;
-                                padding: 22px 0 6px;
-                                text-align: center
-                            }
-
-                            #qnb .side_recent .list_goods {
-                                overflow: hidden;
-                                position: relative;
-                                width: 60px;
-                                margin: 0 auto
-                            }
-
-                            #qnb .side_recent .list {
-                                position: absolute;
-                                left: 0;
-                                top: 0
-                            }
-
-                            #qnb .side_recent .link_goods {
-                                display: block;
-                                overflow: hidden;
-                                width: 60px;
-                                height: 80px;
-                                padding: 1px 0 2px
-                            }
-
-                            #qnb .side_recent .btn {
-                                display: block;
-                                overflow: hidden;
-                                width: 100%;
-                                height: 17px;
-                                border: 0 none;
-                                font-size: 0;
-                                line-height: 0;
-                                text-indent: -9999px
-                            }
-
-                            #qnb .side_recent .btn_up {
-                                position: absolute;
-                                left: 0;
-                                top: 0;
-                                background: url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_hover.png) no-repeat 50% 50%
-                            }
-
-                            #qnb .side_recent .btn_up.off {
-                                background: url(https://res.kurly.com/pc/service/main/2002/ico_quick_up.png) no-repeat 50% 50%
-                            }
-
-                            #qnb .side_recent .btn_down {
-                                background: url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_hover.png) no-repeat 50% 0
-                            }
-
-                            #qnb .side_recent .btn_down.off {
-                                background: url(https://res.kurly.com/pc/service/main/2002/ico_quick_down.png) no-repeat 50% 0
-                            }
-
-
-                            @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-                            only screen and (min-device-pixel-ratio: 1.5),
-                            only screen and (min-resolution: 1.5dppx) {
-                                #qnb .side_recent .btn_up {
-                                    background-image: url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_hover_x2.png);
-                                    background-size: 12px 18px
-                                }
-
-                                #qnb .side_recent .btn_down {
-                                    background-image: url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_hover_x2.png);
-                                    background-size: 12px 18px
-                                }
-
-                                #qnb .side_recent .btn_up.off {
-                                    background-image: url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_x2.png);
-                                    background-size: 12px 18px
-                                }
-
-                                #qnb .side_recent .btn_down.off {
-                                    background-image: url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_x2.png);
-                                    background-size: 12px 18px
-                                }
-                            }
-
-                            @media all and (max-width: 1250px) {
-                                #qnb {
-                                    display: none
-                                }
                             }
                         </style>
 
@@ -2065,15 +978,12 @@
                         }
 
                         .group_btn .btn {
-                            float: left;
-                            width: 150px;
-                            height: 42px;
                             margin-right: 5px;
                             border: 1px solid #512772;
                             background-color: #fff;
                             font-size: 14px;
                             line-height: 40px;
-                            font-family: "Noto Sans";
+                            font-family: 'Noto Sans KR';
                             font-weight: 700;
                             color: #56297a;
                             letter-spacing: -0.6px
@@ -2084,6 +994,9 @@
                             border: 1px solid #512771;
                             background-color: #512772;
                             color: #fff
+                        }
+                        .btn_submit {
+                            position:
                         }
                     </style>
                     <div class="page_aticle">
@@ -2306,14 +1219,14 @@
                                                                                         height="28" nowrap=""> <a
                                                                                             href="javascript:miniEditorMode(0,'editor')"><img
                                                                                                 id="btn_editor0"
-                                                                                                src="../lib/meditor/img/btn_editor.gif"
+                                                                                                src="../../img/goods_qna/btn_editor.webp"
                                                                                                 border="0"
                                                                                                 align="absmiddle"
                                                                                                 style="display:none"></a>
                                                                                         <a
                                                                                             href="javascript:miniEditorMode(0,'source')"><img
                                                                                                 id="btn_source0"
-                                                                                                src="../lib/meditor/img/btn_source.gif"
+                                                                                                src="../../img/goods_qna/btn_source.webp"
                                                                                                 border="0"
                                                                                                 align="absmiddle"></a>
                                                                                     </td>
@@ -2397,7 +1310,7 @@
                                                                                                             </option>
                                                                                                         </select></td>
                                                                                                     <td><img id="mini_btn0Bold"
-                                                                                                            src="../lib/meditor/img/btn_Bold.gif"
+                                                                                                            src="../../img/goods_qna/btn_Bold.webp"
                                                                                                             onclick="mini_command(0,'Bold')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2405,7 +1318,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0Italic"
-                                                                                                            src="../lib/meditor/img/btn_Italic.gif"
+                                                                                                            src="../../img/goods_qna/btn_Italic.webp"
                                                                                                             onclick="mini_command(0,'Italic')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2413,7 +1326,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0Underline"
-                                                                                                            src="../lib/meditor/img/btn_Underline.gif"
+                                                                                                            src="../../img/goods_qna/btn_Underline.webp"
                                                                                                             onclick="mini_command(0,'Underline')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2421,7 +1334,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0StrikeThrough"
-                                                                                                            src="../lib/meditor/img/btn_StrikeThrough.gif"
+                                                                                                            src="../../img/goods_qna/btn_StrikeThrough.webp"
                                                                                                             onclick="mini_command(0,'StrikeThrough')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2430,10 +1343,10 @@
                                                                                                             style="border:1px solid #ffffff;cursor:pointer">
                                                                                                     </td>
                                                                                                     <td><img
-                                                                                                            src="../lib/meditor/img/seperator.gif">
+                                                                                                            src="../../img/goods_qna/seperator.gif">
                                                                                                     </td>
                                                                                                     <td><img id="mini_btn0ForeColor"
-                                                                                                            src="../lib/meditor/img/btn_ForeColor.gif"
+                                                                                                            src="../../img/goods_qna/btn_ForeColor.webp"
                                                                                                             onclick="mini_command(0,'ForeColor')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2441,7 +1354,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0BackColor"
-                                                                                                            src="../lib/meditor/img/btn_BackColor.gif"
+                                                                                                            src="../../img/goods_qna/btn_BackColor.webp"
                                                                                                             onclick="mini_command(0,'BackColor')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2450,10 +1363,10 @@
                                                                                                             style="border:1px solid #ffffff;cursor:pointer">
                                                                                                     </td>
                                                                                                     <td><img
-                                                                                                            src="../lib/meditor/img/seperator.gif">
+                                                                                                            src="../../img/goods_qna/seperator.gif">
                                                                                                     </td>
                                                                                                     <td><img id="mini_btn0JustifyLeft"
-                                                                                                            src="../lib/meditor/img/btn_JustifyLeft.gif"
+                                                                                                            src="../../img/goods_qna/btn_JustifyLeft.webp"
                                                                                                             onclick="mini_command(0,'JustifyLeft')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2461,7 +1374,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0JustifyCenter"
-                                                                                                            src="../lib/meditor/img/btn_JustifyCenter.gif"
+                                                                                                            src="../../img/goods_qna/btn_JustifyCenter.webp"
                                                                                                             onclick="mini_command(0,'JustifyCenter')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2469,7 +1382,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0JustifyRight"
-                                                                                                            src="../lib/meditor/img/btn_JustifyRight.gif"
+                                                                                                            src="../../img/goods_qna/btn_JustifyRight.webp"
                                                                                                             onclick="mini_command(0,'JustifyRight')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2478,10 +1391,10 @@
                                                                                                             style="border:1px solid #ffffff;cursor:pointer">
                                                                                                     </td>
                                                                                                     <td><img
-                                                                                                            src="../lib/meditor/img/seperator.gif">
+                                                                                                            src="../../img/goods_qna/seperator.gif">
                                                                                                     </td>
                                                                                                     <td><img id="mini_btn0InsertTable"
-                                                                                                            src="../lib/meditor/img/btn_InsertTable.gif"
+                                                                                                            src="../../img/goods_qna/btn_InsertTable.webp"
                                                                                                             onclick="mini_command(0,'InsertTable')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2489,7 +1402,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0CreateLink"
-                                                                                                            src="../lib/meditor/img/btn_CreateLink.gif"
+                                                                                                            src="../../img/goods_qna/btn_CreateLink.gif"
                                                                                                             onclick="mini_command(0,'CreateLink')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -2497,7 +1410,7 @@
                                                                                                             onmouseout="mini_btn_out2(this)"
                                                                                                             style="border:1px solid #ffffff;cursor:pointer"><img
                                                                                                             id="mini_btn0InsertImage"
-                                                                                                            src="../lib/meditor/img/btn_InsertImage.gif"
+                                                                                                            src="../../img/goods_qna/btn_InsertImage.webp"
                                                                                                             onclick="mini_command(0,'InsertImage')"
                                                                                                             onmouseover="mini_btn_over(this)"
                                                                                                             onmousedown="mini_btn_down(this)"
@@ -3142,7 +2055,7 @@
                             </form>
                         </div>
                     </div>
-                    <script type="text/javascript">
+                    <!-- <script type="text/javascript">
                         /*------------------------------ 특정 한글 호환 2013-05-08 추가 ------------------------------*/
                         function html_euckr_entities(string) {
                             return string.replace(/&/g, "&amp;").replace(/\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -3185,7 +2098,7 @@
                         })
 
                         KurlyTracker.setScreenName('product_inquiry_writing');
-                    </script>
+                    </script> -->
                 </div>
             </div>
 
@@ -3236,43 +2149,33 @@
                         onclick="$('#layerDSR').hide();$(this).parent().find('.inner_layer').hide();"></button>
                 </div>
             </div>
-            <div id="footer">
-                <div class="inner_footer">
+            <div class="footerLine"></div>
+            <footer id="footer">
+                <div class="inner_footer page_aticle">
                     <div class="footer_cc">
                         <h2 class="tit_cc">고객행복센터</h2>
                         <div class="cc_view cc_call">
-                            <h3><span class="tit">1644-1107</span></h3>
+                            <h3>
+                                <span class="tit">1644-1107</span>
+                            </h3>
                             <dl class="list">
                                 <dt>365고객센터</dt>
                                 <dd>오전 7시 - 오후 7시</dd>
                             </dl>
                         </div>
                         <div class="cc_view cc_kakao">
-                            <h3><a class="tit" href="#none">카카오톡 문의</a></h3>
-                            <script type="text/javascript">
-                                $('.cc_kakao .tit').on('click', function (e) {
-                                    e.preventDefault();
-                                    $.ajax({
-                                        type: "GET",
-                                        url: apiDomain + '/v1/mypage/asks/confirm/kakao',
-                                        dataType: 'json',
-                                        success: function (data) {
-                                            if (data.data.ok_button_action_url.indexOf('https://api.happytalk.io/') > -1) {
-                                                if (confirm('[' + data.data.title + '] ' + data.data.message)) window.open(data.data.ok_button_action_url, '_blank');
-                                            } else {
-                                                alert(data.data.title + '\n' + data.data.message);
-                                            }
-                                        }
-                                    })
-                                });
-                            </script>
+                            <h3>
+                                <a class="tit" href="#none">카카오톡 문의</a>
+                            </h3>
                             <dl class="list">
                                 <dt>365고객센터</dt>
                                 <dd>오전 7시 - 오후 7시</dd>
                             </dl>
                         </div>
                         <div class="cc_view cc_qna">
-                            <h3><a href="/shop/mypage/mypage_qna_register.php?mode=add_qna" class="tit">1:1 문의</a></h3>
+                            <h3>
+                                <a href="./shop/mypage/mypage_qna_register.html" class="tit">1:1 문의</a>
+                            </h3>
                             <dl class="list">
                                 <dt>24시간 접수 가능</dt>
                                 <dd>고객센터 운영시간에 순차적으로 답변해드리겠습니다.</dd>
@@ -3281,243 +2184,173 @@
                     </div>
                     <div class="company">
                         <ul class="list">
-                            <li><a class="link" href="/shop/introduce/about_kurly.php">컬리소개</a></li>
+                            <li><a class="link" href="./shop/service/about_kurly.html">컬리소개</a></li>
                             <li><a class="link"
-                                    href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&amp;showinfo=0&amp;wmode=opaque&amp;enablejsapi=1"
-                                    onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes');return false;">컬리소개영상</a>
+                                    href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&showinfo=0&wmode=opaque&enablejsapi=1"
+                                    onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes'); return false;">컬리소개영상</a>
                             </li>
                             <li><a class="link" href="https://marketkurly.recruiter.co.kr/appsite/company/index"
                                     target="_blank">인재채용</a></li>
-                            <li><a class="link" href="/shop/service/agreement.php">이용약관</a></li>
-                            <li><a class="link emph" href="/shop/service/private.php">개인정보처리방침</a></li>
-                            <li><a class="link" href="/shop/service/guide.php">이용안내</a></li>
+                            <li><a class="link" href="#">이용약관</a></li>
+                            <li><a class="link" href="#" style="font-weight: 500;">개인정보처리방침</a></li>
+                            <li><a class="link" href="#">이용안내</a></li>
                         </ul>
-                        법인명 (상호) : 주식회사 컬리 <span class="bar">I</span> 사업자등록번호 : 261-81-23567 <a
-                            href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&amp;apv_perm_no="
-                            target="_blank" class="link">사업자정보 확인</a>
-                        <br>
-                        통신판매업 : 제 2018-서울강남-01646 호 <span class="bar">I</span> 개인정보보호책임자 : 이원준
-                        <br>
-                        주소 : 서울시 도산대로 16길 20, 이래빌딩 B1 ~ 4F <span class="bar">I</span> 대표이사 : 김슬아
-                        <br>
-                        입점문의 : <a href="https://forms.gle/oKMAe1SaicqMX3SC9" target="_blank" class="link">입점문의하기</a>
-                        <span class="bar">I</span> 제휴문의 : <a href="mailto:business@kurlycorp.com"
-                            class="link">business@kurlycorp.com</a>
-                        <br>
-                        채용문의 : <a href="mailto:recruit@kurlycorp.com" class="link">recruit@kurlycorp.com</a>
-                        <br>
-                        팩스: 070 - 7500 - 6098 <span class="bar">I</span> 이메일 : <a href="mailto:help@kurlycorp.com"
-                            class="link">help@kurlycorp.com</a>
-                        <em class="copy">© KURLY CORP. ALL RIGHTS RESERVED</em>
+                        <p>
+                            법인명 (상호) : 주식회사 컬리 <span class="bar">|</span> 사업자등록번호 : 261-81-23567 <a
+                                href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&apv_perm_no=" class="link"
+                                target="_blank">사업자정보 확인</a><br>
+                            통신판매업 : 제 2018-서울강남-01646 호 <span class="bar">|</span> 개인정보보호책임자 : 이원준<br>
+                            주소 : 서울시 도산대로 16길 20, 이래빌딩 B1 ~ 4F <span class="bar">|</span> 대표이사 : 김슬아<br>
+                            입점문의 : <a href="https://forms.gle/oKMAe1SaicqMX3SC9" target="_blank" class="link">입점문의하기</a>
+                            <span class="bar">|</span> 제휴문의 : <a href="mailto:business@kurlycorp.com"
+                                class="link">business@kurlycorp.com</a><br>
+                            채용문의 : <a href="mailto:recruit@kurlycorp.com" class="link">recruit@kurlycorp.com</a><br>
+                            팩스: 070 - 7500 - 6098 <span class="bar">|</span> 이메일 : <a href="mailto:help@kurlycorp.com"
+                                class="link">help@kurlycorp.com</a>
+                        <p class="copy">© KURLY CORP. ALL RIGHTS RESERVED</p>
+                        </p>
                         <ul class="list_sns">
-                            <li>
-                                <a href="https://instagram.com/marketkurly" class="link_sns" target="_blank"><img
-                                        src="https://res.kurly.com/pc/ico/1810/ico_instagram.png"
-                                        alt="마켓컬리 인스타그램 바로가기"></a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/marketkurly" class="link_sns" target="_blank"><img
-                                        src="https://res.kurly.com/pc/ico/1810/ico_fb.png" alt="마켓컬리 페이스북 바로가기"></a>
-                            </li>
-                            <li>
-                                <a href="http://blog.naver.com/marketkurly" class="link_sns" target="_blank"><img
-                                        src="https://res.kurly.com/pc/ico/1810/ico_blog.png" alt="마켓컬리 네이버블로그 바로가기"></a>
-                            </li>
-                            <li>
-                                <a href="https://m.post.naver.com/marketkurly" class="link_sns" target="_blank"><img
-                                        src="https://res.kurly.com/pc/ico/1810/ico_naverpost.png"
-                                        alt="마켓컬리 유튜브 바로가기"></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg" class="link_sns lst"
-                                    target="_blank"><img src="https://res.kurly.com/pc/ico/1810/ico_youtube.png"
-                                        alt="마켓컬리 유튜브 바로가기"></a>
-                            </li>
+                            <li><a href="https://instagram.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="./img/sns/ico_instagram.webp" alt="마켓컬리 인스타그램 바로가기"></a></li>
+                            <li><a href="https://www.facebook.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="./img/sns/ico_fb.webp" alt="마켓컬리 페이스북 바로가기"></a></li>
+                            <li><a href="http://blog.naver.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="./img/sns/ico_blog.webp" alt="마켓컬리 네이버블로그 바로가기"></a></li>
+                            <li><a href="https://m.post.naver.com/marketkurly" class="link_sns" target="_blank"><img
+                                        src="./img/sns/ico_naverpost.webp" alt="마켓컬리 네이버포스트 바로가기"></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg" class="link_sns"
+                                    target="_blank"><img src="./img/sns/ico_youtube.webp" alt="마켓컬리 유튜브 바로가기"></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="footer_link">
+                <div class="footer_link page_aticle">
                     <div class="authentication">
-                        <a href="#none"
-                            onclick="popup('https://res.kurly.com/pc/img/1909/img_isms.jpg',550,700);return false;"
-                            class="mark" target="_blank">
-                            <img src="https://res.kurly.com/pc/ico/2001/logo_isms.png" alt="isms 로고" class="logo">
-                            <p class="txt">
-                                [인증범위] 마켓컬리 쇼핑몰 서비스 개발 · 운영<br>
-                                [유효기간] 2019.04.01 ~ 2022.03.31
-                            </p>
+                        <a href="#" class="mark">
+                            <img src="./img/sns/logo_isms.webp" alt="isms 로고" class="logo">
+                            <p class="txt">[인증범위] 마켓컬리 쇼핑몰 서비스 개발 · 운영<br>[유효기간] 2019.04.01 ~ 2022.03.31</p>
                         </a>
-                        <a href="#none"
-                            onclick="popup('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&amp;certNum=2021-EP-R003',527,720);return false;"
-                            class="mark" target="_blank">
-                            <img src="https://res.kurly.com/pc/ico/2001/logo_eprivacyplus.png" alt="eprivacy plus 로고"
-                                class="logo">
-                            <p class="txt">
-                                개인정보보호 우수 웹사이트 ·<br>
-                                개인정보처리시스템 인증 (ePRIVACY PLUS)
-                            </p>
+                        <a href="#" class="mark">
+                            <img src="./img/sns/logo_eprivacyplus.webp" alt="eprivacy plus 로고" class="logo">
+                            <p class="txt">개인정보보호 우수 웹사이트 ·<br>개인정보처리시스템 인증 (ePRIVACY PLUS)</p>
                         </a>
-                        <a href="#none"
-                            onclick="popup('http://pgweb.uplus.co.kr/ms/escrow/s_escrowYn.do?mertid=go_thefarmers',460,550);return false;"
-                            class="mark lguplus" target="_blank">
-                            <img src="https://res.kurly.com/pc/service/main/2009/logo_payments.png" alt="payments 로고"
-                                class="logo">
-                            <p class="txt">
-                                고객님의 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한<br>
-                                토스 페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.
-                            </p>
+                        <a href="#" class="mark lguplus">
+                            <img src="./img/sns/logo_payments.webp" alt="payments 로고" class="logo">
+                            <p class="txt">고객님의 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한<br>토스 페이먼츠 구매안전(에스크로) 서비스를 이용하실 수
+                                있습니다.</p>
                         </a>
                     </div>
                 </div>
-            </div>
+            </footer>
         </div>
-    </div><iframe name="xdomain-e8fb1d92" id="xdomain-e8fb1d92" src="https://api.kurly.com/xdomain?ver=1"
-        style="display:none;"></iframe>
+        <!-- quick list 시작 -->
+        <a href="#top" id="pageTop" class="on" style="opacity: 1; bottom: 15px;">맨 위로가기</a> <!--  -->
+        <script>
+            // 스크롤을 위로 올리면 (top메뉴가 보이면) to_top이 아래로 사라지는 효과
+            $(document).ready(function () {
+                var pageTop = {
+                    $target: $('#pageTop'),
+                    $targetDefault: 0,
+                    $scrollTop: 0,
+                    $window: $(window),
+                    $windowHeight: 0,
+                    setTime: 500,
+                    saveHeight: 0,
+                    init: function () {
+                    },
+                    action: function () {
+                        var $self = this;
+                        $self.$windowHeight = parseInt($self.$window.height());
+                        $self.$window.on('scroll', function () {
+                            $self.$scrollTop = parseInt($self.$window.scrollTop());
+                            if ($self.$scrollTop >= $self.$windowHeight) {
+                                if (!$self.$target.hasClass('on')) {
+                                    $self.position();
+                                    $self.$target.addClass('on');
+                                    $self.showAction();
+                                }
+                            } else {
+                                if ($self.$target.hasClass('on')) {
+                                    $self.position();
+                                    $self.$target.removeClass('on');
+                                    $self.hideAction();
+                                }
+                            }
+                        });
 
-    <a href="#top" id="pageTop">맨 위로가기</a>
-    <script>
-        $(document).ready(function () {
-            var pageTop = {
-                $target: $('#pageTop'),
-                $targetDefault: 0,
-                $scrollTop: 0,
-                $window: $(window),
-                $windowHeight: 0,
-                setTime: 500,
-                saveHeight: 0,
-                init: function () {
-                },
-                action: function () {
-                    var $self = this;
-                    $self.$windowHeight = parseInt($self.$window.height());
-                    $self.$window.on('scroll', function () {
-                        $self.$scrollTop = parseInt($self.$window.scrollTop());
-                        if ($self.$scrollTop >= $self.$windowHeight) {
-                            if (!$self.$target.hasClass('on')) {
-                                $self.position();
-                                $self.$target.addClass('on');
-                                $self.showAction();
-                            }
-                        } else {
-                            if ($self.$target.hasClass('on')) {
-                                $self.position();
-                                $self.$target.removeClass('on');
-                                $self.hideAction();
-                            }
+                        $self.$target.on('click', function (e) {
+                            e.preventDefault();
+                            $self.topAction();
+                        });
+                    },
+                    showAction: function () {
+                        var $self = this;
+                        $self.$target.stop().animate({
+                            opacity: 1,
+                            bottom: $self.saveHeight
+                        }, $self.setTime);
+                    },
+                    hideAction: function () {
+                        var $self = this;
+                        $self.$target.stop().animate({
+                            opacity: 0,
+                            bottom: -$self.$target.height()
+                        }, $self.setTime);
+                    },
+                    topAction: function () {
+                        var $self = this;
+                        $self.hideAction();
+                        $('html,body').animate({
+                            scrollTop: 0
+                        }, $self.setTime);
+                    },
+                    position: function () {
+                        var $self = this;
+                        $self.saveHeight = 15;
+                        if ($('#sectionView').length > 0) {
+                            $self.saveHeight = 25;
                         }
-                    });
-
-                    $self.$target.on('click', function (e) {
-                        e.preventDefault();
-                        $self.topAction();
-                    });
-                },
-                showAction: function () {
-                    var $self = this;
-                    $self.$target.stop().animate({
-                        opacity: 1,
-                        bottom: $self.saveHeight
-                    }, $self.setTime);
-                },
-                hideAction: function () {
-                    var $self = this;
-                    $self.$target.stop().animate({
-                        opacity: 0,
-                        bottom: -$self.$target.height()
-                    }, $self.setTime);
-                },
-                topAction: function () {
-                    var $self = this;
-                    $self.hideAction();
-                    $('html,body').animate({
-                        scrollTop: 0
-                    }, $self.setTime);
-                },
-                position: function () {
-                    var $self = this;
-                    $self.saveHeight = 15;
-                    if ($('#sectionView').length > 0) {
-                        $self.saveHeight = 25;
-                    }
-                    if ($('#branch-banner-iframe').length > 0 && parseInt($('#branch-banner-iframe').css('bottom')) > 0) {
-                        $('#footer').addClass('bnr_app');
-                        $self.saveHeight += $('#branch-banner-iframe').height();
+                        if ($('#branch-banner-iframe').length > 0 && parseInt($('#branch-banner-iframe').css('bottom')) > 0) {
+                            $('#footer').addClass('bnr_app');
+                            $self.saveHeight += $('#branch-banner-iframe').height();
+                        }
                     }
                 }
-            }
-            pageTop.action();
-        });
-    </script>
-
-    <script>
-        // 클릭인인경우(푸터에 있으나, 아직공용작업은 못함) => bgLoading 이부분 처리필요
-        var bodyScroll = {
-            winScrollTop: 0,
-            body: $('body'),
-            gnb: $('#gnb'),
-            bg: $('#bgLoading'),
-            bodyFixed: function () {
-                var $self = this;
-                var gnbCheck = false;
-                $self.gnb = $('#gnb');
-                if ($self.gnb.hasClass('gnb_stop')) {
-                    gnbCheck = true;
-                }
-                $self.body = $('body');
-                $self.bg = $('#bgLoading');
-                $self.winScrollTop = $(window).scrollTop();
-                $self.bg.show();
-                $self.body.addClass('noBody').css({
-                    'top': -$self.winScrollTop
-                });
-            },
-            bodyDefault: function (type) {
-                var $self = this;
-                $self.body.removeClass('noBody').removeAttr('style');
-                $self.bg.hide();
-                if (type === undefined) {
-                    window.scrollTo(0, $self.winScrollTop);
-                }
-            }
-        }
-    </script>
-
-    <iframe name="ifrmHidden" id="ifrmHidden" src="about:blank" style="display:none;width:100%;height:600px;"></iframe>
-    <script>
-            (function (theFrame) {
-                theFrame.contentWindow.location.href = theFrame.src;
-            }(document.getElementById("ifrmHidden")));
-    </script>
-
-
-    <script src="https://res.kurly.com/js/polifill/customeEvent.js"></script>
-    <script>
-        window.addEventListener('load', function () {
-            // KM-1238 branch
-            (function (b, r, a, n, c, h, _, s, d, k) { if (!b[n] || !b[n]._q) { for (; s < _.length;)c(h, _[s++]); d = r.createElement(a); d.async = 1; d.src = "https://cdn.branch.io/branch-latest.min.js"; k = r.getElementsByTagName(a)[0]; k.parentNode.insertBefore(d, k); b[n] = h } })(window, document, "script", "branch", function (b, r) { b[r] = function () { b._q.push([r, arguments]) } }, { _q: [], _v: 1 }, "addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-            var BRANCHKEY = 'key_live_meOgzIdffiVWvdquf7Orkacksxa2LneN';
-            if (!webStatus.is_release_build) {
-                BRANCHKEY = 'key_test_joIkrHgomhL3qaEreXL5QdigzEn6Ucd4';
-            }
-            branch.init(BRANCHKEY);
-            branch.setIdentity(uuidCheck);
-            branch.track("pageview");
-
-            // branchReady
-            var _eventBranchReady = new CustomEvent("branchReady", {
-                detail: { // 전달 할께 있으면 반드시 detail 오브젝트에 넣어야 함
-                    val: '1',
-                }
+                pageTop.action();
             });
-            document.dispatchEvent(_eventBranchReady);
-            // END branchReady
-        }, false);
-    </script>
-
-
-
-    <script
-        type="text/javascript">window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam.nr-data.net", "licenseKey": "NRJS-5dec146893a58b07e31", "applicationID": "602251426", "transactionName": "MlZUZhdUXkoCAkBQDQscY0AMGkNRDBEbXg0KV0UdAlpfXRA+RVcDOkFTVQxGRFwRT0RREg==", "queueTime": 0, "applicationTime": 52, "atts": "HhFXEF9OTUQ=", "errorBeacon": "bam.nr-data.net", "agent": "" }</script>
+        </script>
+        <script>
+            var bodyScroll = {
+                winScrollTop: 0,
+                body: $('body'),
+                gnb: $('#gnb'),
+                bg: $('#bgLoading'),
+                bodyFixed: function () {
+                    var $self = this;
+                    var gnbCheck = false;
+                    $self.gnb = $('#gnb');
+                    if ($self.gnb.hasClass('gnb_stop')) {
+                        gnbCheck = true;
+                    }
+                    $self.body = $('body');
+                    $self.bg = $('#bgLoading');
+                    $self.winScrollTop = $(window).scrollTop();
+                    $self.bg.show();
+                    $self.body.addClass('noBody').css({
+                        'top': -$self.winScrollTop
+                    });
+                },
+                bodyDefault: function (type) {
+                    var $self = this;
+                    $self.body.removeClass('noBody').removeAttr('style');
+                    $self.bg.hide();
+                    if (type === undefined) {
+                        window.scrollTo(0, $self.winScrollTop);
+                    }
+                }
+            }
+        </script>
+        <!-- quick list 끝 -->
+    </div>
 </body>
 
 </html>
