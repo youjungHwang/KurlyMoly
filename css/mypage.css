@@ -73,9 +73,11 @@ letter-spacing: 0; color: #5f0080; letter-spacing: -0.7px; }
 #viewOrderList .head_aticle .tit_sub { font-size: 14px; margin-left: 10px; color: #999; vertical-align: 3px; font-weight: 400; }
 #viewOrderList .search_date { position: relative; }
 .search_date .btn_layer { overflow: hidden; position: absolute; right: 0; top: -70px; width: 157px; height: 44px; padding: 11px 0 0 15px; border: 1px solid #ddd; font-size: 14px; color: #666; line-height: 18px; letter-spacing: -.5px; box-sizing: border-box; margin-top: -5px; }
-.search_date .layer_search { display: none; position: absolute; right: 0; top: -30px; width: 157px; border: 1px solid #dddfe1; border-top: 0; }
+.search_date .layer_search { display: none; position: absolute; right: 0; top: -30px; width: 157px; border: 1px solid #dddfe1; border-top: 0; z-index: 9999; }
+.search_date .layer_search.on {display: block;}
 #viewOrderList .list_order { border-top: 2px solid #333; padding-top: 10px; }
 #viewOrderList .list_order .date { padding-top: 20px; font-size: 16px; line-height: 24px; font-weight: 500; color: #666; } 
+#viewOrderList .list_order .no_data {border-bottom: 1px solid #dddfe1;}
 #viewOrderList .list_order .goods_name { padding: 20px 0 13px; border-bottom: 1px solid #dddfe1; }
 #viewOrderList .list_order .order_goods { position: relative; margin-top: 10px; padding: 0 20px; border: 1px solid #dddfe1; }
 
@@ -136,23 +138,25 @@ table { border-collapse: collapse; border-spacing: 0; }
 .page_section #trans_list .edit { width: 24px; height: 24px; border: 0 none; font-size: 0; line-height: 0; background: url(../img/mypage/ico_modify.webp) no-repeat 50% 50%; cursor: pointer;  background-size: 24px 24px; vertical-align: 7px; }
 
 /* =========배송지 수정 팝업페이지========== */
-#wrap { margin-top: 0 !important; padding: 0 !important; height: 100%; width: 100%; max-width: 500px; }
-.layout-main-wrapper { position: relative; }
-.section_destinaiton { overflow: auto; overflow-x: hidden; height: 100%; padding-bottom: 0; }
-.only_pc .pop_head { padding: 20px 0 0 30px; font-weight: 500; line-height: 36px; letter-spacing: -.5px; font-size: 24px; }
+#wrap { margin-top: 0 !important; padding: 0 !important; height: 100%; width: 100% !important; }
+.layout-main-wrapper { position: relative;}
+.section_destinaiton {  height: 100%; padding-bottom: 0; }
+.only_pc_pop .pop_head { padding: 20px 0 0 30px; font-weight: 500; line-height: 36px; letter-spacing: -.5px; font-size: 24px; }
 #inputForm { box-sizing: border-box; }
 #inputForm .only_pc { position: static; }
 #inputForm .only_pc.modify { padding: 0 30px; }
 .section_destinaiton .only_pc .badge_default { margin-bottom: 11px; font-weight: 500; }
 .badge_default { display: inline-block; height: 22px; padding: 5px 8px 0 8px; border-radius: 11px; background-color: #f7f7f7; vertical-align: top;  margin-bottom:15px; }
 
+.section_destination {width: 100%;  padding-bottom: 0; max-width: 500px; position: relative;}
+.section_destination .only_pc.modify { padding: 0 30px;}
 .section_destination .only_pc.modify .field { padding-top: 22px; }
-.section_destination .only_pc.modify .address { padding-bottom: 12px; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -.3px; }
-.section_destination .only_pc input[type=text] { height: 44px; padding: 1px 11px 0 15px; border-radius: 3px; font-weight: 500; font-size: 14px; letter-spacing: -.5px; outline: 0px; width: 94.5%; border: 1px solid #ddd; }
+.section_destination .only_pc.modify .address { padding-bottom: 12px; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -.3px; width: 100%; }
+.section_destination .only_pc input[type=text] { height: 44px; padding: 1px 11px 0 15px; border-radius: 3px; font-weight: 500; font-size: 14px; letter-spacing: -.5px; outline: 0px;  border: 1px solid #ddd; width: 45%; }
 .section_destination .only_pc.modify .label_block { padding-bottom: 7px; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -.3px; }
 
 .section_destination .only_pc.modify .btn.active { margin-top: 30px; }
-.section_destination .only_pc.modify .btn { height: 44px; border-radius: 3px; font-weight: 500; font-size: 14px; line-height: 42px; width: 100%; }
+.section_destination .only_pc.modify .btn { height: 44px; border-radius: 3px; font-weight: 500; font-size: 14px; line-height: 42px; width: 45%; }
 
 /* ============================================늘 사는 것 ======================================== */
 #Z_list { border-bottom:  1px solid #ddd; box-sizing: border-box; width: 820px; }
@@ -160,12 +164,18 @@ table { border-collapse: collapse; border-spacing: 0; }
 #Z_list thead tr th:first-child { width: 40px; }
 #Z_list thead tr th:nth-child(2) { width: 150px; }
 #Z_list thead tr th:last-child { width: 164px; }
-.label_check { display: inline-block; padding: 0 21px 0 6px; background: #fff url(../img/mypage/ico_checkbox_off.webp) no-repeat 0 2px; font-size: 14px; color: #000; line-height: 18px; cursor: pointer; white-space: nowrap; }
-.label_check .checked { background: #fff url(../img/mypage/ico_checkbox_on.webp)no-repeat 0 2px; }
-.label_check .icon_check { opacity: 0; z-index: -1; position: relative; cursor: pointer; vertical-align: top; }
+#Z_list .label_check { display: inline-block; padding: 0 21px 0 6px; background: none; font-size: 14px; color: #000; line-height: 18px; cursor: pointer; white-space: nowrap; }
+/* background: #fff url(../img/mypage/ico_checkbox_off.webp) no-repeat 0 2px; */
+
+#Z_list input[type=checkbox] {display: none !important;}
+#Z_list .check_ico {background: #fff url(/img/mypage/ico_checkbox_off.webp) no-repeat 0 2px; display: block !important ; width: 25px; height: 25px;}
+#Z_list input[type=checkbox]:checked + .check_ico {background: #fff url(../img/mypage/ico_checkbox_on.webp)no-repeat 0 2px;}
+/*   */
+.label_check .icon_check { opacity: 1; z-index: 9999; position: relative; cursor: pointer; vertical-align: top;}
 
 #Z_list tbody tr:first-child td { border-top: 1px solid black; }
 #Z_list tbody tr { box-sizing: border-box; }
+#Z_list tbody .hasNone{display: none;}
 #Z_list tbody tr td { border-top: 1px solid #f4f4f4; height: 156px; }
 #Z_list .thumb img { width: 90px; }
 #Z_list .info { width: 463px; box-sizing: border-box; }
@@ -219,23 +229,34 @@ table { border-collapse: collapse; border-spacing: 0; }
 .section_review .list_after .desc_after { display: block; overflow: hidden; padding: 14px 30px 0; cursor: pointer; }
 .section_review .list_after .subject { display: block; overflow: hidden; width: 100%; position: relative; padding-right: 120px; font-size: 14px; line-height: 20px; font-weight: 500; color: #000; white-space: nowrap; text-overflow: ellipsis; box-sizing: border-box; }
 .section_review .list_after .date { position: absolute; right: 0; top: 0; font-size: 12px; color: #949296; line-height: 20px; text-align: right; }
-.section_review .list_after li.item_view .txt { max-height: none; padding-top: 0; display: block; -webkit-line-clamp: inherit; } 
-
+.section_review .list_after li.item_view .txt { max-height: none !important; padding-top: 0; display: block; -webkit-line-clamp: inherit; } 
 .section_review .list_after li { border-bottom: 2px solid #ddd; }
+.section_review .list_after .on .txt { display: block; overflow: hidden; max-height: none !important; padding-top: 10px; font-size: 12px; color: #000; line-height: 20px; word-wrap: break-word; text-overflow: ellipsis;  }
 
-.section_review .list_after .txt { display: block; overflow: hidden; max-height: 70px; padding-top: 10px; font-size: 12px; color: #000; line-height: 20px; word-wrap: break-word; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+
+
 
 /* 요건 클릭시 변경되는 CSS  (문장기준 아래꺼 의미)*/
-.section_review .list_after .view { display: none; }
+
 .section_review .list_after li.item_view .view { display: block; padding-top: 20px; }
 
-.section_review .list_after .btn_after { overflow: hidden; padding: 20px 30px 0; }
-.section_review .list_after li.item_view .btn_help { padding-top: 16px; }
-.section_review .list_after .btn_help { float: left; padding-top: 0; border: 0; background: 0 0; font-size: 12px; color: #666; line-height: 18px; cursor: default; }
-.section_review .list_after li.item_view .btn { display: block; }
-.section_review .list_after .btn_del { padding-top: 1px; }
-.section_review .list_after .btn { display: none; float: right; height: 34px; padding: 0 13px 0 12px; font-size: 12px; color: #5f0080; line-height: 32px; text-align: center; cursor: pointer; }
-.section_review .list_after .btn_modify { margin-left: 28px; border: 1px solid #5f0080; }
+.section_review .list_after .on .btn_after { overflow: hidden; padding: 20px 30px 0; }
+.section_review .list_after .on li.item_view .btn_help { padding-top: 16px; }
+.section_review .list_after .on .btn_help { float: left; padding-top: 0; border: 0; background: 0 0; font-size: 12px; color: #666; line-height: 18px; cursor: default; }
+.section_review .list_after .on li.item_view .btn { display: block; }
+.section_review .list_after .on .btn_del { padding-top: 1px; }
+.section_review .list_after .on .btn { display: block; float: right; height: 34px; padding: 0 13px 0 12px; font-size: 12px; color: #5f0080; line-height: 32px; text-align: center; cursor: pointer; width: unset; z-index: 99999;}
+.section_review .list_after .on .btn_modify { margin-left: 28px; border: 1px solid #5f0080; }
+
+.tab_menu_cont{display: none;}
+.tab_menu_cont.on{display: block;}
+
+.section_review .list_after .desc {display: none;}
+.section_review .list_after .view {display: block;}
+.section_review .list_after .on .desc {display: block;}
+.section_review .list_after .on .view {display: none;}
+
+
 /* ======================================= 후기 작성 페이지 ================================== */
 .page_aticle.aticle_type2 .page_section { float: right; width: 820px; }
 #form_review { box-sizing: border-box; margin: 0; padding: 0; line-height: 1; font-size: 12px; color: #4c4c4c; }
@@ -279,6 +300,19 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 .section_write .btn_reg.btn_disabled { border: 1px solid #dddfe1; background-color: #fff; color: #dddfe1; }
 
+
+.section_write.review_section .layer {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 #dddfe1;
+}
+.layer_type .layer {z-index: 99999;}
 
 /* ========================================  적립금  ======================================== */
 .page_aticle .head_aticle{ padding-bottom: 34px; }

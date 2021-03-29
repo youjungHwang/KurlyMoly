@@ -69,7 +69,8 @@
         .no_delivery .btn{height:36px;padding-top:16px;border:0 none;background:none;font-size:12px;color:#999;line-height:20px}
         .no_delivery .btn .ico{display:inline-block;width:20px;height:20px;background:url(../../img/join_zipCode/ico_arrow_999_40x40.webp) no-repeat 50% 50%;background-size:20px 20px;vertical-align:-5px}
         .no_delivery .btn.on .ico{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);-o-transform:rotate(-180deg);transform:rotate(-180deg)}
-        .no_delivery .list{display:none;padding-top:30px}
+        .no_delivery .list{display:none;padding-top:30px }
+        
         .no_delivery .list li{font-size:12px;color:#666;line-height:17px}
         .no_delivery .list li:last-child{padding-bottom:20px}
       </style>
@@ -124,9 +125,16 @@
             <h2 class="tit">
               <span class="ico">샛별배송 지역 중 배송 불가 장소 안내</span>
               <span class="desc">관공서/ 학교/ 병원/ 시장/ 공단 지역/ 산간 지역/ 백화점 등</span>
-              <button type="button" class="btn on">자세히 보기<span class="ico"></span></button>
+              <button class="btn on" ><span class="ico"></span></button>
+              <label class="detail" style="z-index: 9999;">자세히 보기</label>
             </h2>
-            <ul class="list" style="display: block;">
+            <script type="text/javascript">
+              $('.no_delivery .detail').on('click',function () {
+                  $(this).addClass('fuck');
+                  
+              });
+              </script>
+            <ul class="list">
               <li>가락동농수산물도매시장</li>
               <li>가락동농수산물시장</li>
               <li>가천대학교</li>
@@ -155,8 +163,8 @@
         </div>
       </div>
     </div>
-  
-  
+
+
     <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
     <script charset="UTF-8" type="text/javascript"
       src="//t1.daumcdn.net/postcode/api/core/210128/1611810131757/210128.js"></script>
@@ -265,9 +273,6 @@
         });
       });
     </script>
-
-
-
   
     <script type="text/javascript" src="/asset/js/useKurly/libText.bundle.js"></script>
     <script>
@@ -283,6 +288,11 @@
       $("#zipcode-address-confirm input[type='submit']").on("click", function () {
         $("input[name=address_sub]").attr('data-required', 'false');
         opener.byteToTxt();
+      });
+    </script>
+    <script>
+      $('#detail').on('click', function() {
+        $('#detail').toggleClass('checked');
       });
     </script>
   </body>

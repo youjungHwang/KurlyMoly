@@ -12,64 +12,111 @@ window.onscroll = function sticky() {
 
     }
 }
-//사이드바 고정
-function offset(el) {
-    var rect = el.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-}
-window.addEventListener("load", function () {
-    var lastScrollTop = 0;
-    var article = document.getElementById("content"); //본문영역 id
-    var aside = document.getElementById("qnb"); //사이드바 id
-    if (document.documentElement.clientWidth > 767 && article.offsetHeight > aside.offsetHeight) {
-        window.addEventListener("scroll", function () {
-            var scrT = window.pageYOffset || document.documentElement.scrollTop;
-            var winH = document.documentElement.clientHeight;
-            var sideH = aside.offsetHeight;
-            var dir = (scrT > lastScrollTop) ? "down" : "up"; lastScrollTop = scrT;
-            var sideT = offset(aside).top;
-            var topLine = offset(article).top;
-            var bottomLine = topLine + article.offsetHeight - winH;
+//index.html 사이드바 top을 512px로 고정, 515이상스크롤 되었을 때 내려감
+$(function(){
 
-            if (sideH > winH) {
-                if (dir == "down") {
-                    if (scrT >= (sideT + sideH - winH) && scrT < bottomLine) {
-                        aside.style.marginTop = scrT - topLine - (sideH - winH) + 'px';
-                    }
-                    if (scrT >= bottomLine) {
-                        aside.style.marginTop = Math.max(topLine + article.offsetHeight - sideH - topLine, 0) + 'px';
-                    }
-                } else {
-                    if (scrT <= sideT && scrT > topLine) {
-                        aside.style.marginTop = scrT - topLine + 'px';
-                    }
-                    if (scrT <= topLine) {
-                        aside.style.marginTop = 0;
-                    }
-                }
-            } else {
-                bottomLine = topLine + article.offsetHeight - sideH;
-                if (dir == "down") {
-                    if (scrT > topLine && scrT < bottomLine) {
-                        aside.style.marginTop = scrT - topLine + 'px';
-                    }
-                    if (scrT >= bottomLine) {
-                        aside.style.marginTop = bottomLine - topLine + 'px';
-                    }
-                } else {
-                    if (scrT > topLine && scrT < bottomLine) {
-                        aside.style.marginTop = scrT - topLine + 'px';
-                    }
-                    if (scrT <= topLine) {
-                        aside.style.marginTop = 0;
-                    }
-                }
-            }
-        });
-    }
+	//사이드바 스크롤
+	
+    const scrollHeight = 512;
+
+	function sidebar(){
+		if($(window).scrollTop() > scrollHeight){
+			var top = $(window).scrollTop();
+
+			document.getElementById('qnbMain').style.top = top +'px'; //스크롤내릴때 top값
+
+
+		}else{
+            document.getElementById('qnbMain').style.top = '512px'; //고정값
+        }
+	}
+
+	sidebar();
+
+	$(window).scroll(()=>{
+		sidebar();
+	});
+
 });
+//index.html을 제외한 나머지 사이드바 스크롤 
+//몇몇 페이지 하단부분 사이드바 꺼짐-->수정(borad:전체,goods:cart,dtail,order,member:join,mypage:전체,event페이지전체)
+$(function(){
+
+	//사이드바 스크롤
+	
+    const scrollHeight = 300;
+
+	function sidebar(){
+		if($(window).scrollTop() > scrollHeight){
+			var top = $(window).scrollTop();
+
+			document.getElementById('qnb').style.top = top +'px'; //스크롤내릴때 top값
+
+		}else{
+            document.getElementById('qnb').style.top = '150px'; //고정값(padding-top+top=300px)
+        }
+	}
+
+	sidebar();
+
+	$(window).scroll(()=>{
+		sidebar();
+	});
+
+});
+
+//카테고리메뉴펼치기-->카테고리 항목으로 커서 옮길시 none 처리 돼버림
+//지도아이콘 커서올릴시 display:block
+$(document).ready(function(){
+    $('.menu1 > a').mouseenter(function(){
+        $('.gnb_sub').css('display','block');
+    });
+    $('.gnb_sub .inner_sub ').mouseleave(function(){
+        $('.gnb_sub').css('display','none');
+    });
+    $('.inner_sub > ul > li').mouseenter(function(){
+        $('.gnb_sub').css('width','438px');
+    });
+    $('.inner_sub > ul > li ').mouseleave(function(){
+        $('.gnb_sub').css('width','219px');
+    });
+    $('.location_set').mouseenter(function(){
+        $('.layer_location').css("display","block");
+    });
+    $('.layer_location').mouseleave(function(){
+        $('.layer_location').css("display","none");
+    });
+    $('.page_article #top_menu ul li a').click(function(){
+        $('.page_article #top_menu ul li a').css("color","#5f0080");
+        $('.page_article #top_menu ul li a').css("font-weight","bold");
+        $('.page_article #top_menu ul li a').css("border-bottom","1px solid #5f0080");
+    });
+
+});
+
+//스위치기능
+$(function(){
+    $('.btn_onoff').click(function(){
+        $(this).toggleClass("switchOn");
+    });
+});
+//찜기능
+$(function(){
+    $(".turn_off").click(function(){
+        $('.turn_off').css("display","none");
+        $('.turn_on').css("display","block");
+    });
+
+});
+//onclick="return false"-> 한번에 처리하기...
+$(function(){
+    $('.chart_btn').click(function(){
+        $(this).onclick("return false");
+    });
+});
+
+
+
 //회원가입페이지//
 
 //아이디 정규식확인
