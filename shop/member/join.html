@@ -783,7 +783,7 @@
                                             <td>
                                                 <input type="text" name="m_id" value="" maxlength="16" required="" fld_esssential="" option="regId" label="아이디" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
                                                 <input type="hidden" name="chk_id" required="" fld_esssential="" label="아이디중복체크" value="">
-                                                <a class="btn default" href="#" onclick="chkId();"  >중복확인</a>
+                                                <a class="btn default" href="javascript:chkId()">중복확인</a>
                                                 <p class="txt_guide square">
                                                     <span class="txt txt_case1">6자 이상의 영문 혹은 영문과 숫자를 조합</span>
                                                     <span class="txt txt_case2">아이디 중복확인</span>
@@ -857,76 +857,9 @@
                                                     <input type="hidden" name="address" id="address" value="" required="" readonly="readonly" label="주소">
                                                     <input type="hidden" name="road_address" id="road_address" required="" value="" label="주소">
                                                 </div>
-                                            <label for="addressNo" value="우편번호 찾기" onclick="sample6_execDaumPostcode()" style="cursor: pointer;">
-                                                <a id="addressSearch" class="search" >
-                                                        <span id="addressNo" class="address_no" data-text="재검색" >주소 검색</span>
-                                                    
+                                                <a href="#none" id="addressSearch" class="search" onclick="popup('../proc/popup_address.php',530,500)">
+                                                    <span id="addressNo" class="address_no" data-text="재검색">주소 검색</span>
                                                 </a>
-                                            </label>
-                                                <input type="hidden" id="sample6_postcode" placeholder="우편번호">
-
-
-
-<input type="hidden" id="sample6_address" placeholder="주소"><br>
-<input type="hidden" id="sample6_detailAddress" placeholder="상세주소">
-<input type="hidden" id="sample6_extraAddress" placeholder="참고항목">
-
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
-    }
-</script>
-
-
-
-
-
-
                                                 <div id="selectAddressSub">
                                                     <input type="text" name="address_sub" id="address_sub" value="" class="byteTotext" placeholder="나머지 주소를 입력해주세요">
                                                     <p id="delivery"></p>
@@ -1514,7 +1447,7 @@
                                                         <button type="button" class="btn_ok"><span class="txt_type">확인</span></button>
                                                         <button type="button" class="btn_close"><span class="screen_out">레이어 닫기</span></button>
                                                     </div>
-                                                    
+                                                    <button type="button" class="btn_close"><span class="screen_out">레이어 닫기</span></button>
                                                 </div>
                     
                                                 <div class="check_view">
@@ -1945,7 +1878,7 @@
 
                             // 중복확인
                             function chkId() {
-                                var alertMsg = "아이디는 6자 이상의 영문 혹은 영문과 숫자 조합만 가능합니다 ㅋㅋㅋㅋㅋ";
+                                var alertMsg = "아이디는 6자 이상의 영문 혹은 영문과 숫자 조합만 가능합니다";
                                 var $target = $("[name='m_id']").parent().find('.txt_case2');
                                 var id_txt = $("[name='m_id']").val();
                                 var id_trim_txt = id_txt.replace(/(^\s*)|(\s*$)/gi, "");
@@ -1970,10 +1903,8 @@
                                     if ($target.hasClass('good')) $target.removeClass('good');
                                     $target.addClass('bad');
                                 } else {
-                                    // ifrmHidden.location.href = "indb.php?mode=chkId&m_id=" + form.m_id.value; // jsp 관련인듯
-                                    
+                                    ifrmHidden.location.href = "indb.php?mode=chkId&m_id=" + form.m_id.value;
                                 }
-                                alert("사용할 수 있는 아이디 입니다.")
                             }
                             function chkId2(num) {
                                 var $target = $("[name='m_id']").parent().find('.txt_case2');
@@ -1997,7 +1928,7 @@
                                 }
                             }
                             // 이메일 중복확인
-                            function chkEmail($target) {
+                            function chkEmail() {
                                 var email_txt = $("input[name='email']").val();
                                 var trim_txt = email_txt.replace(/(^\s*)|(\s*$)/gi, "");
                                 var email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
@@ -2007,11 +1938,12 @@
                                     $('[name=chk_email]').val('0');
                                     return false;
                                 }
-                                if (email_regex.test(trim_txt) === false) 
+                                if (email_regex.test(trim_txt) === false) {
                                     alert("잘못된 이메일 형식입니다.");
                                     $('[name=chk_email]').val('0');
                                     return false;
-                                
+                                }
+
                                 var form = document.frmMember;
                                 if (!chkText(form.email, form.email.value, "이메일을 입력해주세요")) {
                                     $('[name=chk_email]').val('0');
@@ -2021,10 +1953,13 @@
                                     $('[name=chk_email]').val('0');
                                     return;
                                 }
+
                                 $('[name=chk_email]').val('1');
+
                                 var chkUrl = "indb.php?mode=chkEmail&email=" + form.email.value + "&m_id=";
                                 ifrmHidden.location.href = chkUrl;
                             }
+
                             $("input[name='mobileInp']").change(function () {
                                 $("input[name='check_mobile']").val("0");
                             });
