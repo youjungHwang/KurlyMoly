@@ -1,0 +1,5 @@
+package com.kurly.notice;
+
+public class NoticeDAO {
+
+}

@@ -1,0 +1,51 @@
+'use strict';
+
+$('.cc_kakao .tit').on('click', function(e) {
+	e.preventDefault();
+	$.ajax({
+		type: "GET",
+		url: apiDomain + '/v1/mypage/asks/confirm/kakao',
+		dataType: 'json',
+		success: function(data) {
+			if (data.data.ok_button_action_url.indexOf('https://api.happytalk.io/') > -1) {
+				if (confirm('[' + data.data.title + '] ' + data.data.message)) window.open(data.data.ok_button_action_url, '_blank');
+			} else {
+				alert(data.data.title + '\n' + data.data.message);
+			}
+		}
+	})
+});
+
+$(function() {
+	$("#btnIdCheck").on("click", function() {
+		if ($("#userid").val() == "") {
+			alert("아이디를 입력하세요");
+			$("#userid").focus();
+			return false;
+		}
+
+		const xhr = new XMLHttpRequest();
+		const userid = $("#userid").val();
+		xhr.open("GET", "idcheck.jsp?userid=" + userid, true);
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+				const result = xhr.responseText;
+				if (result.trim() == "ok") {
+					// 아이디를 만들 수 있을 때(중복 아이디가 아닐 때)
+					$("#idCheckMsg").html("<b style='color: red'>사용할 수 있는 아이디입니다<b>");
+					$("#isIdCheck").val("y");
+				} else {
+					// 아이디를 만들 수 없을 때(중복 아이디일 경우)
+					$("#idCheckMsg").html("<b style='color: red'>사용할 수 없는 아이디입니다<b>");
+				}
+			}
+		}
+	});
+
+	$("#userid").on("keyup", function() {
+		$("#isIdCheck").val("n");
+		$("#idCheckMsg").html("");
+	});
+
+});

@@ -1,0 +1,632 @@
+var birthCheckAction = {  // 생년월일검증
+  birthGuide : null,
+  _birthCheck : {},
+  birthCount : false,
+  _serverTimeGet : {},
+  serverTimeCheck : false, // 서버시간은 1회만 가져오기
+  formCheck : function(){
+    var $self = this;
+
+    $self.birthCount = true;
+
+    $self._birthCheck = {
+      'validator' : true,
+      'text':null,
+    };
+    if(!$self.serverTimeCheck){
+      $self.serverTime();
+      $self.serverTimeCheck = true;
+    }
+    var _serverTime = $self._serverTimeGet;
+    var _birthData = {
+      'year': $.trim($('[name=birth_year]').val()),
+      'month': $.trim($('[name="birth[]"]').eq(0).val()),
+      'day': $.trim($('[name="birth[]"]').eq(1).val()),
+    }
+    var year = _birthData.year;
+    var numYear = Number(year);
+    var month = _birthData.month;
+    var numMonth = Number(month);
+    var day = _birthData.day;
+    var numDay = Number(day);
+    var minYear = _serverTime.year - 100;
+    var lastDay = ( new Date( year, month, 0) ).getDate();
+    var dateBirth = new Date(numYear, numMonth - 1, numDay);
+    var dateNow = new Date(_serverTime.year, _serverTime.month - 1, _serverTime.day);
+    var dateUnderFourteen = new Date(_serverTime.year - 14, _serverTime.month - 1, _serverTime.day);
+    var dateOverHundred = new Date(_serverTime.year - 100, _serverTime.month - 1, _serverTime.day);
+
+    // 값이 없을때는 검증하지 않음
+    if (year === '' && month === '' && day === '') {
+      $self.birthCount = false;
+      return;
+    }
+
+    if ( !/\d{4}/.test(year) ) {
+      $self._birthCheck.text = '태어난 년도 4자리를 정확하게 입력해주세요.';
+      $self._birthCheck.validator = false;
+      return;
+    }
+
+    // 디폴트값인 공백인 경우 체크 하지 않음
+    if ( ( month !== '' && !/^(?:0?[1-9]|1[012])$/.test(month) ) || ((year !== ''|| day !== '') && month === '')) {
+      $self._birthCheck.text = '태어난 월을 정확하게 입력해주세요.';
+      $self._birthCheck.validator = false;
+      return;
+    }
+
+    // 디폴트값인 공백인 경우 체크 하지 않음 & 월의 마지막달이 틀렸을때
+    if ( ( day !== '' && !/^(?:0?[1-9]|[12]\d|3[01])$/.test(day) ) || numDay > lastDay || ((year !== ''|| month !== '') && day === '')) {
+      $self._birthCheck.text = '태어난 일을 정확하게 입력해주세요.';
+      $self._birthCheck.validator = false;
+      return;
+    }
+
+    // 만 14세 미만
+    if (dateBirth > dateUnderFourteen) {
+      $self._birthCheck.text = '만 14세 미만은 가입이 불가합니다.';
+      // 생년월일이 미래로 입력되었어요.
+      if (dateBirth > dateNow) {
+        $self._birthCheck.text = '생년월일이 미래로 입력되었어요.';
+      }
+      $self._birthCheck.validator = false;
+      return;
+    }
+
+    // 100년전
+    if (dateBirth <= dateOverHundred) {
+      $self._birthCheck.text = '생년월일을 다시 확인해주세요.';
+      $self._birthCheck.validator = false;
+      return;
+    }
+  }, validatorForm : function(){
+    var $self = this;
+    if(!$self.birthCount) return true; // 값이 없을때는 검증하지 않음
+    $self.formCheck();
+    if(! $self._birthCheck.validator ){
+      alert('생년월일을 확인해주세요.');
+      $("[name=birth_year]").focus();
+      return false;
+    }else{
+      return true;
+    }
+  }, validatorText : function(){
+    var $self = this;
+
+    $self.formCheck();
+
+    $self.birthGuide = $('.field_birth .txt_guide .txt');
+    if($self._birthCheck.validator){
+      $self.birthGuide.parent().hide();
+      $self.birthGuide.removeAttr('class').addClass('txt');
+      $self.birthGuide.text('');
+    }else{
+      $self.birthGuide.parent().show()
+      $self.birthGuide.removeAttr('class').addClass('txt');
+      $self.birthGuide.addClass('bad');
+      $self.birthGuide.text($self._birthCheck.text);
+    }
+  }, serverTime : function(){ // 서버시간가져오기
+    var $self = this;
+    var curDate = new Date(window.webStatus.timestamp);
+    $self._serverTimeGet = {
+      'year' : Number(curDate.getFullYear()),
+      'month' : Number(curDate.getMonth()+1),
+      'day' : Number(curDate.getDate())
+    }
+  }
+};
+
+//특수문자 입력 방지
+function preventSpecialChars($self, type) {
+  var str = $self.val();
+  var regExp = /(?:[^\w\s\uAC00-\uD7A3\u1100-\u11FF\u3131-\u314E\u314F-\u3163\u318D\u119E\u11A2\u2022\u2025a\u00B7\uFE55]|_)+/g;
+  var msg = '이름에 한글, 영어, 숫자 외 특수문자를 사용할 수 없습니다.';
+  if(type === 'write'){
+    if(regExp.test(str)){
+      $self.val(str.replace(regExp, ''));
+    }
+  }else{
+    if(regExp.test(str)){
+      alert(msg);
+      if(type === 'result'){
+        return false;
+      }
+    }
+    return true;
+  }
+};
+
+
+$(document).ready(function () {
+  // �̿�����ü����
+  var checkBoxAction = {
+    parentTarget : null, // ��ü����üũ�ڽ� + ����üũ�ڽ�
+    allTarget : null, // ��ü����üũ�ڽ�
+    chlidTarget : null, // ����üũ�ڽ�
+    selectCount : 0, // �ϳ��� ��Ʈ�� �� �ִ� ���� üũ�ڽ� ��
+    caseSet : null, // ���� ���̽�
+    caseSetTarget : null,
+    caseSetCount : 0,
+    set : function(){
+      var $self = this;
+      var type = false;
+      $('.checkbox_parent [type=checkbox]').on('click', function(){
+        $self.setSelector($(this).parents('.checkbox_parent').find('[name=agree_allcheck]'));
+        if($(this).attr('name') === 'agree_allcheck'){
+          $self.allAction( $self.allTarget.is(':checked') );
+        }else{
+          if( $(this).data('child') ){
+            type = 'child';
+          }else if( $(this).data('parent') ){
+            type = 'parent';
+          }
+          $self.setSelector( $(this), type );
+          if( $(this).data('parent') ){
+            $self.checkChange( $self.caseSetTarget, $(this).is(':checked'));
+          }else{
+            $self.checkChange( $(this), $(this).is(':checked'));
+          }
+          $self.checkCount( type );
+        }
+      });
+    },
+    setSelector : function(target, type){
+      var $self = this;
+      $self.parentTarget = target.parents('.checkbox_parent');
+      $self.allTarget = $self.parentTarget.find('[name=agree_allcheck]');
+      $self.chlidTarget = $self.parentTarget.find('.checkbox_child [type=checkbox]');
+      $self.selectCount = $self.chlidTarget.length;
+      if(type !== false){
+        $self.caseSet = target.parents('.checkbox_case').find('[data-parent]');
+        $self.caseSetTarget = target.parents('.checkbox_case').find('[data-child]');
+        $self.caseSetCount = $self.caseSetTarget.length;
+      }
+    },
+    allAction : function(checkResult){
+      var $self = this;
+      $self.checkChange( $self.chlidTarget, checkResult);
+    },
+    checkCount : function( type ){
+      var $self = this;
+      var count = 0;
+      if(type !== false){
+        var countSub = 0;
+        $self.caseSetTarget.each(function(){
+          if($(this).is(':checked')){
+            countSub++;
+          }
+        })
+        if($self.caseSetCount === countSub){
+          $self.checkChange( $self.caseSet, true);
+        }else{
+          $self.checkChange( $self.caseSet, false);
+        }
+      }
+      $self.chlidTarget.each(function(){
+        if($(this).is(':checked')){
+          count++;
+        }
+      })
+      if($self.selectCount === count){
+        $self.checkChange( $self.allTarget, true);
+      }else{
+        $self.checkChange( $self.allTarget, false);
+      }
+    },
+    checkChange : function(obj, result){
+      obj.attr('checked', result)
+      obj.prop('checked', result);
+    }
+  }
+  checkBoxAction.set();
+
+
+
+  // ----����� ���� v2 start ----
+  var checkCertBtn = true; // ���� �ϱ� ��ư Ȱ��ȭ ����
+  var confirmCertBtn = false; // ���� Ȯ�� ��ư Ȱ��ȭ ����
+  var stopTimer = false; // Ÿ�̸� ����
+  var mobile0 = $('input[name="mobile[]"]').eq(0);
+  var mobile1 = $('input[name="mobile[]"]').eq(1);
+  var mobile2 = $('input[name="mobile[]"]').eq(2);
+
+  /* ������ȣ üũ Ȯ�ο� ������������ */
+  var confirmTxt = $('.field_phone .txt_guide span');
+
+  /* ������ȣ üũ Ÿ�Ժ� ���⹮��*/
+  function confNotice(type){
+    var resultText, classAdd;
+    if(type === 'receive'){
+      classAdd = 'receive';
+      // resultText = '인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요. (마켓컬리 1644-1107)';
+    }else if(type === 'fail'){
+      classAdd = 'bad';
+      resultText = '������ȣ�� Ȯ�����ּ���';
+    }else if(type === 'conf'){
+      classAdd = 'good';
+      resultText = '������ȣ Ȯ�οϷ�';
+    }
+    confirmTxt.removeClass('receive bad good').addClass(classAdd);
+    confirmTxt.text(resultText);
+  }
+
+  // ������ȣ �ޱ� Ȱ��ȭ
+  $('[name=mobileInp]').on('keyup blur',function(e){
+    var inputText = $(this).val();
+    var number = inputText.replace(/[^0-9]/g,'');
+    $(this).val(number);
+    number = $(this).val();
+
+    if($(this).val().length > 11){
+      $(this).val(number.substring(0,11));
+    }
+    mobile0.val(number.substring(0,3));
+    mobile1.val(number.substring(3,7));
+    mobile2.val(number.substring(7,11));
+    var checkNum = '010';
+    if( ( mobile0.val().indexOf(checkNum) !== 0 && $(this).val().length >= 10) || (mobile0.val().indexOf(checkNum) === 0 && $(this).val().length >= 11) ){
+      if(confirmCertBtn == false){
+        if($('#btn_cert').hasClass('disabled')) $('#btn_cert').removeClass('disabled');
+        checkCertBtn = true;
+      }
+    } else {
+      if(!$('#btn_cert').hasClass('disabled')) $('#btn_cert').addClass('disabled');
+      checkCertBtn = false;
+    }
+  });
+
+  function countdown(elementId, seconds) {
+    var element, endTime, hours, mins, msLeft, time;
+
+    function updateTimer() {
+      if (stopTimer == true) {
+        $('#countdown').hide();
+        return;
+      }
+
+      $('#countdown').show();
+
+      msLeft = endTime - (+new Date);
+      if (msLeft < 0) {
+        count_down_stop();
+        alert('���� ���� �ð��� �������ϴ�');
+      } else {
+        time = new Date(msLeft);
+        hours = time.getUTCHours();
+        mins = time.getUTCMinutes();
+        element.innerHTML = (hours ? hours + ':' + ('0' + mins).slice(-2) : mins) + ' : ' + ('0' + time.getUTCSeconds()).slice(-2);
+        certifyTime = setTimeout(updateTimer, time.getUTCMilliseconds());
+
+        checkCertBtn = false;
+        confirmCertBtn = true;
+      }
+    }
+
+    element = document.getElementById(elementId);
+    endTime = (+new Date) + 1000 * seconds;
+    updateTimer();
+  }
+
+  // ī��Ʈ �ٿ� ����
+  function authSuccessAction(count_time) {
+    stopTimer = false;
+    checkCertBtn = false;
+    confirmCertBtn = true;
+    countdown('countdown', count_time);
+    $('#btn_cert').addClass('disabled'); // [������ȣ �ޱ�] ��Ȱ��ȭ
+    $('#codeNum').show();
+    $('#btn_cert_confirm').removeClass('disabled'); // [������ȣ Ȯ��] Ȱ��ȭ
+    $('[name=auth_code]').prop("disabled", false);
+    $('[name=mobileInp]').attr('readonly',true);
+
+    // ������ȣ �Է��׵θ� Ȱ��ȭ�׹�������
+    if(!$('.code_num .num_count').hasClass('on')) $('.code_num .num_count').addClass('on');
+  }
+
+  // ī��Ʈ �ٿ� ����
+  function count_down_stop() {
+    stopTimer = true;
+    checkCertBtn = true;
+    confirmCertBtn = false;
+    $('#countdown').hide();
+    $('#btn_cert').removeClass('disabled'); // [������ȣ �ޱ�] Ȱ��ȭ
+    $('#btn_cert_confirm').addClass('disabled'); // [������ȣ Ȯ��] ��Ȱ��ȭ
+    $('[name=auth_code]').prop("disabled", true);
+    $('[name=mobileInp]').attr('readonly',false);
+  }
+
+  // ���� �Ϸ�
+  function mobile_auth_finished(showAlert)
+  {
+    stopTimer = true;
+    checkCertBtn = true;
+    confirmCertBtn = false;
+    $('#btn_cert').removeClass('disabled'); // [������ȣ �ޱ�] Ȱ��ȭ
+    $('#btn_cert_confirm').addClass('disabled'); // [������ȣ Ȯ��] ��Ȱ��ȭ
+    $('[name=auth_code]').prop("disabled", true);
+    $('#btn_cert').text('�ٸ���ȣ ����');
+    $("[name=check_mobile]").val('1');
+    $('[name=mobileInp]').attr("readonly", true);
+
+    if (showAlert == true)
+    {
+      alert('������ �Ϸ� �Ǿ����ϴ�.');
+      confNotice('conf');
+    }
+  }
+
+  // [���� ��ȣ �ޱ�] ��ư Ŭ��
+  $('#btn_cert').on('click', function() {
+    if($(this).hasClass('disabled')){
+      return;
+    }
+
+    $('.field_phone .txt_guide').show();
+    confNotice('receive');
+
+    if (!checkCertBtn) {
+      return;
+    }
+
+    mobile = mobile0.val() + "-" + mobile1.val() + "-" + mobile2.val();
+    auth_code = $('input[name="auth_code"]');
+
+    if ($(this).text() === '�ٸ���ȣ ����')
+    {
+      $(this).text('������ȣ �ޱ�');
+      $(this).addClass('disabled');
+      checkCertBtn = false;
+      if($('.code_num .num_count').hasClass('on')) $('.code_num .num_count').removeClass('on');
+      $('.field_phone .txt_guide').hide();
+      $('#codeNum').hide();
+      $('[name=mobileInp]').attr("readonly", false).val('');
+      $('[name=check_mobile]').val('');
+      return;
+    }
+
+    if ($("[name=check_mobile]").val() === '1') {
+      $('#btn_cert').text('������ȣ �ޱ�');
+      $('[name=mobileInp]').attr("readonly", false);
+      mobile0.val('');
+      mobile1.val('');
+      mobile2.val('');
+      auth_code.val('');
+      $("[name=check_mobile]").val('');
+      return;
+    }
+
+    if (mobile0.val() == "" || mobile1.val() == "" || mobile2.val() == "") {
+      alert('��Ȯ�� �޴��� ��ȣ�� �Է��� �ּ���');
+      return;
+    }
+
+    // ���� ��ȣ ��û
+    $.ajax({
+      url: '/shop/proc/auth_code.php',
+      type: 'POST',
+      data: {
+        "mode": "get_auth_code",
+        "mobile": mobile
+      },
+      dataType: 'json',
+      async: false
+    }).success(function(data) {
+      if (data.result == false) {
+        alert(data.message);
+      } else {
+        alert(data.message);
+        authSuccessAction(parseInt(data.data.count_time));
+      }
+    }).fail(function() {
+      alert("�Ͻ����� ��ְ� �߻��Ͽ����ϴ�.\n����� �ٽýõ����ּ���");
+    });
+  });
+
+  // [���� ��ȣ Ȯ��] ��ư Ŭ��
+  $('#btn_cert_confirm').on('click', function() {
+    if (confirmCertBtn == false) {
+      return;
+    }
+
+    mobile = mobile0.val() + "-" + mobile1.val() + "-" + mobile2.val();
+    auth_code = $('input[name="auth_code"]').val();
+
+    if( auth_code.length < 6){
+      confNotice('fail');
+      return;
+    }
+
+    // ���� ��ȣ Ȯ�� ��û
+    $.ajax({
+      url: '/shop/proc/auth_code.php',
+      type: 'POST',
+      data: {
+        "mode": "check_auth_code",
+        "mobile": mobile,
+        "auth_code": auth_code
+      },
+      dataType: 'json',
+      async: false
+    }).success(function(data) {
+      if (data.result == false) {
+        //alert(data.message);
+        confNotice('fail');
+      } else {
+        $('input[name="auth_finish_code"]').val(data.data.auth_finish_code);
+        mobile_auth_finished(true);
+      }
+    }).fail(function() {
+      alert("�Ͻ����� ��ְ� �߻��Ͽ����ϴ�.\n����� �ٽýõ����ּ���");
+    });
+  });
+  // ----����� ���� v2 end ----
+});
+
+
+// �˻� ��� ���ϴ� ��� �ش� ��ġ�� �̵�
+var isFormJoinSubmit = false;
+var validPosition = '', defaultTopHeight = $('#header').height() + $('#appBanner').height();
+function validFocus($target) {
+  if( window.appResult.device === 'pc'){
+
+    if($target.attr('name') === 'address'){
+      $target = $('#addressSearch');
+    }
+
+    setTimeout(function(){
+      $target.focus();
+      isFormJoinSubmit = false;
+    }, 1000);
+  }else{
+    validPosition = $target.closest('.join_cell').offset().top - defaultTopHeight;
+    window.scrollTo(0, validPosition);
+    isFormJoinSubmit = false;
+  }
+}
+
+// input type check
+function inputTypeCheck($target){
+  if(
+    ( $target.attr('type') !== 'checkbox' &&  $target.attr('type') !== 'radio' && $target.val() == '' )
+    ||
+    (( $target.attr('type') === 'checkbox' ||  $target.attr('type') === 'radio' ) && !$target.is(":checked") )
+  ){
+    return true;
+  }
+  return false;
+}
+
+// �̸���
+var regexEmoji = /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff]|[\u0023-\u0039]\ufe0f?\u20e3|\u3299|\u3297|\u303d|\u3030|\u24c2|\ud83c[\udd70-\udd71]|\ud83c[\udd7e-\udd7f]|\ud83c\udd8e|\ud83c[\udd91-\udd9a]|\ud83c[\udde6-\uddff]|\ud83c[\ude01-\ude02]|\ud83c\ude1a|\ud83c\ude2f|\ud83c[\ude32-\ude3a]|\ud83c[\ude50-\ude51]|\u203c|\u2049|[\u25aa-\u25ab]|\u25b6|\u25c0|[\u25fb-\u25fe]|\u00a9|\u00ae|\u2122|\u2139|\ud83c\udc04|[\u2600-\u26FF]|\u2b05|\u2b06|\u2b07|\u2b1b|\u2b1c|\u2b50|\u2b55|\u231a|\u231b|\u2328|\u23cf|[\u23e9-\u23f3]|[\u23f8-\u23fa]|\ud83c\udccf|\u2934|\u2935|[\u2190-\u21ff])/g;
+
+function formJoinSubmit() {
+  // �̺�Ʈ �ߺ�����
+  if(isFormJoinSubmit){
+    return;
+  }
+  isFormJoinSubmit = true;
+
+  var isRequired = true, validMsg = '', validMsgSub = '��(��) �Է��� �ּ���';
+
+  $("input[type='text']").each(function(){
+    var input_txt = $(this).val();
+    var input_trim_txt = input_txt.trim();
+    $(this).val(input_trim_txt);
+  });
+
+  $("#form input[required='']").each(function() {
+    var obj = $(this);
+
+    if ( inputTypeCheck(obj) && isRequired){
+      isRequired = false;
+
+      validMsg = obj.attr('label');
+
+      if(obj.attr('label') === ''){
+        validMsg = obj.attr('placeholder')
+      }
+
+      if(obj.attr('type') === 'checkbox' || obj.attr('type') === 'radio'){
+        validMsgSub = '�� �������ּ���'
+      }
+    }
+
+
+    // ���̵��ߺ� üũ
+    if(obj.attr('name') === 'm_id' && obj.val() !== '' && ( $("[name=id_chk]").val() !== 'y' && $("[name=chk_id]").val() !== '1' ) ){
+
+      isRequired = false;
+      validMsg = '���̵� �ߺ�Ȯ���� Ȯ���� �ּ���';
+      validMsgSub = '';
+
+      var validCheckText = $("[name=m_id]").parents('.join_cell').find('.txt_guide').find('.txt').eq(1);
+      if(typeof validCheckText !== 'undefined') {
+        if(validCheckText.hasClass('good')) validCheckText.removeClass('good');
+        if(!validCheckText.hasClass('good')) validCheckText.addClass('bad');
+      }
+    }
+
+    // ��밡�� ��й�ȣ Ȯ��
+    if(obj.attr('name') === 'password'
+      &&  obj.hasClass('bad')) {
+      isRequired = false;
+      validMsg = '��й�ȣ�� �Է��� �ּ���';
+      validMsgSub = '';
+    }
+
+    // ��й�ȣȮ�� ��ġȮ��
+    if(obj.attr('name') === 'password2' && obj.hasClass('bad')) {
+      isRequired = false;
+      validMsg = '��й�ȣ�� �ѹ� �� �Է��� �ּ���';
+      validMsgSub = '';
+    }
+
+    // �̸������� Ȯ��
+    if(obj.attr('name') === 'email') {
+      var email_txt = obj.val();
+      var trim_txt = email_txt.trim();
+      var email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+      if (email_regex.test(trim_txt) === false) {
+        isRequired = false;
+        validMsg = '�̸��� ������ Ȯ���� �ּ���';
+        validMsgSub = '';
+      }
+    }
+
+    if(obj.attr('name') === 'chk_email' && obj.val() === ''){
+      isRequired = false;
+      validMsg = '�̸��� �ߺ� Ȯ���� �� �ּ���';
+      validMsgSub = '';
+      obj = $('[name=email]');
+    }
+
+    if(obj.attr('name') === 'mobile[]' && $("[name=check_mobile]").val() != '1') {
+      isRequired = false;
+      validMsg = '�޴��� ������ �Ϸ� �� �ּ���';
+      validMsgSub = '';
+      obj = $('[name=mobileInp]');
+    }
+
+    if(obj.attr('name') === 'address'){ // �̸��� üũ
+      var $addressSub = $("input[name=address_sub]");
+      var textAddressSub = $addressSub.val();
+
+      if(!_chkInputStr('address_sub','������ �ּ�')){
+        isRequired = false;
+        isFormJoinSubmit = false;
+        return false;
+      }
+    }
+
+    if (!isRequired){
+      alert(validMsg + validMsgSub);
+      validFocus(obj);
+      return false;
+    }
+  });
+
+  if (!isRequired){
+    return false;
+  }
+
+  if ($("input:text[name=recommid]").val() !== ""){
+    if($("input:text[name=recommid]").val() === $("input:text[name=m_id]").val()){
+      alert('���̵�� ��õ�� ���̵� �����ϴ�. �ٽ� �Է��� �ּ���');
+
+      validFocus($("[name=recommid]"));
+      return false;
+    }
+  }
+
+  if(! birthCheckAction.validatorForm()){
+    validFocus($("[name=birth_year]"));
+    return false;
+  }
+
+  if($('#bgLoading').length > 0){
+    $('#bgLoading').show();
+  }
+
+  $("#form").submit();
+}

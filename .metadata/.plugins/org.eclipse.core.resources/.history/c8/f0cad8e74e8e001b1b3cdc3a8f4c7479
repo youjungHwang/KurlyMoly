@@ -1,0 +1,28 @@
+package com.kurly.product;
+
+import java.time.LocalDateTime;
+
+public class ProductDTO {
+	
+	private Long pIdx; // 상품번호
+	private String pCategory1; // 카테고리 대
+	private String pCategory2; // 카테고리 소
+	private String pTitle; // 상품명
+	private String pSubtitle; // 상품슬로건
+	private String pBrand; // 브랜드명
+	private Integer pPrice; // 가격
+	private Integer pDiscprice; // 할인액 ( 45,000원 중 5,000원)
+	private Integer pPoint; // 적립금
+	private Integer pStock; // 재고수량
+	private String pDeliverytype; // 배송타입 : 샛별배송/택배배송/기타
+	private String pPackingtype; // 보관타입 : 냉동/냉장/상온/기타
+	private String pSalesUnit; // 판매단위
+	private String pWeight; // 중량
+	private String pOrigin; // 원산지
+	private String pMainImg; // 대표이미지(파일명)
+	private String pDescription; // 상세설명
+	private String pSaleState; // 판매상태 : 판매대기/판매중/품절/판매중지/판매종료
+	private String pDisplay; // 전시상태 : 전시중/전시중단
+	private LocalDateTime pRegdate; // 등록시간
+
+}
