@@ -4,32 +4,32 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="Member">
-  <select id="idCheck" parameterType="string" resultType="int">
-    select count(mem_idx) from tb_member where mem_userid=#{mem_userid}
+  <select id="idCheck" parameterType="String" resultType="int">
+    select count(m_idx) from tb_member where m_userid=#{userid}
   </select>
   
   <insert id="join" parameterType="map">
-  	insert into tb_member (mem_userid, mem_userpw, mem_name, mem_hp, mem_email, mem_hobby, 
-  	mem_ssn1, mem_ssn2, mem_zipcode, mem_address1, mem_address2, mem_address3) values
-  	(#{mem_userid}, #{mem_userpw}, #{mem_name}, #{mem_hp}, #{mem_email}, #{mem_hobby},
-  	#{mem_ssn1}, #{mem_ssn2}, #{mem_zipcode}, #{mem_address1}, #{mem_address2}, #{mem_address3})
+  	insert into tb_member (m_userid, m_userpw, m_name, m_hp, m_email, m_hobby, 
+  	m_ssn1, m_ssn2, m_zipcode, m_address1, m_address2, m_address3) values
+  	(#{m_userid}, #{m_userpw}, #{m_name}, #{m_hp}, #{m_email}, #{m_hobby},
+  	#{m_ssn1}, #{m_ssn2}, #{m_zipcode}, #{m_address1}, #{m_address2}, #{m_address3})
   </insert>
   
   <select id="login" parameterType="map" resultType="map">
-  	select mem_idx, mem_name from tb_member where mem_userid=#{mem_userid} and mem_userpw=#{mem_userpw}
+  	select m_idx, m_name from tb_member where m_userid=#{m_userid} and m_userpw=#{m_userpw}
   </select>
   
   <select id="info" parameterType="map" resultType="map">
-  	select * from tb_member where mem_userid=#{mem_userid}
+  	select * from tb_member where m_userid=#{m_userid}
   </select>
   
   <select id="pwCheck" parameterType="map" resultType="int">
-  	select count(mem_idx) from tb_member where mem_idx=#{mem_idx} and mem_userpw=#{mem_userpw}
+  	select count(m_idx) from tb_member where m_idx=#{m_idx} and m_password=#{m_password}
   </select>
   
   <update id="edit" parameterType="map">
-  	update tb_member set mem_name=#{mem_name}, mem_hp=#{mem_hp}, mem_email=#{mem_email}, mem_hobby=#{mem_hobby},
-  	mem_ssn1=#{mem_ssn1}, mem_ssn2=#{mem_ssn2}, mem_zipcode=#{mem_zipcode}, mem_address1=#{mem_address1}, 
-  	mem_address2=#{mem_address2}, mem_address3=#{mem_address3} where mem_idx=#{mem_idx}
+  	update tb_member set m_name=#{m_name}, m_hp=#{m_hp}, m_email=#{m_email}, m_hobby=#{m_hobby},
+  	m_ssn1=#{m_ssn1}, m_ssn2=#{m_ssn2}, m_zipcode=#{m_zipcode}, m_address1=#{m_address1}, 
+  	m_address2=#{m_address2}, m_address3=#{m_address3} where m_idx=#{mem_idx}
   </update>
 </mapper>

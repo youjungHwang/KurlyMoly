@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("utf-8");
 	String userid = null;
-	if (session.getAttribute("userid") != null) {
-		userid = (String) session.getAttribute("userid");
+	if (session.getAttribute("m_id") != null) {
+		userid = (String) session.getAttribute("m_id");
 	}
 %>
 
@@ -34,9 +35,7 @@
             <!-- header 시작 -->
             <header id="header">
                 <div class="bnr_header" id="top-message">
-                    <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_210224"
-                        id="eventLanding">지금 가입하고 인기상품 <b>100원</b>에 받아가세요!<img
-                            src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
+                    <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_210224" id="eventLanding">지금 가입하고 인기상품 <b>100원</b>에 받아가세요!<img src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
                         <div class="bnr_top">
                             <div class="inner_top_close">
                                 <button id="top-message-close" class="btn_top_bnr">가입하고 혜택받기</button>
@@ -60,7 +59,7 @@
                     </ul>
                     <ul class="menuRight list_menu">
 				<%
-					if (userid != null) {
+					if (userid == null) {
 				%>
                         <li class="menu none_sub menu_join">
                             <a href="./join.jsp" class="link_menu">회원가입</a>
@@ -73,7 +72,7 @@
 					} else {
 				%>
 						<li class="menu menu_user" style="width: 120px;">
-							<a class="link_menu grade_comm"><span class="ico_grade grade0">일반</span> <span class="txt"><span class="name">김사과</span><span class="sir">님</span></span></a>
+							<a class="link_menu grade_comm"><span class="ico_grade grade0">일반</span> <span class="txt"><span class="name"><%=session.getAttribute("m_name")%></span><span class="sir">님</span></span></a>
 							<ul class="sub" style="left: 20px;">
 								<li><a href="../mypage/mypage_main.html">주문 내역</a></li>
 								<li><a href="../mypage/mypage_transport.html">배송지 관리</a></li>
@@ -106,8 +105,7 @@
                 </div>
 
                 <div id="headerLogo">
-                    <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp"
-                                alt="마켓컬리 로고" style="display: block;"></a></h1>
+                    <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
                 <div id="gnb">
@@ -621,12 +619,8 @@
                                         return true;
                                     }
                                 }
-
-                                // KM-1483 Amplitude
-                                KurlyTracker.setScreenName('login').setTabName('my_kurly');
                             </script>
                         </div>
-
                     </div>
                 </div>
                 <!-- 본문 종료 -->

@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("utf-8");
+	String userid = null;
+	if (session.getAttribute("m_id") != null) {
+		userid = (String) session.getAttribute("m_id");
+	}
 %>
 
  <!-- 회원가입 페이지 N -->
@@ -54,12 +58,35 @@
                         </li>
                     </ul>
                     <ul class="menuRight list_menu">
+				<%
+					if (userid == null) {
+				%>
                         <li class="menu none_sub menu_join">
-                            <a href="./join.html" class="link_menu">회원가입</a>
+                            <a href="./join.jsp" class="link_menu">회원가입</a>
                         </li>
                         <li class="menu none_sub menu_login">
-                            <a href="./login.html" class="link_menu">로그인</a>
+                            <a href="./login.jsp" class="link_menu">로그인</a>
                         </li>
+                        
+				<%
+					} else {
+				%>
+						<li class="menu menu_user" style="width: 120px;">
+							<a class="link_menu grade_comm"><span class="ico_grade grade0">일반</span> <span class="txt"><span class="name">김사과</span><span class="sir">님</span></span></a>
+							<ul class="sub" style="left: 20px;">
+								<li><a href="../mypage/mypage_main.html">주문 내역</a></li>
+								<li><a href="../mypage/mypage_transport.html">배송지 관리</a></li>
+								<li><a href="../mypage/mypage_Zzim.html">늘 사는 것</a></li>
+								<li><a href="../mypage/mypage_review.jsp">상품 후기</a></li>
+								<li><a href="../mypage/mypage_emoney.html">적립금</a></li>
+								<li><a href="../mypage/mypage_coupon.html">쿠폰</a></li>
+								<li><a href="../mypage/mypage_editinfo.html">개인 정보 수정</a></li>
+								<li><a href="./logout.jsp">로그아웃</a></li>
+							</ul>
+						</li>
+				<%
+					}
+				%>
                         <li class="menu lst">
                             <a href="../board/notice.html" class="link_menu cos">고객센터</a>
                             <ul class="sub">
@@ -78,7 +105,7 @@
                 </div>
 
                 <div id="headerLogo">
-                    <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1>
+                    <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
                 <div id="gnb">
@@ -564,16 +591,15 @@
 
                         <div class="side_menu">
                             <a href="../../event_lovers.html" class="link_menu">등급별 혜택</a>
-                            <a href="#" class="link_menu">레시피</a>
+                            <a href="../recipe/recipe_all.html" class="link_menu">레시피</a>
                         </div>
                     </div>
 
                     <div class="page_aticle">
                         <script type="text/javascript" src="../../script/libText.bundle.js"></script>
                         <script src="../../script/godo.password_strength.js" type="text/javascript"></script>
-                        <script src="../../script/join_v1.js"></script>
                         <div class="type_form member_join ">
-                            <form id="form" name="frmMember" method="post" action="join_ok.jsp" onsubmit="return chkForm2(this)" novalidate="">
+                             <form id="form" name="frmMember" method="post" action="join_ok.jsp" onsubmit="return chkForm2(this)" novalidate="">
                                 <input type="hidden" name="mode" value="joinMember">
                                 <input type="hidden" name="check_mobile" value="">
                                 <input type="hidden" name="auth_finish_code" value="">
@@ -595,18 +621,17 @@
                                         <tr class="fst">
                                             <th>아이디<span class="ico">*<span class="screen_out">필수항목</span></span></th>
 											<td>
-												<input type="text" name="m_id" value="" maxlength="16" required="" fld_esssential="" option="regId" label="아이디" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
+												<input type="text" name="mUserid" value="" id="m_id" maxlength="16" option="regId" label="아이디" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
 												<input type="hidden" name="chk_id" required="" fld_esssential="" label="아이디중복체크" value=""> <a class="btn default" href="javascript:chkId()">중복확인</a>
 												<p class="txt_guide square">
 													<span class="txt txt_case1">6자 이상의 영문 혹은 영문과 숫자를 조합</span>
-													<span class="txt txt_case2">아이디 중복확인</span>
 												</p>
 											</td>
 										</tr>
                                         <tr>
                                             <th>비밀번호<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
-                                                <input type="password" name="password" required="" fld_esssential="" option="regPass" label="비밀번호" maxlength="16" class="reg_pw" placeholder="비밀번호를 입력해주세요">
+                                                <input type="password" name="mPassword" option="regPass" label="비밀번호" maxlength="16" class="reg_pw" placeholder="비밀번호를 입력해주세요">
                                                 <p class="txt_guide square">
                                                     <span class="txt txt_case1">10자 이상 입력</span>
                                                     <span class="txt txt_case2">영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span>
@@ -617,7 +642,7 @@
                                         <tr class="member_pwd">
                                             <th>비밀번호확인<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
-                                                <input type="password" name="password2" required="" fld_esssential="" option="regPass" label="비밀번호" maxlength="16" class="confirm_pw" placeholder="비밀번호를 한번 더 입력해주세요">
+                                                <input type="password" name="password2" option="regPass" label="비밀번호" maxlength="16" class="confirm_pw" placeholder="비밀번호를 한번 더 입력해주세요">
                                                 <p class="txt_guide square">
                                                     <span class="txt txt_case1">동일한 비밀번호를 입력해주세요.</span>
                                                 </p>
@@ -626,26 +651,25 @@
                                         <tr>
                                             <th>이름<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
-                                                <input type="text" name="m_id" value="" required="" fld_esssential="" label="이름" placeholder="이름을 입력해주세요">
+                                                <input type="text" name="mName" label="이름" placeholder="이름을 입력해주세요">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>이메일<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
-                                                <input type="text" name="email" value="" data-email="" size="30" required="" fld_esssential="" option="regEmail" label="이메일" placeholder="예: marketkurly@kurly.com">
+                                                <input type="text" name="mEmail" value="" data-email="" size="30" required="" fld_esssential="" option="regEmail" label="이메일" placeholder="예: marketkurly@kurly.com">
                                                 <input type="hidden" name="chk_email" required="" fld_esssential="" label="이메일중복체크">
-                                                <a href="javascript:void(0)" onclick="chkEmail()" class="btn default">중복확인</a>
                                             </td>
                                         </tr>
                                         <tr class="field_phone">
                                             <th>휴대폰<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
                                                 <div class="phone_num">
-                                                    <input type="text" value="" pattern="[0-9]*" name="mobileInp" placeholder="숫자만 입력해주세요" class="inp">
+                                                    <input type="text" value="" pattern="[0-9]*" name="mTel" placeholder="숫자만 입력해주세요" class="inp">
                                                     <input type="hidden" name="mobile[]" id="mobile0" value="" required="" fld_esssential="" option="regNum" label="휴대폰">
                                                     <input type="hidden" name="mobile[]" id="mobile1" value="" required="" fld_esssential="" option="regNum" label="휴대폰">
                                                     <input type="hidden" name="mobile[]" id="mobile2" value="" required="" fld_esssential="" option="regNum" label="휴대폰">
-                                                    <button id="btn_cert" class="btn default disabled" type="button" onclick="alert('인증번호가 발송 되었습니다.')">인증번호 받기</button>
+                                                    <button id="btn_cert" class="btn default" type="button" onclick="alert('인증번호가 발송 되었습니다.')">인증번호 받기</button>
                                                 </div>
                                                 <div id="codeNum" class="code_num">
                                                     <input type="text" name="auth_code" id="auth_code" value="" size="6" maxlength="6" pattern="[0-9]*" label="인증번호 확인" disabled="" class="inp_confirm" oninput="if(value.length>6)value=value.slice(0,6);$(this).val($(this).val().replace(/[^0-9]/g,''));">
@@ -657,10 +681,12 @@
                                                 </p>
                                             </td>
                                         </tr>
+
+
                                         <tr>
                                             <th>우편번호<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
-                                                <input type="text" name="addr" value="" readonly="readonly" label="주소" size="30" required="" fld_esssential="" placeholder="우편번호를 입력해주세요" id="sample6_postcode">
+                                                <input type="text" name="mZipcode" value="" readonly="readonly" label="주소" size="30" required="" fld_esssential="" placeholder="우편번호를 입력해주세요" id="sample6_postcode">
                                             
                                                 <input type="hidden" name="chk_zipcode" required="" fld_esssential="" label="우편번호검색">
                                                 <a href="javascript:void(0)" onclick="sample6_execDaumPostcode()" class="btn default">우편번호 검색</a>
@@ -676,7 +702,7 @@
                                             <th>주소<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td class="field_address">
                                                 
-                                                <input type="text" name="deliPoli" id="sample6_address" size="1" value="" placeholder="주소를 입력해주세요">
+                                                <input type="text" name="mAddress1" id="sample6_address" size="1" value="" placeholder="주소를 입력해주세요">
                                             </td>
                                         </tr>
 
@@ -684,7 +710,7 @@
                                             <th>상세주소<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td class="field_address">
                                                 
-                                                <input type="text" id="sample6_detailAddress" name="base_address_type" value="" placeholder="나머지 주소를 입력해주세요">
+                                                <input type="text" id="sample6_detailAddress" name="mAddress2" value="" placeholder="나머지 주소를 입력해주세요">
                                                 <div id="selectAddress">
                                             </td>
                                         </tr>
@@ -755,34 +781,25 @@
 										    }
 										</script>
 										<style>
-.screen_out {
-	padding: 20px 0 0 0px !important;
-}
-</style>
-
-										<div id="selectAddressSub">
-                                                    <input type="text" name="address_sub" id="address_sub" value="" class="byteTotext" placeholder="나머지 주소를 입력해주세요">
-                                                    <p id="delivery"></p>
-                    
-                                                </div>
-                                                <p class="txt_guide">
-                                                    <span class="txt txt_case1">배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
-                                                </p>
+											.screen_out {
+												padding: 20px 0 0 0px !important;
+											}
+										</style>
                                             </td>
                                         </tr>
                                         <tr class="select_sex">
                                             <th>성별</th>
                                             <td>
                                                 <label class="">
-                                                    <input type="radio" name="sex" value="m">
+                                                    <input type="radio" name="mGender" value="m">
                                                     <span class="ico"></span>남자
                                                 </label>
                                                 <label class="">
-                                                    <input type="radio" name="sex" value="w">
+                                                    <input type="radio" name="mGender" value="w">
                                                     <span class="ico"></span>여자
                                                 </label>
                                                 <label class="checked">
-                                                    <input type="radio" name="sex" value="n" checked="checked">
+                                                    <input type="radio" name="mGender" value="n" checked="checked">
                                                     <span class="ico"></span>선택안함
                                                 </label>
                                             </td>
@@ -791,11 +808,11 @@
                                             <th>생년월일</th>
                                             <td>
                                                 <div class="birth_day">
-                                                    <input type="text" name="birth_year" id="birth_year" pattern="[0-9]*" value="" label="생년월일" size="4" maxlength="4" placeholder="YYYY">
+                                                    <input type="text" name="mBirth" id="birth_year" pattern="[0-9]*" value="" label="생년월일" size="4" maxlength="4" placeholder="YYYY"> <!-- birth_year -->
                                                     <span class="bar"></span>
-                                                    <input type="text" name="birth[]" id="birth_month" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="MM">
+                                                    <input type="text" name="mBirth" id="birth_month" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="MM"> <!-- birth[] -->
                                                     <span class="bar"></span>
-                                                    <input type="text" name="birth[]" id="birth_day" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="DD">
+                                                    <input type="text" name="mBirth" id="birth_day" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="DD"> <!-- birth[] -->
                                                 </div>
                                                 <p class="txt_guide">
                                                     <span class="txt bad"></span>
@@ -820,7 +837,7 @@
                                                     </span>
                                                 </div>
                                                 <div class="input_wrapper">
-                                                    <input type="text" name="recommid" value="" class="inp" placeholder="추천인 아이디를 입력해주세요.">
+                                                    <input type="text" name="mRecomid" value="" class="inp" placeholder="추천인 아이디를 입력해주세요.">
                                                     <p class="txt_guide">
                                                         추천인 아이디와 참여 이벤트명 중 하나만 선택 가능합니다. <br> 가입 이후, 수정이 불가합니다. <br> 대소문자 및 띄어쓰기에 유의해주세요.
                                                     </p>
@@ -1264,33 +1281,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <script>
-                                                            var serviceView = new Vue({
-                                                                el: '#serviceView',
-                                                                data: {
-                                                                    pageUrl: campaginUrl + 'pc/service/agreement.html',
-                                                                    storagetObj: null,
-                                                                    eventStart: false, // 딱 한번만실행
-                                                                },
-                                                                methods: {
-                                                                    update: function () {
-                                                                        var $self = this;
-                                                                        $.ajax({
-                                                                            url: $self.pageUrl
-                                                                        }).done(function (result) {
-                                                                            $('#serviceView').html(result);
-                                                                            $self.storagetObj = JSON.parse(sessionStorage.getItem("agreement"));
-                                                                            if (!$self.eventStart) {
-                                                                                $self.eventStart = true;
-                                                                                $self.pageUrl = campaginUrl + 'pc/service/' + $self.storagetObj[$self.storagetObj.length - 1].name + '.html'
-                                                                                $self.update();
-                                                                            }
-                                                                        });
-                                                                    }
-                                                                }
-                                                            });
-                                                            serviceView.update();
-                                                        </script>
                                                         <button type="button" class="btn_ok">확인</button>
                                                         <button type="button" class="btn_close"><span class="screen_out">레이어 닫기</span></button>
                                                     </div>
@@ -1419,7 +1409,7 @@
                                     </tbody>
                                 </table>
                                 <div id="formSubmit" class="form_footer">
-                                    <button type="button" class="btn active btn_join" onclick="formJoinSubmit()">가입하기</button>
+                                    <button type="submit" class="btn active btn_join">가입하기</button> <!--  onclick="formJoinSubmit()" -->
                                 </div>
                             </form>
                         </div>
@@ -1442,8 +1432,8 @@
                                 });
 
                                 // PRDPJ-159 장차석 : 사용자 아이디와 추처인 아이디 중복 안되도록 처리
-                                var $nameRecommid = $('[name=recommid]');
-                                var $nameMId = $('[name=m_id]');
+                                var $nameRecommid = $('[name=mRecomid]');
+                                var $nameMId = $('[name=mUserid]');
                                 $($nameRecommid, $nameMId).blur(function () {
                                     if ($.trim($nameMId.val()) !== '' && $.trim($nameRecommid.val()) !== '' &&
                                         ($nameRecommid.val() === $nameMId.attr('data-id') || $nameRecommid.val() === $nameMId.val())) {
@@ -1598,7 +1588,6 @@
                                 }
                                 inputFocus();
 
-
                                 // 글자 갯수확인 + 문장조합확인
                                 var checkType1 = false;// 갯수
                                 var checkType2 = false;// 문자
@@ -1634,14 +1623,13 @@
                                     }
                                 }
 
-
                                 // 아이디검증
                                 var saveId;
-                                $('[name=m_id]').on('focus', function () {
+                                $('[name=mUserid]').on('focus', function () {
                                     saveId = $(this).val();
                                     $(this).parent().find('.txt_guide').show();
                                 });
-                                $('[name=m_id]').on('keyup', function () {
+                                $('[name=mUserid]').on('keyup', function () {
                                     var $target = $(this).parent().find('.txt_guide');
                                     var $chkVal = $(this).val();
                                     var $numMin = 6;
@@ -1661,10 +1649,10 @@
                                 });
 
                                 // 비밀번호검증
-                                $('[name=password], [name=newPassword], [name=password2], [name=confirmPassword]').on('focus', function () {
+                                $('[name=mPassword], [name=newPassword], [name=password2], [name=confirmPassword]').on('focus', function () {
                                     $(this).parent().find('.txt_guide').show();
                                 });
-                                $('[name=password], [name=newPassword], [name=password2], [name=confirmPassword]').on('blur', function () {
+                                $('[name=mPassword], [name=newPassword], [name=password2], [name=confirmPassword]').on('blur', function () {
                                     if ($(this).parent().find('.txt').hasClass('bad') || $.trim($(this).val()) === "") {
                                         if (!$(this).hasClass('bad')) $(this).addClass('bad');
                                     } else {
@@ -1674,14 +1662,14 @@
                                 $('input[name=password2], [name=confirmPassword]').on('keyup', function () {
                                     var $target = $(this).parent().find('.txt_guide');
 
-                                    if (($("[name=password]").val() === $('[name=password2]').val() && $.trim($("[name=password]").val()) != "") || ($("[name=newPassword]").val() === $('[name=confirmPassword]').val() && $.trim($("[name=newPassword]").val()) != "")) {
+                                    if (($("[name=mPassword]").val() === $('[name=password2]').val() && $.trim($("[name=mPassword]").val()) != "") || ($("[name=newPassword]").val() === $('[name=confirmPassword]').val() && $.trim($("[name=newPassword]").val()) != "")) {
                                         class_change($target.find('.txt_case1'), 'good');
                                     } else {
                                         class_change($target.find('.txt_case1'), 'bad');
                                     }
                                 });
 
-                                $('input[name=password], [name=newPassword]').on('keyup', function (e) {
+                                $('input[name=mPassword], [name=newPassword]').on('keyup', function (e) {
                                     var $target = $(this).parent().find('.txt_guide');
                                     var $chkVal = $(this).val();
                                     var $numMin = 10;
@@ -1778,103 +1766,37 @@
 
                             // 중복확인
                             function chkId() {
-                                var alertMsg = "아이디는 6자 이상의 영문 혹은 영문과 숫자 조합만 가능합니다";
-                                var $target = $("[name='m_id']").parent().find('.txt_case2');
-                                var id_txt = $("[name='m_id']").val();
-                                var id_trim_txt = id_txt.replace(/(^\s*)|(\s*$)/gi, "");
-                                $("input[name='m_id']").val(id_trim_txt);
-                                var form = document.frmMember;
-                                if ($("input[name='m_id']").val() === "") {
+                                if ($("input[name='mUserid']").val() === "") {
                                     alert("아이디를 입력해 주세요.");
                                     return;
                                 }
-                                if ($("input[name='m_id']").val().length < 6) { alert("아이디는 6자 이상의 영문 혹은 영문과 숫자 조합만 가능합니다"); return; }
-                                if (!chkText(form.m_id, form.m_id.value, "아이디를 입력해주세요")) return;
+                                if ($("input[name='mUserid']").val().length < 6) { alert("아이디는 6자 이상의 영문 혹은 영문과 숫자 조합만 가능합니다"); return; }
                                 var idPattern = /^[a-zA-Z0-9]{1}[^"']{3,15}$/; // chkPatten 메소드에서 가져옴
-                                var isValidId = eval(idPattern);
-                                if (!isValidId.test(form.m_id.value)) {
-                                    alert(alertMsg);
-                                    return;
-                                }
-                                var $idValidator = $("[name='m_id']").attr('data-validator');
-                                if ($idValidator === "false") {
-                                    $("[name=chk_id]").val('');
-                                    alert(alertMsg);
-                                    if ($target.hasClass('good')) $target.removeClass('good');
-                                    $target.addClass('bad');
-                                } else {
-                                    ifrmHidden.location.href = "indb.php?mode=chkId&m_id=" + form.m_id.value;
+                                var $idValidator = $("[name='mUserid']").attr('data-validator');
+
+                                	const xhr = new XMLHttpRequest();
+                            		const userid = $("#m_id").val();
+                            		console.log(userid);
+                            		xhr.open("GET", "idCheck.jsp?mUserid=" + userid, true);
+                            		xhr.send();
+                            		xhr.onreadystatechange = function(){
+                            			if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
+                            				const result = xhr.responseText;
+                            				if (result.trim() == "ok") {
+                            					// 아이디를 만들 수 있을 때(중복 아이디가 아닐 때)
+                            					alert("사용 가능한 아이디 입니다.");
+                            					$("#isIdCheck").val("y");
+                            				} else {
+                            					// 아이디를 만들 수 없을 때(중복 아이디일 경우)
+                            					alert("사용할 수 없는 아이디입니다.");
+                            				}
+                            			
+                            		}
                                 }
                             }
-                            function chkId2(num) {
-                                var $target = $("[name='m_id']").parent().find('.txt_case2');
-                                var id_txt = $("[name='m_id']").val();
-                                if (num == 1) {
-                                    if ($target.hasClass('bad')) $target.removeClass('bad');
-                                    $target.addClass('good');
-                                    $("[name='m_id']").attr('data-id', id_txt);
-                                } else {
-                                    if ($target.hasClass('good')) $target.removeClass('good');
-                                    $target.addClass('bad');
-                                }
-                            }
-
-                            //
-                            function chkEmailChange($target) {
-                                if ($target.val() === $target.data('email') && $target.val().trim() !== '') {
-                                    $('[name=chk_email]').val('1');
-                                } else {
-                                    $('[name=chk_email]').val('0');
-                                }
-                            }
-                            // 이메일 중복확인
-                            function chkEmail() {
-                                var email_txt = $("input[name='email']").val();
-                                var trim_txt = email_txt.replace(/(^\s*)|(\s*$)/gi, "");
-                                var email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-                                $("input[name='email']").val(trim_txt)
-                                if ($("input[name='email']").val() === "") {
-                                    alert("이메일 주소를 입력해 주세요.");
-                                    $('[name=chk_email]').val('0');
-                                    return false;
-                                }
-                                if (email_regex.test(trim_txt) === false) {
-                                    alert("잘못된 이메일 형식입니다.");
-                                    $('[name=chk_email]').val('0');
-                                    return false;
-                                }
-
-                                var form = document.frmMember;
-                                if (!chkText(form.email, form.email.value, "이메일을 입력해주세요")) {
-                                    $('[name=chk_email]').val('0');
-                                    return;
-                                }
-                                if (!chkPatten(form.email, form.email.getAttribute('option'), "정상적인 이메일 주소를 입력해주세요.")) {
-                                    $('[name=chk_email]').val('0');
-                                    return;
-                                }
-
-                                $('[name=chk_email]').val('1');
-
-                                var chkUrl = "indb.php?mode=chkEmail&email=" + form.email.value + "&m_id=";
-                                ifrmHidden.location.href = chkUrl;
-                            }
-
-                            $("input[name='mobileInp']").change(function () {
+                            
+                            $("input[name='mTel']").change(function () {
                                 $("input[name='check_mobile']").val("0");
-                            });
-
-                            // 생년월일 입력시 폼 포커스 이벤트
-                            $('.birth_day input').focus(function () {
-                                $(this).parent().addClass('on');
-                            }).keyup(function () {
-                                var inputText = $(this).val();
-                                var number = $(this).val().replace(/[^0-9]/g, '');
-                                $(this).val(number);
-                            }).blur(function () {
-                                $(this).parent().removeClass('on');
-                                // KM-1261 회원가입 14세 인증
-                                birthCheckAction.validatorText();
                             });
 
 
@@ -1890,7 +1812,6 @@
                                 var req = { password: currentPassword };
                                 kurlyApi({
                                     method: 'post',
-                                    // url:'/v1/users/check/password',
                                     url: '/v3/auth/check-password',
                                     data: req
                                 }).then(function (response) {
@@ -1933,32 +1854,17 @@
                                     }
                                 }
 
-                                if ($('[name=chk_email]').val() !== '1') {
-                                    alert('이메일 중복확인을 확인해주세요', function () {
-                                        $('[name=email]').focus();
-                                    });
-                                    return false;
-                                }
-
                                 if (!preventSpecialChars($('input[name=name]'), 'result')) {
                                     return false;
                                 }
 
-                                if ($("input[name='check_mobile']").val() !== "1") {
-                                    alert("휴대폰 인증을 완료해 주세요.", function () {
-                                        $('#btn_cert').focus();
-                                    });
-                                    return false;
-                                }
-
-
-                                var email_txt = $("input[name='email']").val();
+                                var email_txt = $("input[name='mEmail']").val();
                                 var trim_txt = email_txt.replace(/(^\s*)|(\s*$)/gi, "");
                                 var email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-                                $("input[name='email']").val(trim_txt)
+                                $("input[name='mEmail']").val(trim_txt)
                                 if (email_regex.test(trim_txt) === false) {
                                     alert('잘못된 이메일 형식입니다.', function () {
-                                        $('input[name=email]').focus();
+                                        $('input[name=mEmail]').focus();
                                     });
                                     return false;
                                 }
@@ -1980,16 +1886,11 @@
                                 var match = location.search.match(recommRegExp);
                                 if (match !== null && match.length === 2) {
                                     $('#labelRecomm').click();
-                                    $('input[name=recommid]').val("");
+                                    $('input[name=mRecomid]').val("");
                                 }
                             });
-
-
-                            // KM-1483 Amplitude
-                            KurlyTracker.setScreenName('sign_up').setAction('view_sign_up').sendData();
                         </script>
                     </div>
-                    
                 </div>
                 <!-- 본문 종료 -->
             </div>

@@ -11,7 +11,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.kurly.db.Dbconn;
 import com.kurly.db.SqlMapConfig;
-import com.kurly.order.OrderDTO;
 
 public class MemberDAO {
 	
@@ -23,6 +22,11 @@ public class MemberDAO {
 
 	SqlSessionFactory ssf = SqlMapConfig.getSqlMapInstance();
 	SqlSession sqlsession;
+	
+	public MemberDAO() {
+		sqlsession = ssf.openSession(true); // openSession(true) 설정시 자동 commit 됨
+		System.out.println("마이바티스 설정 성공!");
+	}
 
 	public List<MemberDTO> selectMember() {
 		try {
@@ -64,7 +68,7 @@ public class MemberDAO {
 	// 회원가입
 	public int join(MemberDTO member) {
 		try {
-			sql = "INSERT INTO tb_member(m_userid, m_password, m_name, m_tel, m_email, m_birth, m_gender, m_zipcode, m_address1, m_address2, m_recomid, m_membership, m_kurlypass, m_state, m_withdrawwhy, m_withdrawwhy2, m_withdrawdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			sql = "INSERT INTO tb_member(m_userid, m_password, m_name, m_tel, m_email, m_birth, m_gender, m_zipcode, m_address1, m_address2, m_recomid, m_membership, m_kurlypass, m_state, m_withdrawwhy, m_withdrawwhy2, m_withdrawdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			conn = Dbconn.getConnection(); // DB연결
 			pstmt = conn.prepareStatement(sql);
@@ -80,13 +84,12 @@ public class MemberDAO {
 			pstmt.setString(9, member.getmAddress1()); // 주소
 			pstmt.setString(10, member.getmAddress2()); // 상세주소
 			pstmt.setString(11, member.getmRecomid()); // 추천인
-			pstmt.setString(12, member.getmRegdate()); // 등록일자
-			pstmt.setString(13, member.getmMembership()); // 멤버십
-			pstmt.setString(14, member.getmKurlypass()); // 컬리패스 (가입/비가입)
-			pstmt.setInt(15, member.getmState()); // 회원상태 (1: 일반, 2: 탈퇴, 9: 관리자)
-			pstmt.setString(16, member.getmWithdrawwhy()); // 불편사항 선택
-			pstmt.setString(17, member.getmWithdrawwhy2()); // 불편사항 기타내용 (직접입력)
-			pstmt.setString(18, member.getmWithdrawdate()); // 탈퇴일시
+			pstmt.setString(12, member.getmMembership()); // 멤버십
+			pstmt.setString(13, member.getmKurlypass()); // 컬리패스 (가입/비가입)
+			pstmt.setInt(14, member.getmState()); // 회원상태 (1: 일반, 2: 탈퇴, 9: 관리자)
+			pstmt.setString(15, member.getmWithdrawwhy()); // 불편사항 선택
+			pstmt.setString(16, member.getmWithdrawwhy2()); // 불편사항 기타내용 (직접입력)
+			pstmt.setString(17, member.getmWithdrawdate()); // 탈퇴일시
 
 			if (pstmt.executeUpdate() != 0) {
 				return 1;
@@ -96,26 +99,24 @@ public class MemberDAO {
 		}
 		return 0;
 	}
+
 	
 	// 로그인
 	public MemberDTO login(MemberDTO member) {
-		sql = "SELECT m_idx, m_userid, m_name FROM tb_member WHERE m_userid=? AND m_password=?";
+		sql = "SELECT m_idx, m_userid, m_name from tb_member WHERE m_userid=? and m_password=?";
 		try {
 			conn = Dbconn.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			
 			pstmt.setString(1, member.getmUserid());
 			pstmt.setString(2, member.getmPassword());
-			
 			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
+			if(rs.next()) {
 				member.setmIdx(rs.getInt("m_idx"));
 				member.setmUserid(rs.getString("m_userid"));
 				member.setmName(rs.getString("m_name"));
 				return member;
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -174,7 +175,7 @@ public class MemberDAO {
 	
 	// 아이디 체크
 	public boolean idCheck(String userid) {
-		if ((Integer) sqlsession.selectOne("Member.idCheck", userid) == 1) {
+		if ((Integer)sqlsession.selectOne("Member.idCheck", userid) == 1) {
 			// integer 형태로 (mapper namespace="Member")idCheck 값을 가져올 건데, 그 곳에 userid 값을 넣어라.
 			// 그런데 그 값이 1인가? 그렇다면 true 리턴
 			return true; // 아이디 중복. 가입 불가능

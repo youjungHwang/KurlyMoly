@@ -106,7 +106,7 @@
                 </div>
 
                 <div id="headerLogo">
-                    <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp"
+                    <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp"
                                 alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
@@ -181,15 +181,12 @@
 
                             <div class="gnb_sub">
                                 <div class="inner_sub">
-                                    <ul class="gnb_menu" style="height: auto;" data-default="219" data-min="219"
-                                        data-max="731">
+                                    <ul class="gnb_menu" style="height: auto;" data-default="219" data-min="219" data-max="731">
                                         <li>
                                             <a class="menu">
                                                 <span class="ico">
-                                                    <img src="../../img/mainMenu/icon_veggies_inactive_pc@2x.1586324570.png"
-                                                        alt="카테고리 아이콘 off" class="ico_off">
-                                                    <img src="../../img/mainMenu/icon_veggies_active_pc@2x.1586324570.png"
-                                                        alt="카테고리 아이콘 on" class="ico_on">
+                                                    <img src="../../img/mainMenu/icon_veggies_inactive_pc@2x.1586324570.png" alt="카테고리 아이콘 off" class="ico_off">
+                                                    <img src="../../img/mainMenu/icon_veggies_active_pc@2x.1586324570.png" alt="카테고리 아이콘 on" class="ico_on">
                                                 </span>
                                                 <span class="tit">
                                                     <span class="txt">채소</span>
@@ -576,8 +573,7 @@
                 <div id="content" style="padding-bottom: 120px;">
                     <div id="qnb" class="quick-navigation" style="top: 70px;">
                         <div class="bnr_qnb" id="brnQuick">
-                            <a href="../board/delivery.html" id="brnQuickObj"><img class="thumb"
-                                    src="../../img/sidebar/bnr_quick_20190403.webp" alt="퀄리티있게 샛별배송"></a>
+                            <a href="../board/delivery.html" id="brnQuickObj"><img class="thumb" src="../../img/sidebar/bnr_quick_20190403.webp" alt="퀄리티있게 샛별배송"></a>
                         </div>
 
                         <script>
@@ -596,7 +592,7 @@
 
                         <div class="side_menu">
                             <a href="../../event_lovers.html" class="link_menu ">등급별 혜택</a>
-                            <a href="#" class="link_menu ">레시피</a>
+                            <a href="../recipe/recipe_all.html" class="link_menu ">레시피</a>
                         </div>
                     </div>
 

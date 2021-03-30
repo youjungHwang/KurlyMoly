@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	String username = null;
-	if (session.getAttribute("username") != null) { // username != sql에 저장된 이름??? m_name로 안해도 되는건지 체크 필요
-		username = (String) session.getAttribute("username");
+	String userid = null;
+	if (session.getAttribute("userid") != null) { // userid != sql에 저장된 이름??? m_name로 안해도 되는건지 체크 필요
+		userid = (String) session.getAttribute("userid");
 	}
 %>
 
@@ -106,8 +106,7 @@
                 </div>
 
                 <div id="headerLogo">
-                    <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp"
-                                alt="마켓컬리 로고" style="display: block;"></a></h1>
+                    <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
                 <div id="gnb">
@@ -594,7 +593,7 @@
 
                         <div class="side_menu">
                             <a href="../../event_lovers.html" class="link_menu ">등급별 혜택</a>
-                            <a href="#" class="link_menu ">레시피</a>
+                            <a href="../recipe/recipe_all.html" class="link_menu ">레시피</a>
                         </div>
                     </div>
 

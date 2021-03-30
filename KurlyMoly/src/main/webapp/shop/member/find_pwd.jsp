@@ -106,8 +106,7 @@
                 </div>
 
                 <div id="headerLogo">
-                    <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp"
-                                alt="마켓컬리 로고" style="display: block;"></a></h1>
+                    <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
                 <div id="gnb">
@@ -575,8 +574,7 @@
                 <div id="content" style="padding-bottom: 120px;">
                     <div id="qnb" class="quick-navigation" style="top: 70px;">
                         <div class="bnr_qnb" id="brnQuick">
-                            <a href="../board/delivery.html" id="brnQuickObj"><img class="thumb"
-                                    src="../../img/sidebar/bnr_quick_20190403.webp" alt="퀄리티있게 샛별배송"></a>
+                            <a href="../board/delivery.html" id="brnQuickObj"><img class="thumb" src="../../img/sidebar/bnr_quick_20190403.webp" alt="퀄리티있게 샛별배송"></a>
                         </div>
 
                         <script>

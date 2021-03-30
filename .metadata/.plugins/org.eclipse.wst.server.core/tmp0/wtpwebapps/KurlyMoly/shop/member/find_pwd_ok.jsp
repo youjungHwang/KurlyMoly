@@ -35,8 +35,7 @@
             <header id="header">
                 <div class="bnr_header" id="top-message">
                     <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_210224"
-                        id="eventLanding">지금 가입하고 인기상품 <b>100원</b>에 받아가세요!<img
-                            src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
+                        id="eventLanding">지금 가입하고 인기상품 <b>100원</b>에 받아가세요!<img src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
                         <div class="bnr_top">
                             <div class="inner_top_close">
                                 <button id="top-message-close" class="btn_top_bnr">가입하고 혜택받기</button>
@@ -59,12 +58,35 @@
                         </li>
                     </ul>
                     <ul class="menuRight list_menu">
+				<%
+					if (userid == null) {
+				%>
                         <li class="menu none_sub menu_join">
-                            <a href="./join.html" class="link_menu">회원가입</a>
+                            <a href="./join.jsp" class="link_menu">회원가입</a>
                         </li>
                         <li class="menu none_sub menu_login">
-                            <a href="./login.html" class="link_menu">로그인</a>
+                            <a href="./login.jsp" class="link_menu">로그인</a>
                         </li>
+                        
+				<%
+					} else {
+				%>
+						<li class="menu menu_user" style="width: 120px;">
+							<a class="link_menu grade_comm"><span class="ico_grade grade0">일반</span> <span class="txt"><span class="name">김사과</span><span class="sir">님</span></span></a>
+							<ul class="sub" style="left: 20px;">
+								<li><a href="../mypage/mypage_main.html">주문 내역</a></li>
+								<li><a href="../mypage/mypage_transport.html">배송지 관리</a></li>
+								<li><a href="../mypage/mypage_Zzim.html">늘 사는 것</a></li>
+								<li><a href="../mypage/mypage_review.jsp">상품 후기</a></li>
+								<li><a href="../mypage/mypage_emoney.html">적립금</a></li>
+								<li><a href="../mypage/mypage_coupon.html">쿠폰</a></li>
+								<li><a href="../mypage/mypage_editinfo.html">개인 정보 수정</a></li>
+								<li><a href="./logout.jsp">로그아웃</a></li>
+							</ul>
+						</li>
+				<%
+					}
+				%>
                         <li class="menu lst">
                             <a href="../board/notice.html" class="link_menu cos">고객센터</a>
                             <ul class="sub">
@@ -83,8 +105,7 @@
                 </div>
 
                 <div id="headerLogo">
-                    <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp"
-                                alt="마켓컬리 로고" style="display: block;"></a></h1>
+                    <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp" alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
                 <div id="gnb">
@@ -553,8 +574,7 @@
                 <div id="content" style="padding-bottom: 120px;">
                     <div id="qnb" class="quick-navigation" style="top: 70px;">
                         <div class="bnr_qnb" id="brnQuick">
-                            <a href="../board/delivery.html" id="brnQuickObj"><img class="thumb"
-                                    src="../../img/sidebar/bnr_quick_20190403.webp" alt="퀄리티있게 샛별배송"></a>
+                            <a href="../board/delivery.html" id="brnQuickObj"><img class="thumb" src="../../img/sidebar/bnr_quick_20190403.webp" alt="퀄리티있게 샛별배송"></a>
                         </div>
 
                         <script>
@@ -573,7 +593,7 @@
 
                         <div class="side_menu">
                             <a href="../../event_lovers.html" class="link_menu ">등급별 혜택</a>
-                            <a href="#" class="link_menu ">레시피</a>
+                            <a href="../recipe/recipe_all.html" class="link_menu ">레시피</a>
                         </div>
                     </div>
 
