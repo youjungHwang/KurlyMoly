@@ -13,6 +13,11 @@ html[Attributes Style] {
     color: #4c4c4c;
     font-size: 12px;
 } */
+<<<<<<< HEAD
+/* #wrap {color: #646464;}  */
+/* .tit_recipe {color: #646464; font-weight: bold;} */
+
+=======
 #wrap {color: #646464;} 
 .tit_recipe {color: #646464; font-weight: bold;}
 head {
@@ -33,6 +38,7 @@ link {
 style {
     display: none;
 }
+>>>>>>> e03accb73a848ae94b24ddee850cfe09902a3f87
 
 /* body, input, select, textarea, button { font-family: dotum; }
 body, input, select, textarea, button {
@@ -41,22 +47,31 @@ body, input, select, textarea, button {
     color: #4c4c4c;
     font-size: 12px;
 } */
-#header, #container, #content {
+/* #header, #container, #content {
     position: relative;
-}
+} */
 
 
-.bnr_header { font-size: 14px;}
+/* .bnr_header { font-size: 14px;}
 b, strong {
     font-weight: 700;
+<<<<<<< HEAD
+} */
+/* a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+} */
+/* #main {
+=======
 }
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
 }
 #main {
+>>>>>>> e03accb73a848ae94b24ddee850cfe09902a3f87
     border-bottom: 1px solid #f7f7f7;
-}
+} */
 /* ul {
     display: block;
     margin-block-start: 1em;
@@ -131,7 +146,11 @@ img[Attributes Style] {
     width: 480px;
     aspect-ratio: auto 480 / 480;
     height: 480px;
+<<<<<<< HEAD
+} 
+=======
 }
+>>>>>>> e03accb73a848ae94b24ddee850cfe09902a3f87
 a { color: inherit;}
 #recipe .recipe_item .tit_recipe {
     width: 480px;
@@ -141,17 +160,17 @@ a { color: inherit;}
     font-size: 22px;
     line-height: .6;
     padding-left: 30px;
-    padding-top: 5px;
+    /* padding-top: 5px; */
 }
-/*----------------------------*/
-p {
+
+/* p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-}
-/*************************************/
+} */
+
 
 #recipe .recipe_item {
     width: 480px;
@@ -184,6 +203,11 @@ li {
 .xans-board-search .stxt {
     font-size: 14px;
 }
+.skin_checkbox input[type=radio], input[type=checkbox]{
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+}
 .xans-board-search .stxt input {
     margin-left: 10px;
     margin-right: 3px;
@@ -214,3 +238,20 @@ input[type="checkbox" i] {
 #layerDSR .dsr_desc .emph {
     font-weight: 700;
 }
+<<<<<<< HEAD
+#content {
+    padding-bottom: 120px;
+}
+
+/* #footer {
+    height: 400px;
+}
+.footer_link {
+    height: 80px;
+    padding-bottom: 20px;
+}
+#footer {
+    padding-bottom: 50px;
+} */
+=======
+>>>>>>> e03accb73a848ae94b24ddee850cfe09902a3f87
