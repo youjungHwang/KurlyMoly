@@ -3,9 +3,7 @@
 회사소개, 
 레시피, 레시피 상세페이지, 
 상품문의글 작성페이지, 
-마이페이지의 주문내역 상세페이지, 
-탈퇴하기 등의 추가된 html의 css 입니다.
-
+마이페이지의 주문내역 상세페이지 등의 추가된 html의 css 입니다.
 */
 
 
@@ -375,7 +373,7 @@ a {
 
 
 
-/* ======================================== 레시피 - 전체보기 페이지 시작 ======================================== */
+/* ======================================== 레시피 - 전체보기 등등의 페이지 시작 ======================================== */
 
 .page_aticle {
     width: 1050px;
@@ -485,33 +483,375 @@ a {
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .xans-board-search .stxt {
     font-size: 14px;
+}
+
+/* ======================================== 레시피 - 전체보기 등등의 페이지 종료 ======================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================== 레시피 - 상세보기(apalf 페이지 시작 ======================================== */
+
+.view_recipe {
+    padding: 150px 10px 10px;
+}
+
+.goods_wrap {
+    width: 1010px;
+    margin: 0 auto;
+    font-family: noto sans KR;
+    font-weight: 200;
+    letter-spacing: 0;
+}
+
+.goods_wrap .goods_recipe h3 {
+    display: block;
+    font-family: noto sans KR;
+    font-weight: 700;
+    padding-bottom: 70px;
+    font-size: 50px;
+    line-height: 46px;
+    text-align: center;
+    color: #666;
+}
+
+.goods_wrap .goods_recipe .recipe_tit {
+    display: block;
+    padding-bottom: 30px;
+    font-family: noto sans KR;
+    font-weight: 700;
+    color: #666;
+    text-shadow: 2px 0;
+}
+
+.goods_wrap .goods_recipe .recipe_product {
+    display: inline-block;
+    border-top: 1px solid #b1b1b1;
+    padding-top: 30px;
+    min-width: 342px;
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 400;
+    text-shadow: 1px 0;
+}
+
+.goods_wrap .context .words {
+    margin-top: 55px;
+    font-size: 18px;
+    line-height: 32px;
+    color: #373737;
+}
+
+.goods_wrap .goods_recipe .recipe_item_tit {
+    display: block;
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-family: noto sans KR;
+    font-weight: 700;
+    color: #666;
+    text-shadow: 1px 0;
+}
+
+.goods_wrap .goods_recipe .context .words+.words {
+    margin-top: 60px;
+}
+
+
+/* RECIPEITEMS 부분 시작 */
+
+#recipe_view {
+    width: 100%;
+}
+
+.goods-add-product {
+    margin-bottom: 50px;
+}
+
+.goods-add-product {
+    position: relative;
+}
+
+.goods-add-product-title {
+    text-align: left;
+}
+
+.goods-add-product-title:before {
+    width: 20px;
+    height: 5px;
+    background-color: #000;
+    display: block;
+    content: '';
+}
+
+.__slide-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.goods-add-product-wrapper {
+    position: relative;
+    margin-top: 20px;
+}
+
+.goods-add-product-move.goods-add-product-move-left {
+    left: 0;
+    background-image: url(../img/EtcImage/slide-sub-left-button-black.webp);
+    background-position: left;
+}
+
+.goods-add-product-move.goods-add-product-move-right {
+    right: 0;
+    background-image: url(../img/EtcImage/slide-sub-right-button-black.webp);
+    background-position: right;
+}
+
+.goods-add-product-list-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 940px;
+    margin: 0 auto;
+    height: 350px;
+}
+
+.__slide-mover {
+    position: absolute;
+    left: 0;
+    width: 10000%;
+    height: 100%;
+}
+
+.goods-add-product-item-figure {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+
+.goods-add-product-item-figure a {
+    display: block;
+}
+
+.goods-add-product .btn_cart {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 45px;
+    height: 45px;
+    margin-top: 15px;
+    border: 0 none;
+    background: url(../img/EtcImage/ico_list_add_cart.webp) no-repeat 50% 50%;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+.goods-add-product-item-content {
+    height: 120px;
+}
+
+.goods-add-product-item-content-wrapper {
+    padding: 10px;
+    position: relative;
+    min-height: 75px;
+}
+
+.goods-add-product .goods-add-product-item-name {
+    overflow: hidden;
+    width: 100%;
+    height: 35px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+.goods-add-product .goods-add-product-item-name {
+    overflow: hidden;
+    width: 100%;
+    height: 35px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+.goods-add-product-item-price {
+    font-size: 14px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.goods-add-product-item-price {
+    left: 35%;
+}
+
+/* 찜기능, 장바구니 css - 레시피 상세페이지 전용 입니다. 취합시 다른 곳이 깨질 수 있습니다.*/
+.product_part .wish0 {
+    position: absolute;
+    right: 63px;
+    bottom: 14px;
+}
+
+.product_part .wish1 {
+    position: absolute;
+    right: 63px;
+    bottom: 14px;
+}
+
+.product_part .btn_cart {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 45px;
+    height: 45px;
+    margin-top: 15px;
+    border: 0 none;
+    background: url(../img/EtcImage/ico_list_add_cart.webp) no-repeat 50% 50%;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+
+
+
+
+
+
+/* RECIPEITEMS 부분 종료 */
+
+
+
+.xans-board-movement li a, .xans-board-movement li strong {
+    float: left;
+    padding: 10px;
+}
+
+
+.bg_loading {
+    position: fixed;
+    z-index: 9998;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5;
+}
+
+.loading_show {
+    position: fixed;
+    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    width: 32px;
+    height: 32px;
+    background: url(../img/EtcImage/img_loading_128x128.webp) no-repeat 50% 50%;
+    background-size: 16px 16px;
+}
+
+
+
+/* 레시피 상세페이지의 장바구니 담기 */
+#cartPut .cart_type3 {
+    /* position: fixed; */
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    width: 440px;
+    max-height: 600px;
+    margin-left: -220px;
+    border-radius: 6px;
+    background-color: #fff;
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!! 자동으로 창이 안띄워지나, 클릭해도 뜨지 않음. 단, 장바구니 클릭시 팝업띄우게 설정은 해놨는데 안먹음 */
+#cartPut .cart_type3{
+    display: none;
+}
+
+#cartPut .cart_type3 .list .btn_position {
+    display: block;
+}
+
+
+
+
+
+/* ======================================== 레시피 - 상세보기 페이지 종료 ======================================== */
+
+
+
+
+
+
+
+
+/* ======================================== 마이컬리 - 주문내역 페이지 시작 ======================================== */
+
+.mypage_top {
+    width: 100%;
+    padding: 50px 0;
+    margin-bottom: -20px;
+    background-color: #f7f7f7;
+}
+
+.mypage_top .mypagetop_user {
+    overflow: hidden;
+    width: 1050px;
+    margin: 0 auto;
+}
+
+.mypage_top .bnr_event {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    background-size: 1050px 60px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.loading_show {
+    position: fixed;
+    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    width: 32px;
+    height: 32px;
+    background: url(../img/EtcImage/img_loading_128x128.webp) no-repeat 50% 50%;
+    background-size: 16px 16px;
+}
+
+.page_aticle.aticle_type2 .page_section {
+    float: right;
+    width: 820px;
+}
+
+/* ↓ 문제 발생시 삭제할것!!!!! */
+.chk_cart {
+    display: none;
 }
 
 
@@ -534,17 +874,4 @@ a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ======================================== 레시피 - 전체보기 페이지 종료 ======================================== */
+/* ======================================== 마이컬리 - 주문내역 페이지 종료 ======================================== */

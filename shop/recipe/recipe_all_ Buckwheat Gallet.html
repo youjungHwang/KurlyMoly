@@ -1,4 +1,4 @@
-<!-- 레시피 - 매일밥상 페이지 -->
+<!-- 레시피 - 상세페이지 - 메밀갈레트 페이지 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +14,7 @@
     <script src="/script/script.js"></script>
     <script src="../../script/MJscript.js"></script>
     <script src="/common_js/kurlytracker/kurlytracker.js?ver=1.26.11"></script>
+    <script src="../../script/autoslider.js"></script>
     <style>
         #content {
             padding-bottom: 120px;
@@ -803,317 +804,320 @@
 
 
 
-                    <!-- 레시피 - 매일밥상 시작 -->
-                    <style>
-                        #lnbMenu li a:hover,
-                        #lnbMenu li .on {
-                            border-bottom: 1px solid #5F0080
-                        }
-                    </style>
-
-
-                    <div class="page_aticle">
-                        <div id="lnbMenu" class="lnb_menu">
-                            <div class="inner_lnb">
-                                <div class="ico_cate">
-                                    <span class="tit">레시피</span>
-                                </div>
-                                <ul class="list">
-                                    <li>
-                                        <a class="" id="no_anchor" href="../recipe/recipe_all.html">전체보기</a>
-                                    </li>
-                                    <li>
-                                        <a class="on" href="../recipe/recipe_everyday.html">매일밥상</a>
-                                    </li>
-                                    <li>
-                                        <a class="" href="../recipe/recipe_special.html">특별한날</a>
-                                    </li>
-                                    <li>
-                                        <a class="" href="../recipe/recipe_simple.html">간단요리</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <!-- 레시피 - 전체보기 - 메밀갈레트 시작 -->
+                    <div class="tit_page">
+                        <h2 class="tit">레시피</h2>
                     </div>
+
+
                     <div class="layout-wrapper">
-                        <div id="recipe" class="wrap">
-                            <table width="100%" align="center">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <form name="frmList" action="/shop/board/list.php?&amp;"
-                                                onsubmit="return chkFormList(this)">
-                                                <input type="hidden" name="id" value="recipe">
-                                                <table width="100%" id="recipe_table">
-                                                    <tbody>
-                                                        <tr class="recipe_tr">
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=386">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/975b07be2baba9ae"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">황태양념구이</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=385">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/9ce15cfc1b3e571b"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">도다리 양념구이</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="recipe_tr">
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=383">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/ffad2d8e18ce6b35"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">도다리 냉이국</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=382">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/5cc6a45945c5132f"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">메로 미소된장조림</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="recipe_tr">
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=379">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/ee105f9f395e7c73"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">스튜</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=373">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/dbbb42b102f85311"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">땅콩 호박 라구</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="recipe_tr">
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=372">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/752faca336c32a93"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">짜장밥</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=363">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/3c975dd8e25fb955"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">토종닭 캐슈넛볶음</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="recipe_tr">
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=361">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/c570f07948f2fcde"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">꼬리곰탕</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=356">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/792df50826159494"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">도다리 냉이국</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="recipe_tr">
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=341">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/51a83cde2c8cdaaf"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">아몬드 오징어채 무침</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td align="left" valign="top">
-                                                                <div>
-                                                                    <ul>
-                                                                        <li class="recipe_item"><a
-                                                                                href="view.php?id=recipe&amp;subSpeech=%B8%C5%C0%CF%B9%E4%BB%F3&amp;no=332">
-                                                                                <img src="//img-cf.kurly.com/shop/data/board/recipe/r/2cbcb6abaac6e706"
-                                                                                    width="480" height="480"
-                                                                                    onerror="this.src=&quot;/shop/data/skin/designgj/board/gallery/img/noimg.gif&quot;">
-                                                                                <p class="tit_recipe">버섯들깨탕</p>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="recipe_tr"> </tr>
-                                                    </tbody>
-                                                </table>
-                                                <div class="layout-pagination">
-                                                    <div class="pagediv">
-                                                        <a href="list.php?id=recipe&amp;page=1"
-                                                            class="layout-pagination-button layout-pagination-first-page">맨
-                                                            처음 페이지로 가기</a><a href="list.php?id=recipe&amp;page=1"
-                                                            class="layout-pagination-button layout-pagination-prev-page page_btnborder">이전
-                                                            페이지로 가기</a><strong
-                                                            class="layout-pagination-button layout-pagination-number __active">1</strong><a
-                                                            href="list.php?id=recipe&amp;page=2"
-                                                            class="layout-pagination-button layout-pagination-number">2</a><a
-                                                            href="list.php?id=recipe&amp;page=3"
-                                                            class="layout-pagination-button layout-pagination-number">3</a><a
-                                                            href="list.php?id=recipe&amp;page=4"
-                                                            class="layout-pagination-button layout-pagination-number">4</a><a
-                                                            href="list.php?id=recipe&amp;page=5"
-                                                            class="layout-pagination-button layout-pagination-number">5</a><a
-                                                            href="list.php?id=recipe&amp;page=6"
-                                                            class="layout-pagination-button layout-pagination-number">6</a><a
-                                                            href="list.php?id=recipe&amp;page=7"
-                                                            class="layout-pagination-button layout-pagination-number">7</a><a
-                                                            href="list.php?id=recipe&amp;page=8"
-                                                            class="layout-pagination-button layout-pagination-number">8</a><a
-                                                            href="list.php?id=recipe&amp;page=9"
-                                                            class="layout-pagination-button layout-pagination-number">9</a><a
-                                                            href="list.php?id=recipe&amp;page=10"
-                                                            class="layout-pagination-button layout-pagination-number">10</a><a
-                                                            href="list.php?id=recipe&amp;page=2"
-                                                            class="layout-pagination-button layout-pagination-next-page">다음
-                                                            페이지로 가기</a><a href="list.php?id=recipe&amp;page=30"
-                                                            class="layout-pagination-button layout-pagination-last-page">맨
-                                                            끝 페이지로 가기</a>
-                                                    </div>
-                                                </div>
-                                                <table width="100%">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td align="right">
-                                                                <table class="xans-board-search xans-board-search2">
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td class="input_txt"><img
-                                                                                    src="../../img/EtcImage/ico_function.gif">검색어
-                                                                            </td>
-                                                                            <td class="stxt" style="text-align:left">
-                                                                                <input type="checkbox"
-                                                                                    name="search[name]">이름
-                                                                                <input type="checkbox"
-                                                                                    name="search[subject]">제목
-                                                                                <input type="checkbox"
-                                                                                    name="search[contents]">내용
-                                                                                <input type="checkbox"
-                                                                                    name="search[tag]">태그
-                                                                                &nbsp;
-                                                                            </td>
-                                                                            <td class="input_txt">&nbsp;</td>
-                                                                            <td>
-                                                                                <div class="search_bt">
-                                                                                    <a
-                                                                                        href="javascript:document.frmList.submit()"><img
-                                                                                            src="../../img/EtcImage/search.webp"
-                                                                                            align="absmiddle"></a>
-                                                                                    <input type="text"
-                                                                                        name="search[word]" value=""
-                                                                                        required="">
+                        <table width="100%" align="center">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table class="boardView" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" style="border:none;">제목</th>
+                                                                    <td>메밀 갈레트</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">작성자</th>
+                                                                    <td>
+                                                                        MarketKurly
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="etcArea">
+                                                                    <td colspan="2">
+                                                                        <ul>
+                                                                            <li class="date">
+                                                                                <strong class="th">작성일</strong> <span
+                                                                                    class="td">2021-02-18</span>
+                                                                            </li>
+                                                                            <li class="hit">
+                                                                                <strong class="th">조회수</strong> <span
+                                                                                    class="td">68923</span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="200" valign="top" id="contents" class="view_recipe">
+                                                        <table width="100%" style="table-layout:fixed"
+                                                            class="goods_wrap">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top">
+                                                                        <div class="goods_recipe">
+                                                                            <h3>
+                                                                                <span class="recipe_tit">Kurly’s
+                                                                                    Recipe</span>
+                                                                                <small class="recipe_product">메밀
+                                                                                    갈레트</small>
+                                                                            </h3>
+                                                                            <div class="context">
+                                                                                <div class="pic">
+                                                                                    <img
+                                                                                        src="//img-cf.kurly.com/shop/data/board/recipe/r/b6d3695bcb4c5569">
                                                                                 </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                                                                <p class="words">
+                                                                                    <strong
+                                                                                        class="recipe_item_tit">재료</strong>
+                                                                                    순메밀가루 100g, 우유 200mL, 달걀 1개, 양송이 버섯,
+                                                                                    베이컨, 베이비 채소, 경성치즈, 소금과 설탕 1/4작은술, 후추
+                                                                                </p>
+                                                                                <p class="words">
+                                                                                    <strong
+                                                                                        class="recipe_item_tit">RECIPE</strong>
+                                                                                    1. 볼에 순메밀가루, 소금, 설탕을 넣은 뒤 우유를 조금씩
+                                                                                    부으면서 섞는다.<br>
+                                                                                    2. 묽은 상태의 반죽을 냉장고에서 1시간 정도 숙성한다. 이때
+                                                                                    편으로 썬 버섯과 베이컨을 살짝 굽는다.<br>
+                                                                                    3. 약불로 달군 팬에 오일을 둘러 코팅한 뒤 반죽을 얇고 넓게
+                                                                                    펼쳐 굽는다.<br>
+                                                                                    4. 달걀 1개를 깨 ③의 중앙에 위치시킨 뒤 구운 버섯과
+                                                                                    베이컨을 올리고, 가장자리를 접어 준다.<br>
+                                                                                    5. 후추, 경성 치즈를 갈아 올린 뒤 베이비 채소로 장식해
+                                                                                    마무리한다.<br>
+                                                                                    <b>Tip.</b>혻베이컨 대신 프로슈토나 하몽을 사용해도
+                                                                                    좋아요. 에멘탈 치즈 등을 더해주면 짭조름한 감칠맛이 한층
+                                                                                    살아납니다.
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="recipe_view" align="center">
+                                        <div class="goods-add-product">
+                                            <h3 class="goods-add-product-title">RECIPE ITEMS</h3>
+                                            <div class="goods-add-product-wrapper __slide-wrapper" data-slide-item="5">
+                                                <button
+                                                    class="goods-add-product-move goods-add-product-move-left __slide-go-left">왼쪽으로
+                                                    슬라이드 이동</button>
+                                                <button
+                                                    class="goods-add-product-move goods-add-product-move-right __slide-go-right">오른쪽으로
+                                                    슬라이드 이동</button>
+                                                <div class="goods-add-product-list-wrapper" style="height:310px">
+                                                    <ul class="goods-add-product-list __slide-mover">
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=177">
+                                                                    <img src="../../img/EtcImage/158469513546l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('177')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=177">
+                                                                        <p class="goods-add-product-item-name">유기농 베이비
+                                                                            채소 100g</p>
+                                                                        <p class="goods-add-product-item-price"> 2,600원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=29850">
+                                                                    <img src="//img-cf.kurly.com/shop/data/goods/1592802536569l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('29850')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=29850">
+                                                                        <p class="goods-add-product-item-name">[Kurly's]
+                                                                            동물복지 유정란 20구</p>
+                                                                        <p class="goods-add-product-item-price"> 8,950원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=44651">
+                                                                    <img src="../../img/EtcImage/1576038943636l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('44651')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=44651">
+                                                                        <p class="goods-add-product-item-name">[선농육공방]
+                                                                            무항생제 베이컨</p>
+                                                                        <p class="goods-add-product-item-price"> 8,500원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=48666">
+                                                                    <img src="//img-cf.kurly.com/shop/data/goods/1580878680982l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('48666')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=48666">
+                                                                        <p class="goods-add-product-item-name">[Kurly's]
+                                                                            동물복지 우유 900ml</p>
+                                                                        <p class="goods-add-product-item-price"> 2,950원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=49253">
+                                                                    <img src="//img-cf.kurly.com/shop/data/goods/1582702595820l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('49253')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=49253">
+                                                                        <p class="goods-add-product-item-name">한끼 양송이 3입
+                                                                        </p>
+                                                                        <p class="goods-add-product-item-price"> 1,890원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=53588">
+                                                                    <img src="//img-cf.kurly.com/shop/data/goods/1597384038163l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('53588')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=53588">
+                                                                        <p class="goods-add-product-item-name">[파르네세]
+                                                                            파르미지아노 레지아노 24개월</p>
+                                                                        <p class="goods-add-product-item-price"> 11,500원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=65718">
+                                                                    <img src="//img-cf.kurly.com/shop/data/goods/1613541077269l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('65718')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=65718">
+                                                                        <p class="goods-add-product-item-name">[한밀제분] 맷돌
+                                                                            국산 순메밀 가루 500g</p>
+                                                                        <p class="goods-add-product-item-price"> 15,900원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table width="100%" style="table-layout:fixed; border-top:1px solid #795c90; height:80px;">
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="padding-top:10px;">
+                                        <table width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td align="right">
+                                                        <a href="../../shop/recipe/recipe_all.html"><span
+                                                                class="bhs_button yb" style="float:none;">목록</span></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div
+                            class="xans-element- xans-board xans-board-movement-1002 xans-board-movement xans-board-1002 ">
+                            <ul>
+                                <li class="prev ">
+                                    <strong>이전글</strong><a
+                                        href="/board/free/read.html?no=27121&amp;board_no=1&amp;page="></a><a
+                                        href="../../shop/recipe/recipe_all_ Rucola Pizza.html">플랫 브레드 루꼴라 피자</a>
+                                </li>
+                                <p>
+                                    <br><textarea id="examC_392"
+                                        style="display:none;width:100%;height:300px">순메밀가루 100g, 우유 200mL, 달걀 1개, 양송이 버섯, 베이컨, 베이비 채소, 경성치즈, 소금과 설탕 1/4작은술, 후추</textarea>
+
+
+                                </p>
+                            </ul>
                         </div>
+                        <div class="bg_loading" id="bgLoading" style="display: none;">
+                            <div class="loading_show"></div>
+                        </div>
+                        <script>
+                            // KM-1483 Amplitude
+                            KurlyTracker.setScreenName('recipe_detail')
+                        </script>
                     </div>
-                    <script>
-                        // KM-1483 Amplitude
-                        KurlyTracker.setScreenName('recipe_list')
-                    </script>
-                    <!-- 레시피 - 매일밥상 종료 -->
+
+                    <!-- 레시피 - 전체보기 - 메밀갈레트 종료 -->
 
 
                 </div>
@@ -1329,6 +1333,215 @@
         </script>
         <!-- quick list 끝 -->
     </div>
+
+
+
+
+
+    <!-- 레시피 상세보기 페이지 카트 부분 -->
+    <div id="cartPut">
+        <div class="cart_option cartList cart_type3" style="opacity: 1;">
+            <div class="inner_option"><button type="button" class="btn_close1">레이어닫기</button>
+                <!---->
+                <div class="in_option">
+                    <div class="list_goods">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <ul class="list list_nopackage">
+                            <li class="on"><span class="btn_position"><button type="button" class="btn_del"><span
+                                            class="txt">삭제하기</span></button></span> <span class="name">
+                                    <!----> [사브로소] 엑스트라버진 올리브 오일
+                                    <!---->
+                                </span>
+                                <!---->
+                                <div class="option"><span class="count"><button type="button"
+                                            class="btn down on">수량내리기</button> <input type="number" readonly="readonly"
+                                            onfocus="this.blur()" class="inp"> <button type="button"
+                                            class="btn up on">수량올리기</button></span> <span class="price">
+                                        <!----> <span class="dc_price">13,900원</span>
+                                    </span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="total">
+                        <div class="price"><strong class="tit">합계</strong>
+                            <!----> <span class="sum"><span class="num">13,900</span> <span class="won">원</span></span>
+                        </div>
+                        <p class="txt_point"><span class="ico">적립</span> <span class="no_login">
+                                <!----> <span>로그인 후, 적립혜택 제공</span>
+                            </span>
+                            <!---->
+                        </p>
+                    </div>
+                </div>
+                <div class="group_btn off layer_btn2">
+                    <!---->
+                    <!----> <span class="btn_type2"><button type="button" class="txt_type">취소</button></span> <span
+                        class="btn_type1"><button type="button" class="txt_type">장바구니 담기</button>
+                        <!---->
+                    </span>
+                    <!---->
+                </div>
+            </div>
+        </div>
+        <div class="cart_option cart_type3 notify_option">
+            <div class="inner_option"><strong class="tit">재입고 알림 신청</strong>
+                <p class="name_deal">[사브로소] 엑스트라버진 올리브 오일</p>
+                <!---->
+                <!---->
+                <p class="notice"><span class="ico">·</span>상품이 입고되면 앱 푸시 또는 알림톡으로 알려 드립니다.</p>
+                <div class="group_btn layer_btn2"><span class="btn_type2"><button type="button"
+                            class="txt_type">취소</button></span> <span class="btn_type1"><button type="button"
+                            class="txt_type">신청하기</button></span></div>
+            </div>
+        </div>
+        <div class="cart_option cart_result cart_type3">
+            <div class="inner_option"><button type="button" class="btn_close1">pc레이어닫기</button>
+                <p class="success">상품 구매를 위한 <span class="bar"></span>배송지를 설정해주세요</p>
+                <div class="group_btn layer_btn2"><span class="btn_type2"><button type="button"
+                            class="txt_type">취소</button></span> <span class="btn_type1"><button type="button"
+                            class="txt_type"><span class="ico_search"></span>주소 검색</button></span></div>
+            </div>
+        </div>
+        <form name="frmBuyNow" method="post" action="/shop/order/order.php"><input type="hidden" name="mode"
+                value="addItem"> <input type="hidden" name="goodsno" value=""></form>
+        <form name="frmWishlist" method="post"></form>
+    </div>
+
+
+    <script>
+        //goods_list 장바구니창 취소버튼(닫기)
+        $(function () {
+            $('.btn_type2').click(function () {
+                $('#cartPut').css("display", "none");
+            });
+        });
+
+        $(function () {
+            $('.btn_cart').click(function () {
+                $('#cartPut').css("display", "block");
+            });
+        });
+    </script>
+
+
+    <script src="../../script/common_filter.js"></script>
+    <script src="../../script/cartput_v1.js"></script>
+
+    <script>
+        // 클릭인경우
+        function cartLayerOpenAction(no, type) {
+            var cartPutDefault = {
+                'login': false,
+                'no': no,
+                'type': 'pc'
+            }
+            cartPutDefault.login = window.webStatus.isSession;
+            if (cartPutDefault.login || typeof type === 'undefined') {
+                bodyScroll.bodyFixed();
+            }
+            cartPut.userInfoGet(cartPutDefault, (typeof type !== 'undefind' && type === 'notify') ? type : false);
+        }
+    </script>
+
+    <iframe name="ifrmHidden" id="ifrmHidden" src="about:blank" style="display:none;width:100%;height:600px;">
+        <html>
+
+        <head></head>
+
+        <body></body>
+
+        </html>
+
+
+        <!-- ======================= -->
+        <html>
+
+        <head></head>
+
+        <body>
+            <!-- Code injected by live-server -->
+            <script type="text/javascript">
+                // <![CDATA[  <-- For SVG support
+                if ('WebSocket' in window) {
+                    (function () {
+                        function refreshCSS() {
+                            var sheets = [].slice.call(document.getElementsByTagName("link"));
+                            var head = document.getElementsByTagName("head")[0];
+                            for (var i = 0; i < sheets.length; ++i) {
+                                var elem = sheets[i];
+                                var parent = elem.parentElement || head;
+                                parent.removeChild(elem);
+                                var rel = elem.rel;
+                                if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                    var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                    elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                                }
+                                parent.appendChild(elem);
+                            }
+                        }
+                        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                        var address = protocol + window.location.host + window.location.pathname + '/ws';
+                        var socket = new WebSocket(address);
+                        socket.onmessage = function (msg) {
+                            if (msg.data == 'reload') window.location.reload();
+                            else if (msg.data == 'refreshcss') refreshCSS();
+                        };
+                        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                            console.log('Live reload enabled.');
+                            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                        }
+                    })();
+                }
+                else {
+                    console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+                }
+	// ]]>
+            </script>
+        </body>
+
+        </html>
+
+    </iframe>
+
+    <script>
+        (function (theFrame) {
+            theFrame.contentWindow.location.href = theFrame.src;
+        }(document.getElementById("ifrmHidden")));
+    </script>
+
+    <script src="../../script/customeEvent.js"></script>
+
+
+
+    <script>
+        window.addEventListener('load', function () {
+            // KM-1238 branch
+            (function (b, r, a, n, c, h, _, s, d, k) { if (!b[n] || !b[n]._q) { for (; s < _.length;)c(h, _[s++]); d = r.createElement(a); d.async = 1; d.src = "https://cdn.branch.io/branch-latest.min.js"; k = r.getElementsByTagName(a)[0]; k.parentNode.insertBefore(d, k); b[n] = h } })(window, document, "script", "branch", function (b, r) { b[r] = function () { b._q.push([r, arguments]) } }, { _q: [], _v: 1 }, "addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
+            var BRANCHKEY = 'key_live_meOgzIdffiVWvdquf7Orkacksxa2LneN';
+            if (!webStatus.is_release_build) {
+                BRANCHKEY = 'key_test_joIkrHgomhL3qaEreXL5QdigzEn6Ucd4';
+            }
+            branch.init(BRANCHKEY);
+            branch.setIdentity(uuidCheck);
+            branch.track("pageview");
+
+            // branchReady
+            var _eventBranchReady = new CustomEvent("branchReady", {
+                detail: { // 전달 할께 있으면 반드시 detail 오브젝트에 넣어야 함
+                    val: '1',
+                }
+            });
+            document.dispatchEvent(_eventBranchReady);
+            // END branchReady
+        }, false);
+    </script>
+    <script>
+        if (document.getElementById('examC_390')) document.getElementById('contents_390').innerHTML = document.getElementById('examC_390').value;
+    </script>
+
+
 </body>
 
 </html>

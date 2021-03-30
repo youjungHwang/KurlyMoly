@@ -737,7 +737,6 @@ function sample6_execDaumPostcode() {
 
 
 // ================================================= 꽃길람보 
-
 //  mypage > mypage_editinfo.html의 로그인 alert 함수
 function loginCheck(){
     var f = document.confitmForm;
@@ -751,9 +750,7 @@ function loginCheck(){
 
 
 
-
-
-
+// ================================================= 레시피 상세보기 페이지의 script1 시작 ===============================================
 
 
 
