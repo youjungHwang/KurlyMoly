@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+D:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2736097412.index
-3266470349.index
-2613943002.index
-1238606736.index
-2880571728.index
-2119779715.index
-3153118506.index
