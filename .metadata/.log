@@ -1,0 +1,859 @@
+!SESSION 2021-03-30 19:52:56.917 -----------------------------------------------
+eclipse.buildId=4.18.0.I20201202-1800
+java.version=11.0.9
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+This is a continuation of log file D:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\.metadata\.bak_0.log
+Created Time: 2021-03-31 02:29:06.460
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:06.461
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:09.229
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:09.393
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:10.442
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\recipe\recipe_special.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:11.060
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:11.060
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:11.445
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:11.731
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:11.731
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:15.130
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:15.306
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:18.028
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\mypage\mypage_emoney.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:20.701
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:21.094
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:35.781
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:35.781
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:38.353
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:38.538
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:41.232
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\mypage\mypage_coupon.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:43.696
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:44.145
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:47.071
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:29:47.072
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:43.925
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\goods\sale_goods_list.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:46.464
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:47.129
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:47.318
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:48.827
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:57.249
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:57.249
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:30:59.834
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:00.001
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:01.681
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:04.906
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:04.906
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:27.621
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\goods\event_list.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:30.285
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:30.690
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:32.242
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:32.242
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:32.873
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\goods\best_goods_list.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:35.470
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:35.889
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:36.784
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:36.784
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:39.880
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\view3.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:41.902
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:42.310
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:44.489
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:44.489
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:46.865
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:47.058
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:49.448
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\view1.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:51.693
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:52.073
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:54.688
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:54.688
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:57.699
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:57.884
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.ui 4 0 2021-03-31 02:31:59.581
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.base/java.util.HashMap$HashIterator.nextNode(HashMap.java:1493)
+	at java.base/java.util.HashMap$KeyIterator.next(HashMap.java:1516)
+	at org.eclipse.wst.sse.ui.internal.reconcile.AbstractStructuredTextReconcilingStrategy.getCorrespondingMarkerAnnotation(AbstractStructuredTextReconcilingStrategy.java:368)
+	at org.eclipse.wst.sse.ui.internal.reconcile.AbstractStructuredTextReconcilingStrategy.removeAnnotations(AbstractStructuredTextReconcilingStrategy.java:345)
+	at org.eclipse.wst.sse.ui.internal.reconcile.AbstractStructuredTextReconcilingStrategy.removeAllAnnotations(AbstractStructuredTextReconcilingStrategy.java:385)
+	at org.eclipse.wst.sse.ui.internal.reconcile.AbstractStructuredTextReconcilingStrategy.setDocument(AbstractStructuredTextReconcilingStrategy.java:407)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.setDocument(ValidatorStrategy.java:312)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.setDocument(DocumentRegionProcessor.java:355)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.setDocument(StructuredRegionProcessor.java:295)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor.uninstall(DirtyRegionProcessor.java:844)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.uninstall(DocumentRegionProcessor.java:442)
+	at org.eclipse.jface.text.source.SourceViewer.unconfigure(SourceViewer.java:719)
+	at org.eclipse.wst.sse.ui.internal.StructuredTextViewer.unconfigure(StructuredTextViewer.java:914)
+	at org.eclipse.jface.text.source.SourceViewer.handleDispose(SourceViewer.java:780)
+	at org.eclipse.jface.text.source.projection.ProjectionViewer.handleDispose(ProjectionViewer.java:1301)
+	at org.eclipse.wst.sse.ui.internal.StructuredTextViewer.handleDispose(StructuredTextViewer.java:736)
+	at org.eclipse.jface.text.TextViewer.lambda$1(TextViewer.java:1723)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:127)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1046)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:760)
+	at org.eclipse.swt.custom.StyledText.handleDispose(StyledText.java:5980)
+	at org.eclipse.swt.custom.StyledText.lambda$1(StyledText.java:5792)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:794)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:410)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.disposeWidget(SWTPartRenderer.java:173)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.disposeWidget(ContributedPartRenderer.java:286)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:865)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:849)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.subscribeTopicToBeRendered(PartRenderingEngine.java:185)
+	at jdk.internal.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:92)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setToBeRendered(UIElementImpl.java:314)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1402)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1332)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1182)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1042)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1958)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:335)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1434)
+
+!ENTRY org.eclipse.ui 4 0 2021-03-31 02:31:59.583
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4875)
+	at org.eclipse.swt.SWT.error(SWT.java:4790)
+	at org.eclipse.swt.SWT.error(SWT.java:4761)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:432)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:351)
+	at org.eclipse.swt.widgets.Widget.getData(Widget.java:526)
+	at org.eclipse.jface.text.source.VisibleLinesTracker.untrack(VisibleLinesTracker.java:122)
+	at org.eclipse.jface.text.source.AnnotationRulerColumn.handleDispose(AnnotationRulerColumn.java:499)
+	at org.eclipse.jface.text.source.AnnotationRulerColumn.lambda$2(AnnotationRulerColumn.java:278)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:127)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:794)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:410)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.disposeWidget(SWTPartRenderer.java:173)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.disposeWidget(ContributedPartRenderer.java:286)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:865)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:849)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.subscribeTopicToBeRendered(PartRenderingEngine.java:185)
+	at jdk.internal.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:92)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setToBeRendered(UIElementImpl.java:314)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1402)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1332)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1182)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1042)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1958)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:335)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1434)
+
+!ENTRY org.eclipse.ui 4 0 2021-03-31 02:31:59.584
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4875)
+	at org.eclipse.swt.SWT.error(SWT.java:4790)
+	at org.eclipse.swt.SWT.error(SWT.java:4761)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:432)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:351)
+	at org.eclipse.swt.widgets.Widget.getData(Widget.java:526)
+	at org.eclipse.jface.text.source.VisibleLinesTracker.untrack(VisibleLinesTracker.java:122)
+	at org.eclipse.jface.text.source.LineNumberRulerColumn.handleDispose(LineNumberRulerColumn.java:654)
+	at org.eclipse.jface.text.source.LineNumberChangeRulerColumn.handleDispose(LineNumberChangeRulerColumn.java:333)
+	at org.eclipse.jface.text.source.LineNumberRulerColumn.lambda$3(LineNumberRulerColumn.java:623)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:127)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:794)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:410)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.disposeWidget(SWTPartRenderer.java:173)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.disposeWidget(ContributedPartRenderer.java:286)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:865)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:849)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.subscribeTopicToBeRendered(PartRenderingEngine.java:185)
+	at jdk.internal.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:92)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setToBeRendered(UIElementImpl.java:314)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1402)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1332)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1182)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1042)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1958)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:335)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1434)
+
+!ENTRY org.eclipse.ui 4 0 2021-03-31 02:31:59.584
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4875)
+	at org.eclipse.swt.SWT.error(SWT.java:4790)
+	at org.eclipse.swt.SWT.error(SWT.java:4761)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:432)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:351)
+	at org.eclipse.swt.widgets.Widget.getData(Widget.java:526)
+	at org.eclipse.jface.text.source.VisibleLinesTracker.untrack(VisibleLinesTracker.java:122)
+	at org.eclipse.jface.text.source.AnnotationRulerColumn.handleDispose(AnnotationRulerColumn.java:499)
+	at org.eclipse.jface.text.source.AnnotationRulerColumn.lambda$2(AnnotationRulerColumn.java:278)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:127)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:794)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:797)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:410)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.disposeWidget(SWTPartRenderer.java:173)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.disposeWidget(ContributedPartRenderer.java:286)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:865)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:849)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.subscribeTopicToBeRendered(PartRenderingEngine.java:185)
+	at jdk.internal.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:92)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setToBeRendered(UIElementImpl.java:314)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1402)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1332)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1182)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1042)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1958)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:335)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1434)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:31:59.874
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:00.051
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:00.051
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:02.834
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:03.026
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:04.096
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:05.146
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:05.146
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:08.267
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:08.454
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:32:09.253
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:33:01.647
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:33:01.647
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:34:19.779
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:34:57.594
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:34:57.594
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:35:49.340
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:35:55.348
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:35:55.348
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:36:56.029
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:36:58.996
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:36:58.996
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:36:59.335
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:37:20.636
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:37:20.636
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:38:23.695
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:40:12.190
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:40:12.191
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:40:26.377
+!MESSAGE [Error]	No config file for d:\04. Code\00. Team PJT\1st_Team_KurlyMoly\05. Jsp\KurlyMoly\src\main\webapp\shop\board\notice.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:40:27.551
+!MESSAGE [Error]	Notification handler 'textDocument/didOpen' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-03-31 02:40:27.551
+!MESSAGE [Error]	TypeError: Cannot read property 'charCount' of undefined
+    at LineNode.walk (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155913:68)
+    at LineIndex.edit (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155794:31)
+    at ScriptVersionCache._getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155584:47)
+    at ScriptVersionCache.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:155577:82)
+    at TextStorage.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147146:32)
+    at ScriptInfo.getSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147308:41)
+    at InferredProject.Project.getScriptSnapshot (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:147964:39)
+    at HostCache.createEntry (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143618:44)
+    at new HostCache (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143605:22)
+    at synchronizeHostData (C:\Users\nhpc\.p2\pool\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js:143906:29)

@@ -1,0 +1,45 @@
+package com.kurly.review;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.kurly.db.Dbconn;
+import com.kurly.order.ClaimDTO;
+
+public class ReviewDAO {
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	List<ReviewDTO> reviewList = new ArrayList<>();
+	String sql = "";
+
+	public List<ReviewDTO> selectReview() {
+		try {
+			conn = Dbconn.getConnection();
+			sql = "SELECT * FROM tb_review ORDER BY rv_idx DESC";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ReviewDTO reviewDetail = new ReviewDTO();
+				reviewDetail.setRvIdx(rs.getLong("rv_idx"));
+				reviewDetail.setRvProductidx(rs.getLong("rv_productidx"));
+				reviewDetail.setRvUserid(rs.getString("rv_userid"));
+				reviewDetail.setRvStars(rs.getInt("rv_stars"));
+				reviewDetail.setRvTitle(rs.getString("rv_title"));
+				reviewDetail.setRvContent(rs.getString("rv_content"));
+				reviewDetail.setRvHelped(rs.getInt("rv_helped"));
+				reviewDetail.setRvRegdate(rs.getString("rv_regdate"));
+				
+				reviewList.add(reviewDetail);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return reviewList;
+	}
+}

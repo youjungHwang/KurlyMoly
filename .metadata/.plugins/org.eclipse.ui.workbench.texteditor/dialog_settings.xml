@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="베이커리"/>
+		<list key="findhistory">
+			<item value="index.html"/>
+			<item value="qnb"/>
+			<item value="/form"/>
+			<item value="유명 맛집"/>
+			<item value="section_view"/>
+			<item value="kurlytracker"/>
+			<item value="class=&quot;section_login&quot;&gt;"/>
+			<item value="&lt;div id=&quot;main&quot;&gt;"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>

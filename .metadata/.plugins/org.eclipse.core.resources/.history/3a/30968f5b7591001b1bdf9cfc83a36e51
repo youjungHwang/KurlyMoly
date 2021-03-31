@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/webapp/script/axios.js=UTF-8
+encoding//src/main/webapp/script/common.js=UTF-8
+encoding//src/main/webapp/script/delivery_address.js=UTF-8
+encoding//src/main/webapp/script/godo.password_strength.js=UTF-8
+encoding//src/main/webapp/script/kurlytracker.js=UTF-8
+encoding//src/main/webapp/script/polify.js=UTF-8
+encoding//src/main/webapp/script/pw_validate.js=UTF-8
+encoding//src/main/webapp/script/ui_v2.js=UTF-8
+encoding//src/test/java=UTF-8
+encoding/<project>=UTF-8
