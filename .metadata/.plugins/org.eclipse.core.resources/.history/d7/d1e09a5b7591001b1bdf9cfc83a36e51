@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/admin_style.css" rel="stylesheet" type="text/css">
+
+    <title>주문/배송 현황</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 상단 메뉴 시작 -->
+        <header id="header">
+            <div id="header_menu1" class="header_menu">
+                <ul>
+                    <li>
+                        <a href="#"><img id="kurly_logo" src="../img/kurly.png" alt="컬리로고"></a>
+                    </li>
+                    <li>
+                        <h2>관리자 센터</h2>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="header_menu2">
+                <ul class="util clear" class="header_menu">
+                    <li><a href="admin_dashboard.html">Admin 님</a></li>
+                    <li><a href="admin_mypage.html">내 정보</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- 상단 메뉴 끝 -->
+
+        <!--컨테이너 시작-->
+        <div class="container clear">
+            <!-- 사이드 메뉴 시작 -->
+            <div class="side_menu">
+                <div id="profile_area"><img id="pro_file" src="../img/profile.png"></div>
+                <div id="tab1" class="menutab">
+                    <ul>
+                        <li class="category"><a href="admin_dashboard.html">대시보드</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab2" class="menutab">
+                    <img src="../img/ico_folding_down.png">
+                    <ul>
+                        <li class="category">공지사항</li>
+                        <li><a href="admin_noticecheck.html">공지사항 조회</a></li>
+                        <li><a href="admin_noticeadd.html">공지사항 등록</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab3" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">상품 관리</li>
+                        <li><a href="admin_productcheck.html">상품 조회/수정</a></li>
+                        <li><a href="admin_productadd.html">상품 등록</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab4" class="menutab __activepage">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">판매 관리</li>
+                        <li><a href="admin_ordercheck.html">주문 조회</a></li>
+                        <li class="__activepage1">주문/배송 현황</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab5" class="menutab">
+                    <img src="../img/ico_folding_down.png">
+                    <ul>
+                        <li class="category clear">클레임 관리</li>
+                        <li><a href="admin_cancelcheck.html">취소 관리</a></li>
+                        <li><a href="admin_eventcheck.html">교환 관리</a></li>
+                        <li><a href="admin_refundcheck.html">반품 관리</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab6" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">문의 사항</li>
+                        <li><a href="admin_prd_inquiry.html">상품 문의</a></li>
+                        <li><a href="admin_ctm_inquiry.html">고객 문의</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab7" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">회원 관리</li>
+                        <li><a href="admin_membercheck.html">회원 조회</a></li>
+                        <li><a href="admin_wd_member.html">탈회회원 조회</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab8" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">이벤트 관리</li>
+                        <li><a href="admin_eventcheck.html">이벤트 조회</a></li>
+                        <li><a href="admin_eventadd.html">이벤트 등록</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab9" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">기본 정보</li>
+                        <li><a href="admin_mypage.html">내 정보</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 사이드 메뉴 끝 -->
+            <!-- 내용 시작-->
+            <div id="content">
+                <div class="title">
+                    <p>주문/배송 현황</p>
+                </div>
+                <div class="quickcheck">
+                    <ul>
+                        <li>
+                            <div class="quickmenu">
+                                <img class="quickimg" src="../img/cart.png">
+                                <span class="prod_state">신규주문<br><span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="../img/cart.png">
+                                <span class="prod_state">상품준비<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="../img/cart.png">
+                                <span class="prod_state">배송중<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="../img/cart.png">
+                                <span class="prod_state">배송완료<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="quickmenu"><img class="quickimg" src="../img/cart.png">
+                                <span class="prod_state">구매확정<br>
+                                <span>0</span> 건</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+              
+                <div class="filter">
+                    <form aciton="#" class="regForm">
+                        <ul class="reg_list clear">
+                            <li class="clear">
+                                <label class="o_tit_lbl_search">조회기간</label>
+                                <div class="select_duration">
+                                    <select name="select_duration">
+                                        <option value="결제일" selected>결제일</option>
+                                        <option value="주문확인일">주문확인일</option>
+                                        <option value="발송처리일">발송처리일</option>
+                                        <option value="배송완료일">배송완료일</option>  
+                                        <option value="구매확정일">구매확정일</option>                                  </select>
+                                    <input type="date"> ~ <input type="date">
+                                </div>
+                            </li>
+                           
+                            <div class="hr"> </div>
+
+                            <li class="clear">
+                                <label class="tit_lbl">처리상태</label>
+                                <div class="select_sales">
+                                    <label class="space"><input type="checkbox" name="orderstate" value="전체"> 전체</label>
+                                    <label class="space"><input type="checkbox" name="orderstate"
+                                            value="신규주문"> 신규주문</label>
+                                    <label class="space"><input type="checkbox" name="orderstate" value="상품준비중"> 상품준비중</label>
+                                    <label class="space"><input type="checkbox" name="orderstate" value="배송중"> 배송중</label>
+                                    <label class="space"><input type="checkbox" name="orderstate"
+                                            value="배송완료"> 배송완료</label>
+                                    <label class="space"><input type="checkbox" name="orderstate"
+                                            value="구매확정"> 구매확정</label>
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+
+                            <li class="search_detail clear">
+                                <label class="tit_lbl_search "> 상세조건</label>
+                                <div class="search_box"> 
+                                    <select name="select_search">
+                                        <option value="전체" selected>전체</option>
+                                        <option value="배송번호">배송번호</option>
+                                        <option value="주문번호">주문번호</option>
+                                        <option value="배송업체">배송업체</option>
+                                        <option value="송장번호">송장번호</option>
+                                        <option value="처리상태">처리상태</option>
+                                    </select> <input type="text" name="o_search_cont"> 
+                                </div>
+                            </li>
+
+                            <li>
+                                <p class="btn_line">
+                                    <Input type="submit" value="검색" class="btn_basecolor1"> <Input type="reset"
+                                        value="초기화" class="btn_basecolor2">
+                                </p>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+                <div class="listview">
+                    <div class="subtitle float_left">
+                        <h3>주문 / 배송 목록 (총 <span>0</span> 개)</h3>
+                    </div>
+                    <div class="subfunc float_right clear"> 
+                            <select name="pn_cnt">
+                                <option svalue="10개씩보기" selected>10개씩보기</option>
+                                <option value="20개씩보기">20개씩보기</option>
+                                <option value="30개씩보기">30개씩보기</option>
+                            </select>
+                    </div>
+                    <div class="bssBox">
+                        <table class="bbsListTbl">
+                            <tr>
+                                <th>중요</th>
+                                <th>배송번호</th>
+                                <th>주문번호</th>
+                                <th>배송업체</th>
+                                <th>송장번호</th>
+                                <th>처리상태</th>
+                                <th>처리일시</th>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>미확인</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>미확인</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>상품준비중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>상품준비중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>배송중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>배송중</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>배송완료</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>배송완료</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>구매확정</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>구매확정</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="../img/star.png" alt="중요"></td>
+                                <td><a href="#" class="order_datails">d12345</a></td>
+                                <td><a href="#" class="order_datails">12345</a></td>
+                                <td>CJ대한통운</td>
+                                <td><a href="#" class="order_datails">682829101</a></td>
+                                <td>구매확정</td>
+                                <td>2020.02.24</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <div  class = "pagination">
+                        <a href="#" class="pn_btn pn_firstpage">맨 처음 페이지로 가기</a>
+                        <a href="#" class="pn_btn pn_prevpage">이전 페이지로 가기</a>
+                        <strong class="pn_btn pn_num __active">1</strong>
+                        <a href="#" class="pn_btn pn_num">2</a>
+                        <a href="#" class="pn_btn pn_num">3</a>
+                        <a href="#" class="pn_btn pn_num">4</a>
+                        <a href="#" class="pn_btn pn_num">5</a>
+                        <a href="#" class="pn_btn pn_num">6</a>
+                        <a href="#" class="pn_btn pn_num">7</a>
+                        <a href="#" class="pn_btn pn_num">8</a>
+                        <a href="#" class="pn_btn pn_num">9</a>
+                        <a href="#" class="pn_btn pn_num">10</a>
+                        <a href="#" class="pn_btn pn_nextpage">다음 페이지로 가기</a>
+                        <a href="#" class="pn_btn pn_lastpage">맨 끝 페이지로 가기</a>
+                    </div>
+                </div>
+            
+            <!-- 푸터 시작 -->
+            <div class="footer">
+                <div class="footer_menu">
+                    <ul class="footer_list">
+                        <li><a href="#">관리자센터 메뉴얼</a></li>
+                        <li> | </li>
+                        <li><a href="#">구글 애널리틱스</a></li>
+                        <li> | </li>
+                        <li><a href="#">마켓컬리 협업툴</a></li>
+                        <li> | </li>
+                        <li><a href="#">개발도구</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 푸터 끝-->
+        </div>
+        <!-- 내용 끝-->
+        </div>
+        <!--컨테이너 끝-->
+
+    </div>
+</body>
+
+</html>

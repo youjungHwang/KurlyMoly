@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/admin_style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/26.0.0/classic/ckeditor.js"></script>
+    <title>상품 등록</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 상단 메뉴 시작 -->
+        <header id="header">
+            <div id="header_menu1" class="header_menu">
+                <ul>
+                    <li>
+                        <a href="#"><img id="kurly_logo" src="../img/kurly.png" alt="컬리로고"></a>
+                    </li>
+                    <li>
+                        <h2>관리자 센터</h2>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="header_menu2">
+                <ul class="util clear" class="header_menu">
+                    <li><a href="admin_dashboard.html">Admin 님</a></li>
+                    <li><a href="admin_mypage.html">내 정보</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- 상단 메뉴 끝 -->
+
+        <!--컨테이너 시작-->
+        <div class="container clear">
+            <!-- 사이드 메뉴 시작 -->
+            <div class="side_menu">
+                <div id="profile_area"><img id="pro_file" src="../img/profile.png"></div>
+                <div id="tab1" class="menutab">
+                    <ul>
+                        <li class="category"><a href="admin_dashboard.html">대시보드</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab2" class="menutab">
+                    <img src="../img/ico_folding_down.png">
+                    <ul>
+                        <li class="category">공지사항</li>
+                        <li><a href="admin_noticecheck.html">공지사항 조회</a></li>
+                        <li><a href="admin_noticeadd.html">공지사항 등록</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab3" class="menutab __activepage">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">상품 관리</li>
+                        <li><a href="admin_productcheck.html">상품 조회/수정</a></li>
+                        <li class="__activepage1">상품 등록</li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab4" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">판매 관리</li>
+                        <li><a href="admin_ordercheck.html">주문 조회</a></li>
+                        <li><a href="admin_deliverycheck.html">주문/배송 현황</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab5" class="menutab">
+                    <img src="../img/ico_folding_down.png">
+                    <ul>
+                        <li class="category clear">클레임 관리</li>
+                        <li><a href="admin_cancelcheck.html">취소 관리</a></li>
+                        <li><a href="admin_exchangecheck.html">교환 관리</a></li>
+                        <li><a href="admin_refundcheck.html">반품 관리</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab6" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">문의 사항</li>
+                        <li><a href="admin_prd_inquiry.html">상품 문의</a></li>
+                        <li><a href="admin_ctm_inquiry.html">고객 문의</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab7" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">회원 관리</li>
+                        <li><a href="admin_membercheck.html">회원 조회</a></li>
+                        <li><a href="admin_wd_member.html">탈회회원 조회</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab8" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">이벤트 관리</li>
+                        <li><a href="admin_eventcheck.html">이벤트 조회</a></li>
+                        <li><a href="admin_eventadd.html">이벤트 등록</a></li>
+                    </ul>
+                </div>
+                <div class="hr"> </div>
+
+                <div id="tab9" class="menutab">
+                    <img src="../img/ico_folding_down.png"> 
+                    <ul>
+                        <li class="category">기본 정보</li>
+                        <li><a href="admin_mypage.html">내 정보</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 사이드 메뉴 끝 -->
+            <!-- 내용 시작-->
+            <div id="content">
+
+                <div class="title">
+                    <p>상품 등록</p>
+                </div>
+                <form aciton="#" class="regForm">
+                <div class="productadd">
+                    
+                    <ul class="reg_list reg_list_category" >
+                        <li class="tit_lbl">
+                            카테고리
+                        </li>
+
+                        <li class="prod_category">
+                        <select class="select_category" name="category1" size=8 >    
+                            <option>채소</option>
+                            <option>과일·견과·쌀</option>
+                            <option>수산·해산·건어물</option>
+                            <option>정육·계란</option>
+                            <option>국·반찬·메인요리</option>
+                            <option>샐러드·간편식</option>
+                            <option>면·양념·오일</option>
+                            <option>생수·음료·우유·커피</option>
+                            <option>간식·과자·떡</option>
+                            <option>베이커리·치즈·델리</option>
+                            <option>건강식품</option>
+                            <option>생활용품·리빙</option>
+                            <option>뷰티·바디케어</option>
+                            <option>주방용품</option>
+                            <option>가전제품</option>
+                            <option>베이비·키즈</option>
+                            <option>반려동물</option>
+                            <option>컬리의 추천</option>
+                            </select>      
+                            <select class="select_category"  name="category2" size=8>   
+                                <option>고구마·감자·당근</option>
+                                <option>시금치·쌈채소·나물</option>
+                                <option>브로콜리·파프리카·양배추</option>
+                                <option>양파·대파·마늘·배추</option>
+                                <option>오이·호박·고추</option>
+                                <option>냉동·이색·간편채소</option>
+                                <option>콩나물·버섯</option>
+                                <option>제철과일</option>
+                                <option>국산과일</option>
+                                <option>수입과일</option>
+                                <option>간편과일</option>
+                                <option>냉동·건과일</option>
+                                <option>견과류</option>
+                                <option>쌀·잡곡</option>
+                                <option>제철수산</option>
+                                <option>생선류</option>
+                                <option>굴비·반건류</option>
+                                <option>오징어·낙지·문어</option>
+                                <option>새우·게·랍스터</option>
+                                <option>해산물·조개류</option>
+                                <option>수산가공품</option>
+                            </select> 
+                 
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter productadd">
+                
+                        <ul class="reg_list">
+                            <li class="tit_lbl">
+                                상품 정보 </li>
+                        <div class="prod_inner">
+                            <li class=" clear">
+                                <label class="tit_lbl_search"> 상품명</label>
+                                <div class="search_box"> 
+                                    <input class="long_input" type="text" name="search_cont"><span class="print_bytes"> 0 / 100 </span>
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+                            <li class="clear">
+                                <label class="tit_lbl_search"> 상품 한줄 설명</label>
+                                <div class="search_box"> 
+                                    <input class="long_input" type="text" name="search_cont"><span class="print_bytes"> 0 / 100 </span>
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+                            <li class="clear">
+                                <label class="tit_lbl_search"> 브랜드명</label>
+                                <div class="search_box"> 
+                              <input type="text" name="search_cont"> 
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+                            <li class="clear">
+                                <label class="tit_lbl_search"> 판매가</label>
+                                <div class="search_box"> 
+                              <input class="short_input" type="text" name="search_cont" placeholder="숫자만 입력"><span class="print_units"> 원 </span> 
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+                            <li class="clear">
+                                <label class="tit_lbl_search"> 할인가</label>
+                                <div class="search_box"> 
+                                    <input class="short_input" type="text" name="search_cont" placeholder="숫자만 입력"><span class="print_units" > 원 </span> 
+                                </div>
+                            </li>
+                            <div class="hr"> </div>
+                            <li class="clear">
+                                <label class="tit_lbl_search"> 재고수량</label>
+                                <div class="search_box"> 
+                                    <input class="short_input" type="text" name="search_cont" placeholder="숫자만 입력"><span class="print_units"> 개 </span> 
+                                </div>
+                            </li>
+                        </div>
+                        </ul>
+                  
+                </div>
+
+
+                <div class="productadd">
+                    
+                    <ul class="reg_list">
+                        <li class="tit_lbl">
+                            옵션 </li>
+                    <div class="prod_inner">
+                        <li class="clear">
+                            <label class="tit_lbl_search"> 배송구분</label>
+                            <div class="select_sales">
+                                <label class="space"><input type="checkbox" name="orderstate" value="샛별배송"> 샛별배송</label>
+                                <label class="space"><input type="checkbox" name="orderstate" value="일반배송"> 일반배송</label>
+                                <label class="space"><input type="checkbox" name="orderstate"
+                                value="기타"> 기타</label>
+                            </div>
+                        </li>
+                        <div class="hr"> </div>
+                        <li class="clear">
+                            <label class="tit_lbl_search"> 포장타입</label>
+                            <div class="select_sales">
+                                <label class="space2"><input type="checkbox" name="orderstate" value="냉동"> 냉동</label>
+                                <label class="space2"><input type="checkbox" name="orderstate" value="냉장"> 냉장</label>
+                                <label class="space2"><input type="checkbox" name="orderstate"
+                                value="실온"> 실온</label>
+                                <label class="space2"><input type="checkbox" name="orderstate" value="기타"> 기타</label>
+                            </div>
+                        </li>
+                        <div class="hr"> </div>
+                        <li class="clear">
+                            <label class="tit_lbl_search"> 판매단위</label>
+                            <div class="search_box"> 
+                          <input class="middle_input" type="text" name="search_cont"> 
+                            </div>
+                        </li>
+                        <div class="hr"> </div>
+                        <li class="clear">
+                            <label class="tit_lbl_search"> 중량용량</label>
+                            <div class="search_box"> 
+                          <input class="middle_input"  type="text" name="search_cont"> 
+                            </div>
+                        </li>
+                        <div class="hr"> </div>
+                        <li class="clear">
+                            <label class="tit_lbl_search"> 원산지</label>
+                            <div class="search_box"> 
+                          <input class="middle_input"  type="text" name="search_cont"> 
+                            </div>
+                        </li>
+                    </div>
+                    </ul>
+                </div>
+    
+                     
+                    
+
+            <div class="productadd">
+        
+                <ul class="reg_list">
+                    <li class="tit_lbl">
+                        상품이미지 </li>
+                    <div class="prod_inner">
+
+                <li class="search_detail clear">
+                    <div >
+                    <label class="tit_lbl_search">대표이미지</label>
+                    <a href="#"><div class="img_add"><img id="kurly_logo" src="../img/plus.png" alt="이미지추가">  </div></a>
+                <div>
+                    <label class="tit_lbl_search  tit_lbl_search2">추가이미지</label>
+                    <a href="#"><div class="img_add"><img id="kurly_logo" src="../img/plus.png" alt="이미지추가"></div></a>
+                 
+                </div>
+                </li>
+            
+            </div>
+            </ul>
+            </div>
+
+            <div class="productadd">
+                
+                <ul class="reg_list clear">
+                    <li class="tit_lbl clear">
+                        상품 상세 설명 
+                    </li>
+                    <li class="clear">
+                        <div class="prod_content">
+                            <textarea  name="content" id="editor" ></textarea>
+                            <script>
+                            ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                            </script>
+                        </div>
+                    </li>
+                    <li class="clear" style="padding-bottom: 20px;">
+                        <p class="btn_line">
+                            <Input type="submit" value="이벤트 등록" class="btn_basecolor1"> <Input type="reset"
+                                value="취소" class="btn_basecolor2">
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        
+            
+            <!-- 푸터 시작 -->
+            <div class="footer">
+                <div class="footer_menu">
+                    <ul class="footer_list">
+                        <li><a href="#">관리자센터 메뉴얼</a></li>
+                        <li> | </li>
+                        <li><a href="#">구글 애널리틱스</a></li>
+                        <li> | </li>
+                        <li><a href="#">마켓컬리 협업툴</a></li>
+                        <li> | </li>
+                        <li><a href="#">개발도구</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 푸터 끝-->
+        </div>
+        <!-- 내용 끝-->
+        </div>
+        <!--컨테이너 끝-->
+
+    </div>
+</body>
+
+</html>
