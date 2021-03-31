@@ -1,7 +1,0 @@
-
-3월 28, 2021 09:37:05.742 NEW SESSION
-3월 28, 2021 09:37:05.742 [13560:27588:0328/093705.728:ERROR:device_event_log_impl.cc(214)] [09:37:05.729] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
-3월 28, 2021 12:02:38.208 [0328/120238.142:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\nhpc\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\ef727221-ee5f-45ce-808d-e9997a750d3f: 지정된 경로를 찾을 수 없습니다. (0x3)
-3월 28, 2021 12:02:38.209 [0328/120238.209:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\nhpc\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\dfe81179-19c3-4b25-9032-b3ba9b2e89bc: 지정된 경로를 찾을 수 없습니다. (0x3)
-3월 28, 2021 16:17:39.67 [13560:27588:0328/161739.067:ERROR:device_event_log_impl.cc(214)] [16:17:39.066] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
-3월 29, 2021 02:45:13.509 [13560:27588:0329/024513.509:ERROR:device_event_log_impl.cc(214)] [02:45:13.509] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
