@@ -7,16 +7,16 @@ var nsGodo_PasswordStrength = function(){
 	return {
 		// result constant.
 		RESULT : {
-			length_too_short		: {level : 0, levelText : '»ç¿ëºÒ°¡', msg : 'ºñ¹Ğ¹øÈ£´Â 10ÀÚ ÀÌ»ó ÀÔ·ÂÇØ ÁÖ¼¼¿ä.'},
-			length_too_long			: {level : 0, levelText : '»ç¿ëºÒ°¡', msg : 'ºñ¹Ğ¹øÈ£´Â 16ÀÚ ÀÌÇÏ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.'},
-			mixstatus				: {level : 0, levelText : '»ç¿ëºÒ°¡', msg : '¿µ¹®´ë¹®ÀÚ(26°³), ¿µ¹®¼Ò¹®ÀÚ(26°³), ¼ıÀÚ(10°³), Æ¯¼ö¹®ÀÚ(32°³) Áß ÃÖ¼Ò 2°¡Áö°¡ Á¶ÇÕµÇ¾î¾ß ÇÕ´Ï´Ù.'},
-			invalid_character		: {level : 0, levelText : '»ç¿ëºÒ°¡', msg : '»ç¿ëÇÒ ¼ö ¾ø´Â ¹®ÀÚ°¡ Æ÷ÇÔµÇ¾î ÀÖ½À´Ï´Ù.'},
-			continuous_character	: {level : 0, levelText : '»ç¿ëºÒ°¡', msg : '3ÀÚ ÀÌ»ó ¿¬¼ÓÀûÀÎ ¹®ÀÚ´Â »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.'},
-			on_blacklist			: {level : 0, levelText : '»ç¿ëºÒ°¡', msg : '»ç¿ëÇÒ ¼ö ¾ø´Â ´Ü¾î°¡ Æ÷ÇÔµÇ¾î ÀÖ½À´Ï´Ù.'},
-			normal					: {level : 1, levelText : '³·À½', msg : '¿¹»óÇÏ±â ½¬¿î ºñ¹Ğ¹øÈ£ÀÔ´Ï´Ù.'},
-			nightmare				: {level : 2, levelText : 'º¸Åë', msg : 'º¸Åë º¸¾È¼öÁØÀÇ ºñ¹Ğ¹øÈ£ÀÔ´Ï´Ù.'},
-			hell					: {level : 3, levelText : '³ôÀ½', msg : '¿¹ÃøÇÏ±â Èûµç ºñ¹Ğ¹øÈ£·Î ´õ¿í ¾ÈÀüÇÕ´Ï´Ù.'},
-			inferno					: {level : 4, levelText : '³ôÀ½', msg : '¿¹ÃøÇÏ±â Èûµç ºñ¹Ğ¹øÈ£·Î ´õ¿í ¾ÈÀüÇÕ´Ï´Ù.'}
+			length_too_short		: {level : 0, levelText : 'ì‚¬ìš©ë¶ˆê°€', msg : 'ë¹„ë°€ë²ˆí˜¸ëŠ” 10ì ì´ìƒ ì…ë ¥í•´ ì£¼ì„¸ìš”.'},
+			length_too_long			: {level : 0, levelText : 'ì‚¬ìš©ë¶ˆê°€', msg : 'ë¹„ë°€ë²ˆí˜¸ëŠ” 16ì ì´í•˜ ì…ë ¥í•´ ì£¼ì„¸ìš”.'},
+			mixstatus				: {level : 0, levelText : 'ì‚¬ìš©ë¶ˆê°€', msg : 'ì˜ë¬¸ëŒ€ë¬¸ì(26ê°œ), ì˜ë¬¸ì†Œë¬¸ì(26ê°œ), ìˆ«ì(10ê°œ), íŠ¹ìˆ˜ë¬¸ì(32ê°œ) ì¤‘ ìµœì†Œ 2ê°€ì§€ê°€ ì¡°í•©ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.'},
+			invalid_character		: {level : 0, levelText : 'ì‚¬ìš©ë¶ˆê°€', msg : 'ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ë¬¸ìê°€ í¬í•¨ë˜ì–´ ìˆìŠµë‹ˆë‹¤.'},
+			continuous_character	: {level : 0, levelText : 'ì‚¬ìš©ë¶ˆê°€', msg : '3ì ì´ìƒ ì—°ì†ì ì¸ ë¬¸ìëŠ” ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.'},
+			on_blacklist			: {level : 0, levelText : 'ì‚¬ìš©ë¶ˆê°€', msg : 'ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ë‹¨ì–´ê°€ í¬í•¨ë˜ì–´ ìˆìŠµë‹ˆë‹¤.'},
+			normal					: {level : 1, levelText : 'ë‚®ìŒ', msg : 'ì˜ˆìƒí•˜ê¸° ì‰¬ìš´ ë¹„ë°€ë²ˆí˜¸ì…ë‹ˆë‹¤.'},
+			nightmare				: {level : 2, levelText : 'ë³´í†µ', msg : 'ë³´í†µ ë³´ì•ˆìˆ˜ì¤€ì˜ ë¹„ë°€ë²ˆí˜¸ì…ë‹ˆë‹¤.'},
+			hell					: {level : 3, levelText : 'ë†’ìŒ', msg : 'ì˜ˆì¸¡í•˜ê¸° í˜ë“  ë¹„ë°€ë²ˆí˜¸ë¡œ ë”ìš± ì•ˆì „í•©ë‹ˆë‹¤.'},
+			inferno					: {level : 4, levelText : 'ë†’ìŒ', msg : 'ì˜ˆì¸¡í•˜ê¸° í˜ë“  ë¹„ë°€ë²ˆí˜¸ë¡œ ë”ìš± ì•ˆì „í•©ë‹ˆë‹¤.'}
 		},
 		CONFIG : {
 			// available characters.
@@ -48,7 +48,7 @@ var nsGodo_PasswordStrength = function(){
 		},
 		appendBlacklist : function(param) {
 
-			// ºí·¢¸®½ºÆ®¿¡ param ³»¿ë Ãß°¡
+			// ë¸”ë™ë¦¬ìŠ¤íŠ¸ì— param ë‚´ìš© ì¶”ê°€
 			if (typeof param.form == 'object' && typeof param.fields == 'object') {
 				var _el;
 
@@ -75,7 +75,7 @@ var nsGodo_PasswordStrength = function(){
 
 			var chars = str.split('');
 
-			// Á¤¹æÇâ
+			// ì •ë°©í–¥
 			for (i=0,m=chars.length;i<m ;i++) {
 
 				word = [];
@@ -89,7 +89,7 @@ var nsGodo_PasswordStrength = function(){
 				}
 			}
 
-			// ¿ª¹æÇâ
+			// ì—­ë°©í–¥
 			chars.reverse();
 
 			for (i=0,m=chars.length;i<m ;i++) {
@@ -256,22 +256,22 @@ var nsGodo_PasswordStrength = function(){
 
 			pwd = this.trim(pwd);
 
-			// ÃÖ¼Ò±æÀÌ
+			// ìµœì†Œê¸¸ì´
 			if (!this.checkMinLength(pwd)) return this.RESULT.length_too_short;
 
-			// ÃÖ´ë±æÀÌ
+			// ìµœëŒ€ê¸¸ì´
 			if (!this.checkMaxLength(pwd)) return this.RESULT.length_too_long;
 
-			// Çã¿ë¹®ÀÚ
+			// í—ˆìš©ë¬¸ì
 			//if (!this.checkValidChar(pwd)) return this.RESULT.invalid_character;
 
-			// ¿¬¼Ó(Æ¯Á¤°£°İ) ¹®ÀÚ
+			// ì—°ì†(íŠ¹ì •ê°„ê²©) ë¬¸ì
 			//if (!this.checkContinueChar(pwd)) return this.RESULT.continuous_character;
 
-			// ºí·¢¸®½ºÆ®
+			// ë¸”ë™ë¦¬ìŠ¤íŠ¸
 			//if (!this.checkBlackList(pwd)) return this.RESULT.on_blacklist;
 
-			// ¾ÏÈ£°­µµ
+			// ì•”í˜¸ê°•ë„
 			return this.getPasswordStrength(pwd);
 
 		}

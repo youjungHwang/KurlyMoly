@@ -17,8 +17,8 @@
 	<jsp:useBean class="com.kurly.member.MemberDTO" id="member"/>
 	<jsp:useBean class="com.kurly.member.MemberDAO" id="dao"/>
 <%
-		member.setIdx(Integer.parseInt(String.valueOf(session.getAttribute("useridx"))));
-		member.setUserid((String)session.getAttribute("userid"));
+		member.setmIdx(Integer.parseInt(String.valueOf(session.getAttribute("useridx"))));
+		member.setmUserid((String)session.getAttribute("userid"));
 		// member.setUsername((String)session.getAttribute("username"));
 	
 		if(dao.info(member) == null) {
@@ -47,7 +47,7 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="../../script/script.js"></script>
     <script src="../../script/MJscript.js"></script>
-    <script src="/common_js/kurlytracker/kurlytracker.js?ver=1.26.11"></script>
+    <script src="../../script/kurlytracker.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
@@ -857,3 +857,7 @@
 </body>
 
 </html>
+<%
+	}
+}
+%>

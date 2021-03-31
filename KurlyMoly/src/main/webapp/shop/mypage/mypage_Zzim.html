@@ -75,7 +75,7 @@
             </div>
 
             <div id="headerLogo">
-                <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp"
+                <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp"
                             alt="마켓컬리 로고" style="display: block;"></a></h1> <!-- 메인로고 -->
             </div>
 
@@ -105,19 +105,22 @@
                                 </li>
                             </ul>
                             <div id="sideSearch" class="gnb_search">
-                                <form action="../goods/goods_search.html">
-                                    <input type="text" name="sword" id="sword" class="inp_search"
-                                        value="유명 맛집따라 서울 한 바퀴">
+                                <!-- 검색창 들어가는 부분 -->
+                                <form action="../goods/goods_search.html"> <!-- <form action="../goods/goods_search.html" onsubmit="return searchTracking(this)"> -->
+                                    <input type="text" name="sword" id="sword" class="inp_search">
                                     <input type="image" src="../../img/ico_search_x2.webp" class="btn_search">
                                     <div class="init">
                                         <button id="searchInit" class="btn_delete">검색어 삭제하기</button>
+                                        <!-- 평소에는 숨어있고, 검색어가 입력되면 'X' 표시로 나타남 -->
                                     </div>
                                 </form>
                             </div>
                             <div class="location_set">
+                                <!-- 배송지 설정 -->
                                 <button type="button" class="btn_location">배송지 설정하기</button>
                                 <div class="layer_location">
                                     <div class="no_address">
+                                        <!-- 등록된 주소가 없는 사람이 마우스를 가져다 댈 때 나타남 -->
                                         <span class="emph">배송지를 등록</span>하고<br>구매 가능한 상품을 확인하세요!
                                         <div>
                                             <button type="button" class="btn default login">로그인</button>
@@ -128,6 +131,7 @@
                                 </div>
                             </div>
                             <div class="cart_count">
+                                <!-- 장바구니에 물건이 담겨질 때마다 액션 발생해야 함 -->
                                 <div class="inner_cartcount">
                                     <a href="../goods/goods_cart.html" class="btn_cart">
                                         <span class="screen_out">장바구니</span>
@@ -135,9 +139,9 @@
                                     </a>
                                 </div>
                                 <div id="addMsgCart" class="msg_cart">
-                                    <span class="point"></span>
+                                    <span class="point"></span> <!-- 장바구니에 1 숫자 뜨는 곳 -->
                                     <div class="inner_msgcart">
-                                        <img src="#" class="thumb">
+                                        <img src="#" class="thumb"> <!-- 장바구니에 들어간 상품 이미지 -->
                                         <p id="msgReaddedItem" class="desc">
                                             <span class="tit">제품 타이틀</span>
                                             <span class="txt">장바구니에 상품을 담았습니다.
@@ -149,12 +153,11 @@
                             </div>
                         </div>
 
-                        <div class="gnb_sub" style="display: none; width: 219px;">
+                        <div class="gnb_sub"><!-- js 적용시 - display:none→block, width:219px→438px --> <!-- 마우스 오버 시 style="display: block; width: 438px;" -->
                             <div class="inner_sub">
-                                <ul class="gnb_menu" style="height: auto;" data-default="219" data-min="219"
-                                    data-max="731">
-                                    <!-- 카테고리 전체를 감싸는 div -->
+                                <ul class="gnb_menu" style="height: auto;" data-default="219" data-min="219" data-max="731"><!-- 카테고리 전체를 감싸는 div -->
                                     <li>
+                                        <!-- 마우스 호버 시 클래스 .current가 생겨야 함 ★★★★★ -->
                                         <a class="menu">
                                             <span class="ico">
                                                 <img src="../../img/mainMenu/icon_veggies_inactive_pc@2x.1586324570.png"
@@ -166,8 +169,9 @@
                                                 <span class="txt">채소</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu current" style="display: block;">
                                             <li><a class="sub"><span class="name">고구마·감자·당근</span></a></li>
+                                            <!-- 마우스 호버 시 .current가 생겨야 함 ★★★★★ -->
                                             <li><a class="sub"><span class="name">시금치·쌈채소·나물</span></a></li>
                                             <li><a class="sub"><span class="name">브로콜리·파프리카·양배추</span></a></li>
                                             <li><a class="sub"><span class="name">양파·대파·마늘·배추</span></a></li>
@@ -189,7 +193,7 @@
                                                 <span class="txt">과일·견과·쌀</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">제철과일</span></a></li>
                                             <li><a class="sub"><span class="name">국산과일</span></a></li>
                                             <li><a class="sub"><span class="name">수입과일</span></a></li>
@@ -212,7 +216,7 @@
                                                 <span class="txt">수산·해산·건어물</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">제철수산</span></a></li>
                                             <li><a class="sub"><span class="name">생선류</span></a></li>
                                             <li><a class="sub"><span class="name">굴비·반건류</span></a></li>
@@ -237,7 +241,7 @@
                                                 <span class="txt">정육·계란</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">국내산 소고기</span></a></li>
                                             <li><a class="sub"><span class="name">수입산 소고기</span></a></li>
                                             <li><a class="sub"><span class="name">돼지고기</span></a></li>
@@ -260,7 +264,7 @@
                                                 <span class="txt">국·반찬·메인요리</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">국·탕·찌개</span></a></li>
                                             <li><a class="sub"><span class="name">밀키트·메인요리</span></a></li>
                                             <li><a class="sub"><span class="name">밑반찬</span></a></li>
@@ -282,7 +286,7 @@
                                                 <span class="txt">샐러드·간편식</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">샐러드·닭가슴살</span></a></li>
                                             <li><a class="sub"><span class="name">도시락·밥류</span></a></li>
                                             <li><a class="sub"><span class="name">파스타·면류</span></a></li>
@@ -306,7 +310,7 @@
                                                 <span class="txt">면·양념·오일</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">파스타·면류</span></a></li>
                                             <li><a class="sub"><span class="name">식초·소스·드레싱</span></a></li>
                                             <li><a class="sub"><span class="name">양념·액젓·장류</span></a></li>
@@ -328,7 +332,7 @@
                                                 <span class="txt">생수·음료·우유·커피</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">생수·탄산수</span></a></li>
                                             <li><a class="sub"><span class="name">음료·주스</span></a></li>
                                             <li><a class="sub"><span class="name">우유·두유·요거트</span></a></li>
@@ -349,7 +353,7 @@
                                                 <span class="txt">간식·과자·떡</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">과자·스낵·쿠키</span></a></li>
                                             <li><a class="sub"><span class="name">초콜릿·젤리·캔디</span></a></li>
                                             <li><a class="sub"><span class="name">떡·한과</span></a></li>
@@ -369,7 +373,7 @@
                                                 <span class="txt">베이커리·치즈·델리</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">식빵·빵류</span></a></li>
                                             <li><a class="sub"><span class="name">잼·버터·스프레드</span></a></li>
                                             <li><a class="sub"><span class="name">케이크·파이·디저트</span></a></li>
@@ -391,7 +395,7 @@
                                                 <span class="txt">건강식품</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">영양제</span></a></li>
                                             <li><a class="sub"><span class="name">유산균</span></a></li>
                                             <li><a class="sub"><span class="name">홍삼·인삼·꿀</span></a></li>
@@ -414,7 +418,7 @@
                                                 <span class="txt">생활용품·리빙</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">휴지·티슈</span></a></li>
                                             <li><a class="sub"><span class="name">여성·위생용품</span></a></li>
                                             <li><a class="sub"><span class="name">세제·청소용품</span></a></li>
@@ -436,7 +440,7 @@
                                                 <span class="txt">뷰티·바디케어</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">스킨케어</span></a></li>
                                             <li><a class="sub"><span class="name">구강·면도</span></a></li>
                                             <li><a class="sub"><span class="name">바디·제모</span></a></li>
@@ -457,7 +461,7 @@
                                                 <span class="txt">주방용품</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">주방소모품·잡화</span></a></li>
                                             <li><a class="sub"><span class="name">주방·조리도구</span></a></li>
                                             <li><a class="sub"><span class="name">냄비·팬·솥</span></a></li>
@@ -479,7 +483,7 @@
                                                 <span class="txt">가전제품</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">주방가전</span></a></li>
                                             <li><a class="sub"><span class="name">생활가전</span></a></li>
                                             <li><a class="sub"><span class="name">계절가전</span></a></li>
@@ -498,7 +502,7 @@
                                                 <span class="txt">베이비·키즈</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">분유·간편 이유식</span></a></li>
                                             <li><a class="sub"><span class="name">이유식 재료</span></a></li>
                                             <li><a class="sub"><span class="name">간식·음식·음료</span></a></li>
@@ -523,7 +527,7 @@
                                                 <span class="txt">반려동물</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
+                                        <ul class="sub_menu" style="display: none;">
                                             <li><a class="sub"><span class="name">강아지 간식</span></a></li>
                                             <li><a class="sub"><span class="name">강아지 주식</span></a></li>
                                             <li><a class="sub"><span class="name">고양이 간식</span></a></li>
@@ -533,6 +537,119 @@
                                             <li><a class="sub"><span class="name">소용량·샘플</span></a></li>
                                         </ul>
                                     </li>
+
+                                    <li>
+                                        <a class="menu">
+                                            <span class="ico">
+                                                <img src="../../img/mainMenu/ico_recommend_v2.webp" alt="카테고리 아이콘 off"
+                                                    class="ico_off">
+                                                <img src="../../img/mainMenu/ico_recommend_on_v2.webp" alt="카테고리 아이콘 on"
+                                                    class="ico_on">
+                                            </span>
+                                            <span class="tit">
+                                                <span class="txt">컬리의 추천</span>
+                                            </span>
+                                        </a>
+                                        <ul class="sub_menu2" style="display: none;">
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail_diet.1585551225.jpg"></span>
+                                                    <span class="name">식단관리</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail_breakfast.1585549149.jpg"></span>
+                                                    <span class="name">간편한 아침식사</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail_kp_best_201207.1607408493.jpg"></span>
+                                                    <span class="name">재구매 BEST</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail_kp_3000_201207.1607408565.jpg"></span>
+                                                    <span class="name">3천원의 행복</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail_kp_210108_4.1610088265.jpg"></span>
+                                                    <span class="name">컬리마트</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail_single.1594026881.jpg"></span>
+                                                    <span class="name">1인 가구</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/category_kurly_s-pick_thumbnail_shrimp.1589797274.png"></span>
+                                                    <span class="name">뚝딱! 간편식</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumb_kp_bakery_201217.1608624742.jpg"></span>
+                                                    <span class="name">베이커리 맛집</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail.1598235634.jpg"></span>
+                                                    <span class="name">반찬가게</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/Thum_Cytogenic.1592469678.jpg"></span>
+                                                    <span class="name">키토제닉</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/Thum_vegan.1592469659.jpg"></span>
+                                                    <span class="name">비건</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/Thum_sustainable.1589875827.jpg"></span>
+                                                    <span class="name">지속가능한 상품</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/pb.1594027365.jpg"></span>
+                                                    <span class="name">컬리가 만든 상품</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumbnail_kp_only_201207.1607408395.jpg"></span>
+                                                    <span class="name">Kurly Only</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/kf3651016.1602814588.jpg"></span>
+                                                    <span class="name">KF365</span>
+                                                </a>
+                                            </li>
+                                            <li class="recommend">
+                                                <a class="sub">
+                                                    <span class="thumb"><img src="../../img/mainMenu/thumb_kp_1PT_201222.1608611417.jpg"></span>
+                                                    <span class="name">1% Table</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>

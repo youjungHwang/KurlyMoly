@@ -1,4 +1,4 @@
-<!-- 샛별배송 안내게시글 N -->
+<!-- 레시피 - 상세페이지 - 시금치 페트토 파스타 페이지 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +8,14 @@
     <title>마켓컬리 :: 내일의 장보기, 마켓컬리</title>
     <link href="../../css/style.css" rel="stylesheet" type="text/css">
     <link href="../../css/jsScript.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="/common_js/kurlytracker/kurlytracker.js?ver=1.26.11"></script>
+    <link href="../../css/etc.css" rel="stylesheet" type="text/css">
     <script src="../../script/script.js"></script>
     <script src="../../script/MJscript.js"></script>
+    <link href="https://unpkg.com/swiper/swiper-bundle.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../../script/autoslider.js"></script> <!-- 레시피 아이템 슬라이더 js-->
     <style>
         #content {
             padding-bottom: 120px;
@@ -25,22 +27,7 @@
         }
 
         .xans-myshop-couponserial th {
-            line-height: 1.8em;
-        }
-
-        .xans-board-write table input[type=text],
-        .xans-board-write table input[type=password] {
-            height: 25px;
-        }
-
-        .boardWrite2 .smalle {
-            position: relative;
-        }
-
-        .boardWrite2 .smalle input[type=checkbox] {
-            position: relative;
-            right: 2px;
-            vertical-align: middle;
+            line-height: 1em;
         }
     </style>
 </head>
@@ -72,22 +59,22 @@
                 <div id="userMenu">
                     <ul class="menuLeft list_menu">
                         <li>
-                            <a href="./delivery.html" class="bnr_delivery"><img src="../../img/delivery_190819.webp"
-                                    alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송"></a>
+                            <a href="../../shop/board/delivery.html" class="bnr_delivery"><img
+                                    src="../../img/delivery_190819.webp" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송"></a>
                         </li>
                     </ul>
                     <ul class="menuRight list_menu">
                         <li class="menu none_sub menu_join">
-                            <a href="../member/join.html" class="link_menu">회원가입</a>
+                            <a href="../../shop/member/join.html" class="link_menu">회원가입</a>
                         </li>
                         <li class="menu none_sub menu_login">
-                            <a href="../member/login.html" class="link_menu">로그인</a>
+                            <a href="../../shop/member/login.html" class="link_menu">로그인</a>
                         </li>
                         <li class="menu lst">
-                            <a href="../board/notice.html" class="link_menu cos">고객센터</a>
+                            <a href="../../shop/board/notice.html" class="link_menu cos">고객센터</a>
                             <ul class="sub">
                                 <li>
-                                    <a href="../board/notice.html">공지사항</a>
+                                    <a href="./notice.html">공지사항</a>
                                 </li>
                                 <li>
                                     <a href="./faq.html">자주하는 질문</a>
@@ -101,14 +88,15 @@
                 </div>
 
                 <div id="headerLogo">
-                    <h1 class="logo"><a href="../../index.html" class="link_main"><img src="../../img/logo_x2.webp"
-                                alt="마켓컬리 로고" style="display: block;"></a></h1> <!-- 메인로고 -->
+                    <h1 class="logo"><a href="../../index.jsp" class="link_main"><img src="../../img/logo_x2.webp"
+                                alt="마켓컬리 로고" style="display: block;"></a></h1>
                 </div>
 
                 <div id="gnb">
                     <div id="gnbMenu" class="gnb_kurly gnbMenu">
                         <div class="inner_gnbkurly">
                             <div class="gnb_main">
+                                <!-- 메뉴들 전체를 감싸는 div -->
                                 <ul class="gnb">
                                     <li class="menu1">
                                         <a>
@@ -117,20 +105,21 @@
                                         </a>
                                     </li>
                                     <li class="menu2">
-                                        <a href="../goods/new_goods_list.html"><span class="txt">신상품</span></a>
+                                        <a href="../../shop/goods/new_goods_list.html"><span class="txt">신상품</span></a>
                                     </li>
                                     <li class="menu3">
-                                        <a href="../goods/best_goods_list.html"><span class="txt">베스트</span></a>
+                                        <a href="../../shop/goods/best_goods_list.html"><span class="txt">베스트</span></a>
                                     </li>
                                     <li class="menu4">
-                                        <a href="../goods/sale_goods_list.html"><span class="txt">알뜰쇼핑</span></a>
+                                        <a href="../../shop/goods/sale_goods_list.html"><span
+                                                class="txt">알뜰쇼핑</span></a>
                                     </li>
                                     <li class="menu5">
-                                        <a href="../goods/event_list.html"><span class="txt">금주혜택</span></a>
+                                        <a href="../../shop/goods/event_list.html"><span class="txt">금주혜택</span></a>
                                     </li>
                                 </ul>
                                 <div id="sideSearch" class="gnb_search">
-                                    <form action="../goods/goods_search.html">
+                                    <form action="../../shop/goods/goods_search.html">
                                         <input type="text" name="sword" id="sword" class="inp_search">
                                         <input type="image" src="../../img/ico_search_x2.webp" class="btn_search">
                                         <div class="init">
@@ -147,13 +136,13 @@
                                                 <button type="button" class="btn default login">로그인</button>
                                                 <button type="button" class="btn active searchAddress"><span
                                                         class="ico"></span>주소검색</button>
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="cart_count">
                                     <div class="inner_cartcount">
-                                        <a href="../goods/goods_cart.html" class="btn_cart">
+                                        <a href="../../shop/goods/goods_cart.html" class="btn_cart">
                                             <span class="screen_out">장바구니</span>
                                             <span id="cart_item_count" class="num realtime_cartcount"></span>
                                         </a>
@@ -177,6 +166,7 @@
                                 <div class="inner_sub">
                                     <ul class="gnb_menu" style="height: auto;" data-default="219" data-min="219"
                                         data-max="731">
+                                        <!-- 카테고리 전체를 감싸는 div -->
                                         <li>
                                             <a class="menu">
                                                 <span class="ico">
@@ -593,270 +583,272 @@
                         </div>
                     </div>
 
-                    <!-- 마이페이지_공지사항 게시글 시작 -->
+                    <!-- 레시피 - 전체보기 - 시금치 페스토 파스타 시작 -->
                     <div class="tit_page">
-                        <h2 class="tit">공지사항</h2>
-                        <p class="sub">컬리의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</p>
+                        <h2 class="tit">레시피</h2>
                     </div>
-
                     <div class="layout-wrapper">
-                        <div class="xans-element- xans-myshop xans-myshop-couponserial ">
-                            <table width="100%" align="center" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <table width="100%">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <table class="boardView" width="100%">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row" style="border:none;">제목</th>
-                                                                        <td>마켓컬리 배송 안내</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">작성자</th>
-                                                                        <td>MarketKurly</td>
-                                                                    </tr>
-                                                                    <tr class="etcArea">
-                                                                        <td colspan="2">
-                                                                            <ul>
-                                                                                <li class="date ">
-                                                                                    <strong class="th">작성일</strong>
-                                                                                    <span class="td">2016-01-08</span>
-                                                                                </li>
-                                                                                <li class="hit ">
-                                                                                    <strong class="th">조회수</strong>
-                                                                                    <span class="td">2561150</span>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="right" class="eng" style="padding:5px;">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td id="noticeView">
-                                                            <!-- 이벤트 시작 -->
-                                                            <style type="text/css">
-                                                                .page_noticeview {
-                                                                    text-align: center
-                                                                }
-
-                                                                .page_noticeview img {
-                                                                    vertical-align: top
-                                                                }
-                                                            </style>
-                                                            <div class="page_noticeview">
-                                                                <h3 class="screen_out">공지사항 - 마켓컬리 배송 안내</h3>
-                                                                <img src="../../img/gongjisahang_image/img_main_190528_v2.webp"
-                                                                    alt="">
-                                                                <img src="../../img/gongjisahang_image/img_delivery1_v3.webp"
-                                                                    alt="">
-                                                                <img src="../../img/gongjisahang_image/img_delivery2_v3.webp"
-                                                                    alt="">
-                                                                <img src="../../img/gongjisahang_image/img_delivery3.webp"
-                                                                    alt="">
-                                                                <a href="javascript:address_chk_popup();">
-                                                                    <img src="../../img/gongjisahang_image/img_delivery4.webp"
-                                                                        alt="">
-                                                                </a>
-                                                                <img src="../../img/gongjisahang_image/img_delivery5.webp"
-                                                                    alt="">
-                                                                <img src="../../img/gongjisahang_image/img_delivery7_190528_v3.webp"
-                                                                    alt="">
+                        <table width="100%" align="center">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table class="boardView" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row" style="border:none;">제목</th>
+                                                                    <td>시금치 페스토 파스타</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">작성자</th>
+                                                                    <td>
+                                                                        MarketKurly
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="etcArea">
+                                                                    <td colspan="2">
+                                                                        <ul>
+                                                                            <li class="date">
+                                                                                <strong class="th">작성일</strong> <span
+                                                                                    class="td">2020-11-17</span>
+                                                                            </li>
+                                                                            <li class="hit">
+                                                                                <strong class="th">조회수</strong> <span
+                                                                                    class="td">247824</span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="200" valign="top" id="contents" class="view_recipe">
+                                                        <table width="100%" style="table-layout:fixed"
+                                                            class="goods_wrap">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top">
+                                                                        <div class="goods_recipe">
+                                                                            <h3>
+                                                                                <span class="recipe_tit">Kurly’s
+                                                                                    Recipe</span>
+                                                                                <small class="recipe_product">시금치 페스토
+                                                                                    파스타</small>
+                                                                            </h3>
+                                                                            <div class="context">
+                                                                                <div class="pic">
+                                                                                    <img
+                                                                                        src="//img-cf.kurly.com/shop/data/board/recipe/r/d276dcedfe48cc9c">
+                                                                                </div>
+                                                                                <p class="words">
+                                                                                    <strong
+                                                                                        class="recipe_item_tit">재료</strong>
+                                                                                    시금치 150g, 잣 50g, 아몬드 50g, 소금 1작은술,
+                                                                                    올리브 오일 120mL, 그라나 파다노 90g, 통마늘 1알,
+                                                                                    리가토니 120g, 방울토마토 4개, 부라타 치즈 120g
+                                                                                </p>
+                                                                                <p class="words">
+                                                                                    <strong
+                                                                                        class="recipe_item_tit">RECIPE</strong>
+                                                                                    1. 시금치의 억센 뿌리와 밑동 부분을 제거해 준비한다. <br>
+                                                                                    2. 손질한 시금치, 잣, 아몬드, 소금, 올리브 오일을 블렌더에
+                                                                                    넣고, 그라나 파다노 치즈 80g을 곱게 갈아 넣는다. <br>
+                                                                                    3. ②를 한 번 갈아준 뒤, 통마늘 1알을 넣고 다시 한 번
+                                                                                    갈아준다. <br>
+                                                                                    4. ③의 내용물을 골고루 섞어 따로 담은 후, 그 위에 올리브
+                                                                                    오일을 살짝 뿌려 페스토를 완성한다. <br>
+                                                                                    5. 끓는 물에 소금을 넣고, 분량의 리가토니를 약 14분간
+                                                                                    삶는다. <br>
+                                                                                    6. 삶은 리가토니의 물기를 완전히 제거하고, 방울토마토를 1/2
+                                                                                    크기로 자른다. <br>
+                                                                                    7. 미리 만들어 둔 시금치 페스토를 2~3큰술 정도 덜어 ⑥과
+                                                                                    골고루 버무린다. <br>
+                                                                                    8. ⑦에 부라타 치즈를 올리고, 남은 그라나 파다노 치즈로
+                                                                                    장식해 완성한다.
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="recipe_view" align="center">
+                                        <script src="/shop/data/skin/designgj/autoslider.js"></script>
+                                        <div class="goods-add-product">
+                                            <h3 class="goods-add-product-title">RECIPE ITEMS</h3>
+                                            <div class="goods-add-product-wrapper __slide-wrapper" data-slide-item="5">
+                                                <button
+                                                    class="goods-add-product-move goods-add-product-move-left __slide-go-left">왼쪽으로
+                                                    슬라이드 이동</button>
+                                                <button
+                                                    class="goods-add-product-move goods-add-product-move-right __slide-go-right">오른쪽으로
+                                                    슬라이드 이동</button>
+                                                <div class="goods-add-product-list-wrapper" style="height:310px">
+                                                    <ul class="goods-add-product-list __slide-mover">
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=4499">
+                                                                    <img src="../../img/EtcImage/1515396236580l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('4499')">이 상품을 장바구니에
+                                                                    담기</button>
                                                             </div>
-                                                            <!-- // 이벤트 끝 -->
-                                                        </td>
-                                                        <script>
-                                                            var noticeView = new Vue({
-                                                                el: '#noticeView',
-                                                                data: {
-                                                                    getData: null,
-                                                                    eventPage: [], // 데이터불러오기
-                                                                    eventView: null,
-                                                                    type: 'pc'
-                                                                },
-                                                                methods: {
-                                                                    update: function () {
-                                                                        var $self = this;
-
-                                                                        // IE9 대응 스크립트 (ie9 이하에서만 window.XDomainRequest true)
-                                                                        if (window.XDomainRequest) {
-                                                                            jQuery.ajaxTransport(function (s) {
-                                                                                if (s.crossDomain && s.async) {
-                                                                                    if (s.timeout) {
-                                                                                        s.xdrTimeout = s.timeout;
-                                                                                        delete s.timeout;
-                                                                                    }
-                                                                                    var xdr;
-                                                                                    return {
-                                                                                        send: function (_, complete) {
-                                                                                            function callback(status, statusText, responses, responseHeaders) {
-                                                                                                xdr.onload = xdr.onerror = xdr.ontimeout = jQuery.noop;
-                                                                                                xdr = undefined;
-                                                                                                complete(status, statusText, responses, responseHeaders);
-                                                                                            }
-                                                                                            xdr = new XDomainRequest();
-                                                                                            xdr.onload = function () {
-                                                                                                callback(200, "OK", { text: xdr.responseText }, "Content-Type: " + xdr.contentType);
-                                                                                            };
-                                                                                            xdr.onerror = function () {
-                                                                                                callback(404, "Not Found");
-                                                                                            };
-                                                                                            xdr.onprogress = jQuery.noop;
-                                                                                            xdr.ontimeout = function () {
-                                                                                                callback(0, "timeout");
-                                                                                            };
-                                                                                            xdr.timeout = s.xdrTimeout || Number.MAX_VALUE;
-                                                                                            xdr.open(s.type, s.url);
-                                                                                            xdr.send((s.hasContent && s.data) || null);
-                                                                                        },
-                                                                                        abort: function () {
-                                                                                            if (xdr) {
-                                                                                                xdr.onerror = jQuery.noop;
-                                                                                                xdr.abort();
-                                                                                            }
-                                                                                        }
-                                                                                    };
-                                                                                }
-                                                                            });
-                                                                        }
-
-                                                                        $.ajax({
-                                                                            url: campaginUrl + '/pc/notice/64.html'
-                                                                        }).done(function (result) {
-                                                                            $('#noticeView').html(result);
-                                                                        });
-                                                                    }
-                                                                }
-                                                            });
-                                                            noticeView.update();
-                                                        </script>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="1" bgcolor="#f4f4f4"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table><br>
-                                            <table width="100%" style="table-layout:fixed" cellpadding="0"
-                                                cellspacing="0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td align="center" style="padding-top:10px;">
-                                                            <table width="100%">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td align="right">
-                                                                            <a href="list.php?id=notice"><span
-                                                                                    class="bhs_button yb"
-                                                                                    style="float:none;">목록</span></a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div
-                                                class="xans-element- xans-board xans-board-movement-1002 xans-board-movement xans-board-1002 ">
-                                                <ul>
-                                                    <li class="prev ">
-                                                        <strong>이전글</strong><a
-                                                            href="/board/free/read.html?no=27121&amp;board_no=1&amp;page="></a><a
-                                                            href="view.php?id=notice&amp;no=849">[가격인상공지] [달구지푸드] 훈제삼겹
-                                                            500g (2021 3. 22 ~)</a>
-                                                    </li>
-                                                    <li class="next ">
-                                                        <strong>다음글</strong><a
-                                                            href="/board/free/read.html?no=22443&amp;board_no=1&amp;page="></a><a
-                                                            href="view.php?id=notice&amp;no=850">[마켓컬리] 일용직 2인 코로나19 확진
-                                                            관련 안내</a>
-                                                    </li>
-                                                </ul>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=4499">
+                                                                        <p class="goods-add-product-item-name">[벨지오이오소]
+                                                                            부라타 치즈</p>
+                                                                        <p class="goods-add-product-item-price"> 14,900원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=48811">
+                                                                    <img src="../../img/EtcImage/1582000256134l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('48811')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=48811">
+                                                                        <p class="goods-add-product-item-name">[파미고]
+                                                                            엑스트라 버진 올리브 오일 500ml</p>
+                                                                        <p class="goods-add-product-item-price"> 5,900원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=51672">
+                                                                    <img src="../../img/EtcImage/1588742546430l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('51672')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=51672">
+                                                                        <p class="goods-add-product-item-name">구운 아몬드
+                                                                            500g</p>
+                                                                        <p class="goods-add-product-item-price"> 10,900원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=51901">
+                                                                    <img src="../../img/EtcImage/1590458021353l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('51901')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=51901">
+                                                                        <p class="goods-add-product-item-name">GAP 방울토마토
+                                                                            300g</p>
+                                                                        <p class="goods-add-product-item-price"> 2,980원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="goods-add-product-item __slide-item">
+                                                            <div class="goods-add-product-item-figure">
+                                                                <a href="/shop/goods/goods_view.php?&amp;goodsno=60197">
+                                                                    <img src="../../img/EtcImage/1603169189568l0.jpg"
+                                                                        alt="" class="goods-add-product-item-image">
+                                                                </a> <button class="btn_cart"
+                                                                    onclick="cartLayerOpenAction('60197')">이 상품을 장바구니에
+                                                                    담기</button>
+                                                            </div>
+                                                            <div class="goods-add-product-item-content">
+                                                                <div class="goods-add-product-item-content-wrapper">
+                                                                    <a
+                                                                        href="/shop/goods/goods_view.php?&amp;goodsno=60197">
+                                                                        <p class="goods-add-product-item-name">[룸모] 숏
+                                                                            파스타 면 6종</p>
+                                                                        <p class="goods-add-product-item-price"> 3,120원
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <br>
-                                            <table width="100%" cellpadding="5" cellspacing="0">
-                                                <colgroup>
-                                                    <col width="100" align="right" bgcolor="#f7f7f7"
-                                                        style="padding-right:10px">
-                                                    <col style="padding-left:10px">
-                                                </colgroup>
-                                            </table>
-                                            <p>
-                                                <br><textarea id="examC_64"
-                                                    style="display:none;width:100%;height:300px">&lt;div class="board_64"&gt;
-                                                                        &lt;div class="view_pc"&gt;
-                                                                        
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_main_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_delivery1_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_delivery2_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_delivery3_190528_v3.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_delivery4_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        
-                                                                        &lt;a href="javascript:address_chk_popup();"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_delivery5_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;/a&gt;
-                                                                        
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_delivery6_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/pc/img_delivery7_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;/div&gt;
-                                                                        
-                                                                        
-                                                                        &lt;div class="view_mobile"&gt;
-                                                                        
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_img_main_190528.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_img_cont1_190528.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_img_cont2_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_img_cont3_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        
-                                                                        &lt;a href="javascript:address_chk_popup();"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_img_cont4_190528.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;/a&gt;
-                                                                        
-                                                                        &lt;div class="" style="position:relative"&gt;
-                                                                        &lt;div class="delivery_tab"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_btn_delivery1_190528.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_btn_delivery2_190528.jpg" alt="" style="display:none"&gt;
-                                                                        &lt;/div&gt;
-                                                                        &lt;div class="delivery_select"&gt;
-                                                                        &lt;a href="#none" class="link_delivery1" style="position:absolute;left:0;top:0;width:50%;height:100%"&gt;&lt;/a&gt;
-                                                                        &lt;a href="#none" class="link_delivery2" style="position:absolute;right:0;top:0;width:50%;height:100%"&gt;&lt;/a&gt;
-                                                                        &lt;/div&gt;
-                                                                        &lt;/div&gt;
-                                                                        
-                                                                        &lt;div class="delivery_cont"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_img_delivery1_190528_v2.jpg" alt="" style="display:block"&gt;
-                                                                        &lt;img src="https://res.kurly.com/images/cms/2019/notice/1905/mobile/m_img_delivery2_190528.jpg" alt="" style="display:none"&gt;
-                                                                        &lt;/div&gt;
-                                                                        
-                                                                        &lt;/div&gt;
-                                                                        
-                                                                        &lt;/div&gt;
-                                                                        </textarea>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table width="100%" style="table-layout:fixed; border-top:1px solid #795c90; height:80px;">
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="padding-top:10px;">
+                                        <table width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td align="right">
+                                                        <a href="../../shop/recipe/recipe_all.html"><span
+                                                                class="bhs_button yb" style="float:none;">목록</span></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div
+                            class="xans-element- xans-board xans-board-movement-1002 xans-board-movement xans-board-1002 ">
+                            <ul>
+                                <li class="prev ">
+                                    <strong>이전글</strong><a href="#"></a><a
+                                        href="view.php?id=recipe&amp;no=386">황태양념구이</a>
+                                </li>
+                                <li class="next ">
+                                    <strong>다음글</strong><a href="../../shop/recipe/recipe_all_ Rucola Pizza.html"></a><a
+                                        href="view.php?id=recipe&amp;no=390">플랫 브레드 루꼴라 피자</a>
+                                </li>
+                            </ul>
                         </div>
-                        <script>
-                            // KM-1483 Amplitude
-                            KurlyTracker.setScreenName('delivery_guide'); // 배송안내
-                        </script>
+                        <p>
+                            <br><textarea id="examC_387" style="display:none;width:100%;height:300px">시금치 150g, 잣 50g, 아몬드 50g, 소금 1작은술, 올리브 오일 120mL, 그라나 파다노 90g, 통마늘 1알, 리가토니 120g, 방울토마토 4개, 부라타 치즈 120g
+                        </textarea>
+                        </p>
                     </div>
-
-                    <!-- 마이페이지_공지사항 게시글 종료 -->
-
                 </div>
-                <!-- 본문 종료 -->
             </div>
             <!-- main 종료 -->
 
@@ -959,7 +951,7 @@
         <!-- container 종료 -->
 
         <!-- quick list 시작 -->
-        <a href="#top" id="pageTop" class="on" style="opacity: 1; bottom: 15px;">맨 위로가기</a> <!--  -->
+        <a href="#top" id="pageTop" class="on" style="opacity: 1; bottom: 15px;">맨 위로가기</a>
         <script>
             // 스크롤을 위로 올리면 (top메뉴가 보이면) to_top이 아래로 사라지는 효과
             $(document).ready(function () {
@@ -1068,6 +1060,97 @@
         </script>
         <!-- quick list 끝 -->
     </div>
+
+    <!-- 레시피 상세보기 페이지 카트 부분 -->
+    <div id="cartPut">
+        <div class="cart_option cartList cart_type3" style="opacity: 1;">
+            <div class="inner_option"><button type="button" class="btn_close1">레이어닫기</button>
+                <div class="in_option">
+                    <div class="list_goods">
+                        <ul class="list list_nopackage">
+                            <li class="on"><span class="btn_position"><button type="button" class="btn_del"><span
+                                            class="txt">삭제하기</span></button></span> <span class="name"> [사브로소] 엑스트라버진
+                                    올리브 오일
+                                </span>
+                                <div class="option"><span class="count"><button type="button"
+                                            class="btn down on">수량내리기</button> <input type="number" readonly="readonly"
+                                            onfocus="this.blur()" class="inp"> <button type="button"
+                                            class="btn up on">수량올리기</button></span> <span class="price"> <span
+                                            class="dc_price">13,900원</span>
+                                    </span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="total">
+                        <div class="price"><strong class="tit">합계</strong>
+                            <span class="sum"><span class="num">13,900</span> <span class="won">원</span></span>
+                        </div>
+                        <p class="txt_point"><span class="ico">적립</span> <span class="no_login"><span>로그인 후, 적립혜택
+                                    제공</span></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="group_btn off layer_btn2">
+                    <span class="btn_type2"><button type="button" class="txt_type">취소</button></span> <span
+                        class="btn_type1"><button type="button" class="txt_type">장바구니 담기</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="cart_option cart_type3 notify_option">
+            <div class="inner_option"><strong class="tit">재입고 알림 신청</strong>
+                <p class="name_deal">[사브로소] 엑스트라버진 올리브 오일</p>
+                <p class="notice"><span class="ico">·</span>상품이 입고되면 앱 푸시 또는 알림톡으로 알려 드립니다.</p>
+                <div class="group_btn layer_btn2"><span class="btn_type2"><button type="button"
+                            class="txt_type">취소</button></span> <span class="btn_type1"><button type="button"
+                            class="txt_type">신청하기</button></span></div>
+            </div>
+        </div>
+        <div class="cart_option cart_result cart_type3">
+            <div class="inner_option"><button type="button" class="btn_close1">pc레이어닫기</button>
+                <p class="success">상품 구매를 위한 <span class="bar"></span>배송지를 설정해주세요</p>
+                <div class="group_btn layer_btn2"><span class="btn_type2"><button type="button"
+                            class="txt_type">취소</button></span> <span class="btn_type1"><button type="button"
+                            class="txt_type"><span class="ico_search"></span>주소 검색</button></span></div>
+            </div>
+        </div>
+        <form name="frmBuyNow" method="post" action="/shop/order/order.php"><input type="hidden" name="mode"
+                value="addItem"> <input type="hidden" name="goodsno" value=""></form>
+        <form name="frmWishlist" method="post"></form>
+    </div>
+
+    <script>
+        $(function () {
+            $('.btn_type2').click(function () {
+                $('#cartPut').css("display", "none");
+            });
+        });
+
+        $(function () {
+            $('.btn_cart').click(function () {
+                $('#cartPut').css("display", "block");
+            });
+        });
+    </script>
+
+    <script src="../../script/common_filter.js"></script>
+    <script src="../../script/cartput_v1.js"></script>
+
+    <script>
+        function cartLayerOpenAction(no, type) {
+            var cartPutDefault = {
+                'login': false,
+                'no': no,
+                'type': 'pc'
+            }
+            cartPutDefault.login = window.webStatus.isSession;
+            if (cartPutDefault.login || typeof type === 'undefined') {
+                bodyScroll.bodyFixed();
+            }
+            cartPut.userInfoGet(cartPutDefault, (typeof type !== 'undefind' && type === 'notify') ? type : false);
+        }
+    </script>
+    <script src="../../script/customeEvent.js"></script>
 </body>
 
 </html>

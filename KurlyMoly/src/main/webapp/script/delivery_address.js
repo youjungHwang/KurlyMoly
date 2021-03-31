@@ -1,8 +1,8 @@
 /**
- * ±â´É¸í¼¼
- * pc, mobile ±¸ºĞ
- * ÇØ´ç ÆäÀÌÁö¿¡ ÁÖ¼Ò ³ëÃâ ÆûÀÌ ÀÖ´Â °æ¿ì ÇØ´ç °ª Ãß°¡ (backEnd Àü´Ş ¿ëÀÌ±â ¶§¹®¿¡ ¾ÆÀÌµğ ¶Ç´Â ³×ÀÓÀº ±âÁ¸ ±×´ë·Î À¯Áö)
- * ³ª¸ÓÁö ÁÖ¼Ò¿¡ ±ÛÀÚ¼ö Ã¼Å© Àû¿ë ÇÊ¿ä
+ * ê¸°ëŠ¥ëª…ì„¸
+ * pc, mobile êµ¬ë¶„
+ * í•´ë‹¹ í˜ì´ì§€ì— ì£¼ì†Œ ë…¸ì¶œ í¼ì´ ìˆëŠ” ê²½ìš° í•´ë‹¹ ê°’ ì¶”ê°€ (backEnd ì „ë‹¬ ìš©ì´ê¸° ë•Œë¬¸ì— ì•„ì´ë”” ë˜ëŠ” ë„¤ì„ì€ ê¸°ì¡´ ê·¸ëŒ€ë¡œ ìœ ì§€)
+ * ë‚˜ë¨¸ì§€ ì£¼ì†Œì— ê¸€ììˆ˜ ì²´í¬ ì ìš© í•„ìš”
  *
  */
 var addressAction = (function(global) {
@@ -13,7 +13,7 @@ var addressAction = (function(global) {
       var that = this;
       addressData = JSON.parse(data);
       /**
-       * ¹è¼ÛÀ¯Çü ¼±ÅÃ
+       * ë°°ì†¡ìœ í˜• ì„ íƒ
        */
       var apiURL = '/addressbook/v1/regions/check-address?t=' + (new Date()).valueOf()
       var postData = {'address': addressData.roadAddress, 'address_detail': addressData.addressSub, 'base_address_type': 'R'};
@@ -30,7 +30,7 @@ var addressAction = (function(global) {
             var deliveryType = res.data.data.delivery_type;
 
             if (deliveryType === null) {
-              alert('ÀÏ½ÃÀûÀÎ ¿À·ù·Î ¹è¼ÛÁö Á¤º¸¸¦ ºÒ·¯¿ÀÁö ¸øÇß½À´Ï´Ù. ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.');
+              alert('ì¼ì‹œì ì¸ ì˜¤ë¥˜ë¡œ ë°°ì†¡ì§€ ì •ë³´ë¥¼ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.');
               return false;
             } else {
               addressData.deliPoli = objDeliveryPolicy[deliveryType];
@@ -39,7 +39,7 @@ var addressAction = (function(global) {
               that.insertViewData();
             }
           } else {
-            console.error('API ÀÀ´ä ÀÌ»ó', res);
+            console.error('API ì‘ë‹µ ì´ìƒ', res);
           }
         })
         .catch(function (err) {
@@ -48,7 +48,7 @@ var addressAction = (function(global) {
     },
 
     /**
-     * form Àü¼Û input¿¡ °ª Ãß°¡
+     * form ì „ì†¡ inputì— ê°’ ì¶”ê°€
      */
     sendFormDataAdd: function(){
       if($('#deliPoli').length === 0){
@@ -66,7 +66,7 @@ var addressAction = (function(global) {
 
 
     /**
-     * UI ¿ë ³ëÃâÇü ÅØ½ºÆ®
+     * UI ìš© ë…¸ì¶œí˜• í…ìŠ¤íŠ¸
      */
     insertViewData: function(){
       if($('#selectAddress').length === 0){
@@ -83,23 +83,23 @@ var addressAction = (function(global) {
         addrSub: $('#address_sub')
       }
 
-      var that = this, deliveryText = '»ûº°¹è¼Û';
+      var that = this, deliveryText = 'ìƒ›ë³„ë°°ì†¡';
       var addrText = addressData.sType ===  'zipcode' ? addressData.address : addressData.roadAddress
 
       $selector.selectAddr.show();
       $selector.selectSub.show();
 
-      // ¹®±¸
+      // ë¬¸êµ¬
       $selector.delivery.removeAttr('class');
       if(addressData.deliPoli === 0) {
         $selector.delivery.addClass('type1');
       }
       if(addressData.deliPoli === 1){
-        deliveryText = 'ÅÃ¹è¹è¼Û';
+        deliveryText = 'íƒë°°ë°°ì†¡';
         $selector.delivery.addClass('type2');
       }
       if(addressData.deliPoli === ''){
-        deliveryText = '¹è¼ÛºÒ°¡';
+        deliveryText = 'ë°°ì†¡ë¶ˆê°€';
         $selector.delivery.addClass('type3');
       }
 
@@ -121,14 +121,14 @@ var addressAction = (function(global) {
 
 
     /**
-     * PD-818 : ³ª¸ÓÁö ÁÖ¼Ò ÅØ½ºÆ® ÀÔ·Â½Ã Ä«¿îÆ® µÇµµ·Ï ¼³Á¤
+     * PD-818 : ë‚˜ë¨¸ì§€ ì£¼ì†Œ í…ìŠ¤íŠ¸ ì…ë ¥ì‹œ ì¹´ìš´íŠ¸ ë˜ë„ë¡ ì„¤ì •
      */
     countAction: function(){
-      var maxByteLimit = 99; // ±ÛÀÚ¼öÁ¦ÇÑ
+      var maxByteLimit = 99; // ê¸€ììˆ˜ì œí•œ
       var staticLengthAddr = null; // length
-      var $addressSub = null; // ¼¼ºÎÁÖ¼Ò
-      var $addressSubValue = null; // ¼¼ºÎÁÖ¼Ò°ª
-      var $addressValue = null; // ÁÖ¼Ò°ª
+      var $addressSub = null; // ì„¸ë¶€ì£¼ì†Œ
+      var $addressSubValue = null; // ì„¸ë¶€ì£¼ì†Œê°’
+      var $addressValue = null; // ì£¼ì†Œê°’
       var $fieldAddressSub = null;
 
       var subAddress = {
@@ -152,8 +152,8 @@ var addressAction = (function(global) {
             $addressSubValue = $(this).val();
           });
         },
-        addressSubSplit : function(){ // ÃÖ´ëÀÔ·Â°¡´ÉÇÑ ±ÛÀÚ¼ö ÃÊ°ú½Ã µŞ±ÛÀÚ Á¦°Å
-          var maxAddress = maxByteLimit - staticLengthAddr - 1; // 1Àº ÁÖ¼Ò¿Í ¼¼ºÎ ÁÖ¼Ò »çÀÌÀÇ °ø¹é
+        addressSubSplit : function(){ // ìµœëŒ€ì…ë ¥ê°€ëŠ¥í•œ ê¸€ììˆ˜ ì´ˆê³¼ì‹œ ë’·ê¸€ì ì œê±°
+          var maxAddress = maxByteLimit - staticLengthAddr - 1; // 1ì€ ì£¼ì†Œì™€ ì„¸ë¶€ ì£¼ì†Œ ì‚¬ì´ì˜ ê³µë°±
 
           $addressSub.attr('maxlength', maxAddress);
           $addressSub.val($addressSubValue.substring(0, maxAddress));
@@ -170,26 +170,26 @@ var addressAction = (function(global) {
 
 
     /**
-     * °á°ú ·¹ÀÌ¾î ³ëÃâ => È®ÀÎÈÄ »èÁ¦ ¿¹Á¤
+     * ê²°ê³¼ ë ˆì´ì–´ ë…¸ì¶œ => í™•ì¸í›„ ì‚­ì œ ì˜ˆì •
      */
     layerAction: function(){
       var $layerDSR = $("#layerDSR");
       var $dsrThumb = $layerDSR.find('.ani img');
-      var layerType = '.layer_star'; // »ûº°¹è¼Û
+      var layerType = '.layer_star'; // ìƒ›ë³„ë°°ì†¡
 
       $layerDSR.show();
       $layerDSR.find('.inner_layer').hide();
 
-      // KM-1955 : ÀÌ¹ÌÁö±³Ã¼
+      // KM-1955 : ì´ë¯¸ì§€êµì²´
       $dsrThumb.each(function(){
         $(this).attr('src', $(this).data('src'));
       });
 
-      if (addressData.deliPoli === 1) { // ÅÃ¹è¹è¼Û
+      if (addressData.deliPoli === 1) { // íƒë°°ë°°ì†¡
         layerType = '.layer_normal';
       }
 
-      if (addressData.deliPoli === '') { // ¹è¼ÛºÒ°¡
+      if (addressData.deliPoli === '') { // ë°°ì†¡ë¶ˆê°€
         layerType = '.layer_none';
       }
       $layerDSR.find(layerType).show();
@@ -199,8 +199,8 @@ var addressAction = (function(global) {
 })(window);
 
 /**
- * ÇØ´ç ÇÔ¼ö´Â ÁÖ¼Ò°Ë»ö PHP ÆÄÀÏ¿¡¼­ params°ªÀ» Àü´ŞÇØÁÖ¾î »ç¿ëµÊ.
- * È¸¿ø°¡ÀÔ¿¡¼­ »ç¿ë
+ * í•´ë‹¹ í•¨ìˆ˜ëŠ” ì£¼ì†Œê²€ìƒ‰ PHP íŒŒì¼ì—ì„œ paramsê°’ì„ ì „ë‹¬í•´ì£¼ì–´ ì‚¬ìš©ë¨.
+ * íšŒì›ê°€ì…ì—ì„œ ì‚¬ìš©
  * @param data Object
  */
 var setDeliveryAddress = function (data, type) {
@@ -211,12 +211,12 @@ var setDeliveryAddress = function (data, type) {
     address: data.address,
     addressSub: data.address_sub,
     roadAddress: data.road_address,
-    sType: data.s_type, //ÁÖ¼Ò°Ë»ö Å¸ÀÔ => zipcode : ±âÁ¸ ¿ìÆí¹øÈ£ °Ë»ö, road : µµ·Î¸íÁÖ¼Ò °Ë»ö
+    sType: data.s_type, //ì£¼ì†Œê²€ìƒ‰ íƒ€ì… => zipcode : ê¸°ì¡´ ìš°í¸ë²ˆí˜¸ ê²€ìƒ‰, road : ë„ë¡œëª…ì£¼ì†Œ ê²€ìƒ‰
     device: data.gubun === 'mobile' ? 'm' : 'pc'
   }
 
-  // iframe Å¸ÀÔ(mobile) , popup Å¸ÀÔ(pc) ±¸ºĞÇÊ¿ä. (appResult ¾øÀ½)
-  // ¹è¼Û¹æ¹ı ÀÚµ¿¼±ÅÃ
+  // iframe íƒ€ì…(mobile) , popup íƒ€ì…(pc) êµ¬ë¶„í•„ìš”. (appResult ì—†ìŒ)
+  // ë°°ì†¡ë°©ë²• ìë™ì„ íƒ
   if(type === 'current'){
     addressAction.setAddress(JSON.stringify(addressData));
     return false;
@@ -229,15 +229,15 @@ var setDeliveryAddress = function (data, type) {
       window.parent.close();
     }
   } else {
-    // PC - È¸¿ø°¡ÀÔ
+    // PC - íšŒì›ê°€ì…
     opener.parent.addressAction.setAddress(JSON.stringify(addressData));
-    // windows¿¡¼­ º»ÀÎÃ¢ ´İÀ» °æ¿ì Á¤»óÀûÀ¸·Î ·ÎÁ÷ÀÌ µ¹¾Æ°¡Áö ¾ÊÀ½
+    // windowsì—ì„œ ë³¸ì¸ì°½ ë‹«ì„ ê²½ìš° ì •ìƒì ìœ¼ë¡œ ë¡œì§ì´ ëŒì•„ê°€ì§€ ì•ŠìŒ
     window.parent.close();
   }
 }
 
 
-// KQA-2037 [App][mWeb][PC] ºñÈ¸¿ø¶§ Àå¹Ù±¸´Ï¿¡¼­ Ãß°¡ÇÑ ÁÖ¼ÒÁö, È¸¿ø°¡ÀÔ ÆäÀÌÁö¿¡ ¹ÌÀÔ·ÂµÇ¾î ³ëÃâµÇ´Â Çö»ó
+// KQA-2037 [App][mWeb][PC] ë¹„íšŒì›ë•Œ ì¥ë°”êµ¬ë‹ˆì—ì„œ ì¶”ê°€í•œ ì£¼ì†Œì§€, íšŒì›ê°€ì… í˜ì´ì§€ì— ë¯¸ì…ë ¥ë˜ì–´ ë…¸ì¶œë˜ëŠ” í˜„ìƒ
 var adddressCheck = (function(global) {
 
   var _addressCheck = {
@@ -263,7 +263,7 @@ var adddressCheck = (function(global) {
           address: getData.address,
           address_sub: getData.address_sub,
           road_address: getData.road_address,
-          s_type: getData.base_address_type === 'R' ? 'road' : 'zipcode', //ÁÖ¼Ò°Ë»ö Å¸ÀÔ => zipcode : ±âÁ¸ ¿ìÆí¹øÈ£ °Ë»ö, road : µµ·Î¸íÁÖ¼Ò °Ë»ö
+          s_type: getData.base_address_type === 'R' ? 'road' : 'zipcode', //ì£¼ì†Œê²€ìƒ‰ íƒ€ì… => zipcode : ê¸°ì¡´ ìš°í¸ë²ˆí˜¸ ê²€ìƒ‰, road : ë„ë¡œëª…ì£¼ì†Œ ê²€ìƒ‰
           gubun: deviceCheck
         }
         setDeliveryAddress(dataTemp, 'current');

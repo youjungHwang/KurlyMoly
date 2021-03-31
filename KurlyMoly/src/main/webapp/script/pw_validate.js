@@ -123,7 +123,7 @@ var pwValidate = new function () {
 			// check character mix
 			$self.characterValid();
 
-			// µ¿ÀÏÇÑ ¼ıÀÚ 3°³ ÀÌ»ó ¿¬¼Ó »ç¿ë ºÒ°¡
+			// ë™ì¼í•œ ìˆ«ì 3ê°œ ì´ìƒ ì—°ì† ì‚¬ìš© ë¶ˆê°€
 			$self.validateNumbers();
 		}
 	}
@@ -134,7 +134,7 @@ var pwValidate = new function () {
 			$self.inputOutlineHandler(confirm_id, 'bad');
 			$self.markEffectHandler($('.mark_coincide'), 'bad');
 		} else {
-			//- »õºñ¹Ğ¹øÈ£¿Í ÇöÀç ºñ¹Ğ¹øÈ£ ºñ±³
+			//- ìƒˆë¹„ë°€ë²ˆí˜¸ì™€ í˜„ì¬ ë¹„ë°€ë²ˆí˜¸ ë¹„êµ
 			if ($this_element.val() == $('#' + new_id).val()) {
 				$self.inputOutlineHandler(confirm_id, 'good');
 				$self.markEffectHandler($('.mark_coincide'), 'good'); 
@@ -167,7 +167,7 @@ var pwValidate = new function () {
 	
 	$self.inputOutlineHandler = function (arg_target_id, arg_type) {
 		if (arg_target_id == "") {
-			console.log("Error : inputOutlineHandler->arg_target_id : ÇÊ¼ö°ª ´©¶ô");
+			console.log("Error : inputOutlineHandler->arg_target_id : í•„ìˆ˜ê°’ ëˆ„ë½");
 			return;
 		}
 		if (arg_type == 'good') {
@@ -175,7 +175,7 @@ var pwValidate = new function () {
 		} else if (arg_type == 'bad') {
 			$('#' + arg_target_id).addClass('inp_invalid');
 		} else {
-			console.log("Error : inputOutlineHandler->arg_type : Á¤ÀÇµÇÁö ¾ÊÀº Çü½ÄÀÔ´Ï´Ù.");
+			console.log("Error : inputOutlineHandler->arg_type : ì •ì˜ë˜ì§€ ì•Šì€ í˜•ì‹ì…ë‹ˆë‹¤.");
 		}
 	}
 	
@@ -216,7 +216,7 @@ var pwValidate = new function () {
 		var checkNumber = $chk_val.search(/[0-9]/g);
 		var checkEnglish = $chk_val.search(/[a-zA-Z]/ig);
 		var checkSpecial = $chk_val.search(/[^a-zA-Z0-9]/ig);
-		var checkAscii = $chk_val.search(/[^a-zA-Z0-9~`!>@?/<#"'\$;:\]%\.\^,&\[*()_\+\-=|\\{}]/ig); // ¾Æ½ºÅ° Æ¯¼ö¹®ÀÚ
+		var checkAscii = $chk_val.search(/[^a-zA-Z0-9~`!>@?/<#"'\$;:\]%\.\^,&\[*()_\+\-=|\\{}]/ig); // ì•„ìŠ¤í‚¤ íŠ¹ìˆ˜ë¬¸ì
 		
 		if (checkNumber >= 0 && checkEnglish >= 0 && checkAscii === -1) {
 			check_type2 = true;
@@ -254,13 +254,13 @@ var pwValidate = new function () {
 	}
 
 	/**
-	 * µ¿ÀÏÇÑ ¼ıÀÚ 3°³ ÀÌ»ó ¿¬¼Ó »ç¿ë¿©ºÎ Ã¼Å©
+	 * ë™ì¼í•œ ìˆ«ì 3ê°œ ì´ìƒ ì—°ì† ì‚¬ìš©ì—¬ë¶€ ì²´í¬
 	 *
 	 */
 	$self.validateNumbers = function () {
 		var input = $self.parentDom.find('.wrap_inp #pwNew').val()
 		if ($self.hasThreeOrMoreConsecutiveNumbers(input)) {
-			// µ¿ÀÏÇÑ ¼ıÀÚ 3°³ ÀÌ»ó ¿¬¼Ó ÀÎ °æ¿ì
+			// ë™ì¼í•œ ìˆ«ì 3ê°œ ì´ìƒ ì—°ì† ì¸ ê²½ìš°
 			$self.markEffectHandler($('.mark_numbers'), 'bad');
 			$('#pwNew').addClass('inp_invalid');
 		} else {
@@ -270,8 +270,8 @@ var pwValidate = new function () {
 	};
 
 	/**
- 	 * µ¿ÀÏÇÑ ¼ıÀÚ 3°³ ÀÌ»ó ¿¬¼ÓÀÎÁö È®ÀÎ
-	 * @param input ÀÔ·ÂÇÑ ºñ¹Ğ¹øÈ£
+ 	 * ë™ì¼í•œ ìˆ«ì 3ê°œ ì´ìƒ ì—°ì†ì¸ì§€ í™•ì¸
+	 * @param input ì…ë ¥í•œ ë¹„ë°€ë²ˆí˜¸
 	 * @returns {boolean}
 	 */
 	$self.hasThreeOrMoreConsecutiveNumbers = function (input) {
@@ -322,19 +322,19 @@ var pwValidate = new function () {
 
 			$('.mark_invalid_etc').html('');
 
-			// Çö ºñ¹Ğ¹øÈ£¿Í ´Ù¸£°Ô ÀÔ·Â
+			// í˜„ ë¹„ë°€ë²ˆí˜¸ì™€ ë‹¤ë¥´ê²Œ ì…ë ¥
 			if (oldPassword == newPassword) {
-				alert('ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä');
+				alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”');
 				return false;
 			}
 
-			// µ¿ÀÏÇÑ ¼ıÀÚ 3°³ ÀÌ»ó ¿¬¼Ó »ç¿ë ºÒ°¡
+			// ë™ì¼í•œ ìˆ«ì 3ê°œ ì´ìƒ ì—°ì† ì‚¬ìš© ë¶ˆê°€
 			if ($self.hasThreeOrMoreConsecutiveNumbers(newPassword)) {
-				alert('ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä');
+				alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”');
 				return false;
 			}
 
-			// »õ ºñ¹Ğ¹øÈ£¿Í µ¿ÀÏÇÑ ºñ¹Ğ¹øÈ£ ÀÔ·Â && ¿µ¹®/¼ıÀÚ/Æ¯¼ö¹®ÀÚ¸¸ Çã¿ë(2°³ÀÌ»ó Á¶ÇÕ) && 10ÀÚ ÀÌ»ó ÀÔ·Â
+			// ìƒˆ ë¹„ë°€ë²ˆí˜¸ì™€ ë™ì¼í•œ ë¹„ë°€ë²ˆí˜¸ ì…ë ¥ && ì˜ë¬¸/ìˆ«ì/íŠ¹ìˆ˜ë¬¸ìë§Œ í—ˆìš©(2ê°œì´ìƒ ì¡°í•©) && 10ì ì´ìƒ ì…ë ¥
 			if ((confirmNewPassword == newPassword) && ((check_type2 == true) && (check_type1 == true))) {
 				var post_data = {
 					"mode" : "change_pwd_after_login", 
@@ -351,12 +351,12 @@ var pwValidate = new function () {
 						if(res.code == '0000') {
 							// mobile
 							if(device == 'M') {
-								// return_urlÀÌ ÀÖÀ¸¸é ÇØ´ç ÆäÀÌÁö·Î ÀÌµ¿ÇÑ´Ù
+								// return_urlì´ ìˆìœ¼ë©´ í•´ë‹¹ í˜ì´ì§€ë¡œ ì´ë™í•œë‹¤
 								if (!!return_url) {
 									document.location.href = location.protocol+'//'+location.hostname+return_url;
 									return;
 								}
-								// return_urlÀÌ ¾øÀ¸¸é /m2 ·Î ÀÌµ¿ÇÑ´Ù
+								// return_urlì´ ì—†ìœ¼ë©´ /m2 ë¡œ ì´ë™í•œë‹¤
 								document.location.href = location.protocol+'//'+location.hostname+'/m2';
 
 							// pc
@@ -364,7 +364,7 @@ var pwValidate = new function () {
 								$("#change_pw").hide();
 							}
 							
-							// cms ³» º¯°æ ½Ã cms ÀÎµ¦½º ÆäÀÌÁö·Î ÀÌµ¿(2018.01.08, ±è±â¿Ï)
+							// cms ë‚´ ë³€ê²½ ì‹œ cms ì¸ë±ìŠ¤ í˜ì´ì§€ë¡œ ì´ë™(2018.01.08, ê¹€ê¸°ì™„)
 							if("/shop/admin/" == document.location.pathname || "/shop/admin/#C" == document.location.pathname)	document.location.href = document.location.pathname;	
 						} else {
 							var now_id;
@@ -382,20 +382,20 @@ var pwValidate = new function () {
 							}
 
 							$self.inputOutlineHandler(now_id, 'bad');
-							alert('ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä');
+							alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”');
 						}
 					}
 				});
 			}else{
-				alert('ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä');
+				alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”');
 			}
 		}else{
-			alert('ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä');
+			alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”');
 		}
 	}
 
 	$self.emptyPwState = function() {
-		// ¸ğ¹ÙÀÏ¿¡ ¾ø°í PC¿¡¸¸ ÀÖ´ø ±â´É
+		// ëª¨ë°”ì¼ì— ì—†ê³  PCì—ë§Œ ìˆë˜ ê¸°ëŠ¥
 		var selector = _ID('el-password-strength-indicator')
 		if (selector) {
 			selector.style.display = "none";
@@ -419,17 +419,17 @@ var pwValidate = new function () {
 
 	$self.checkPasswordForm = function (f, m_id, token, otp, deviceType) {
 		if(!_ID('newPassword').value) {
-			alert("»õ ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			alert("ìƒˆ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			_ID('newPassword').focus();
 			return false;
 		}
 		if(!_ID('confirmPassword').value) {
-			alert("»õ ºñ¹Ğ¹øÈ£ È®ÀÎÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			alert("ìƒˆ ë¹„ë°€ë²ˆí˜¸ í™•ì¸ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			_ID('confirmPassword').focus();
 			return false;
 		}
 		if(_ID('newPassword').value != _ID('confirmPassword').value) {
-			alert("»õ ºñ¹Ğ¹øÈ£¿Í ºñ¹Ğ¹øÈ£ È®ÀÎÀÌ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+			alert("ìƒˆ ë¹„ë°€ë²ˆí˜¸ì™€ ë¹„ë°€ë²ˆí˜¸ í™•ì¸ì´ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			_ID('confirmPassword').focus();
 			return false;
 		}

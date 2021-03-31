@@ -20,8 +20,8 @@ $(function(){
     const scrollHeight = 512;
 
 	function sidebar(){
-		if($(window).scrollTop() > scrollHeight){
-			var top = $(window).scrollTop();
+		if($(document).scrollTop() > scrollHeight){
+			let top = $(document).scrollTop();
 
 			document.getElementById('qnbMain').style.top = top +'px'; //스크롤내릴때 top값
 
@@ -33,7 +33,7 @@ $(function(){
 
 	sidebar();
 
-	$(window).scroll(()=>{
+	$(document).scroll(()=>{
 		sidebar();
 	});
 
@@ -47,8 +47,8 @@ $(function(){
     const scrollHeight = 300;
 
 	function sidebar(){
-		if($(window).scrollTop() > scrollHeight){
-			var top = $(window).scrollTop();
+		if($(document).scrollTop() > scrollHeight){
+			let top = $(document).scrollTop();
 
 			document.getElementById('qnb').style.top = top +'px'; //스크롤내릴때 top값
 
@@ -59,7 +59,7 @@ $(function(){
 
 	sidebar();
 
-	$(window).scroll(()=>{
+	$(document).scroll(()=>{
 		sidebar();
 	});
 
@@ -77,6 +77,9 @@ $(document).ready(function(){
     $('.inner_sub > ul > li').mouseenter(function(){
         $('.gnb_sub').css('width','438px');
     });
+    $('.inner_sub .sub_menu2 > li ').mouseenter(function(){
+        $('.gnb_sub').css('width','715px');
+    });
     $('.inner_sub > ul > li ').mouseleave(function(){
         $('.gnb_sub').css('width','219px');
     });
@@ -86,34 +89,425 @@ $(document).ready(function(){
     $('.layer_location').mouseleave(function(){
         $('.layer_location').css("display","none");
     });
-    $('.page_article #top_menu ul li a').click(function(){
-        $('.page_article #top_menu ul li a').css("color","#5f0080");
-        $('.page_article #top_menu ul li a').css("font-weight","bold");
-        $('.page_article #top_menu ul li a').css("border-bottom","1px solid #5f0080");
+    //카테고리 메뉴
+    $('.menu').mouseenter(function(){
+        $(this).siblings('.sub_menu').css("display","block");
     });
+    $('.menu').mouseleave(function(){
+        $(this).siblings('.sub_menu > li').css("display","none");
+        
+    });
+    $('.sub_menu').mouseenter(function(){
+        $(this).css("display","block");
+    });
+    $('.menu').mouseleave(function(){
+        $(this).siblings('.sub_menu').css("display","none");
+    });
+    //카테고리메뉴2
+    $('.menu').mouseenter(function(){
+        $(this).siblings('.sub_menu2').css("display","block");
+    });
+    $('.menu').mouseleave(function(){
+        $(this).siblings('.sub_menu2 > li').css("display","none");
+        
+    });
+    $('.sub_menu2').mouseenter(function(){
+        $(this).css("display","block");
+    });
+    $('.menu').mouseleave(function(){
+        $(this).siblings('.sub_menu2').css("display","none");
+    });
+    $('.btn_dropup').click(function(){
+        if($('.list').is(":visible")){
+            $('.list').css("display","none");
+        }else{
+            $('.list').css("display","block");
+        }
+    });
+    $('.btn').click(function(){
+        if($('.list_product').is(":visible")){
+            $('.list_product').css("display","none");
+            $('.info_product .btn').css("-webkit-transform","rotate(180deg)");
+        }else{
+            $('.list_product').css("display","block");
+            $('.info_product .btn').css("-webkit-transform","none");
+        }
+    });
+    $('.btn').click(function(){
+        if($('.short_info').is(":visible")){
+            $('.short_info').css("display","none");
+        }else{
+            $('.short_info').css("display","block");
+            
+        }
+        
+    });
+    $('.view_popselbox').click(function(){
+        if($('.layer_coupon').is(":visible")){
+            $('.layer_coupon').css("display","none");
+        }else{
+            $('.layer_coupon').css("display","block");
+        }
+    });
+    
+
 
 });
+//셀렉트체인지
+// $('.list > li').on("change",function(){
+//     $(this).
+// });
 
+
+function createSpan(){
+    var obj = document.getElementsByClassName('.box');   
+    var newSpan = document.createElement("span");   
+    newSpan.innerHTML = '';
+    newSpan.setAttribute("class","bg");
+    newSpan.style.display = "none";
+    newSpan.style.height = "10px";
+    newSpan.style.borderTop = "1px solid #ccc";
+    newSpan.style.backgroundColor = "#f4f4f4";
+
+    obj.appendChlid(newSpan);
+
+
+    
+}
+function createP(){
+    var obz = document.getElementsByClassName('.bg');
+    var newP = document.createElement("p");
+    newP.innerHTML='장바구니에 담긴 상품이 없습니다.';
+    newP.setAttribute("class","txt");
+    newP.style.width = "100%";
+    newP.style.marginTop = "0";
+    newP.style.padding = "115px 0 116px";
+    newP.style.fontWeight = "700";
+    newP.style.fontSize = "16px";
+    newP.style.color = "#333";
+    newP.style.textAlign = "center";
+
+    obz.appendChlid(newP);
+
+}
+
+
+
+//Onclick
+$(function(){
+    $('.page_article #top_menu ul li a').click(function(){
+        $(this).toggleClass("Onclick");
+        if($('.page_article #top_menu ul li').click()){
+            $('.page_article #top_menu ul li a').toggleClass("page_article #top_menu ul li a");
+        }
+    });
+});
 //스위치기능
 $(function(){
-    $('.btn_onoff').click(function(){
-        $(this).toggleClass("switchOn");
+    $('.list_round').click(function(){
+        $('#goodsList label').toggleClass("switchOn1");
+        $('.btn_onoff').toggleClass("switchOn2");
     });
 });
-//찜기능
+//찜기능,장바구니아이콘클릭
 $(function(){
     $(".turn_off").click(function(){
-        $('.turn_off').css("display","none");
-        $('.turn_on').css("display","block");
+        $(this).toggleClass("turnOn");
+    });
+    $('.chart_btn').click(function(){
+        $('#cartPut').css("display","block");
+    });
+});
+//goods_list 장바구니창 취소버튼(닫기)
+$(function(){
+    $('.btn_type2').click(function(){
+        $('#cartPut').css("display","none");
+    });
+});
+//goods_cart
+
+
+//페이지롤링
+$(function () {
+
+    function AutoSlider($trigger, time) {
+        this.$trigger = $trigger;
+        this.interval = null;
+        this.time = time || 5000;
+    }
+    AutoSlider.prototype.start = function () {
+        this.interval = setTimeout(function () {
+            this.$trigger.trigger('click');
+        }.bind(this), this.time);
+        return this;
+    }
+    AutoSlider.prototype.stop = function () {
+        clearTimeout(this.interval);
+        return this;
+    }
+
+    $(".__slide-wrapper[data-slide-auto]").each(function () {
+        var $wrapper = $(this);
+        var time = +$wrapper.data("slide-auto");
+        $wrapper.data("slide-auto-timer", new AutoSlider($wrapper.find(".__slide-go-right"), time));
+        $wrapper.data("slide-auto-timer").start();
+        $wrapper.on('mouseover mouseout', function (e) {
+            $(this).data("slide-auto-timer")[e.type === 'mouseover' ? 'stop' : 'start']();
+        });
     });
 
-});
-//onclick="return false"-> 한번에 처리하기...
-$(function(){
-    $('.chart_btn').click(function(){
-        $(this).onclick("return false");
+    $(".main-slider.__slide-wrapper").on({
+        mouseenter: function () {
+            var $wrapper = $(this);
+            var time = +$wrapper.data("slide-auto");
+            $(this).data("slide-auto-timer").stop();
+        },
+        mouseleave: function () {
+            var $wrapper = $(this);
+            var time = +$wrapper.data("slide-auto");
+            $(this).data("slide-auto-timer").start();
+        }
+    })
+
+    $(document).on("click", ".__slide-go-left, .__slide-go-right, [data-slide-go]", function ($e) {
+        $e.preventDefault();
+        function AutoSlider($trigger, time) {
+            this.$trigger = $trigger;
+            this.interval = null;
+            this.time = time || 5000;
+        }
+        AutoSlider.prototype.stop = function () {
+            clearTimeout(this.interval);
+            return this;
+        }
+
+        var $trigger = $(this);
+        var $wrapper = $trigger.closest(".__slide-wrapper");
+        var $mover = $wrapper.find(".__slide-mover").eq(0);
+        if ($mover.is(":animated")) {
+            return;
+        }
+        var $items = $mover.find("> .__slide-item");
+        var $target, moveTo = 0;
+        var itemSize = $wrapper.data("slide-item") || 1;
+        var slideWidth = $items.eq(1).outerWidth(true) * itemSize;
+
+
+        //console.log($items.length, itemSize);
+        if ($items.length > itemSize) {
+            if ($trigger.hasClass('__slide-go-left')) {
+                $target = $items.slice(-itemSize);
+                $target.clone().prependTo($mover);
+                $mover.css('left', -slideWidth + 'px');
+            } else if ($trigger.hasClass('__slide-go-right')) {
+                $target = $items.slice(0, itemSize);
+                $target.clone().appendTo($mover);
+                moveTo = -slideWidth;
+            } else {
+                if ($trigger.hasClass("__active")) {
+                    return;
+                }
+                moveTo = -slideWidth * +$trigger.data("slide-go");
+                $trigger.siblings('.__active').removeClass('__active');
+                $trigger.addClass('__active');
+                //console.log(moveTo);
+            }
+            // auto slider option
+            var $timer = null;
+            if ($wrapper.data("slide-auto-timer") instanceof AutoSlider) {
+                $timer = $wrapper.data("slide-auto-timer");
+            } else if ($trigger.data("slide-auto-keep") === "parent") {
+                //console.log($wrapper);
+                $timer = $wrapper.closest("[data-slide-auto]").data("slide-auto-timer");
+                //console.log($timer);
+            }
+            $timer && $timer.stop();
+            //autoSlider.stop();
+            $mover.animate({ 'left': moveTo + 'px' }, 300, function () {
+                $target && $target.remove();
+                $target && $mover.css('left', 0);
+                $timer && $timer.start();
+            });
+        }
     });
 });
+//선텍 삭제
+
+// 찜목록에 아무것도 없을 때
+$(document).ready(function() {
+    const forLength 
+    = document.querySelectorAll('input[name="check"]');
+    if(forLength.length == 0){
+        $('.hasNone').css("display" , "table-row");
+    }
+});
+
+
+    // 삭제버튼 스크립트
+// $(document).ready(function(){
+//     $('.solo').on('click', function(e){
+//     $(this).parentsUntil("tbody").remove()
+
+//     const forLength 
+//         = document.querySelectorAll('input[name="check"]');
+//         if(forLength.length == 0){
+//             $('.hasNone').css("display" , "table-row");
+//         }
+//     });
+// });
+
+//goods_cart삭제
+function deleteChecked() {
+const CH = document.querySelectorAll('input[name="check"]:checked');
+
+$('input:checkbox[name="check"]').each(function() {
+    if (this.checked){
+            var $li_id = $(this).parent().parent().parent();
+            $li_id.remove(); // 삭제하기
+    }
+});
+if(!CH.length>0){
+    alert("선택한 항목이 없습니다!")
+}
+$("input[type=checkbox]").prop("checked", false);
+
+
+const forLength 
+    = document.querySelectorAll('input[name="check"]');
+    if(forLength.length == 0){
+        $('.hasNone').css("display" , "none")
+    }
+
+}  
+
+
+function checkSelectAll()  {
+// 전체 체크박스
+const checkboxes 
+    = document.querySelectorAll('input[name="check"]');
+// 선택된 체크박스
+const checked 
+    = document.querySelectorAll('input[name="check"]:checked');
+// select all 체크박스
+const selectAll 
+    = document.querySelector('input[name="selectall"]');
+
+if(checkboxes.length === checked.length)  {
+    selectAll.checked = true;
+    
+}else {
+    selectAll.checked = false;
+    
+}
+
+}
+function checkAll(selectAll)  {
+const checkboxes 
+    = document.getElementsByName('check');
+checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked
+});
+}
+
+//장바구니페이지 세부스크립트(마켓컬리스크립트)
+
+//
+gnbMenu.update();
+
+// 검색창 클래스 추가/삭제
+var searchInputAction = (function () {
+    var $target = {};
+
+    var _searchInputAction = {
+        setSeletor: function () {
+            $target = {
+                $parent: $('#gnb'),
+                $search: $('#gnb [name=sword]'),
+                $deleteBtn: $('#searchInit'),
+                $edit: $('#edit')
+            }
+
+            this.setAction();
+        },
+        setAction: function () {
+            var that = this;
+            $target.$search.focus(function () {
+                that.changeClass($target.$search, 'add', 'focus');
+                that.deleteCheck();
+            }).blur(function () {
+                that.changeClass($target.$search, 'remove', 'focus');
+                that.deleteCheck(false);
+            }).on('keyup', function () {
+                if ($target.$edit.val() !== 'Y') {
+                    $target.$edit.val('Y');
+                }
+                that.deleteCheck();
+            });
+
+            $target.$deleteBtn.on('click', function () {
+                $target.$search.val('');
+                that.deleteCheck();
+            });
+        },
+        deleteCheck: function (type) {
+            var that = this, count = $.trim($target.$search.val()).length;
+            if (count === 0 || (typeof type !== 'undefined' && !type)) {
+                that.changeClass($target.$deleteBtn, 'remove', 'on');
+            } else {
+                that.changeClass($target.$deleteBtn, 'add', 'on');
+            }
+        },
+        changeClass: function (target, type, className) {
+            if (type === 'add') {
+                target.addClass(className);
+            } else {
+                target.removeClass(className);
+            }
+        }
+    }
+
+    _searchInputAction.setSeletor();
+})();
+
+// 로고 클릭 이벤트
+$('#header .link_main').on('click', function (e) {
+    e.preventDefault();
+    KurlyTracker.setAction('select_main_logo').sendData();
+    location.href = $(this).attr('href');
+});
+
+$('#gnb .gnb .link').on('click', function (e) {
+    e.preventDefault();
+    var _event_name, _event_info;
+    if ($(this).hasClass('new')) {
+        _event_name = 'select_new_product_subtab';
+    } else if ($(this).hasClass('best')) {
+        _event_name = 'select_popular_product_subtab';
+    } else if ($(this).hasClass('bargain')) {
+        _event_name = 'select_bargain_subtab';
+    } else if ($(this).hasClass('event')) {
+        _event_name = 'select_event_list_subtab';
+    }
+    _event_info = $(this).attr('href');
+
+    KurlyTracker.setEventInfo(_event_info).setAction(_event_name).sendData();
+    location.href = _event_info;
+});
+
+// 장바구니 아이콘 클릭이벤트
+$('#gnbMenu .btn_cart').on('click', function (e) {
+    e.preventDefault();
+    KurlyTracker.setAction('select_cart').sendData();
+    location.href = $(this).attr('href');
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -734,22 +1128,5 @@ function sample6_execDaumPostcode() {
 
 
 
-
-
-// ================================================= 꽃길람보 
-//  mypage > mypage_editinfo.html의 로그인 alert 함수
-function loginCheck(){
-    var f = document.confitmForm;
-    if(f.re_pw.value == ""){
-        alert("아이디와 비밀번호를 확인해 주세요.")
-        f.re_pw.focus();
-        return false;
-    }
-    return true;
-}
-
-
-
-// ================================================= 레시피 상세보기 페이지의 script1 시작 ===============================================
 
 
