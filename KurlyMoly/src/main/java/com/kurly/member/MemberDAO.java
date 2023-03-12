@@ -11,9 +11,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.kurly.db.Dbconn;
 import com.kurly.db.SqlMapConfig;
+import com.kurly.product.ProductDTO;
 
 public class MemberDAO {
-	
+
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -22,7 +23,7 @@ public class MemberDAO {
 
 	SqlSessionFactory ssf = SqlMapConfig.getSqlMapInstance();
 	SqlSession sqlsession;
-	
+
 	public MemberDAO() {
 		sqlsession = ssf.openSession(true); // openSession(true) 설정시 자동 commit 됨
 		System.out.println("마이바티스 설정 성공!");
@@ -34,9 +35,9 @@ public class MemberDAO {
 			sql = "SELECT * FROM tb_member ORDER BY m_idx DESC";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				MemberDTO member= new MemberDTO();
+
+			while (rs.next()) {
+				MemberDTO member = new MemberDTO();
 				member.setmIdx(rs.getInt("m_idx"));
 				member.setmUserid(rs.getString("m_userid"));
 				member.setmPassword(rs.getString("m_password"));
@@ -56,15 +57,15 @@ public class MemberDAO {
 				member.setmWithdrawwhy(rs.getString("m_withdrawwhy"));
 				member.setmWithdrawwhy2(rs.getString("m_withdrawwhy2"));
 				member.setmWithdrawdate(rs.getString("m_withdrawdate"));
-				
+
 				memberList.add(member);
 			}
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return memberList;
 	}
-	
+
 	// 회원가입
 	public int join(MemberDTO member) {
 		try {
@@ -100,7 +101,6 @@ public class MemberDAO {
 		return 0;
 	}
 
-	
 	// 로그인
 	public MemberDTO login(MemberDTO member) {
 		sql = "SELECT m_idx, m_userid, m_name from tb_member WHERE m_userid=? and m_password=?";
@@ -110,18 +110,18 @@ public class MemberDAO {
 			pstmt.setString(1, member.getmUserid());
 			pstmt.setString(2, member.getmPassword());
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				member.setmIdx(rs.getInt("m_idx"));
 				member.setmUserid(rs.getString("m_userid"));
 				member.setmName(rs.getString("m_name"));
 				return member;
 			}
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	// 정보 조회
 	public MemberDTO info(MemberDTO member) {
 		sql = "SELECT * FROM tb_member WHERE m_idx = ?";
@@ -147,14 +147,14 @@ public class MemberDAO {
 		}
 		return null;
 	}
-	
+
 	// 정보 수정
 	public int edit(MemberDTO member) {
 		try {
 			sql = "UPDATE tb_member SET m_password=?, m_name=?, m_email=?, m_tel=?, m_gender=?, m_birth=?, m_recomid=? WHERE m_userid=?";
 			conn = Dbconn.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setString(1, member.getmPassword());
 			pstmt.setString(2, member.getmName());
 			pstmt.setString(3, member.getmEmail());
@@ -163,8 +163,8 @@ public class MemberDAO {
 			pstmt.setString(6, member.getmBirth());
 			pstmt.setString(7, member.getmRecomid());
 			pstmt.setString(8, member.getmUserid());
-			
-			if(pstmt.executeUpdate() >= 1) {
+
+			if (pstmt.executeUpdate() >= 1) {
 				return 1;
 			}
 		} catch (Exception e) {
@@ -172,17 +172,17 @@ public class MemberDAO {
 		}
 		return 0;
 	}
-	
+
 	// 아이디 체크
 	public boolean idCheck(String userid) {
-		if ((Integer)sqlsession.selectOne("Member.idCheck", userid) == 1) {
+		if ((Integer) sqlsession.selectOne("Member.idCheck", userid) == 1) {
 			// integer 형태로 (mapper namespace="Member")idCheck 값을 가져올 건데, 그 곳에 userid 값을 넣어라.
 			// 그런데 그 값이 1인가? 그렇다면 true 리턴
 			return true; // 아이디 중복. 가입 불가능
 		}
 		return false; // 아이디 중복 없음. 가입 가능
 	}
-	
+
 	// pw 체크
 	public boolean pwCheck(MemberDTO member) {
 		sql = "SELECT m_idx FROM tb_member WHERE m_idx = ? and m_password = ?";
@@ -200,8 +200,7 @@ public class MemberDAO {
 		}
 		return false;
 	}
-	   
-	   
+
 	// 이메일 체크
 	public boolean emailCheck(MemberDTO member) {
 		sql = "SELECT m_idx FROM tb_member WHERE m_idx = ? and m_email = ?";
@@ -218,5 +217,79 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	// 주문서 userid 개인정보 불러오기.
+	public List<MemberDTO> useridinfo(String userid) {
+		List<MemberDTO> userinfolist = new ArrayList<MemberDTO>();
+
+		try {
+			conn = Dbconn.getConnection();
+			System.out.println(userid);
+			sql = "select * from tb_member where m_userid=?  ";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, userid);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				MemberDTO member = new MemberDTO();
+				member.setmIdx(rs.getInt("m_idx"));
+				member.setmUserid(rs.getString("m_userid"));
+				member.setmPassword(rs.getString("m_password"));
+				member.setmName(rs.getString("m_name"));
+				member.setmTel(rs.getString("m_tel"));
+				member.setmEmail(rs.getString("m_email"));
+				member.setmBirth(rs.getString("m_birth"));
+				member.setmGender(rs.getString("m_gender"));
+				member.setmZipcode(rs.getString("m_zipcode"));
+				member.setmAddress1(rs.getString("m_address1"));
+				member.setmAddress2(rs.getString("m_address2"));
+				member.setmRecomid(rs.getString("m_recomid"));
+				member.setmRegdate(rs.getString("m_regdate"));
+				member.setmMembership(rs.getString("m_membership"));
+				member.setmKurlypass(rs.getString("m_kurlypass"));
+				member.setmState(rs.getInt("m_state"));
+				member.setmWithdrawwhy(rs.getString("m_withdrawwhy"));
+				member.setmWithdrawwhy2(rs.getString("m_withdrawwhy2"));
+				member.setmWithdrawdate(rs.getString("m_withdrawdate"));
+
+				userinfolist.add(member);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			Dbconn.close(conn, pstmt, rs);
+		}
+		return userinfolist;
+	}
+	
+	// 접속한 회원 정보 가져오기
+	public List<MemberDTO> memberAddress(String userid) {
+		List<MemberDTO> memberAddList = new ArrayList<MemberDTO>();
+		
+		try {
+			conn = Dbconn.getConnection();
+			System.out.println(userid);
+			sql = "select * from tb_member where m_userid = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				MemberDTO memberDTO = new MemberDTO();
+				memberDTO.setmZipcode(rs.getString("m_zipcode"));
+				memberDTO.setmAddress1(rs.getString("m_address1"));
+				memberDTO.setmAddress2(rs.getString("m_address2"));
+
+				memberAddList.add(memberDTO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			Dbconn.close(conn, pstmt, rs);
+		}
+		return memberAddList;
 	}
 }

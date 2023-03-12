@@ -1,158 +1,184 @@
 package com.kurly.product;
-// 혜정님 파일 붙여넣기
 
 public class ProductDTO {
+
+	private int idx;
+	private String category1;
+	private String category2; 
+	private String title; 
+	private String subtitle; 
+	private String brand; 
+	private int price; 
+	private int discprice; 
+	private int point;
+	private int stock;
+	private String deliverytype;
+	private String packingtype;
+	private String salesunit;
+	private String weight;
+	private String origin;
+	private String imgname;
+	private String imgpath;
+	private String description;
+	private String detailimgname;
+	private String detailimgpath;
+	private String salestate;
+	private String isdisplay;
+	private String regdate;
 	
-	private Long pIdx; // 상품번호
-	private String pCategory1; // 카테고리 대
-	private String pCategory2; // 카테고리 소
-	private String pTitle; // 상품명
-	private String pSubtitle; // 상품슬로건
-	private String pBrand; // 브랜드명
-	private Integer pPrice; // 가격
-	private Integer pDiscprice; // 할인액 ( 45,000원 중 5,000원)
-	private Integer pPoint; // 적립금
-	private Integer pStock; // 재고수량
-	private String pDeliverytype; // 배송타입 : 샛별배송/택배배송/기타
-	private String pPackingtype; // 보관타입 : 냉동/냉장/상온/기타
-	private String pSalesUnit; // 판매단위
-	private String pWeight; // 중량
-	private String pOrigin; // 원산지
-	private String pMainImg; // 대표이미지(파일명)
-	private String pDescription; // 상세설명
-	private String pSaleState; // 판매상태 : 판매대기/판매중/품절/판매중지/판매종료
-	private String pDisplay; // 전시상태 : 전시중/전시중단
-	private String pRegdate; // 등록시간
-	
-	public Long getpIdx() {
-		return pIdx;
+	public int getIdx() {
+		return idx;
 	}
-	public void setpIdx(Long pIdx) {
-		this.pIdx = pIdx;
+	public void setIdx(int idx) {
+		this.idx = idx;
 	}
-	public String getpCategory1() {
-		return pCategory1;
+	public String getCategory1() {
+		return category1;
 	}
-	public void setpCategory1(String pCategory1) {
-		this.pCategory1 = pCategory1;
+	public void setCategory1(String category1) {
+		this.category1 = category1;
 	}
-	public String getpCategory2() {
-		return pCategory2;
+	public String getCategory2() {
+		return category2;
 	}
-	public void setpCategory2(String pCategory2) {
-		this.pCategory2 = pCategory2;
+	public void setCategory2(String category2) {
+		this.category2 = category2;
 	}
-	public String getpTitle() {
-		return pTitle;
+	public String getTitle() {
+		return title;
 	}
-	public void setpTitle(String pTitle) {
-		this.pTitle = pTitle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getpSubtitle() {
-		return pSubtitle;
+	public String getSubtitle() {
+		return subtitle;
 	}
-	public void setpSubtitle(String pSubtitle) {
-		this.pSubtitle = pSubtitle;
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
 	}
-	public String getpBrand() {
-		return pBrand;
+	public String getBrand() {
+		return brand;
 	}
-	public void setpBrand(String pBrand) {
-		this.pBrand = pBrand;
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
-	public Integer getpPrice() {
-		return pPrice;
+	public int getPrice() {
+		return price;
 	}
-	public void setpPrice(Integer pPrice) {
-		this.pPrice = pPrice;
+	public void setPrice(int price) {
+		this.price = price;
 	}
-	public Integer getpDiscprice() {
-		return pDiscprice;
+	public int getDiscprice() {
+		return discprice;
 	}
-	public void setpDiscprice(Integer pDiscprice) {
-		this.pDiscprice = pDiscprice;
+	public void setDiscprice(int discprice) {
+		this.discprice = discprice;
 	}
-	public Integer getpPoint() {
-		return pPoint;
+	public int getPoint() {
+		return point;
 	}
-	public void setpPoint(Integer pPoint) {
-		this.pPoint = pPoint;
+	public void setPoint(int point) {
+		this.point = point;
 	}
-	public Integer getpStock() {
-		return pStock;
+	public int getStock() {
+		return stock;
 	}
-	public void setpStock(Integer pStock) {
-		this.pStock = pStock;
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
-	public String getpDeliverytype() {
-		return pDeliverytype;
+	public String getDeliverytype() {
+		return deliverytype;
 	}
-	public void setpDeliverytype(String pDeliverytype) {
-		this.pDeliverytype = pDeliverytype;
+	public void setDeliverytype(String deliverytype) {
+		this.deliverytype = deliverytype;
 	}
-	public String getpPackingtype() {
-		return pPackingtype;
+	public String getPackingtype() {
+		return packingtype;
 	}
-	public void setpPackingtype(String pPackingtype) {
-		this.pPackingtype = pPackingtype;
+	public void setPackingtype(String packingtype) {
+		this.packingtype = packingtype;
 	}
-	public String getpSalesUnit() {
-		return pSalesUnit;
+	public String getSalesunit() {
+		return salesunit;
 	}
-	public void setpSalesUnit(String pSalesUnit) {
-		this.pSalesUnit = pSalesUnit;
+	public void setSalesunit(String salesunit) {
+		this.salesunit = salesunit;
 	}
-	public String getpWeight() {
-		return pWeight;
+	public String getWeight() {
+		return weight;
 	}
-	public void setpWeight(String pWeight) {
-		this.pWeight = pWeight;
+	public void setWeight(String weight) {
+		this.weight = weight;
 	}
-	public String getpOrigin() {
-		return pOrigin;
+	public String getOrigin() {
+		return origin;
 	}
-	public void setpOrigin(String pOrigin) {
-		this.pOrigin = pOrigin;
+	public void setOrigin(String origin) {
+		this.origin = origin;
 	}
-	public String getpMainImg() {
-		return pMainImg;
+	public String getImgname() {
+		return imgname;
 	}
-	public void setpMainImg(String pMainImg) {
-		this.pMainImg = pMainImg;
+	public void setImgname(String imgname) {
+		this.imgname = imgname;
 	}
-	public String getpDescription() {
-		return pDescription;
+	public String getImgpath() {
+		return imgpath;
 	}
-	public void setpDescription(String pDescription) {
-		this.pDescription = pDescription;
+	public void setImgpath(String imgpath) {
+		this.imgpath = imgpath;
 	}
-	public String getpSaleState() {
-		return pSaleState;
+	public String getDescription() {
+		return description;
 	}
-	public void setpSaleState(String pSaleState) {
-		this.pSaleState = pSaleState;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public String getpDisplay() {
-		return pDisplay;
+	public String getDetailimgname() {
+		return detailimgname;
 	}
-	public void setpDisplay(String pDisplay) {
-		this.pDisplay = pDisplay;
+	public void setDetailimgname(String detailimgname) {
+		this.detailimgname = detailimgname;
 	}
-	public String getpRegdate() {
-		return pRegdate;
+	public String getDetailimgpath() {
+		return detailimgpath;
 	}
-	public void setpRegdate(String pRegdate) {
-		this.pRegdate = pRegdate;
+	public void setDetailimgpath(String detailimgpath) {
+		this.detailimgpath = detailimgpath;
+	}
+	public String getSalestate() {
+		return salestate;
+	}
+	public void setSalestate(String salestate) {
+		this.salestate = salestate;
+	}
+	public String getIsdisplay() {
+		return isdisplay;
+	}
+	public void setIsdisplay(String isdisplay) {
+		this.isdisplay = isdisplay;
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 	
 	@Override
 	public String toString() {
-		return "ProductDTO [pIdx=" + pIdx + ", pCategory1=" + pCategory1 + ", pCategory2=" + pCategory2 + ", pTitle="
-				+ pTitle + ", pSubtitle=" + pSubtitle + ", pBrand=" + pBrand + ", pPrice=" + pPrice + ", pDiscprice="
-				+ pDiscprice + ", pPoint=" + pPoint + ", pStock=" + pStock + ", pDeliverytype=" + pDeliverytype
-				+ ", pPackingtype=" + pPackingtype + ", pSalesUnit=" + pSalesUnit + ", pWeight=" + pWeight
-				+ ", pOrigin=" + pOrigin + ", pMainImg=" + pMainImg + ", pDescription=" + pDescription + ", pSaleState="
-				+ pSaleState + ", pDisplay=" + pDisplay + ", pRegdate=" + pRegdate + "]";
+		return "ProductDTO [idx=" + idx + ", category1=" + category1 + ", category2=" + category2 + ", title=" + title
+				+ ", subtitle=" + subtitle + ", brand=" + brand + ", price=" + price + ", discprice=" + discprice
+				+ ", point=" + point + ", stock=" + stock + ", deliverytype=" + deliverytype + ", packingtype="
+				+ packingtype + ", salesunit=" + salesunit + ", weight=" + weight + ", origin=" + origin + ", imgname="
+				+ imgname + ", imgpath=" + imgpath + ", description=" + description + ", detailimgname=" + detailimgname
+				+ ", detailimgpath=" + detailimgpath + ", salestate=" + salestate + ", isdisplay=" + isdisplay
+				+ ", regdate=" + regdate + "]";
 	}
 
+
+	
+	
+	
+	
 }

@@ -1,66 +1,74 @@
 package com.kurly.notice;
 
 public class NoticeDTO {
-	
-	private int n_idx; 
-	private String n_title; 
-	private String n_content;
-	private int n_hit; 
-	private String n_isdisplay; 
-	private String n_isimpt; 
-	private String n_regdate;
-	
-	public int getN_idx() {
-		return n_idx;
+
+	private int idx;
+	private String title;
+	private String content;
+	private int hit;
+	private String isdisplay;
+	private String isimpt;
+	private String regdate;
+
+	public int getIdx() {
+		return idx;
 	}
-	public void setN_idx(int n_idx) {
-		this.n_idx = n_idx;
+
+	public void setIdx(int idx) {
+		this.idx = idx;
 	}
-	public String getN_title() {
-		return n_title;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setN_title(String n_title) {
-		this.n_title = n_title;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getN_content() {
-		return n_content;
+
+	public String getContent() {
+		return content;
 	}
-	public void setN_content(String n_content) {
-		this.n_content = n_content;
+
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public int getN_hit() {
-		return n_hit;
+
+	public int getHit() {
+		return hit;
 	}
-	public void setN_hit(int n_hit) {
-		this.n_hit = n_hit;
+
+	public void setHit(int hit) {
+		this.hit = hit;
 	}
-	public String getN_isdisplay() {
-		return n_isdisplay;
+
+	public String getIsdisplay() {
+		return isdisplay;
 	}
-	public void setN_isdisplay(String n_isdisplay) {
-		this.n_isdisplay = n_isdisplay;
+
+	public void setIsdisplay(String isdisplay) {
+		this.isdisplay = isdisplay;
 	}
-	public String getN_isimpt() {
-		return n_isimpt;
+
+	public String getIsimpt() {
+		return isimpt;
 	}
-	public void setN_isimpt(String n_isimpt) {
-		this.n_isimpt = n_isimpt;
+
+	public void setIsimpt(String isimpt) {
+		this.isimpt = isimpt;
 	}
-	public String getN_regdate() {
-		return n_regdate;
+
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setN_regdate(String n_regdate) {
-		this.n_regdate = n_regdate;
+
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "NoticeDTO [n_idx=" + n_idx + ", n_title=" + n_title + ", n_content=" + n_content + ", n_hit=" + n_hit
-				+ ", n_isdisplay=" + n_isdisplay + ", n_isimpt=" + n_isimpt + ", n_regdate=" + n_regdate + "]";
+		return "NoticeDTO [idx=" + idx + ", title=" + title + ", content=" + content + ", hit=" + hit + ", isdisplay="
+				+ isdisplay + ", isimpt=" + isimpt + ", regdate=" + regdate + "]";
 	}
-
-	
-	
-	
-
 }

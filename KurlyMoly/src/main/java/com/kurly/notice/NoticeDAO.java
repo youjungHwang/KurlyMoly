@@ -3,11 +3,14 @@ package com.kurly.notice;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.HashMap; 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.kurly.db.Dbconn;
 import com.kurly.db.SqlMapConfig;
 
 public class NoticeDAO {
@@ -15,132 +18,154 @@ public class NoticeDAO {
 	PreparedStatement pstmt;
 	ResultSet rs;
 	String sql = "";
-	
+
 	SqlSessionFactory ssf = SqlMapConfig.getSqlMapInstance();
 	SqlSession sqlsession;
+	List<NoticeDTO> noticeList = new ArrayList<>();
 
-
-	
-	public NoticeDAO() { 
+	public NoticeDAO() {
 		sqlsession = ssf.openSession(true); // openSession(true) 설정시 자동 commit
 		System.out.println("마이바티스 설정 성공!");
 	}
 
-	
-	
+	// noticeadd()
 	public int noticeadd(NoticeDTO notice) {
-	HashMap<String, String> dataMap = new HashMap<>();
-	
-	dataMap.put("n_title", notice.getN_title());
-	dataMap.put("n_content", notice.getN_content());
-	dataMap.put("n_isimpt", notice.getN_isimpt());
-	dataMap.put("n_isdisplay", notice.getN_isdisplay());
-	
-	return sqlsession.insert("Notice.noticeadd", dataMap);
+		HashMap<String, String> dataMap = new HashMap<>();
+
+		dataMap.put("n_title", notice.getTitle());
+		dataMap.put("n_content", notice.getContent());
+		dataMap.put("n_isimpt", notice.getIsimpt());
+		dataMap.put("n_isdisplay", notice.getIsdisplay());
+
+		return sqlsession.insert("Notice.noticeadd", dataMap);
 	}
 
-	
-}
+	// 페이징 count() - admin_noticelist.jsp
+	public int count() {
+		int cnt = 0;
+		return sqlsession.selectOne("Notice.totalCount");
+	}
 
-/*
- * 	public boolean idCheck(String userid) {
+	public List<NoticeDTO> selectList(int pagePerCount, int start) {
+		HashMap<String, Integer> dataMap = new HashMap<>();
+		dataMap.put("pagePerCount", pagePerCount);
+		dataMap.put("start", start);
+		noticeList = sqlsession.selectList("Notice.selectList", dataMap);
+		System.out.println(noticeList.size());
+		return noticeList;
+	}
 
-if((Integer)sqlsession.selectOne("Member.idCheck", userid) == 1) {
-	return true;
-}
-return false;
-}
+	// list -> view 데이터 넘기기 - admin_noticeview.jsp
+	public NoticeDTO selectView(int idx) {
+		NoticeDTO noticeDTO = new NoticeDTO();
+		noticeDTO = sqlsession.selectOne("Notice.selectView", idx);
+		return noticeDTO;
+	}
 
-public int join(MemberDTO member) {
-HashMap<String, String> dataMap = new HashMap<>();
-String hobbystr = "";
-for(String hobby : member.getHobby()) {
-	hobbystr = hobbystr + hobby + " ";
-}
-dataMap.put("mem_userid", member.getUserid());
-dataMap.put("mem_userpw", member.getUserpw());
-dataMap.put("mem_name", member.getUsername());
-dataMap.put("mem_hp", member.getHp());
-dataMap.put("mem_email", member.getEmail());
-dataMap.put("mem_hobby", hobbystr);
-dataMap.put("mem_ssn1", member.getSsn1());
-dataMap.put("mem_ssn2", member.getSsn2());
-dataMap.put("mem_zipcode", member.getZipcode());
-dataMap.put("mem_address1", member.getAddress1());
-dataMap.put("mem_address2", member.getAddress2());
-dataMap.put("mem_address3", member.getAddress3());
+	// delete - admin_noticedelete.jsp
+	public boolean delete(int idx) {
+		if (conn != null) {
+			NoticeDTO noticeDTO = new NoticeDTO();
+			noticeDTO = sqlsession.selectOne("Notice.delete", idx);
+		}
+		return true;
+	}
 
-return sqlsession.insert("Member.join", dataMap);
-}
+	// edit - admin_noticeedit_ok.jsp
+	public int edit(NoticeDTO notice) {
+		HashMap<String, String> dataMap = new HashMap<>();
 
-public MemberDTO login(MemberDTO member) {
-HashMap<String, String> dataMap = new HashMap<>();
-dataMap.put("mem_userid", member.getUserid());
-dataMap.put("mem_userpw", member.getUserpw());
-dataMap = sqlsession.selectOne("Member.login", dataMap);
+		dataMap.put("n_title", notice.getTitle());
+		dataMap.put("n_content", notice.getContent());
 
-if(dataMap != null) {
-	member.setIdx(Integer.parseInt(String.valueOf(dataMap.get("mem_idx"))));
-	member.setUsername(dataMap.get("mem_name"));
-	return member;
-}
-return null;
-}
+		return sqlsession.update("Notice.edit", dataMap);
+	}
 
-public MemberDTO info(MemberDTO member) {
-HashMap<String, String> dataMap = new HashMap<>();
-dataMap.put("mem_userid", member.getUserid());
-dataMap = sqlsession.selectOne("Member.info", dataMap);
+	// 홈페이지 공지사항 select(HYJ) -- 추가함
+	public List<NoticeDTO> selectNotice() {
+		List<NoticeDTO> selectList = new ArrayList<>();
 
-if(dataMap != null) {
-	member.setIdx(Integer.parseInt(String.valueOf(dataMap.get("mem_idx"))));
-	member.setUserid(dataMap.get("mem_userid"));
-	member.setUsername(dataMap.get("mem_name"));
-	member.setHp(dataMap.get("mem_hp"));
-	member.setEmail(dataMap.get("mem_email"));
-	String hobby[] = dataMap.get("mem_hobby").split(" ");
-	member.setHobby(hobby);
-	member.setSsn1(dataMap.get("mem_ssn1"));
-	member.setSsn2(dataMap.get("mem_ssn2"));
-	member.setZipcode(dataMap.get("mem_zipcode"));
-	member.setAddress1(dataMap.get("mem_address1"));
-	member.setAddress2(dataMap.get("mem_address2"));
-	member.setAddress3(dataMap.get("mem_address3"));
-	return member;
-}
-return null;
-}
+		try {
+			conn = Dbconn.getConnection();
+			sql = "SELECT * FROM tb_notice ORDER BY n_idx DESC";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
 
-public boolean pwCheck(MemberDTO member) {
-HashMap<String, String> dataMap = new HashMap<>();
-dataMap.put("mem_idx", String.valueOf(member.getIdx()));
-dataMap.put("mem_userpw", member.getUserpw());
+			while (rs.next()) {
+				NoticeDTO noticeDetail = new NoticeDTO();
+				noticeDetail.setIdx(rs.getInt("n_idx"));
+				noticeDetail.setTitle(rs.getString("n_title"));
+				noticeDetail.setContent(rs.getString("n_content"));
+				noticeDetail.setHit(rs.getInt("n_hit"));
+				noticeDetail.setIsdisplay(rs.getString("n_isdisplay"));
+				noticeDetail.setIsimpt(rs.getString("n_isimpt"));
+				noticeDetail.setRegdate(rs.getString("n_regdate").substring(0, 10));
+				selectList.add(noticeDetail);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return selectList;
+	}
 
-if((Integer)sqlsession.selectOne("Member.pwCheck", dataMap) == 1) {
-	return true;
-}
-return false;
-}
+	public boolean admindelete(int idx) {
+		try {
+			conn = Dbconn.getConnection();
+			if (conn != null) {
+				sql = "delete from tb_notice where n_idx=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, idx);
+				if (pstmt.executeUpdate() >= 1) {
+					return true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 
-public int edit(MemberDTO member) {
-HashMap<String, String> dataMap = new HashMap<>();
-String hobbystr = "";
-for(String hobby : member.getHobby()) {
-	hobbystr = hobbystr + hobby + " ";
-}
+	public boolean view(int idx) {
+		try {
+			conn = Dbconn.getConnection();
+			if (conn != null) {
+				sql = "select from tb_notice where n_idx=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, idx);
+				rs = pstmt.executeQuery();
 
-dataMap.put("mem_idx", String.valueOf(member.getIdx()));
-dataMap.put("mem_name", member.getUsername());
-dataMap.put("mem_hp", member.getHp());
-dataMap.put("mem_email", member.getEmail());
-dataMap.put("mem_hobby", hobbystr);
-dataMap.put("mem_ssn1", member.getSsn1());
-dataMap.put("mem_ssn2", member.getSsn2());
-dataMap.put("mem_zipcode", member.getZipcode());
-dataMap.put("mem_address1", member.getAddress1());
-dataMap.put("mem_address2", member.getAddress2());
-dataMap.put("mem_address3", member.getAddress3());
+				if (rs.next()) {
+					String n_title = rs.getString("n_title");
+					String n_content = rs.getString("n_content");
 
-return sqlsession.update("Member.edit", dataMap);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public NoticeDTO viewNotice(int idx) {
+		NoticeDTO board = new NoticeDTO();
+		try {
+			conn = Dbconn.getConnection();
+			sql = "select * from tb_notice where n_idx=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, idx);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				board.setTitle(rs.getString("n_title"));
+				board.setContent(rs.getString("n_content"));
+				board.setHit(rs.getInt("n_hit"));
+				board.setIsimpt(rs.getString("n_isimpt"));
+				board.setIsdisplay(rs.getString("n_isdisplay"));
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return board;
+	}
+
 }
-}*/
