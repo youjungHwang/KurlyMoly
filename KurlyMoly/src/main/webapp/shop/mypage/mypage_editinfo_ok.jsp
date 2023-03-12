@@ -4,7 +4,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String userid = request.getParameter("m_id");
-	String userpw = request.getParameter("password");
+	String userpwre = request.getParameter("re_pw");
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -19,25 +19,27 @@
 		Class.forName("com.mysql.jdbc.Driver"); // com.mysql.cj.jdbc.Driver
 		conn = DriverManager.getConnection(url, uid, upw);
 		if (conn != null) {
-			sql = "SELECT m_idx, m_userid, m_name, m_state FROM tb_member WHERE m_userid=? AND m_password=? AND m_state != 2";
+			sql = "SELECT m_idx, m_userid, m_name FROM tb_member WHERE m_userid=? AND m_password=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userid);
-			pstmt.setString(2, userpw);
+			pstmt.setString(2, userpwre);
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
-				// 로그인 성공
+				
+				// 확인 성공
 				// 3개의 세션변수 만들기
 				session.setAttribute("m_id", userid);
 				session.setAttribute("m_name", rs.getString("m_name"));
 				session.setAttribute("m_idx", rs.getString("m_idx"));
 %>
 				<script>
-					alert('로그인 되었습니다');
-					location.href='../../index.jsp';
+					// alert('확인 되었습니다');
+					location.href='./mypage_editinfo_myinfo.jsp';
+					
 				</script>
 <%
-			} else { // 로그인 실패
+			} else { // 확인 실패
 %>
 			<script>
 				alert('아이디 또는 비밀번호 오류입니다.');
