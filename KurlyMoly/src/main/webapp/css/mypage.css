@@ -37,7 +37,7 @@ letter-spacing: 0; color: #5f0080; letter-spacing: -0.7px; }
 .mypage_top .grade_user .grade_bonus .user .txt { float: left; padding-left: 5px; font-size: 16px; line-height: 28px; }
 
 .mypage_top .next { overflow: hidden; width: 100%; padding: 22px 0 0 84px; }
-.mypage_top .next a { float: left; height: 30px; border: 1px solid #f4f4f4; margin-right: 10px; margin-top: 0px !important; padding-top: 4px; border-radius: 15px; line-height: 18px; text-align: center; background-color: #f3f3f3; font-size: 14px; font-weight: 400; letter-spacing: 0; }
+.mypage_top .next a { float: right; height: 30px; border: 1px solid #f4f4f4; margin-right: 10px; margin-top: 0px !important; padding-top: 4px; border-radius: 15px; line-height: 18px; text-align: center; background-color: #f3f3f3; font-size: 14px; font-weight: 400; letter-spacing: 0; }
 .mypage_top .next a.total_gd { width: 121px; margin-right: 10px !important; box-sizing: border-box; }
 .mypage_top .next a.next_gd { width: 168px; box-sizing: border-box; margin-right: 10px !important; }
 

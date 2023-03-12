@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@
                 <ul class="util clear" class="header_menu">
                     <li><a href="admin_dashboard.jsp">Admin 님</a></li>
                     <li><a href="admin_mypage.jsp">내 정보</a></li>
-                    <li><a href="admin_logout">로그아웃</a></li>
+                    <li><a href="admin_logout.jsp">로그아웃</a></li>
                 </ul>
             </div>
         </header>
@@ -44,7 +45,7 @@
                 <div id="profile_area"><img id="pro_file" src="../img/profile.png"></div>
                 <div id="tab1" class="menutab">
                     <ul>
-                        <li class="category"><a href="admin_dashboard.html">대시보드</a></li>
+                        <li class="category"><a href="admin_dashboard.jsp">대시보드</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -53,8 +54,8 @@
                     <img src="../img/ico_folding_down.png">
                     <ul>
                         <li class="category">공지사항</li>
-                        <li><a href="admin_noticecheck.html">공지사항 조회</a></li>
-                        <li><a href="admin_noticeadd.html">공지사항 등록</a></li>
+                        <li><a href="admin_noticelist.jsp">공지사항 조회</a></li>
+                        <li><a href="admin_noticeadd.jsp">공지사항 등록</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -63,8 +64,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">상품 관리</li>
-                        <li><a href="admin_productcheck.html">상품 조회/수정</a></li>
-                        <li><a href="admin_productadd.html">상품 등록</a></li>
+                        <li><a href="admin_productcheck.jsp">상품 조회/수정</a></li>
+                        <li><a href="admin_productadd.jsp">상품 등록</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -73,8 +74,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">판매 관리</li>
-                        <li><a href="admin_ordercheck.html">주문 조회</a></li>
-                        <li><a href="admin_deliverycheck.html">주문/배송 현황</a></li>
+                        <li><a href="admin_ordercheck.jsp">주문 조회</a></li>
+                        <li><a href="admin_deliverycheck.jsp">주문/배송 현황</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -83,9 +84,9 @@
                     <img src="../img/ico_folding_down.png">
                     <ul>
                         <li class="category clear">클레임 관리</li>
-                        <li><a href="admin_cancelcheck.html">취소 관리</a></li>
-                        <li><a href="admin_exchangecheck.html">교환 관리</a></li>
-                        <li><a href="admin_refundcheck.html">반품 관리</a></li>
+                        <li><a href="admin_cancelcheck.jsp">취소 관리</a></li>
+                        <li><a href="admin_exchangecheck.jsp">교환 관리</a></li>
+                        <li><a href="admin_refundcheck.jsp">반품 관리</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -94,8 +95,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">문의 사항</li>
-                        <li><a href="admin_prd_inquiry.html">상품 문의</a></li>
-                        <li><a href="admin_ctm_inquiry.html">고객 문의</a></li>
+                        <li><a href="admin_pinquirycheck.jsp">상품 문의</a></li>
+                        <li><a href="admin_cinquirycheck.jsp">고객 문의</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -104,8 +105,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">회원 관리</li>
-                        <li><a href="admin_membercheck.html">회원 조회</a></li>
-                        <li><a href="admin_wd_member.html">탈회회원 조회</a></li>
+                        <li><a href="admin_membercheck.jsp">회원 조회</a></li>
+                        <li><a href="admin_wd_member.jsp">탈회회원 조회</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -114,8 +115,8 @@
                     <img src="../img/ico_folding_down.png"> 
                     <ul>
                         <li class="category">이벤트 관리</li>
-                        <li><a href="admin_eventcheck.html">이벤트 조회</a></li>
-                        <li><a href="admin_eventadd.html">이벤트 등록</a></li>
+                        <li><a href="admin_eventcheck.jsp">이벤트 조회</a></li>
+                        <li><a href="admin_eventadd.jsp">이벤트 등록</a></li>
                     </ul>
                 </div>
                 <div class="hr"> </div>
@@ -179,17 +180,17 @@
                 </div>
 
             
-            <!-- 푸터 시작 -->
+      <!-- 푸터 시작 -->
             <div class="footer">
                 <div class="footer_menu">
                     <ul class="footer_list">
-                        <li><a href="#">관리자센터 메뉴얼</a></li>
+                        <li><a href="./admin_manual.pdf" download>관리자센터 메뉴얼</a></li>
                         <li> | </li>
-                        <li><a href="#">구글 애널리틱스</a></li>
+                        <li><a href="https://analytics.google.com/analytics">구글 애널리틱스</a></li>
                         <li> | </li>
-                        <li><a href="#">마켓컬리 협업툴</a></li>
+                        <li><a href="https://trello.com/">마켓컬리 협업툴</a></li>
                         <li> | </li>
-                        <li><a href="#">개발도구</a></li>
+                        <li><a href="https://opentutorials.org/">개발도구</a></li>
                     </ul>
                 </div>
             </div>

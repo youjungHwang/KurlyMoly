@@ -5,7 +5,10 @@
 .switchOn2 {left: 17px !important;}
 .Onclick {color:#5f0080 !important; font-weight: bold; border-bottom: 1px solid #5f0080;}
 .turnOn { background: url(../img/goods_list/wish2.png)no-repeat;}
-/* .subMenuOn { display: block !important;} */
+/* .mav {  position: fixed !important; top:0px;} */
+.gnb_stop { position: fixed!important; top: 80px;} 
+.inner_stop {position: fixed!important; left: 960px!important; }
+
 
 /*html 수정한 부분
 공통 header부분 
@@ -19,8 +22,6 @@
 
 /*          style.css 수정              */
 #qnb { position: absolute; z-index: 999px; right: 20px; width: 80px; font: normal 12px/16px "Noto Sans KR"; color: #333; letter-spacing: -0.3px; transition: top 0.2s; padding-top: 150px;} 화면 스크롤을 내리면 qnb가 따라와야 함
-
-
 
 /* index.html메인화면 사이드바 스크롤 css */
 #qnbMain { position: absolute; z-index: 999px; right: 20px; width: 80px; font: normal 12px/16px "Noto Sans KR"; color: #333; letter-spacing: -0.3px; transition: top 0.2s;} /*화면 스크롤을 내리면 qnb가 따라와야 함*/
@@ -67,5 +68,9 @@
 /*          .gnb_sub 수정           */
 #gnb .gnb_sub { display: none; width: 213px; overflow: hidden; position: absolute; z-index: 301; left: 0; top: 55px; padding-top: 1px;}
 
-
-
+/*			goods_detail btn_close수정			
+#cartPut .btn_close .ico { background: url(https://res.kurly.com/pc/service/goods/1910/ico_up_fff_48x48.png) no-repeat 100% 0; background-size: 24px 24px; }
+#cartPut .btn_close .ico.open { background: url(https://res.kurly.com/pc/service/goods/1910/ico_down_fff_48x48.png) no-repeat 100% -3px; background-size: 24px 24px; }
+#cartPut .btn_close { overflow: hidden; position: absolute; left: 50%; top: -50px; width: 170px; height: 48px; margin-left: 280px; border: 0; border-radius: 3px 3px 0 0; background-color: #5f0080; text-align: center; }
+#cartPut .btn_close .ico { padding: 0 30px 0 7px; background: url(../img/review_image/ico_up_fff_24x24.webp) no-repeat 100% -3px; font-size: 14px; color: #fff; line-height: 20px; }
+#cartPut .btn_close .ico.open { background: url(https://res.kurly.com/pc/service/goods/1910/ico_down_fff_24x24.png) no-repeat 100% -3px; }	*/

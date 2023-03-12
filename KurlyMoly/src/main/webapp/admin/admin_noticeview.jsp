@@ -1,5 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.kurly.notice.NoticeDTO"%>
+<jsp:useBean id="dao" class="com.kurly.notice.NoticeDAO" />
+<%
+	int idx = Integer.parseInt(request.getParameter("idx"));  // 전 페이지에서 "idx" 넘겨준 것
+	
+	NoticeDTO noticeDTO = new NoticeDTO();
+	noticeDTO = dao.viewNotice(idx);
+	
+	
+	String n_title = noticeDTO.getTitle();
+	String n_content = noticeDTO.getContent();
+	String n_isdisplay = noticeDTO.getIsdisplay();
+	String n_isimpt = noticeDTO.getIsimpt();
+	Integer n_hit = noticeDTO.getHit();
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +37,8 @@
 		<header id="header">
 			<div id="header_menu1" class="header_menu">
 				<ul>
-					<li><a href="admin_dashboard.jsp"><img id="kurly_logo" src="../img/kurly.png" alt="컬리로고"></a></li>
+					<li><a href="admin_dashboard.jsp"><img id="kurly_logo"
+							src="../img/kurly.png" alt="컬리로고"></a></li>
 					<li>
 						<h2>관리자 센터</h2>
 					</li>
@@ -131,7 +149,7 @@
 				</div>
 			</div>
 			<!-- 사이드 메뉴 끝 -->
-
+			sp
 			<!-- 내용 시작-->
 			<div id="content">
 				<div class="title">
@@ -142,30 +160,26 @@
 						action="admin_noticeadd_ok.jsp" onsubmit="return sendit()">
 						<ul class="reg_list">
 							<li class="clear">
+
 								<div>
 									<label class="noti_tit_lbl">분류</label>
 									<div class="title_box">
 										<select class=" space" name="isdisplay">
-											<option value="전시중" selected>전시중</option>
-											<option value="전시중단">전시중단</option>
-										</select> <input type="checkbox" name="isimpt" id="imp" value="중요"
-											onclick="unchecked_norm"> 중요 공지사항으로 설정 <input
-											type="checkbox" name="isimpt" id="norm" value="일반"
-											style="display: none;" checked="checked">
-
-										<script>
-				                            $(function() {
-				                            	$('#imp').on('click',function(){ $('#norm').attr('checked', false)} 
-				                            });
-			                            </script>
+											<option value="<%=n_isdisplay%>" selected><%=n_isdisplay%></option>
+										</select> 
+										<input type="input" name="isimpt" id="imp" value="<%=n_isimpt%>" style="width: 50px; height: 30px; text-align: center;">
 									</div>
 								</div>
 							</li>
 							<div class="hr"></div>
 
 							<li class="clear"><label class="noti_tit_lbl">제목</label>
+
+
+
 								<div class="title_box">
-									<input type="text" name="title" placeholder="제목을 입력해주세요">
+									<input type="text" name="title" id="title" value="<%=n_title%>">
+									<input type="hidden" name="idx" id="idx" value="<%=idx%>">
 								</div></li>
 							<div class="hr"></div>
 
@@ -173,23 +187,24 @@
 								<div>
 									<label class="noti_tit_lbl">상품 공지사항 상세</label>
 									<div class="noti_content">
-										<textarea name="content" id="editor"></textarea>
-										<script>
-		                                ClassicEditor
-		                                    .create( document.querySelector( '#editor' ) )
-		                                    .catch( error => {
-		                                        console.error( error );
-		                                    });
-
-		                                </script>
+										<textarea name="content" id="editor"><%=n_content%></textarea>
+										<style>
+											#editor {
+												width: 100%;
+												height: 200px;
+											}
+										</style>
 
 									</div>
 								</div>
 							</li>
 							<li>
 								<p class="btn_line">
-									<Input type="submit" value="공지사항 등록" class="btn_basecolor1">
-									<Input type="reset" value="취소" class="btn_basecolor2">
+									<Input type="button" value="수정하기" class="btn_basecolor1" style="background-color: #5f0080;"
+										onclick="location.href='./admin_noticeedit_ok.jsp?idx=<%=idx%>&&title=<%=n_title%>&&content=<%=n_content%>&&isdisplay=<%=n_isdisplay%>&&isimpt=<%=n_isimpt%>'">
+										
+									<Input type="button" value="삭제하기" class="btn_basecolor2"
+										onclick="location.href='./admin_noticedelete_each.jsp?idx=<%=idx%>'">
 								</p>
 							</li>
 						</ul>
@@ -197,6 +212,18 @@
 				</div>
 
       <!-- 푸터 시작 -->
+      
+      <script>
+                            ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                            CKEDITOR.replace( 'description', {
+                                filebrowserUploadUrl: '/KulryMoly/uploads'
+                            });
+                          
+                            </script>
             <div class="footer">
                 <div class="footer_menu">
                     <ul class="footer_list">
