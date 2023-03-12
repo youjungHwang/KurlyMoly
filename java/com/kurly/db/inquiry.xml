@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Inquiry">
+
+	<insert id="regist" parameterType="map">
+		insert into tb_cinquiry (ciq_about, ciq_orderidx, ciq_userid, ciq_title,
+		ciq_content, ciq_file) values
+		(#{ciq_about}, #{ciq_orderidx}, #{ciq_userid}, #{ciq_title}, #{ciq_content},
+		#{ciq_file})
+	</insert>
+
+	<update id="updatefilepath" parameterType="map">
+		update tb_cinquiry set ciq_filepath=#{ciq_filepath}, where ciq_idx =
+		#{ciq_idx}
+	</update>
+
+
+
+</mapper>
